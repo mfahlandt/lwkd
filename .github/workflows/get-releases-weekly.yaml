@@ -12,6 +12,9 @@
       env:
         CI_COMMIT_MESSAGE: Add weekly release notes
         CI_COMMIT_AUTHOR: Release Crawler
+      permissions:
+        actions: write
+        contents: read
       steps:
         - uses: actions/checkout@v4
         - name: Set up Go
