@@ -7,9 +7,8 @@
   permissions:
    contents: write # Allow to update the PR.
    pull-requests: write
+   id-token: write
    
-   
-    
   defaults:
     run:
       working-directory: scripts/release-crawler
