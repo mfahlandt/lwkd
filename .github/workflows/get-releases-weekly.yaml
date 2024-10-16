@@ -6,6 +6,8 @@
 
   permissions:
    contents: write # Allow to update the PR.
+   pull-requests: write
+   
    
     
   defaults:
