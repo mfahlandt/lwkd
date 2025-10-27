@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2025-10-20 - 2025-10-27</h1><h2>containerd/containerd</h2> <h3>Release notes for containerd API 1.10.0-rc.0</h3><h4>2025-10-24</h4><p>Welcome to the api/v1.10.0-rc.0 release of containerd!
+<em>This is a pre-release of containerd</em></p>
+
+<p>The 11th release for the containerd 1.x API aligns with the containerd 2.2 release.</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<ul>
+<li>Add mount manager (<a href="https://github.com/containerd/containerd/pull/12063" target="_blank">#12063</a>)</li>
+</ul>
+
+<h4 id="image-distribution">Image Distribution</h4>
+
+<ul>
+<li>Add parallel unpack support (<a href="https://github.com/containerd/containerd/pull/12332" target="_blank">#12332</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Derek McGowan</li>
+<li>Henry Wang</li>
+<li>Wei Fu</li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<details><summary>10 commits</summary>
+<p>
+
+* Prepare release notes for api/v1.10.0-rc.0 ([#12408](https://github.com/containerd/containerd/pull/12408))
+  * [`fbc7848f2`](https://github.com/containerd/containerd/commit/fbc7848f2378afa2cf58c868bfcab1467f3ccccd) Prepare release notes for api/v1.10.0-rc.0
+* Add parallel unpack support ([#12332](https://github.com/containerd/containerd/pull/12332))
+  * [`0198b87fc`](https://github.com/containerd/containerd/commit/0198b87fcfb31492c23de83059291efc0f06a1f9) Implement parallel unpack
+* Prepare release notes for api/v1.10.0-beta.0 ([#12346](https://github.com/containerd/containerd/pull/12346))
+  * [`aa571f63c`](https://github.com/containerd/containerd/commit/aa571f63c6529d827bfef02956a8db9bee57ab8c) Prepare release notes for api/v1.10.0-beta.0
+* Add mount manager ([#12063](https://github.com/containerd/containerd/pull/12063))
+  * [`8db301086`](https://github.com/containerd/containerd/commit/8db3010865ae9926aed6c5e476a7c6b2413b44d5) Add mounts api service
+  * [`67fbf9db9`](https://github.com/containerd/containerd/commit/67fbf9db9cbf6ae83df58d18a19f32b28ebc0017) Generate and vendor proto changes
+  * [`c5097ac63`](https://github.com/containerd/containerd/commit/c5097ac63fd704213c507a2b712fa2db7744090b) Add mount manager to protobuf services and types
+</p>
+</details>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<p>This release has no dependency changes</p>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/api/v1.9.0" target="_blank">api/v1.9.0</a></p>
+<br><h3>Release notes for containerd 2.2.0-beta.2</h3><h4>2025-10-22</h4><p>Welcome to the v2.2.0-beta.2 release of containerd!
+<em>This is a pre-release of containerd</em></p>
+
+<p>The second minor release of containerd 2.x focuses on continued stability alongside
+new features and improvements. This is the second time-based released for containerd.</p>
+
+<p>This is a beta release and some functionality is still under development.</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<ul>
+<li>Update erofs snapshotter to use mount manager (<a href="https://github.com/containerd/containerd/pull/12333" target="_blank">#12333</a>)</li>
+<li>Add mount manager (<a href="https://github.com/containerd/containerd/pull/12063" target="_blank">#12063</a>)</li>
+<li>Add conf.d include in the default config (<a href="https://github.com/containerd/containerd/pull/12323" target="_blank">#12323</a>)</li>
+<li>Add support for back references in the garbage collector (<a href="https://github.com/containerd/containerd/pull/12025" target="_blank">#12025</a>)</li>
+</ul>
+
+<h4 id="go-client">Go client</h4>
+
+<ul>
+<li>Update pkg/oci to use fs.FS interface and os.OpenRoot (<a href="https://github.com/containerd/containerd/pull/12245" target="_blank">#12245</a>)</li>
+</ul>
+
+<h4 id="image-distribution">Image Distribution</h4>
+
+<ul>
+<li>Add referrers fetcher to remotes (<a href="https://github.com/containerd/containerd/pull/12309" target="_blank">#12309</a>)</li>
+<li>Tar unpack progress through transfer service (<a href="https://github.com/containerd/containerd/pull/11921" target="_blank">#11921</a>)</li>
+</ul>
+
+<h4 id="image-storage">Image Storage</h4>
+
+<ul>
+<li>Add snapshotter and differ for block CIMs (<a href="https://github.com/containerd/containerd/pull/12050" target="_blank">#12050</a>)</li>
+<li>Add tar index mode to erofs snapshotter (<a href="https://github.com/containerd/containerd/pull/11919" target="_blank">#11919</a>)</li>
+</ul>
+
+<h4 id="node-resource-interface-nri">Node Resource Interface (NRI)</h4>
+
+<ul>
+<li>Enable otel traces in NRI (<a href="https://github.com/containerd/containerd/pull/12082" target="_blank">#12082</a>)</li>
+<li>Add WASM plugin support (<a href="https://github.com/containerd/nri/pull/121" target="_blank">containerd/nri#121</a>)</li>
+</ul>
+
+<h4 id="runtime">Runtime</h4>
+
+<ul>
+<li>Improve shim load time after restart by loading in parallel (<a href="https://github.com/containerd/containerd/pull/12142" target="_blank">#12142</a>)</li>
+<li>Fix pidfd leak in UnshareAfterEnterUserns (<a href="https://github.com/containerd/containerd/pull/12167" target="_blank">#12167</a>)</li>
+</ul>
+
+<h4 id="deprecations">Deprecations</h4>
+
+<ul>
+<li>1.6 is EOL (<a href="https://github.com/containerd/containerd/pull/12348" target="_blank">#12348</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Derek McGowan</li>
+<li>Phil Estes</li>
+<li>Maksym Pavlenko</li>
+<li>Akihiro Suda</li>
+<li>Krisztian Litkey</li>
+<li>Mike Brown</li>
+<li>Wei Fu</li>
+<li>Markus Lehtonen</li>
+<li>Sebastiaan van Stijn</li>
+<li>Samuel Karp</li>
+<li>ningmingxiao</li>
+<li>Austin Vazquez</li>
+<li>yashsingh74</li>
+<li>Jin Dong</li>
+<li>Chris Henzie</li>
+<li>Gao Xiang</li>
+<li>Kirtana Ashok</li>
+<li>Aadhar Agarwal</li>
+<li>Etienne Champetier</li>
+<li>Rodrigo Campos</li>
+<li>Akhil Mohan</li>
+<li>Sascha Grunert</li>
+<li>Henry Wang</li>
+<li>Aleksa Sarai</li>
+<li>Eric Mountain</li>
+<li>Keith Mattix II</li>
+<li>Paweł Gronowski</li>
+<li>Adrien Delorme</li>
+<li>Apurv Barve</li>
+<li>Enji Cooper</li>
+<li>Kohei Tokunaga</li>
+<li>Max Jonas Werner</li>
+<li>Rehan Khan</li>
+<li>Tõnis Tiigi</li>
+<li>Yang Yang</li>
+<li>jinda.ljd</li>
+<li>jokemanfire</li>
+<li>Amit Barve</li>
+<li>Andrew Halaney</li>
+<li>Antonio Ojea</li>
+<li>Brian Goff</li>
+<li>Carlos Eduardo Arango Gutierrez</li>
+<li>Chenyang Yan</li>
+<li>Dawei Wei</li>
+<li>Divya Rani</li>
+<li>Fabiano Fidêncio</li>
+<li>Iceber Gu</li>
+<li>Jared Ledvina</li>
+<li>Jonathan Perkin</li>
+<li>Jose Fernandez</li>
+<li>Karl Baumgartner</li>
+<li>Osama Abdelkader</li>
+<li>Radostin Stoyanov</li>
+<li>Ruidong Cao</li>
+<li>Sameer</li>
+<li>Sergey Kanzhelev</li>
+<li>Swagat Bora</li>
+<li>Sylvain MOUQUET</li>
+<li>Tom Wieczorek</li>
+<li>Tycho Andersen</li>
+<li>Ubuntu</li>
+<li>Wuyue (Tony) Sun</li>
+<li>suranmiao</li>
+<li>tanhuaan</li>
+<li>zounengren</li>
+</ul>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<ul>
+<li><strong>dario.cat/mergo</strong>                                                    v1.0.1 -&gt; v1.0.2</li>
+<li><strong>github.com/Microsoft/hcsshim</strong>                                       v0.13.0-rc.3 -&gt; v0.14.0-rc.1</li>
+<li><strong>github.com/StackExchange/wmi</strong>                                       cbe66965904d <strong><em>new</em></strong></li>
+<li><strong>github.com/checkpoint-restore/checkpointctl</strong>                        v1.3.0 -&gt; v1.4.0</li>
+<li><strong>github.com/containerd/console</strong>                                      v1.0.4 -&gt; v1.0.5</li>
+<li><strong>github.com/containerd/containerd/api</strong>                               v1.9.0 -&gt; v1.10.0-beta.1</li>
+<li><strong>github.com/containerd/go-cni</strong>                                       v1.1.12 -&gt; v1.1.13</li>
+<li><strong>github.com/containerd/nri</strong>                                          v0.8.0 -&gt; v0.10.0</li>
+<li><strong>github.com/containernetworking/plugins</strong>                             v1.7.1 -&gt; v1.8.0</li>
+<li><strong>github.com/coreos/go-systemd/v22</strong>                                   v22.5.0 -&gt; v22.6.0</li>
+<li><strong>github.com/cpuguy83/go-md2man/v2</strong>                                   v2.0.5 -&gt; v2.0.7</li>
+<li><strong>github.com/emicklei/go-restful/v3</strong>                                  v3.11.0 -&gt; v3.13.0</li>
+<li><strong>github.com/fxamacker/cbor/v2</strong>                                       v2.7.0 -&gt; v2.9.0</li>
+<li><strong>github.com/go-jose/go-jose/v4</strong>                                      v4.0.5 -&gt; v4.1.2</li>
+<li><strong>github.com/go-logr/logr</strong>                                            v1.4.2 -&gt; v1.4.3</li>
+<li><strong>github.com/go-ole/go-ole</strong>                                           v1.2.6 <strong><em>new</em></strong></li>
+<li><strong>github.com/golang/groupcache</strong>                                       41bb18bfe9da -&gt; 2c02b8208cf8</li>
+<li><strong>github.com/google/certtostore</strong>                                      v1.0.6 <strong><em>new</em></strong></li>
+<li><strong>github.com/google/deck</strong>                                             105ad94aa8ae <strong><em>new</em></strong></li>
+<li><strong>github.com/gorilla/websocket</strong>                                       v1.5.0 -&gt; e064f32e3674</li>
+<li><strong>github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus</strong>  v1.0.1 -&gt; v1.1.0</li>
+<li><strong>github.com/hashicorp/errwrap</strong>                                       v1.1.0 <strong><em>new</em></strong></li>
+<li><strong>github.com/intel/goresctrl</strong>                                         v0.8.0 -&gt; v0.9.0</li>
+<li><strong>github.com/klauspost/compress</strong>                                      v1.18.0 -&gt; v1.18.1</li>
+<li><strong>github.com/knqyf263/go-plugin</strong>                                      v0.9.0 <strong><em>new</em></strong></li>
+<li><strong>github.com/moby/sys/capability</strong>                                     v0.4.0 <strong><em>new</em></strong></li>
+<li><strong>github.com/modern-go/reflect2</strong>                                      v1.0.2 -&gt; 35a7c28c31ee</li>
+<li><strong>github.com/opencontainers/runtime-tools</strong>                            2e043c6bd626 -&gt; 0ea5ed0382a2</li>
+<li><strong>github.com/prometheus/client_golang</strong>                                v1.22.0 -&gt; v1.23.2</li>
+<li><strong>github.com/prometheus/client_model</strong>                                 v0.6.1 -&gt; v0.6.2</li>
+<li><strong>github.com/prometheus/common</strong>                                       v0.62.0 -&gt; v0.66.1</li>
+<li><strong>github.com/prometheus/procfs</strong>                                       v0.15.1 -&gt; v0.16.1</li>
+<li><strong>github.com/stretchr/testify</strong>                                        v1.10.0 -&gt; v1.11.1</li>
+<li><strong>github.com/tchap/go-patricia/v2</strong>                                    v2.3.2 -&gt; v2.3.3</li>
+<li><strong>github.com/tetratelabs/wazero</strong>                                      v1.9.0 <strong><em>new</em></strong></li>
+<li><strong>github.com/urfave/cli/v2</strong>                                           v2.27.6 -&gt; v2.27.7</li>
+<li><strong>github.com/vishvananda/netlink</strong>                                     0e7078ed04c8 -&gt; v1.3.1</li>
+<li><strong>go.etcd.io/bbolt</strong>                                                   v1.4.0 -&gt; v1.4.3</li>
+<li><strong>go.opentelemetry.io/otel</strong>                                           v1.35.0 -&gt; v1.37.0</li>
+<li><strong>go.opentelemetry.io/otel/metric</strong>                                    v1.35.0 -&gt; v1.37.0</li>
+<li><strong>go.opentelemetry.io/otel/sdk</strong>                                       v1.35.0 -&gt; v1.37.0</li>
+<li><strong>go.opentelemetry.io/otel/trace</strong>                                     v1.35.0 -&gt; v1.37.0</li>
+<li><strong>go.uber.org/goleak</strong>                                                 v1.3.0 <strong><em>new</em></strong></li>
+<li><strong>go.yaml.in/yaml/v2</strong>                                                 v2.4.2 <strong><em>new</em></strong></li>
+<li><strong>golang.org/x/crypto</strong>                                                v0.36.0 -&gt; v0.41.0</li>
+<li><strong>golang.org/x/mod</strong>                                                   v0.24.0 -&gt; v0.29.0</li>
+<li><strong>golang.org/x/net</strong>                                                   v0.38.0 -&gt; v0.43.0</li>
+<li><strong>golang.org/x/oauth2</strong>                                                v0.27.0 -&gt; v0.30.0</li>
+<li><strong>golang.org/x/sync</strong>                                                  v0.14.0 -&gt; v0.17.0</li>
+<li><strong>golang.org/x/sys</strong>                                                   v0.33.0 -&gt; v0.37.0</li>
+<li><strong>golang.org/x/term</strong>                                                  v0.30.0 -&gt; v0.34.0</li>
+<li><strong>golang.org/x/text</strong>                                                  v0.23.0 -&gt; v0.28.0</li>
+<li><strong>golang.org/x/time</strong>                                                  v0.7.0 -&gt; v0.9.0</li>
+<li><strong>google.golang.org/genproto/googleapis/api</strong>                          56aae31c358a -&gt; a7a43d27e69b</li>
+<li><strong>google.golang.org/genproto/googleapis/rpc</strong>                          56aae31c358a -&gt; a7a43d27e69b</li>
+<li><strong>google.golang.org/grpc</strong>                                             v1.72.0 -&gt; v1.76.0</li>
+<li><strong>google.golang.org/protobuf</strong>                                         v1.36.6 -&gt; v1.36.10</li>
+<li><strong>k8s.io/api</strong>                                                         v0.32.3 -&gt; v0.34.1</li>
+<li><strong>k8s.io/apimachinery</strong>                                                v0.32.3 -&gt; v0.34.1</li>
+<li><strong>k8s.io/client-go</strong>                                                   v0.32.3 -&gt; v0.34.1</li>
+<li><strong>k8s.io/cri-api</strong>                                                     v0.32.3 -&gt; v0.34.1</li>
+<li><strong>k8s.io/utils</strong>                                                       3ea5e8cea738 -&gt; 4c0f3b243397</li>
+<li><strong>sigs.k8s.io/json</strong>                                                   9aa6b5e7a4b3 -&gt; cfa47c3a1cc8</li>
+<li><strong>sigs.k8s.io/randfill</strong>                                               v1.0.0 <strong><em>new</em></strong></li>
+<li><strong>sigs.k8s.io/structured-merge-diff/v6</strong>                               v6.3.0 <strong><em>new</em></strong></li>
+<li><strong>sigs.k8s.io/yaml</strong>                                                   v1.4.0 -&gt; v1.6.0</li>
+</ul>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v2.1.0" target="_blank">v2.1.0</a></p>
+
+<h3 id="which-file-should-i-download">Which file should I download?</h3>
+
+<ul>
+<li><code>containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:         ✅Recommended. Dynamically linked with glibc 2.35 (Ubuntu 22.04).</li>
+<li><code>containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:  Statically linked. Expected to be used on Linux distributions that do not use glibc &gt;= 2.35. Not position-independent.</li>
+</ul>
+
+<p>In addition to containerd, typically you will have to install <a href="https://github.com/opencontainers/runc/releases" target="_blank">runc</a>
+and <a href="https://github.com/containernetworking/plugins/releases" target="_blank">CNI plugins</a> from their official sites too.</p>
+
+<p>See also the <a href="https://github.com/containerd/containerd/blob/main/docs/getting-started.md" target="_blank">Getting Started</a> documentation.</p>
+<br><h2>kubernetes/kops</h2> <h3>Release notes for v1.34.0</h3><h4>2025-10-21</h4><h2 id="release-notes-for-kops-1-34-series">Release notes for kOps 1.34 series</h2>
+
+<p>kOps 1.34.0 introduces major updates to container runtime management, enhanced cloud provider support, and significant networking improvements.</p>
+
+<h1 id="significant-changes">Significant changes</h1>
+
+<h2 id="container-runtime">Container Runtime</h2>
+
+<ul>
+<li><code>crictl</code> and <code>nerdctl</code> are now only installed on demand (<a href="https://github.com/kubernetes/kops/pull/17604" target="_blank">#17604</a>)
+
+<ul>
+<li>Set <code>spec.containerd.installCriCtl=true</code> or <code>spec.containerd.installNerdCtl=true</code> to install</li>
+</ul></li>
+<li>Update containerd to v2.1.4 (<a href="https://github.com/kubernetes/kops/pull/17532" target="_blank">#17532</a>)
+
+<ul>
+<li>Better systemd integration with dbus dependency fix (<a href="https://github.com/kubernetes/kops/pull/17603" target="_blank">#17603</a>)</li>
+</ul></li>
+</ul>
+
+<h2 id="networking">Networking</h2>
+
+<ul>
+<li>Update Cilium to v1.18.2 (<a href="https://github.com/kubernetes/kops/pull/17601" target="_blank">#17601</a>)
+
+<ul>
+<li>Add support for cilium-etcd with dns=none (<a href="https://github.com/kubernetes/kops/pull/17625" target="_blank">#17625</a>)</li>
+</ul></li>
+<li>Update Calico to v3.30.3 (<a href="https://github.com/kubernetes/kops/pull/17628" target="_blank">#17628</a>)</li>
+<li>Update Flannel to v0.27.4 (<a href="https://github.com/kubernetes/kops/pull/17641" target="_blank">#17641</a>)</li>
+<li>AWS VPC CNI updated to v1.20.2 (<a href="https://github.com/kubernetes/kops/pull/17629" target="_blank">#17629</a>)</li>
+<li><strong>BREAKING</strong>: Canal support removed (<a href="https://github.com/kubernetes/kops/pull/17642" target="_blank">#17642</a>)</li>
+</ul>
+
+<h2 id="aws">AWS</h2>
+
+<ul>
+<li>Update Karpenter to v1.8.1 (<a href="https://github.com/kubernetes/kops/pull/17624" target="_blank">#17624</a>)
+
+<ul>
+<li>Add support for feature gates configuration</li>
+<li><strong>Important</strong>: Older versions must be uninstalled before upgrading (<a href="https://github.com/kubernetes/kops/pull/17567" target="_blank">#17567</a>)</li>
+</ul></li>
+<li>Add CPU and memory resource configuration for AWS Load Balancer Controller</li>
+<li>Update EBS CSI driver to v1.47.0 (<a href="https://github.com/kubernetes/kops/pull/17560" target="_blank">#17560</a>)</li>
+<li>Add support for using ECR as pull-through image cache (<a href="https://github.com/kubernetes/kops/pull/16593" target="_blank">#16593</a>)</li>
+</ul>
+
+<h2 id="azure">Azure</h2>
+
+<ul>
+<li>Add udev disk rules (<a href="https://github.com/kubernetes/kops/pull/17611" target="_blank">#17611</a>)</li>
+<li>Fix rolling-update error (<a href="https://github.com/kubernetes/kops/pull/17538" target="_blank">#17538</a>)</li>
+<li>Use internal K8s API endpoint for cloud-node-manager (<a href="https://github.com/kubernetes/kops/pull/17607" target="_blank">#17607</a>)</li>
+<li>Remove various VMSS configuration suffixes for cleaner naming</li>
+<li>Use <code>kops</code> as the default admin user</li>
+</ul>
+
+<h2 id="openstack">OpenStack</h2>
+
+<ul>
+<li>Update OpenStack CSI images</li>
+</ul>
+
+<h2 id="etcd">Etcd</h2>
+
+<ul>
+<li>Update etcd to v3.6.5 for Kubernetes 1.34+ (<a href="https://github.com/kubernetes/kops/pull/17637" target="_blank">#17637</a>)</li>
+<li>Update etcd to v3.5.23 for Kubernetes <1.34</li>
+<li>Update etcd-manager to v3.0.20250917 (<a href="https://github.com/kubernetes/kops/pull/17615" target="_blank">#17615</a>)
+
+<ul>
+<li>Use image volumes to mount etcd images (<a href="https://github.com/kubernetes/kops/pull/17539" target="_blank">#17539</a>)</li>
+</ul></li>
+</ul>
+
+<h2 id="other-components">Other Components</h2>
+
+<ul>
+<li>Update cluster-autoscaler to v1.34.0 (<a href="https://github.com/kubernetes/kops/pull/17643" target="_blank">#17643</a>)</li>
+<li>Update CoreDNS to v1.12.4</li>
+<li>Update Cloud Controller Managers for AWS, Azure, and Hetzner</li>
+<li>Default SSH key changed to <code>~/.ssh/id_ed25519.pub</code> (from RSA)</li>
+<li><code>ebtables</code>, <code>ethtool</code> and <code>socat</code> are no longer installed by default</li>
+</ul>
+
+<h1 id="breaking-changes">Breaking changes</h1>
+
+<ul>
+<li>Canal support has been removed (<a href="https://github.com/kubernetes/kops/pull/17642" target="_blank">#17642</a>)
+
+<ul>
+<li>Migrate to Calico or another supported CNI before upgrading</li>
+</ul></li>
+<li>Legacy addons removed from the kOps repository (<a href="https://github.com/kubernetes/kops/pull/17332" target="_blank">#17332</a>)
+
+<ul>
+<li>Only affects clusters using kOps <1.22</li>
+</ul></li>
+<li>Karpenter requires manual uninstallation before upgrading (<a href="https://github.com/kubernetes/kops/pull/17567" target="_blank">#17567</a>)</li>
+<li>Default SSH key changed from RSA to Ed25519</li>
+<li>Several packages no longer installed by default: crictl, nerdctl, ebtables, ethtool, socat</li>
+</ul>
+
+<h1 id="other-changes-of-note">Other changes of note</h1>
+
+<ul>
+<li>Migrate to control-plane nomenclature in documentation</li>
+<li>Fix IPv6 routes for Kubernetes 1.32</li>
+<li>Fix Azure subscription ID check</li>
+<li>Add nftables package support</li>
+<li>Use ephemeral S3 buckets for E2E tests</li>
+<li>Bump Golang to 1.25</li>
+<li>Update golangci-lint to v2</li>
+</ul>
+
+<h1 id="known-issues">Known Issues</h1>
+
+<ul>
+<li>Karpenter upgrade requires manual uninstallation of older versions</li>
+<li>Azure naming conventions have changed which may affect existing automation</li>
+</ul>
+
+<h1 id="deprecations">Deprecations</h1>
+
+<ul>
+<li>Support for Kubernetes version 1.28 is removed in kOps 1.34</li>
+<li>Support for Kubernetes version 1.29 is deprecated and will be removed in kOps 1.35</li>
+</ul>
+
+<h1 id="installation-and-upgrade-notes">Installation and Upgrade Notes</h1>
+
+<h2 id="pre-upgrade-checklist">Pre-Upgrade Checklist</h2>
+
+<ol>
+<li><strong>Canal Users</strong>: Migrate to another CNI solution</li>
+<li><strong>Karpenter Users</strong>: Uninstall existing Karpenter installations</li>
+<li><strong>SSH Access</strong>: Verify Ed25519 key support</li>
+<li><strong>Tool Dependencies</strong>: Check if you need crictl, nerdctl, ebtables, ethtool, or socat</li>
+</ol>
+
+<h2 id="upgrade-process">Upgrade Process</h2>
+
+<ol>
+<li>Review breaking changes</li>
+<li>Test in non-production first</li>
+<li>For Karpenter users, uninstall existing version</li>
+<li>Run <code>kops update cluster</code> and validate before applying</li>
+</ol>
+
+<hr>
+
+<p>This release includes contributions from the kOps community. Thank you to all contributors!</p>
+<br><h2>kubernetes/cloud-provider-aws</h2> <h3>Release notes for Release v1.34.1</h3><h4>2025-10-21</h4><h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>Automated cherry pick of #1223: remove nil ptr dereference by @gargipanatula in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1227" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1227</a></li>
+<li>Automated cherry pick of #1230: fix: update instance types requiring topology labels by @ndbaker1 in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1238" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1238</a></li>
+<li>Update go dependencies with 1.34.0 by @Ganiredi in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1244" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1244</a></li>
+<li>Automated cherry pick of #1245: Update ec2 sdk version to latest by @Ganiredi in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1247" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1247</a></li>
+<li>release 1.34.0 by @Ganiredi in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1253" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1253</a></li>
+<li>Automated cherry pick of #1260: Fix the batched describe insance method for instance not by @kmala in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1261" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1261</a></li>
+<li>release 1.34.1 by @kmala in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1262" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1262</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes/cloud-provider-aws/compare/v1.34.0...v1.34.1" target="_blank">https://github.com/kubernetes/cloud-provider-aws/compare/v1.34.0&hellip;v1.34.1</a></p>
+<br><h3>Release notes for Release v1.33.2</h3><h4>2025-10-21</h4><h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>Cherrypick #1135 to release 1.33 by @yue9944882 in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1191" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1191</a></li>
+<li>Automated cherry pick of #1223: remove nil ptr dereference by @gargipanatula in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1228" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1228</a></li>
+<li>Automated cherry pick of #1207: fix: rule difference for nested objects by @gargipanatula in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1241" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1241</a></li>
+<li>Automated cherry pick of #1230: fix: update instance types requiring topology labels by @ndbaker1 in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1234" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1234</a></li>
+<li>bump version to 1.33.2 by @ndbaker1 in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1249" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1249</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes/cloud-provider-aws/compare/v1.33.1...v1.33.2" target="_blank">https://github.com/kubernetes/cloud-provider-aws/compare/v1.33.1&hellip;v1.33.2</a></p>
+<br><h3>Release notes for Release v1.32.5</h3><h4>2025-10-21</h4><h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>Automated cherry pick of #1223: remove nil ptr dereference by @gargipanatula in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1229" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1229</a></li>
+<li>Automated cherry pick of #1207: fix: rule difference for nested objects by @gargipanatula in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1242" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1242</a></li>
+<li>Automated cherry pick of #1230: fix: update instance types requiring topology labels by @ndbaker1 in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1235" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1235</a></li>
+<li>bump version to 1.32.5 by @ndbaker1 in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1251" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1251</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes/cloud-provider-aws/compare/v1.32.4...v1.32.5" target="_blank">https://github.com/kubernetes/cloud-provider-aws/compare/v1.32.4&hellip;v1.32.5</a></p>
+<br><h2>grpc/grpc</h2> <h3>Release notes for Release v1.76.0</h3><h4>2025-10-20</h4><p>This is release 1.76.0 (<a href="https://github.com/grpc/grpc/blob/master/doc/g_stands_for.md" target="_blank">genuine</a>) of gRPC Core.</p>
+
+<p>For gRPC documentation, see <a href="https://grpc.io/" target="_blank">grpc.io</a>. For previous releases, see <a href="https://github.com/grpc/grpc/releases" target="_blank">Releases</a>.</p>
+
+<p>This release contains refinements, improvements, and bug fixes, with highlights listed below.</p>
+
+<h2 id="core">Core</h2>
+
+<ul>
+<li>Prioritize system CA over bundled CA. (<a href="https://github.com/grpc/grpc/pull/40583" target="_blank">#40583</a>)</li>
+<li>[event_engine] Introduce a event_engine_poller_for_python experiment. (<a href="https://github.com/grpc/grpc/pull/40243" target="_blank">#40243</a>)</li>
+<li>[metrics] add grpc.lb.backend_service label. (<a href="https://github.com/grpc/grpc/pull/40486" target="_blank">#40486</a>)</li>
+</ul>
+
+<h2 id="c">C#</h2>
+
+<ul>
+<li>[csharp tools] #39374 Grpc.Tools can&rsquo;t process file Suffix name with Upper character. (<a href="https://github.com/grpc/grpc/pull/40072" target="_blank">#40072</a>)</li>
+</ul>
+
+<h2 id="python">Python</h2>
+
+<ul>
+<li>[Python] gRPC AsyncIO: Improve CompletionQueue polling performance. (<a href="https://github.com/grpc/grpc/pull/39993" target="_blank">#39993</a>)</li>
+</ul>
+<br><h2>cri-o/ocicni</h2> <h3>Release notes for v0.5.0</h3><h4>2025-10-23</h4><h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>Reduce useless log messages about default CNI network by @roman-kiselenko in <a href="https://github.com/cri-o/ocicni/pull/208" target="_blank">https://github.com/cri-o/ocicni/pull/208</a></li>
+<li>Update golangci-lint and config by @saschagrunert in <a href="https://github.com/cri-o/ocicni/pull/209" target="_blank">https://github.com/cri-o/ocicni/pull/209</a></li>
+<li>Bump CI go version and linter by @saschagrunert in <a href="https://github.com/cri-o/ocicni/pull/218" target="_blank">https://github.com/cri-o/ocicni/pull/218</a></li>
+<li>Update CI to pin deps and use build matrix by @saschagrunert in <a href="https://github.com/cri-o/ocicni/pull/221" target="_blank">https://github.com/cri-o/ocicni/pull/221</a></li>
+<li>Log events only related to a valid CNI configuration file. by @roman-kiselenko in <a href="https://github.com/cri-o/ocicni/pull/232" target="_blank">https://github.com/cri-o/ocicni/pull/232</a></li>
+<li>Bump required go to 1.23 by @saschagrunert in <a href="https://github.com/cri-o/ocicni/pull/225" target="_blank">https://github.com/cri-o/ocicni/pull/225</a></li>
+<li>Update golangci-lint and config by @saschagrunert in <a href="https://github.com/cri-o/ocicni/pull/243" target="_blank">https://github.com/cri-o/ocicni/pull/243</a></li>
+<li>Switch to go 1.24 by @saschagrunert in <a href="https://github.com/cri-o/ocicni/pull/248" target="_blank">https://github.com/cri-o/ocicni/pull/248</a></li>
+<li>Switch to golangci-lint v2 by @saschagrunert in <a href="https://github.com/cri-o/ocicni/pull/252" target="_blank">https://github.com/cri-o/ocicni/pull/252</a></li>
+<li>Don&rsquo;t run CI twice for branched PR&rsquo;s by @saschagrunert in <a href="https://github.com/cri-o/ocicni/pull/258" target="_blank">https://github.com/cri-o/ocicni/pull/258</a></li>
+<li>Fix possible runtime panic if network plugins are empty by @saschagrunert in <a href="https://github.com/cri-o/ocicni/pull/260" target="_blank">https://github.com/cri-o/ocicni/pull/260</a></li>
+<li>Update CNI and CNI plugins by @saschagrunert in <a href="https://github.com/cri-o/ocicni/pull/268" target="_blank">https://github.com/cri-o/ocicni/pull/268</a></li>
+</ul>
+
+<h2 id="new-contributors">New Contributors</h2>
+
+<ul>
+<li>@roman-kiselenko made their first contribution in <a href="https://github.com/cri-o/ocicni/pull/208" target="_blank">https://github.com/cri-o/ocicni/pull/208</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/cri-o/ocicni/compare/v0.4.3...v0.5.0" target="_blank">https://github.com/cri-o/ocicni/compare/v0.4.3&hellip;v0.5.0</a></p>
+<br><h2>etcd-io/etcd</h2> <h3>Release notes for v3.5.24</h3><h4>2025-10-21</h4><p>Please check out <a href="https://github.com/etcd-io/etcd/blob/main/CHANGELOG/CHANGELOG-3.5.md" target="_blank">CHANGELOG</a> for a full list of changes. And make sure to read <a href="https://etcd.io/docs/v3.5/upgrades/upgrade_3_5/" target="_blank">upgrade guide</a> before upgrading etcd (there may be breaking changes).</p>
+
+<p>For installation guides, please check out <a href="http://play.etcd.io" target="_blank">play.etcd.io</a> and <a href="https://etcd.io/docs/v3.5/op-guide/" target="_blank">operating etcd</a>. Latest support status for common architectures and operating systems can be found at <a href="https://etcd.io/docs/v3.5/op-guide/supported-platform/" target="_blank">supported platforms</a>.</p>
+
+<h6 id="linux">Linux</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.5.24
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C /tmp/etcd-download-test --strip-components=1 --no-same-owner
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+
+# start a local etcd server
+/tmp/etcd-download-test/etcd
+
+# write,read to etcd
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 put foo bar
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 get foo
+</code></pre>
+
+<h6 id="macos-darwin">macOS (Darwin)</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.5.24
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-darwin-amd64.zip -o /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+unzip /tmp/etcd-${ETCD_VER}-darwin-amd64.zip -d /tmp &amp;&amp; rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+mv /tmp/etcd-${ETCD_VER}-darwin-amd64/* /tmp/etcd-download-test &amp;&amp; rm -rf mv /tmp/etcd-${ETCD_VER}-darwin-amd64
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+</code></pre>
+
+<h6 id="docker">Docker</h6>
+
+<p>etcd uses <a href="https://gcr.io/etcd-development/etcd" target="_blank"><code>gcr.io/etcd-development/etcd</code></a> as a primary container registry, and <a href="https://quay.io/coreos/etcd" target="_blank"><code>quay.io/coreos/etcd</code></a> as secondary.</p>
+
+<pre><code class="language-sh">ETCD_VER=v3.5.24
+
+rm -rf /tmp/etcd-data.tmp &amp;&amp; mkdir -p /tmp/etcd-data.tmp &amp;&amp; \
+  docker rmi gcr.io/etcd-development/etcd:${ETCD_VER} || true &amp;&amp; \
+  docker run \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  --mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+  --name etcd-gcr-${ETCD_VER} \
+  gcr.io/etcd-development/etcd:${ETCD_VER} \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:2379 \
+  --advertise-client-urls http://0.0.0.0:2379 \
+  --listen-peer-urls http://0.0.0.0:2380 \
+  --initial-advertise-peer-urls http://0.0.0.0:2380 \
+  --initial-cluster s1=http://0.0.0.0:2380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new \
+  --log-level info \
+  --logger zap \
+  --log-outputs stderr
+
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcd --version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdutl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl endpoint health
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl put foo bar
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl get foo
+</code></pre>
+<br><h3>Release notes for v3.4.38</h3><h4>2025-10-21</h4><p>Please check out <a href="https://github.com/etcd-io/etcd/blob/main/CHANGELOG/CHANGELOG-3.4.md" target="_blank">CHANGELOG</a> for a full list of changes. And make sure to read <a href="https://etcd.io/docs/v3.4/upgrades/upgrade_3_4/" target="_blank">upgrade guide</a> before upgrading etcd (there may be breaking changes).</p>
+
+<p>For installation guides, please check out <a href="http://play.etcd.io" target="_blank">play.etcd.io</a> and <a href="https://etcd.io/docs/v3.4/op-guide/" target="_blank">operating etcd</a>. Latest support status for common architectures and operating systems can be found at <a href="https://etcd.io/docs/v3.4/op-guide/supported-platform/" target="_blank">supported platforms</a>.</p>
+
+<h6 id="linux">Linux</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.4.38
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C /tmp/etcd-download-test --strip-components=1 --no-same-owner
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+
+# start a local etcd server
+/tmp/etcd-download-test/etcd
+
+# write,read to etcd
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 put foo bar
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 get foo
+</code></pre>
+
+<h6 id="macos-darwin">macOS (Darwin)</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.4.38
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-darwin-amd64.zip -o /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+unzip /tmp/etcd-${ETCD_VER}-darwin-amd64.zip -d /tmp &amp;&amp; rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+mv /tmp/etcd-${ETCD_VER}-darwin-amd64/* /tmp/etcd-download-test &amp;&amp; rm -rf mv /tmp/etcd-${ETCD_VER}-darwin-amd64
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+</code></pre>
+
+<h6 id="docker">Docker</h6>
+
+<p>etcd uses <a href="https://gcr.io/etcd-development/etcd" target="_blank"><code>gcr.io/etcd-development/etcd</code></a> as a primary container registry, and <a href="https://quay.io/coreos/etcd" target="_blank"><code>quay.io/coreos/etcd</code></a> as secondary.</p>
+
+<pre><code class="language-sh">ETCD_VER=v3.4.38
+
+rm -rf /tmp/etcd-data.tmp &amp;&amp; mkdir -p /tmp/etcd-data.tmp &amp;&amp; \
+  docker rmi gcr.io/etcd-development/etcd:${ETCD_VER} || true &amp;&amp; \
+  docker run \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  --mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+  --name etcd-gcr-${ETCD_VER} \
+  gcr.io/etcd-development/etcd:${ETCD_VER} \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:2379 \
+  --advertise-client-urls http://0.0.0.0:2379 \
+  --listen-peer-urls http://0.0.0.0:2380 \
+  --initial-advertise-peer-urls http://0.0.0.0:2380 \
+  --initial-cluster s1=http://0.0.0.0:2380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new \
+  --log-level info \
+  --logger zap \
+  --log-outputs stderr
+
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcd --version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdutl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl endpoint health
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl put foo bar
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl get foo
+</code></pre>
+<br><h2>prometheus/prometheus</h2> <h3>Release notes for 3.7.2 / 2025-10-22</h3><h4>2025-10-22</h4><ul>
+<li>[BUGFIX] AWS SD: Fix AWS SDK v2 credentials handling for EC2 and Lightsail discovery. #17355</li>
+<li>[BUGFIX] AWS SD: Load AWS region from IMDS when not set. #17376</li>
+<li>[BUGFIX] Relabeling: Fix <code>labelmap</code> action validation with the legacy metric name validation scheme. #17372</li>
+<li>[BUGFIX] PromQL: Fix parsing failure when <code>anchored</code> and <code>smoothed</code> are used as metric names and label names. #17353</li>
+<li>[BUGFIX] PromQL: Fix formatting of range vector selectors with <code>smoothed</code>/<code>anchored</code> modifier. #17354</li>
+</ul>
+<br>
+</body>
+
+</html>
