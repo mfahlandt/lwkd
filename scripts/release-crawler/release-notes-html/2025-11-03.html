@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2025-10-27 - 2025-11-03</h1><h2>containerd/containerd</h2> <h3>Release notes for containerd 2.2.0-rc.0</h3><h4>2025-10-30</h4><p>Welcome to the v2.2.0-rc.0 release of containerd!
+<em>This is a pre-release of containerd</em></p>
+
+<p>The second minor release of containerd 2.x focuses on continued stability alongside
+new features and improvements. This is the second time-based released for containerd.</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<ul>
+<li>Add mount manager (<a href="https://github.com/containerd/containerd/pull/12063" target="_blank">#12063</a>)</li>
+<li>Add conf.d include in the default config (<a href="https://github.com/containerd/containerd/pull/12323" target="_blank">#12323</a>)</li>
+<li>Add support for back references in the garbage collector (<a href="https://github.com/containerd/containerd/pull/12025" target="_blank">#12025</a>)</li>
+</ul>
+
+<h4 id="container-runtime-interface-cri">Container Runtime Interface (CRI)</h4>
+
+<ul>
+<li>Implement CRI ListPodSandboxMetrics (<a href="https://github.com/containerd/containerd/pull/10691" target="_blank">#10691</a>)</li>
+<li>Support image volume mount subpath (<a href="https://github.com/containerd/containerd/pull/11578" target="_blank">#11578</a>)</li>
+</ul>
+
+<h4 id="go-client">Go client</h4>
+
+<ul>
+<li>Update pkg/oci to use fs.FS interface and os.OpenRoot (<a href="https://github.com/containerd/containerd/pull/12245" target="_blank">#12245</a>)</li>
+</ul>
+
+<h4 id="image-distribution">Image Distribution</h4>
+
+<ul>
+<li>Add parallel unpack support (<a href="https://github.com/containerd/containerd/pull/12332" target="_blank">#12332</a>)</li>
+<li>Add referrers fetcher to remotes (<a href="https://github.com/containerd/containerd/pull/12309" target="_blank">#12309</a>)</li>
+<li>Tar unpack progress through transfer service (<a href="https://github.com/containerd/containerd/pull/11921" target="_blank">#11921</a>)</li>
+</ul>
+
+<h4 id="image-storage">Image Storage</h4>
+
+<ul>
+<li>Update erofs snapshotter to use mount manager (<a href="https://github.com/containerd/containerd/pull/12333" target="_blank">#12333</a>)</li>
+<li>Add snapshotter and differ for block CIMs (<a href="https://github.com/containerd/containerd/pull/12050" target="_blank">#12050</a>)</li>
+<li>Add tar index mode to erofs snapshotter (<a href="https://github.com/containerd/containerd/pull/11919" target="_blank">#11919</a>)</li>
+</ul>
+
+<h4 id="node-resource-interface-nri">Node Resource Interface (NRI)</h4>
+
+<ul>
+<li>Enable otel traces in NRI (<a href="https://github.com/containerd/containerd/pull/12082" target="_blank">#12082</a>)</li>
+<li>Add WASM plugin support (<a href="https://github.com/containerd/nri/pull/121" target="_blank">containerd/nri#121</a>)</li>
+</ul>
+
+<h4 id="runtime">Runtime</h4>
+
+<ul>
+<li>Improve shim load time after restart by loading in parallel (<a href="https://github.com/containerd/containerd/pull/12142" target="_blank">#12142</a>)</li>
+<li>Fix pidfd leak in UnshareAfterEnterUserns (<a href="https://github.com/containerd/containerd/pull/12167" target="_blank">#12167</a>)</li>
+</ul>
+
+<h4 id="deprecations">Deprecations</h4>
+
+<ul>
+<li>Postpone v2.2 deprecation items to v2.3 (<a href="https://github.com/containerd/containerd/pull/12417" target="_blank">#12417</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Derek McGowan</li>
+<li>Phil Estes</li>
+<li>Akihiro Suda</li>
+<li>Maksym Pavlenko</li>
+<li>Krisztian Litkey</li>
+<li>Wei Fu</li>
+<li>Mike Brown</li>
+<li>Markus Lehtonen</li>
+<li>Sebastiaan van Stijn</li>
+<li>Samuel Karp</li>
+<li>ningmingxiao</li>
+<li>Akhil Mohan</li>
+<li>Austin Vazquez</li>
+<li>yashsingh74</li>
+<li>Gao Xiang</li>
+<li>Jin Dong</li>
+<li>Chris Henzie</li>
+<li>Kirtana Ashok</li>
+<li>Aadhar Agarwal</li>
+<li>Etienne Champetier</li>
+<li>Henry Wang</li>
+<li>Rodrigo Campos</li>
+<li>Sascha Grunert</li>
+<li>Aleksa Sarai</li>
+<li>Eric Mountain</li>
+<li>Keith Mattix II</li>
+<li>Paweł Gronowski</li>
+<li>Tõnis Tiigi</li>
+<li>Adrien Delorme</li>
+<li>Apurv Barve</li>
+<li>Enji Cooper</li>
+<li>Kohei Tokunaga</li>
+<li>Max Jonas Werner</li>
+<li>Rehan Khan</li>
+<li>Yang Yang</li>
+<li>jinda.ljd</li>
+<li>jokemanfire</li>
+<li>Amit Barve</li>
+<li>Andrew Halaney</li>
+<li>Antonio Ojea</li>
+<li>Brian Goff</li>
+<li>Carlos Eduardo Arango Gutierrez</li>
+<li>Chenyang Yan</li>
+<li>Dawei Wei</li>
+<li>Divya Rani</li>
+<li>Evan Anderson</li>
+<li>Fabiano Fidêncio</li>
+<li>Iceber Gu</li>
+<li>Jared Ledvina</li>
+<li>Jonathan Perkin</li>
+<li>Jose Fernandez</li>
+<li>Karl Baumgartner</li>
+<li>Osama Abdelkader</li>
+<li>Radostin Stoyanov</li>
+<li>Ruidong Cao</li>
+<li>Sameer</li>
+<li>Sergey Kanzhelev</li>
+<li>Swagat Bora</li>
+<li>Sylvain MOUQUET</li>
+<li>Tom Wieczorek</li>
+<li>Tycho Andersen</li>
+<li>Ubuntu</li>
+<li>Wuyue (Tony) Sun</li>
+<li>suranmiao</li>
+<li>tanhuaan</li>
+<li>zounengren</li>
+</ul>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<ul>
+<li><strong>dario.cat/mergo</strong>                                                    v1.0.1 -&gt; v1.0.2</li>
+<li><strong>github.com/Microsoft/hcsshim</strong>                                       v0.13.0-rc.3 -&gt; v0.14.0-rc.1</li>
+<li><strong>github.com/StackExchange/wmi</strong>                                       cbe66965904d <strong><em>new</em></strong></li>
+<li><strong>github.com/checkpoint-restore/checkpointctl</strong>                        v1.3.0 -&gt; v1.4.0</li>
+<li><strong>github.com/containerd/cgroups/v3</strong>                                   v3.0.5 -&gt; v3.1.0</li>
+<li><strong>github.com/containerd/console</strong>                                      v1.0.4 -&gt; v1.0.5</li>
+<li><strong>github.com/containerd/containerd/api</strong>                               v1.9.0 -&gt; v1.10.0-rc.0</li>
+<li><strong>github.com/containerd/go-cni</strong>                                       v1.1.12 -&gt; v1.1.13</li>
+<li><strong>github.com/containerd/nri</strong>                                          v0.8.0 -&gt; v0.10.0</li>
+<li><strong>github.com/containernetworking/plugins</strong>                             v1.7.1 -&gt; v1.8.0</li>
+<li><strong>github.com/coreos/go-systemd/v22</strong>                                   v22.5.0 -&gt; v22.6.0</li>
+<li><strong>github.com/cpuguy83/go-md2man/v2</strong>                                   v2.0.5 -&gt; v2.0.7</li>
+<li><strong>github.com/emicklei/go-restful/v3</strong>                                  v3.11.0 -&gt; v3.13.0</li>
+<li><strong>github.com/fxamacker/cbor/v2</strong>                                       v2.7.0 -&gt; v2.9.0</li>
+<li><strong>github.com/go-jose/go-jose/v4</strong>                                      v4.0.5 -&gt; v4.1.2</li>
+<li><strong>github.com/go-logr/logr</strong>                                            v1.4.2 -&gt; v1.4.3</li>
+<li><strong>github.com/go-ole/go-ole</strong>                                           v1.2.6 <strong><em>new</em></strong></li>
+<li><strong>github.com/golang/groupcache</strong>                                       41bb18bfe9da -&gt; 2c02b8208cf8</li>
+<li><strong>github.com/google/certtostore</strong>                                      v1.0.6 <strong><em>new</em></strong></li>
+<li><strong>github.com/google/deck</strong>                                             105ad94aa8ae <strong><em>new</em></strong></li>
+<li><strong>github.com/gorilla/websocket</strong>                                       v1.5.0 -&gt; e064f32e3674</li>
+<li><strong>github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus</strong>  v1.0.1 -&gt; v1.1.0</li>
+<li><strong>github.com/hashicorp/errwrap</strong>                                       v1.1.0 <strong><em>new</em></strong></li>
+<li><strong>github.com/intel/goresctrl</strong>                                         v0.8.0 -&gt; v0.9.0</li>
+<li><strong>github.com/klauspost/compress</strong>                                      v1.18.0 -&gt; v1.18.1</li>
+<li><strong>github.com/knqyf263/go-plugin</strong>                                      v0.9.0 <strong><em>new</em></strong></li>
+<li><strong>github.com/moby/sys/capability</strong>                                     v0.4.0 <strong><em>new</em></strong></li>
+<li><strong>github.com/modern-go/reflect2</strong>                                      v1.0.2 -&gt; 35a7c28c31ee</li>
+<li><strong>github.com/opencontainers/runtime-tools</strong>                            2e043c6bd626 -&gt; 0ea5ed0382a2</li>
+<li><strong>github.com/prometheus/client_golang</strong>                                v1.22.0 -&gt; v1.23.2</li>
+<li><strong>github.com/prometheus/client_model</strong>                                 v0.6.1 -&gt; v0.6.2</li>
+<li><strong>github.com/prometheus/common</strong>                                       v0.62.0 -&gt; v0.66.1</li>
+<li><strong>github.com/prometheus/procfs</strong>                                       v0.15.1 -&gt; v0.16.1</li>
+<li><strong>github.com/stretchr/testify</strong>                                        v1.10.0 -&gt; v1.11.1</li>
+<li><strong>github.com/tchap/go-patricia/v2</strong>                                    v2.3.2 -&gt; v2.3.3</li>
+<li><strong>github.com/tetratelabs/wazero</strong>                                      v1.9.0 <strong><em>new</em></strong></li>
+<li><strong>github.com/urfave/cli/v2</strong>                                           v2.27.6 -&gt; v2.27.7</li>
+<li><strong>github.com/vishvananda/netlink</strong>                                     0e7078ed04c8 -&gt; v1.3.1</li>
+<li><strong>go.etcd.io/bbolt</strong>                                                   v1.4.0 -&gt; v1.4.3</li>
+<li><strong>go.opentelemetry.io/otel</strong>                                           v1.35.0 -&gt; v1.37.0</li>
+<li><strong>go.opentelemetry.io/otel/metric</strong>                                    v1.35.0 -&gt; v1.37.0</li>
+<li><strong>go.opentelemetry.io/otel/sdk</strong>                                       v1.35.0 -&gt; v1.37.0</li>
+<li><strong>go.opentelemetry.io/otel/trace</strong>                                     v1.35.0 -&gt; v1.37.0</li>
+<li><strong>go.uber.org/goleak</strong>                                                 v1.3.0 <strong><em>new</em></strong></li>
+<li><strong>go.yaml.in/yaml/v2</strong>                                                 v2.4.2 <strong><em>new</em></strong></li>
+<li><strong>golang.org/x/crypto</strong>                                                v0.36.0 -&gt; v0.41.0</li>
+<li><strong>golang.org/x/mod</strong>                                                   v0.24.0 -&gt; v0.29.0</li>
+<li><strong>golang.org/x/net</strong>                                                   v0.38.0 -&gt; v0.43.0</li>
+<li><strong>golang.org/x/oauth2</strong>                                                v0.27.0 -&gt; v0.30.0</li>
+<li><strong>golang.org/x/sync</strong>                                                  v0.14.0 -&gt; v0.17.0</li>
+<li><strong>golang.org/x/sys</strong>                                                   v0.33.0 -&gt; v0.37.0</li>
+<li><strong>golang.org/x/term</strong>                                                  v0.30.0 -&gt; v0.34.0</li>
+<li><strong>golang.org/x/text</strong>                                                  v0.23.0 -&gt; v0.28.0</li>
+<li><strong>golang.org/x/time</strong>                                                  v0.7.0 -&gt; v0.14.0</li>
+<li><strong>google.golang.org/genproto/googleapis/api</strong>                          56aae31c358a -&gt; a7a43d27e69b</li>
+<li><strong>google.golang.org/genproto/googleapis/rpc</strong>                          56aae31c358a -&gt; a7a43d27e69b</li>
+<li><strong>google.golang.org/grpc</strong>                                             v1.72.0 -&gt; v1.76.0</li>
+<li><strong>google.golang.org/protobuf</strong>                                         v1.36.6 -&gt; v1.36.10</li>
+<li><strong>k8s.io/api</strong>                                                         v0.32.3 -&gt; v0.34.1</li>
+<li><strong>k8s.io/apimachinery</strong>                                                v0.32.3 -&gt; v0.34.1</li>
+<li><strong>k8s.io/client-go</strong>                                                   v0.32.3 -&gt; v0.34.1</li>
+<li><strong>k8s.io/cri-api</strong>                                                     v0.32.3 -&gt; v0.34.1</li>
+<li><strong>k8s.io/utils</strong>                                                       3ea5e8cea738 -&gt; 4c0f3b243397</li>
+<li><strong>sigs.k8s.io/json</strong>                                                   9aa6b5e7a4b3 -&gt; cfa47c3a1cc8</li>
+<li><strong>sigs.k8s.io/randfill</strong>                                               v1.0.0 <strong><em>new</em></strong></li>
+<li><strong>sigs.k8s.io/structured-merge-diff/v6</strong>                               v6.3.0 <strong><em>new</em></strong></li>
+<li><strong>sigs.k8s.io/yaml</strong>                                                   v1.4.0 -&gt; v1.6.0</li>
+</ul>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v2.1.0" target="_blank">v2.1.0</a></p>
+
+<h3 id="which-file-should-i-download">Which file should I download?</h3>
+
+<ul>
+<li><code>containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:         ✅Recommended. Dynamically linked with glibc 2.35 (Ubuntu 22.04).</li>
+<li><code>containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:  Statically linked. Expected to be used on Linux distributions that do not use glibc &gt;= 2.35. Not position-independent.</li>
+</ul>
+
+<p>In addition to containerd, typically you will have to install <a href="https://github.com/opencontainers/runc/releases" target="_blank">runc</a>
+and <a href="https://github.com/containernetworking/plugins/releases" target="_blank">CNI plugins</a> from their official sites too.</p>
+
+<p>See also the <a href="https://github.com/containerd/containerd/blob/main/docs/getting-started.md" target="_blank">Getting Started</a> documentation.</p>
+<br><h2>containerd/nerdctl</h2> <h3>Release notes for v2.2.0-rc.0</h3><h4>2025-11-02</h4><h2 id="changes">Changes</h2>
+
+<ul>
+<li><p><code>nerdctl run</code>:</p>
+
+<ul>
+<li>Fix namestore directory regression: <code>/var/lib/nerdctl/1935db59/default/foo</code> → <code>/var/lib/nerdctl/1935db59/names/default/foo</code>(#4535, thanks to @yankay)</li>
+<li>Support mount manager (e.g., for erofs) (#4568, thanks to @hsiangkao)</li>
+</ul></li>
+
+<li><p><code>nerdctl checkpoint</code>:</p>
+
+<ul>
+<li>Add <code>nerdctl checkpoint (create|ls|rm)</code> commands (#4484, #4515, #4562, thanks to @ChengyuZhu6)</li>
+</ul></li>
+
+<li><p><code>nerdctl image convert</code>:</p>
+
+<ul>
+<li>Add <code>--estargz-gzip-helper</code> flag (#4543, thanks to @escapefreeg)</li>
+</ul></li>
+
+<li><p>nerdctl-full:</p>
+
+<ul>
+<li>Update containerd (2.2.0-rc.0), runc (1.3.2), BuildKit (0.25.1), stargz-snapshotter (0.18.0) (#4566, #4569, thanks to @ChengyuZhu6)</li>
+</ul></li>
+</ul>
+
+<p>Full changes: <a href="https://github.com/containerd/nerdctl/milestone/57?closed=1" target="_blank">https://github.com/containerd/nerdctl/milestone/57?closed=1</a>
+Thanks to @ChengyuZhu6 @coderbirju @escapefreeg @hsiangkao @smazmi @yankay</p>
+
+<h2 id="compatible-containerd-versions">Compatible containerd versions</h2>
+
+<p>This release of nerdctl is expected to be used with containerd v1.7, v2.0, v2.1, or v2.2.
+Some features may not work with other releases of containerd.</p>
+
+<h2 id="about-the-binaries">About the binaries</h2>
+
+<ul>
+<li>Minimal (<code>nerdctl-2.2.0-rc.0-linux-amd64.tar.gz</code>): nerdctl only</li>
+<li>Full (<code>nerdctl-full-2.2.0-rc.0-linux-amd64.tar.gz</code>):    Includes dependencies such as containerd, runc, and CNI</li>
+</ul>
+
+<h3 id="minimal">Minimal</h3>
+
+<p>Extract the archive to a path like <code>/usr/local/bin</code> or <code>~/bin</code> .
+<details><summary>tar Cxzvvf /usr/local/bin nerdctl-2.2.0-rc.0-linux-amd64.tar.gz</summary>
+<p></p>
+
+<pre><code>-rwxr-xr-x root/root  29966520 2025-11-02 08:07 nerdctl
+-rwxr-xr-x root/root     22657 2025-11-02 08:06 containerd-rootless-setuptool.sh
+-rwxr-xr-x root/root      8708 2025-11-02 08:06 containerd-rootless.sh
+</code></pre>
+
+<p></p>
+</details></p>
+
+<h3 id="full">Full</h3>
+
+<p>Extract the archive to a path like <code>/usr/local</code> or <code>~/.local</code> .</p>
+
+<details><summary>tar Cxzvvf /usr/local nerdctl-full-2.2.0-rc.0-linux-amd64.tar.gz</summary>
+<p>
+
+```
+drwxr-xr-x 0/0               0 2025-11-02 08:15 bin/
+-rwxr-xr-x 0/0        32910671 2025-10-07 16:52 bin/buildctl
+-rwxr-xr-x 0/0        29909144 2025-05-12 13:10 bin/buildg
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-bandwidth -> ../libexec/cni/bandwidth
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-bridge -> ../libexec/cni/bridge
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-dhcp -> ../libexec/cni/dhcp
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-dummy -> ../libexec/cni/dummy
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-firewall -> ../libexec/cni/firewall
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-host-device -> ../libexec/cni/host-device
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-host-local -> ../libexec/cni/host-local
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-ipvlan -> ../libexec/cni/ipvlan
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-loopback -> ../libexec/cni/loopback
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-macvlan -> ../libexec/cni/macvlan
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-portmap -> ../libexec/cni/portmap
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-ptp -> ../libexec/cni/ptp
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-sbr -> ../libexec/cni/sbr
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-static -> ../libexec/cni/static
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-tap -> ../libexec/cni/tap
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-tuning -> ../libexec/cni/tuning
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-vlan -> ../libexec/cni/vlan
+lrwxrwxrwx 0/0               0 2025-11-02 08:14 bin/buildkit-cni-vrf -> ../libexec/cni/vrf
+-rwxr-xr-x 0/0        65278558 2025-10-07 16:52 bin/buildkitd
+-rwxr-xr-x 0/0        16550016 2025-11-02 08:13 bin/bypass4netns
+-rwxr-xr-x 0/0         6394040 2025-11-02 08:13 bin/bypass4netnsd
+-rwxr-xr-x 0/0        43641984 2025-11-02 08:14 bin/containerd
+-rwxr-xr-x 0/0        12021944 2025-05-20 18:06 bin/containerd-fuse-overlayfs-grpc
+-rwxr-xr-x 0/0           22657 2025-11-02 08:15 bin/containerd-rootless-setuptool.sh
+-rwxr-xr-x 0/0            8708 2025-11-02 08:15 bin/containerd-rootless.sh
+-rwxr-xr-x 0/0         8331448 2025-11-02 08:14 bin/containerd-shim-runc-v2
+-rwxr-xr-x 0/0        56996024 2025-10-17 08:16 bin/containerd-stargz-grpc
+-rwxr-xr-x 0/0        23102810 2025-11-02 08:14 bin/ctd-decoder
+-rwxr-xr-x 0/0        22098104 2025-11-02 08:13 bin/ctr
+-rwxr-xr-x 0/0        30561742 2025-11-02 08:14 bin/ctr-enc
+-rwxr-xr-x 0/0        23253176 2025-10-17 08:16 bin/ctr-remote
+-rwxr-xr-x 0/0         1788872 2025-11-02 08:15 bin/fuse-overlayfs
+-rwxr-xr-x 0/0         3985592 2025-11-02 08:13 bin/gomodjail
+-rwxr-xr-x 0/0        29929656 2025-11-02 08:15 bin/nerdctl
+-rwxr-xr-x 0/0        33922944 2025-11-02 08:15 bin/nerdctl.gomodjail
+-rwxr-xr-x 0/0        12236796 2025-05-08 06:00 bin/rootlessctl
+-rwxr-xr-x 0/0        14176992 2025-05-08 06:00 bin/rootlesskit
+-rwxr-xr-x 0/0        17775304 2025-11-02 08:13 bin/runc
+-rwxr-xr-x 0/0         2383224 2025-11-02 08:15 bin/slirp4netns
+-rwxr-xr-x 0/0        55578808 2025-10-17 08:16 bin/stargz-fuse-manager
+-rwxr-xr-x 0/0        10793144 2025-10-17 08:16 bin/stargz-store-helper
+-rwxr-xr-x 0/0          870496 2025-11-02 08:15 bin/tini
+drwxr-xr-x 0/0               0 2025-11-02 08:14 lib/
+drwxr-xr-x 0/0               0 2025-11-02 08:14 lib/systemd/
+drwxr-xr-x 0/0               0 2025-11-02 08:14 lib/systemd/system/
+-rw-r--r-- 0/0            1309 2025-11-02 08:14 lib/systemd/system/buildkit.service
+-rw-r--r-- 0/0            1248 2025-11-02 08:12 lib/systemd/system/containerd.service
+-rw-r--r-- 0/0             312 2025-11-02 08:14 lib/systemd/system/stargz-snapshotter.service
+drwxr-xr-x 0/0               0 2025-11-02 08:14 libexec/
+drwxr-xr-x 0/0               0 2025-09-01 15:29 libexec/cni/
+-rw-r--r-- 0/0           11357 2025-09-01 15:29 libexec/cni/LICENSE
+-rw-r--r-- 0/0            2343 2025-09-01 15:29 libexec/cni/README.md
+-rwxr-xr-x 0/0         5042186 2025-09-01 15:29 libexec/cni/bandwidth
+-rwxr-xr-x 0/0         5694189 2025-09-01 15:29 libexec/cni/bridge
+-rwxr-xr-x 0/0        13719696 2025-09-01 15:29 libexec/cni/dhcp
+-rwxr-xr-x 0/0         5251247 2025-09-01 15:29 libexec/cni/dummy
+-rwxr-xr-x 0/0         5701763 2025-09-01 15:29 libexec/cni/firewall
+-rwxr-xr-x 0/0         5159307 2025-09-01 15:29 libexec/cni/host-device
+-rwxr-xr-x 0/0         4350430 2025-09-01 15:29 libexec/cni/host-local
+-rwxr-xr-x 0/0         5273398 2025-09-01 15:29 libexec/cni/ipvlan
+-rwxr-xr-x 0/0         4301450 2025-09-01 15:29 libexec/cni/loopback
+-rwxr-xr-x 0/0         5306499 2025-09-01 15:29 libexec/cni/macvlan
+-rwxr-xr-x 0/0         5107586 2025-09-01 15:29 libexec/cni/portmap
+-rwxr-xr-x 0/0         5474778 2025-09-01 15:29 libexec/cni/ptp
+-rwxr-xr-x 0/0         4521078 2025-09-01 15:29 libexec/cni/sbr
+-rwxr-xr-x 0/0         3772408 2025-09-01 15:29 libexec/cni/static
+-rwxr-xr-x 0/0         5330851 2025-09-01 15:29 libexec/cni/tap
+-rwxr-xr-x 0/0         4384728 2025-09-01 15:29 libexec/cni/tuning
+-rwxr-xr-x 0/0         5266939 2025-09-01 15:29 libexec/cni/vlan
+-rwxr-xr-x 0/0         4684912 2025-09-01 15:29 libexec/cni/vrf
+drwxr-xr-x 0/0               0 2025-11-02 08:12 share/
+drwxr-xr-x 0/0               0 2025-11-02 08:15 share/doc/
+drwxr-xr-x 0/0               0 2025-11-02 08:15 share/doc/nerdctl/
+-rw-r--r-- 0/0           12101 2025-11-02 08:06 share/doc/nerdctl/README.md
+drwxr-xr-x 0/0               0 2025-11-02 08:06 share/doc/nerdctl/docs/
+-rw-r--r-- 0/0            3953 2025-11-02 08:06 share/doc/nerdctl/docs/build.md
+-rw-r--r-- 0/0            2570 2025-11-02 08:06 share/doc/nerdctl/docs/builder-debug.md
+-rw-r--r-- 0/0            4779 2025-11-02 08:06 share/doc/nerdctl/docs/cni.md
+-rw-r--r-- 0/0           89194 2025-11-02 08:06 share/doc/nerdctl/docs/command-reference.md
+-rw-r--r-- 0/0            1814 2025-11-02 08:06 share/doc/nerdctl/docs/compose.md
+-rw-r--r-- 0/0            7317 2025-11-02 08:06 share/doc/nerdctl/docs/config.md
+-rw-r--r-- 0/0            9128 2025-11-02 08:06 share/doc/nerdctl/docs/cosign.md
+-rw-r--r-- 0/0            5660 2025-11-02 08:06 share/doc/nerdctl/docs/cvmfs.md
+drwxr-xr-x 0/0               0 2025-11-02 08:06 share/doc/nerdctl/docs/dev/
+-rw-r--r-- 0/0           12701 2025-11-02 08:06 share/doc/nerdctl/docs/dev/auditing_dockerfile.md
+-rw-r--r-- 0/0            8586 2025-11-02 08:06 share/doc/nerdctl/docs/dev/store.md
+-rw-r--r-- 0/0            2879 2025-11-02 08:06 share/doc/nerdctl/docs/dir.md
+-rw-r--r-- 0/0             906 2025-11-02 08:06 share/doc/nerdctl/docs/experimental.md
+-rw-r--r-- 0/0           14687 2025-11-02 08:06 share/doc/nerdctl/docs/faq.md
+-rw-r--r-- 0/0             884 2025-11-02 08:06 share/doc/nerdctl/docs/freebsd.md
+-rw-r--r-- 0/0            3273 2025-11-02 08:06 share/doc/nerdctl/docs/gpu.md
+-rw-r--r-- 0/0            3419 2025-11-02 08:06 share/doc/nerdctl/docs/healthchecks.md
+drwxr-xr-x 0/0               0 2025-11-02 08:06 share/doc/nerdctl/docs/images/
+-rw-r--r-- 0/0            1540 2025-11-02 08:06 share/doc/nerdctl/docs/images/nerdctl-white.svg
+-rw-r--r-- 0/0            1462 2025-11-02 08:06 share/doc/nerdctl/docs/images/nerdctl.svg
+-rw-r--r-- 0/0          684421 2025-11-02 08:06 share/doc/nerdctl/docs/images/rootlessKit-network-design.png
+-rw-r--r-- 0/0           14462 2025-11-02 08:06 share/doc/nerdctl/docs/ipfs.md
+-rw-r--r-- 0/0            2426 2025-11-02 08:06 share/doc/nerdctl/docs/multi-platform.md
+-rw-r--r-- 0/0            2960 2025-11-02 08:06 share/doc/nerdctl/docs/notation.md
+-rw-r--r-- 0/0            2610 2025-11-02 08:06 share/doc/nerdctl/docs/nydus.md
+-rw-r--r-- 0/0            3277 2025-11-02 08:06 share/doc/nerdctl/docs/ocicrypt.md
+-rw-r--r-- 0/0            1876 2025-11-02 08:06 share/doc/nerdctl/docs/overlaybd.md
+-rw-r--r-- 0/0           15657 2025-11-02 08:06 share/doc/nerdctl/docs/registry.md
+-rw-r--r-- 0/0            9147 2025-11-02 08:06 share/doc/nerdctl/docs/rootless.md
+-rw-r--r-- 0/0            3933 2025-11-02 08:06 share/doc/nerdctl/docs/soci.md
+-rw-r--r-- 0/0           11715 2025-11-02 08:06 share/doc/nerdctl/docs/stargz.md
+drwxr-xr-x 0/0               0 2025-11-02 08:06 share/doc/nerdctl/docs/testing/
+-rw-r--r-- 0/0            4897 2025-11-02 08:06 share/doc/nerdctl/docs/testing/README.md
+-rw-r--r-- 0/0           15430 2025-11-02 08:06 share/doc/nerdctl/docs/testing/tools.md
+drwxr-xr-x 0/0               0 2025-11-02 08:15 share/doc/nerdctl-full/
+-rw-r--r-- 0/0            1070 2025-11-02 08:15 share/doc/nerdctl-full/README.md
+-rw-r--r-- 0/0            9415 2025-11-02 08:15 share/doc/nerdctl-full/SHA256SUMS
+```
+</p>
+</details>
+
+<details><summary>Included components</summary>
+<p>
+
+See `share/doc/nerdctl-full/README.md`:
+```markdown
+# nerdctl (full distribution)
+- nerdctl: v2.2.0-rc.0
+- containerd: v2.2.0-rc.0
+- runc: v1.3.2
+- CNI plugins: v1.8.0
+- BuildKit: v0.25.1
+- Stargz Snapshotter: v0.18.0
+- imgcrypt: v2.0.1
+- slirp4netns: v1.3.3
+- bypass4netns: v0.4.2
+- fuse-overlayfs: v1.15
+- containerd-fuse-overlayfs: v2.1.6
+- Tini: v0.19.0
+- buildg: v0.5.3
+- RootlessKit: v2.3.5
+- gomodjail: v0.1.3@cea529ddd971b677c67d8af7e936fbc62b35b98c
+
+## License
+- bin/slirp4netns:    [GNU GENERAL PUBLIC LICENSE, Version 2](https://github.com/rootless-containers/slirp4netns/blob/v1.3.3/COPYING)
+- bin/fuse-overlayfs: [GNU GENERAL PUBLIC LICENSE, Version 2](https://github.com/containers/fuse-overlayfs/blob/v1.15/COPYING)
+- bin/{runc,bypass4netns,bypass4netnsd}: Apache License 2.0, statically linked with libseccomp ([LGPL 2.1](https://github.com/seccomp/libseccomp/blob/main/LICENSE), source code available at https://github.com/seccomp/libseccomp/)
+- bin/tini: [MIT License](https://github.com/krallin/tini/blob/v0.19.0/LICENSE)
+- Other files: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+```
+</p>
+</details>
+
+<h2 id="quick-start">Quick start</h2>
+
+<h3 id="rootful">Rootful</h3>
+
+<pre><code class="language-console">$ sudo systemctl enable --now containerd
+$ sudo nerdctl run -d --name nginx -p 80:80 nginx:alpine
+</code></pre>
+
+<h3 id="rootless">Rootless</h3>
+
+<pre><code class="language-console">$ containerd-rootless-setuptool.sh install
+$ nerdctl run -d --name nginx -p 8080:80 nginx:alpine
+</code></pre>
+
+<p>Enabling cgroup v2 is highly recommended for rootless mode, see <a href="https://rootlesscontaine.rs/getting-started/common/cgroup2/" target="_blank">https://rootlesscontaine.rs/getting-started/common/cgroup2/</a> .</p>
+
+<hr>
+
+<p>The binaries were built automatically on GitHub Actions.
+The build log is available for 90 days: <a href="https://github.com/containerd/nerdctl/actions/runs/19009439354" target="_blank">https://github.com/containerd/nerdctl/actions/runs/19009439354</a></p>
+
+<p>The sha256sum of the SHA256SUMS file itself is <code>11baff99cf3728875d583912359edbca1385aa0e0384752968570d0d7bcce51f</code> .</p>
+
+<hr>
+
+<p>Release manager: @AkihiroSuda</p>
+<br>
+</body>
+
+</html>
