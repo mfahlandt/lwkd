@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2025-12-01 - 2025-12-08</h1><h2>kubernetes/kops</h2> <h3>Release notes for v1.35.0-alpha.1</h3><h4>2025-12-01</h4><h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>Update etcd to v3.5.23 for K8s <1.34 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17639" target="_blank">https://github.com/kubernetes/kops/pull/17639</a></li>
+<li>Stop rendering large CAPI manifests by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17650" target="_blank">https://github.com/kubernetes/kops/pull/17650</a></li>
+<li>update openstack csi images by @kraashen in <a href="https://github.com/kubernetes/kops/pull/17652" target="_blank">https://github.com/kubernetes/kops/pull/17652</a></li>
+<li>Add toolbox command to generate ClusterAPI objects by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17655" target="_blank">https://github.com/kubernetes/kops/pull/17655</a></li>
+<li>tests: allow env vars to be exported from kubetest2-kops by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17654" target="_blank">https://github.com/kubernetes/kops/pull/17654</a></li>
+<li>chore: bump kOps version in tests by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17659" target="_blank">https://github.com/kubernetes/kops/pull/17659</a></li>
+<li>build(deps): bump actions/dependency-review-action from 4.8.0 to 4.8.1 by @dependabot[bot] in <a href="https://github.com/kubernetes/kops/pull/17660" target="_blank">https://github.com/kubernetes/kops/pull/17660</a></li>
+<li>aws: Update Karpenter to v1.8.1 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17661" target="_blank">https://github.com/kubernetes/kops/pull/17661</a></li>
+<li>chore: remove old (unused) bazel libraries by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17665" target="_blank">https://github.com/kubernetes/kops/pull/17665</a></li>
+<li>aws: Add the option to set Karpenter feature gates  by @hakman in <a href="https://github.com/kubernetes/kops/pull/17663" target="_blank">https://github.com/kubernetes/kops/pull/17663</a></li>
+<li>Remove unused kubelet flag <code>--pod-infra-container-image</code> by @hakman in <a href="https://github.com/kubernetes/kops/pull/17657" target="_blank">https://github.com/kubernetes/kops/pull/17657</a></li>
+<li>gce: run scale tests on kops by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17651" target="_blank">https://github.com/kubernetes/kops/pull/17651</a></li>
+<li>Initial support for Ubuntu 25.10 (Questing Quokka) by @hakman in <a href="https://github.com/kubernetes/kops/pull/17664" target="_blank">https://github.com/kubernetes/kops/pull/17664</a></li>
+<li>Drop the <code>libltdl</code> package by @hakman in <a href="https://github.com/kubernetes/kops/pull/17667" target="_blank">https://github.com/kubernetes/kops/pull/17667</a></li>
+<li>Drop the <code>pigz</code> package by @hakman in <a href="https://github.com/kubernetes/kops/pull/17668" target="_blank">https://github.com/kubernetes/kops/pull/17668</a></li>
+<li>aws: Bypass the graceful OS shutdown process on cluster deletion by @hakman in <a href="https://github.com/kubernetes/kops/pull/17670" target="_blank">https://github.com/kubernetes/kops/pull/17670</a></li>
+<li>aws: Enforce the graceful OS shutdown for Xen instances by @hakman in <a href="https://github.com/kubernetes/kops/pull/17675" target="_blank">https://github.com/kubernetes/kops/pull/17675</a></li>
+<li>test: Enforce max node to dump for unregistered nodes by @hakman in <a href="https://github.com/kubernetes/kops/pull/17672" target="_blank">https://github.com/kubernetes/kops/pull/17672</a></li>
+<li>test: Remove non-nitro instance types from the AWS scale test by @hakman in <a href="https://github.com/kubernetes/kops/pull/17674" target="_blank">https://github.com/kubernetes/kops/pull/17674</a></li>
+<li>Allow setting map[string][]string from the command line by @hakman in <a href="https://github.com/kubernetes/kops/pull/17679" target="_blank">https://github.com/kubernetes/kops/pull/17679</a></li>
+<li>allow specific GCE IGs to have public IP addresses by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17680" target="_blank">https://github.com/kubernetes/kops/pull/17680</a></li>
+<li>Prevent failing DNS requests on shutdown of CoreDNS pods by @jan-kantert in <a href="https://github.com/kubernetes/kops/pull/17678" target="_blank">https://github.com/kubernetes/kops/pull/17678</a></li>
+<li>Support tags for kubetest-kops by @ameukam in <a href="https://github.com/kubernetes/kops/pull/17682" target="_blank">https://github.com/kubernetes/kops/pull/17682</a></li>
+<li>Switch Route53 domain for E2E tests by @ameukam in <a href="https://github.com/kubernetes/kops/pull/17684" target="_blank">https://github.com/kubernetes/kops/pull/17684</a></li>
+<li>Migrate Kindnet to Kubernetes prod registry by @ameukam in <a href="https://github.com/kubernetes/kops/pull/17689" target="_blank">https://github.com/kubernetes/kops/pull/17689</a></li>
+<li>fix notfound backendservice/healthchekc by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17692" target="_blank">https://github.com/kubernetes/kops/pull/17692</a></li>
+<li>chore: reduce logspam when matching channels by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17693" target="_blank">https://github.com/kubernetes/kops/pull/17693</a></li>
+<li>fix: use kopsbase.Version instead of kopsbase.KOPS_RELEASE_VERSION by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17658" target="_blank">https://github.com/kubernetes/kops/pull/17658</a></li>
+<li>calico: Don&rsquo;t install Wireguard if disabled by @hakman in <a href="https://github.com/kubernetes/kops/pull/17687" target="_blank">https://github.com/kubernetes/kops/pull/17687</a></li>
+<li>Drop bridge-utils and conntrack packages by @hakman in <a href="https://github.com/kubernetes/kops/pull/17694" target="_blank">https://github.com/kubernetes/kops/pull/17694</a></li>
+<li>Release Notes for kOps 1.34 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17696" target="_blank">https://github.com/kubernetes/kops/pull/17696</a></li>
+<li>Update kindnet repository links in documentation by @aojea in <a href="https://github.com/kubernetes/kops/pull/17698" target="_blank">https://github.com/kubernetes/kops/pull/17698</a></li>
+<li>bump kops-controller qps limits by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17701" target="_blank">https://github.com/kubernetes/kops/pull/17701</a></li>
+<li>Update the node package list only before installing packages by @hakman in <a href="https://github.com/kubernetes/kops/pull/17690" target="_blank">https://github.com/kubernetes/kops/pull/17690</a></li>
+<li>aws: Fix missing permissions for CCM and LBC by @hakman in <a href="https://github.com/kubernetes/kops/pull/17705" target="_blank">https://github.com/kubernetes/kops/pull/17705</a></li>
+<li>Improve the node package list updates by @hakman in <a href="https://github.com/kubernetes/kops/pull/17704" target="_blank">https://github.com/kubernetes/kops/pull/17704</a></li>
+<li>Skip package updates at boot time by @hakman in <a href="https://github.com/kubernetes/kops/pull/17708" target="_blank">https://github.com/kubernetes/kops/pull/17708</a></li>
+<li>tests: free up disk space on github actions runner by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17709" target="_blank">https://github.com/kubernetes/kops/pull/17709</a></li>
+<li>More support for cluster-api by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17636" target="_blank">https://github.com/kubernetes/kops/pull/17636</a></li>
+<li>build(deps): bump actions/upload-artifact from 4 to 5 by @dependabot[bot] in <a href="https://github.com/kubernetes/kops/pull/17711" target="_blank">https://github.com/kubernetes/kops/pull/17711</a></li>
+<li>capi: refactor to use shared nodeup builder by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17703" target="_blank">https://github.com/kubernetes/kops/pull/17703</a></li>
+<li>add support for specifying iops and thoroughput when using hyperdisks by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17685" target="_blank">https://github.com/kubernetes/kops/pull/17685</a></li>
+<li>start running the access tokens and huge services test by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17671" target="_blank">https://github.com/kubernetes/kops/pull/17671</a></li>
+<li>Pull CNI plugins from Github by @ameukam in <a href="https://github.com/kubernetes/kops/pull/17716" target="_blank">https://github.com/kubernetes/kops/pull/17716</a></li>
+<li>Bump cni version by @ameukam in <a href="https://github.com/kubernetes/kops/pull/17676" target="_blank">https://github.com/kubernetes/kops/pull/17676</a></li>
+<li>clean up the skip regex files by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17715" target="_blank">https://github.com/kubernetes/kops/pull/17715</a></li>
+<li>remove bastion flag from gce scale jobs by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17719" target="_blank">https://github.com/kubernetes/kops/pull/17719</a></li>
+<li>Update etcd to v3.5.24 for K8s <1.34 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17720" target="_blank">https://github.com/kubernetes/kops/pull/17720</a></li>
+<li>scaleway: Fix failing terraform test by @hakman in <a href="https://github.com/kubernetes/kops/pull/17722" target="_blank">https://github.com/kubernetes/kops/pull/17722</a></li>
+<li>Update cluster-autoscaler to v1.34.1 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17725" target="_blank">https://github.com/kubernetes/kops/pull/17725</a></li>
+<li>Update Go to 1.25.3 and deps by @hakman in <a href="https://github.com/kubernetes/kops/pull/17728" target="_blank">https://github.com/kubernetes/kops/pull/17728</a></li>
+<li>azure: Avoid spurious changes in NetworkSecurityGroup by @hakman in <a href="https://github.com/kubernetes/kops/pull/17734" target="_blank">https://github.com/kubernetes/kops/pull/17734</a></li>
+<li>azure: Allow independent VMs to join the cluster by @hakman in <a href="https://github.com/kubernetes/kops/pull/17710" target="_blank">https://github.com/kubernetes/kops/pull/17710</a></li>
+<li>update kops scalability run-test.sh to allow configuring qps and burst by @alaypatel07 in <a href="https://github.com/kubernetes/kops/pull/17742" target="_blank">https://github.com/kubernetes/kops/pull/17742</a></li>
+<li>test: Skip Pod Level Resources tests by @hakman in <a href="https://github.com/kubernetes/kops/pull/17745" target="_blank">https://github.com/kubernetes/kops/pull/17745</a></li>
+<li>Skip Pod InPlace Resize Container tests by @hakman in <a href="https://github.com/kubernetes/kops/pull/17747" target="_blank">https://github.com/kubernetes/kops/pull/17747</a></li>
+<li>Update containerd to v2.1.5 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17743" target="_blank">https://github.com/kubernetes/kops/pull/17743</a></li>
+<li>Remove HugeService Test Suite to stop bleeding by @hakuna-matatah in <a href="https://github.com/kubernetes/kops/pull/17750" target="_blank">https://github.com/kubernetes/kops/pull/17750</a></li>
+<li>configure proper kops flags for kube-scheduler qps and burst configuration by @alaypatel07 in <a href="https://github.com/kubernetes/kops/pull/17752" target="_blank">https://github.com/kubernetes/kops/pull/17752</a></li>
+<li>Add snapshot permissions for ec2:CreateVolume by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17757" target="_blank">https://github.com/kubernetes/kops/pull/17757</a></li>
+<li>build(deps): bump actions/dependency-review-action from 4.8.1 to 4.8.2 by @dependabot[bot] in <a href="https://github.com/kubernetes/kops/pull/17760" target="_blank">https://github.com/kubernetes/kops/pull/17760</a></li>
+<li>Revert configure proper kops flags for kube-scheduler qps and burst configuration by @alaypatel07 in <a href="https://github.com/kubernetes/kops/pull/17761" target="_blank">https://github.com/kubernetes/kops/pull/17761</a></li>
+<li>Configure kube-scheduler QPS and Burst by @Sreeja1725 in <a href="https://github.com/kubernetes/kops/pull/17763" target="_blank">https://github.com/kubernetes/kops/pull/17763</a></li>
+<li>Include maxParallelImagePulls field in Kubelet config by @jaswdr in <a href="https://github.com/kubernetes/kops/pull/17755" target="_blank">https://github.com/kubernetes/kops/pull/17755</a></li>
+<li>Fix Netlify build failure from template syntax error and PATH issues in documentation by @Copilot in <a href="https://github.com/kubernetes/kops/pull/17767" target="_blank">https://github.com/kubernetes/kops/pull/17767</a></li>
+<li>build(deps): bump actions/setup-go from 6.0.0 to 6.1.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/kops/pull/17765" target="_blank">https://github.com/kubernetes/kops/pull/17765</a></li>
+<li>build(deps): bump actions/checkout from 5.0.0 to 6.0.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/kops/pull/17764" target="_blank">https://github.com/kubernetes/kops/pull/17764</a></li>
+<li>gce: bump GCE PD CSI Driver by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17712" target="_blank">https://github.com/kubernetes/kops/pull/17712</a></li>
+<li>reworking toolbox dumping logic by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17733" target="_blank">https://github.com/kubernetes/kops/pull/17733</a></li>
+<li>Update Go to 1.25.4 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17768" target="_blank">https://github.com/kubernetes/kops/pull/17768</a></li>
+<li>test: dump kubelet config file by @hakman in <a href="https://github.com/kubernetes/kops/pull/17771" target="_blank">https://github.com/kubernetes/kops/pull/17771</a></li>
+<li>kubelet: Wait less for control-plane pods to restart by @hakman in <a href="https://github.com/kubernetes/kops/pull/17510" target="_blank">https://github.com/kubernetes/kops/pull/17510</a></li>
+<li>aws: Tag Launch Template network interfaces by @hakman in <a href="https://github.com/kubernetes/kops/pull/17773" target="_blank">https://github.com/kubernetes/kops/pull/17773</a></li>
+<li>aws: Enable CloudWatch metrics for the warm pool of an ASG by @recollir in <a href="https://github.com/kubernetes/kops/pull/17776" target="_blank">https://github.com/kubernetes/kops/pull/17776</a></li>
+<li>Update dependencies by @hakman in <a href="https://github.com/kubernetes/kops/pull/17777" target="_blank">https://github.com/kubernetes/kops/pull/17777</a></li>
+<li>Release 1.35.0-alpha.1 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17781" target="_blank">https://github.com/kubernetes/kops/pull/17781</a></li>
+</ul>
+
+<h2 id="new-contributors">New Contributors</h2>
+
+<ul>
+<li>@kraashen made their first contribution in <a href="https://github.com/kubernetes/kops/pull/17652" target="_blank">https://github.com/kubernetes/kops/pull/17652</a></li>
+<li>@jan-kantert made their first contribution in <a href="https://github.com/kubernetes/kops/pull/17678" target="_blank">https://github.com/kubernetes/kops/pull/17678</a></li>
+<li>@alaypatel07 made their first contribution in <a href="https://github.com/kubernetes/kops/pull/17742" target="_blank">https://github.com/kubernetes/kops/pull/17742</a></li>
+<li>@Sreeja1725 made their first contribution in <a href="https://github.com/kubernetes/kops/pull/17763" target="_blank">https://github.com/kubernetes/kops/pull/17763</a></li>
+<li>@jaswdr made their first contribution in <a href="https://github.com/kubernetes/kops/pull/17755" target="_blank">https://github.com/kubernetes/kops/pull/17755</a></li>
+<li>@Copilot made their first contribution in <a href="https://github.com/kubernetes/kops/pull/17767" target="_blank">https://github.com/kubernetes/kops/pull/17767</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes/kops/compare/v1.34.0-beta.1...v1.35.0-alpha.1" target="_blank">https://github.com/kubernetes/kops/compare/v1.34.0-beta.1&hellip;v1.35.0-alpha.1</a></p>
+<br><h2>kubernetes/cloud-provider-vsphere</h2> <h3>Release notes for v1.35.0-rc.0</h3><h4>2025-12-04</h4><h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>:seedling: (chore): Bump actions/checkout from 5 to 6 in the all-github-actions group by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1652" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1652</a></li>
+<li>:seedling: (chore): Bump github.com/onsi/ginkgo/v2 from 2.26.0 to 2.27.2 in /test/e2e in the onsi group by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1656" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1656</a></li>
+<li>:seedling: (chore): Bump golang.org/x/net from 0.46.0 to 0.47.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1653" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1653</a></li>
+<li>Bump Kubernetes dependencies to v1.35.0-rc.0 by @silvery1622 in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1657" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1657</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes/cloud-provider-vsphere/compare/v1.35.0-beta.0...v1.35.0-rc.0" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/compare/v1.35.0-beta.0&hellip;v1.35.0-rc.0</a></p>
+<br><h2>kubernetes-sigs/cluster-api-provider-vsphere</h2> <h3>Release notes for v1.15.0-rc.1</h3><h4>2025-12-04</h4><p>🚨 This is a RELEASE CANDIDATE. Use it only for testing purposes. If you find any bugs, file an <a href="https://github.com/kubernetes-sigs/cluster-api-provider-vsphere/issues/new" target="_blank">issue</a>.</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+<li>Tested with Kubernetes v1.35 &amp; cloud-provider-vsphere v1.35</li>
+<li>Based on Cluster API v1.12</li>
+<li>Bumped to Go 1.24, controller-runtime v0.22, k8s.io/* v0.34, controller-gen v0.19</li>
+<li>Introduce a separate CAPV ServiceAccount (#3640)</li>
+</ul>
+
+<p>govmomi:</p>
+
+<ul>
+<li>Allow customization of CPU and memory shares, reservations and limits (#3607)</li>
+</ul>
+
+<h2 id="changes-since-v1-15-0-rc-0">Changes since v1.15.0-rc.0</h2>
+
+<h2 id="chart-with-upwards-trend-overview">:chart_with_upwards_trend: Overview</h2>
+
+<ul>
+<li>4 new commits merged</li>
+</ul>
+
+<h2 id="seedling-others">:seedling: Others</h2>
+
+<ul>
+<li>Bump autoscaler version used for testing to v1.34.2 (#3696)</li>
+<li>Bump capi rc.1 release 1.15 (#3699)</li>
+<li>Bump Kubernetes version used for testing to v1.35.0-rc.0 (#3697)</li>
+<li>Lint: bump to v2.7.0 (#3702)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>sigs.k8s.io/cluster-api: v1.12.0-rc.0 → v1.12.0-rc.1</li>
+</ul>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<dl>
+<dt><summary>More details about the release</summary></dt>
+</dl>
+
+<p>:warning: <strong>RELEASE CANDIDATE NOTES</strong> :warning:</p>
+
+<h2 id="highlights-1">Highlights</h2>
+
+<ul>
+<li>Tested with Kubernetes v1.35 &amp; cloud-provider-vsphere v1.35</li>
+<li>Based on Cluster API v1.12</li>
+<li>Bumped to Go 1.24, controller-runtime v0.22, k8s.io/* v0.34, controller-gen v0.19</li>
+<li>Introduce a separate CAPV ServiceAccount (#3640)</li>
+</ul>
+
+<p>govmomi:</p>
+
+<ul>
+<li>Allow customization of CPU and memory shares, reservations and limits (#3607)</li>
+</ul>
+
+<h2 id="changes-since-v1-14-0">Changes since v1.14.0</h2>
+
+<h2 id="chart-with-upwards-trend-overview-1">:chart_with_upwards_trend: Overview</h2>
+
+<ul>
+<li>69 new commits merged</li>
+<li>1 breaking change :warning:</li>
+<li>5 feature additions ✨</li>
+<li>8 bugs fixed 🐛</li>
+</ul>
+
+<h2 id="warning-breaking-changes">:warning: Breaking Changes</h2>
+
+<ul>
+<li>Bump to CAPI main (05.09.2025) (#3628)</li>
+</ul>
+
+<h2 id="sparkles-new-features">:sparkles: New Features</h2>
+
+<ul>
+<li>Add flags to allow customization of CPU and memory shares, reservations and limits (#3607)</li>
+<li>Bump autoscaler to a9cb59fdd (#3577)</li>
+<li>Bump to CAPI v1.11.0 (#3583)</li>
+<li>Enable KAL in CI (#3582)</li>
+<li>Feat: add capv serviceaccount (#3640)</li>
+</ul>
+
+<h2 id="bug-bug-fixes">:bug: Bug Fixes</h2>
+
+<ul>
+<li>Bump test module to get latest version of upgrade test (#3604)</li>
+<li>Fix make lint-api (#3612)</li>
+<li>Fix: use machine&rsquo;s .spec.failureDomain with fallback to vspheremachine&rsquo;s .spec.failureDomain if not defined (#3576)</li>
+<li>Increase unit test timeouts to fixup flakes (#3691)</li>
+<li>Register conversion funcs in schemes (#3603)</li>
+<li>Remove finalizer from VSphereMachine during deletion if ownerRef was never set (#3591)</li>
+<li>Remove invalid kustomizeconfig (#3685)</li>
+<li>Remove the CEL validation on VSphereMachineTemplate.spec.network (#3621)</li>
+</ul>
+
+<h2 id="seedling-others-1">:seedling: Others</h2>
+
+<ul>
+<li>Add retry for govc binary download during tests (#3574)</li>
+<li>Bump actions for v1.15 (#3688)</li>
+<li>Bump autoscaler in e2e tests to v1.33.1 (#3642)</li>
+<li>Bump autoscaler in e2e tests to v1.34.0 (#3644)</li>
+<li>Bump autoscaler version used for testing to v1.34.2 (#3696)</li>
+<li>Bump capi rc.1 release 1.15 (#3699)</li>
+<li>Bump CAPI to main Oct 29 (#3656)</li>
+<li>Bump CPI to v1.34.0 (#3618)</li>
+<li>Bump CPI to v1.35.0-beta.0 (#3686)</li>
+<li>Bump Go to 1.24.10 (#3665)</li>
+<li>Bump Kubernetes to v1.34 and add new OVA&rsquo;s (#3616)</li>
+<li>Bump Kubernetes version used for testing to v1.35.0-rc.0 (#3697)</li>
+<li>Bump to CAPI v1.11.1 (#3626)</li>
+<li>Bump to CAPI v1.12.0-beta.0 (#3662)</li>
+<li>Bump to CAPI v1.12.0-beta.1 (#3684)</li>
+<li>Bump to CAPI v1.12.0-rc.0 (#3692)</li>
+<li>Bump to Go 1.24.9 (#3657)</li>
+<li>CI: clear /etc/sysconfig/kubelet to ensure &ndash;pod-infra-container-image is not set (#3661)</li>
+<li>Extend e2e.sh to allow running a periodic network debug job (#3676)</li>
+<li>Fix KAL config (#3593)</li>
+<li>Hack/e2e.sh create a junit file when running e2e.sh (#3670)</li>
+<li>Improve network debug output of e2e.sh (#3675)</li>
+<li>Lint: bump to v2.7.0 (#3702)</li>
+<li>Log version and git commit on controller start (#3610)</li>
+<li>Prepare main for release 1.15 (#3638)</li>
+<li>Remove mirror prow handling from scripts (#3578)</li>
+<li>Set log collector for clusterctl upgrade tests (#3594)</li>
+<li>Set startup taint for autoscaler in e2e tests (#3629)</li>
+<li>Start testing 1.35 (#3623)</li>
+<li>Start testing with Kubernetes v1.35.0-beta.0 (#3687)</li>
+<li>Temporary fix for ResourceVersion flake (#3601)</li>
+<li>Update GitHub actions for CAPV v1.15 (#3580)</li>
+<li>Update InterfaceSpec MTU minimum value (#3585)</li>
+<li>Update OVA list with K8s v1.34 images (#3615)</li>
+<li>VSphereClusterIdentity: ensure namespace in tests exists when not using the default (#3635)</li>
+</ul>
+
+<p>:book: Additionally, there have been 3 contributions to our documentation and book. (#3581, #3614, #3622)</p>
+
+<h2 id="dependencies-1">Dependencies</h2>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
+<li>github.com/gkampitakis/ciinfo: <a href="https://github.com/gkampitakis/ciinfo/tree/v0.3.2" target="_blank">v0.3.2</a></li>
+<li>github.com/gkampitakis/go-diff: <a href="https://github.com/gkampitakis/go-diff/tree/v1.3.2" target="_blank">v1.3.2</a></li>
+<li>github.com/gkampitakis/go-snaps: <a href="https://github.com/gkampitakis/go-snaps/tree/v0.5.15" target="_blank">v0.5.15</a></li>
+<li>github.com/go-jose/go-jose/v4: <a href="https://github.com/go-jose/go-jose/tree/v4.0.4" target="_blank">v4.0.4</a></li>
+<li>github.com/goccy/go-yaml: <a href="https://github.com/goccy/go-yaml/tree/v1.18.0" target="_blank">v1.18.0</a></li>
+<li>github.com/golang-jwt/jwt/v5: <a href="https://github.com/golang-jwt/jwt/tree/v5.2.2" target="_blank">v5.2.2</a></li>
+<li>github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus: <a href="https://github.com/grpc-ecosystem/go-grpc-middleware/tree/providers/prometheus/v1.0.1" target="_blank">v1.0.1</a></li>
+<li>github.com/grpc-ecosystem/go-grpc-middleware/v2: <a href="https://github.com/grpc-ecosystem/go-grpc-middleware/tree/v2.3.0" target="_blank">v2.3.0</a></li>
+<li>github.com/joshdk/go-junit: <a href="https://github.com/joshdk/go-junit/tree/v1.0.0" target="_blank">v1.0.0</a></li>
+<li>github.com/maruel/natural: <a href="https://github.com/maruel/natural/tree/v1.1.1" target="_blank">v1.1.1</a></li>
+<li>github.com/mfridman/tparse: <a href="https://github.com/mfridman/tparse/tree/v0.18.0" target="_blank">v0.18.0</a></li>
+<li>github.com/olekukonko/cat: <a href="https://github.com/olekukonko/cat/tree/50322a0" target="_blank">50322a0</a></li>
+<li>github.com/olekukonko/errors: <a href="https://github.com/olekukonko/errors/tree/v1.1.0" target="_blank">v1.1.0</a></li>
+<li>github.com/olekukonko/ll: <a href="https://github.com/olekukonko/ll/tree/v0.1.1" target="_blank">v0.1.1</a></li>
+<li>github.com/spiffe/go-spiffe/v2: <a href="https://github.com/spiffe/go-spiffe/tree/v2.5.0" target="_blank">v2.5.0</a></li>
+<li>github.com/tidwall/gjson: <a href="https://github.com/tidwall/gjson/tree/v1.18.0" target="_blank">v1.18.0</a></li>
+<li>github.com/tidwall/match: <a href="https://github.com/tidwall/match/tree/v1.1.1" target="_blank">v1.1.1</a></li>
+<li>github.com/tidwall/pretty: <a href="https://github.com/tidwall/pretty/tree/v1.2.1" target="_blank">v1.2.1</a></li>
+<li>github.com/tidwall/sjson: <a href="https://github.com/tidwall/sjson/tree/v1.2.5" target="_blank">v1.2.5</a></li>
+<li>github.com/zeebo/errs: <a href="https://github.com/zeebo/errs/tree/v1.4.0" target="_blank">v1.4.0</a></li>
+<li>go.etcd.io/raft/v3: v3.6.0</li>
+<li>sigs.k8s.io/structured-merge-diff/v6: v6.3.0</li>
+</ul>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
+<li>cel.dev/expr: v0.19.1 → v0.24.0</li>
+<li>github.com/GoogleCloudPlatform/opentelemetry-operations-go/detectors/gcp: <a href="https://github.com/GoogleCloudPlatform/opentelemetry-operations-go/compare/detectors/gcp/v1.25.0...detectors/gcp/v1.26.0" target="_blank">v1.25.0 → v1.26.0</a></li>
+<li>github.com/Masterminds/semver/v3: <a href="https://github.com/Masterminds/semver/compare/v3.3.0...v3.4.0" target="_blank">v3.3.0 → v3.4.0</a></li>
+<li>github.com/a8m/tree: <a href="https://github.com/a8m/tree/compare/36ae24d...2c8764a" target="_blank">36ae24d → 2c8764a</a></li>
+<li>github.com/cncf/xds/go: <a href="https://github.com/cncf/xds/compare/cff3c89...2f00578" target="_blank">cff3c89 → 2f00578</a></li>
+<li>github.com/coredns/corefile-migration: <a href="https://github.com/coredns/corefile-migration/compare/v1.0.27...v1.0.29" target="_blank">v1.0.27 → v1.0.29</a></li>
+<li>github.com/emicklei/go-restful/v3: <a href="https://github.com/emicklei/go-restful/compare/v3.12.2...v3.13.0" target="_blank">v3.12.2 → v3.13.0</a></li>
+<li>github.com/fsnotify/fsnotify: <a href="https://github.com/fsnotify/fsnotify/compare/v1.8.0...v1.9.0" target="_blank">v1.8.0 → v1.9.0</a></li>
+<li>github.com/fxamacker/cbor/v2: <a href="https://github.com/fxamacker/cbor/compare/v2.7.0...v2.9.0" target="_blank">v2.7.0 → v2.9.0</a></li>
+<li>github.com/google/cel-go: <a href="https://github.com/google/cel-go/compare/v0.23.2...v0.26.0" target="_blank">v0.23.2 → v0.26.0</a></li>
+<li>github.com/google/gnostic-models: <a href="https://github.com/google/gnostic-models/compare/v0.6.9...v0.7.0" target="_blank">v0.6.9 → v0.7.0</a></li>
+<li>github.com/google/pprof: <a href="https://github.com/google/pprof/compare/27863c8...f64d9cf" target="_blank">27863c8 → f64d9cf</a></li>
+<li>github.com/grpc-ecosystem/grpc-gateway/v2: <a href="https://github.com/grpc-ecosystem/grpc-gateway/compare/v2.24.0...v2.26.3" target="_blank">v2.24.0 → v2.26.3</a></li>
+<li>github.com/ianlancetaylor/demangle: <a href="https://github.com/ianlancetaylor/demangle/compare/bd984b5...f615e6b" target="_blank">bd984b5 → f615e6b</a></li>
+<li>github.com/jonboulle/clockwork: <a href="https://github.com/jonboulle/clockwork/compare/v0.4.0...v0.5.0" target="_blank">v0.4.0 → v0.5.0</a></li>
+<li>github.com/mattn/go-colorable: <a href="https://github.com/mattn/go-colorable/compare/v0.1.13...v0.1.14" target="_blank">v0.1.13 → v0.1.14</a></li>
+<li>github.com/mattn/go-runewidth: <a href="https://github.com/mattn/go-runewidth/compare/v0.0.14...v0.0.16" target="_blank">v0.0.14 → v0.0.16</a></li>
+<li>github.com/modern-go/reflect2: <a href="https://github.com/modern-go/reflect2/compare/v1.0.2...35a7c28" target="_blank">v1.0.2 → 35a7c28</a></li>
+<li>github.com/olekukonko/tablewriter: <a href="https://github.com/olekukonko/tablewriter/compare/v0.0.5...v1.0.9" target="_blank">v0.0.5 → v1.0.9</a></li>
+<li>github.com/onsi/ginkgo/v2: <a href="https://github.com/onsi/ginkgo/compare/v2.23.4...v2.27.2" target="_blank">v2.23.4 → v2.27.2</a></li>
+<li>github.com/onsi/gomega: <a href="https://github.com/onsi/gomega/compare/v1.38.0...v1.38.2" target="_blank">v1.38.0 → v1.38.2</a></li>
+<li>github.com/pelletier/go-toml/v2: <a href="https://github.com/pelletier/go-toml/compare/v2.2.3...v2.2.4" target="_blank">v2.2.3 → v2.2.4</a></li>
+<li>github.com/prometheus/client_model: <a href="https://github.com/prometheus/client_model/compare/v0.6.1...v0.6.2" target="_blank">v0.6.1 → v0.6.2</a></li>
+<li>github.com/rivo/uniseg: <a href="https://github.com/rivo/uniseg/compare/v0.4.2...v0.4.7" target="_blank">v0.4.2 → v0.4.7</a></li>
+<li>github.com/rogpeppe/go-internal: <a href="https://github.com/rogpeppe/go-internal/compare/v1.13.1...v1.14.1" target="_blank">v1.13.1 → v1.14.1</a></li>
+<li>github.com/sagikazarmark/locafero: <a href="https://github.com/sagikazarmark/locafero/compare/v0.7.0...v0.11.0" target="_blank">v0.7.0 → v0.11.0</a></li>
+<li>github.com/sourcegraph/conc: <a href="https://github.com/sourcegraph/conc/compare/v0.3.0...5f936ab" target="_blank">v0.3.0 → 5f936ab</a></li>
+<li>github.com/spf13/afero: <a href="https://github.com/spf13/afero/compare/v1.12.0...v1.15.0" target="_blank">v1.12.0 → v1.15.0</a></li>
+<li>github.com/spf13/cast: <a href="https://github.com/spf13/cast/compare/v1.7.1...v1.10.0" target="_blank">v1.7.1 → v1.10.0</a></li>
+<li>github.com/spf13/cobra: <a href="https://github.com/spf13/cobra/compare/v1.9.1...v1.10.1" target="_blank">v1.9.1 → v1.10.1</a></li>
+<li>github.com/spf13/pflag: <a href="https://github.com/spf13/pflag/compare/v1.0.7...v1.0.10" target="_blank">v1.0.7 → v1.0.10</a></li>
+<li>github.com/spf13/viper: <a href="https://github.com/spf13/viper/compare/v1.20.1...v1.21.0" target="_blank">v1.20.1 → v1.21.0</a></li>
+<li>github.com/stretchr/testify: <a href="https://github.com/stretchr/testify/compare/v1.10.0...v1.11.1" target="_blank">v1.10.0 → v1.11.1</a></li>
+<li>github.com/vmware/govmomi: <a href="https://github.com/vmware/govmomi/compare/v0.51.0...v0.52.0" target="_blank">v0.51.0 → v0.52.0</a></li>
+<li>go.etcd.io/bbolt: v1.3.11 → v1.4.2</li>
+<li>go.etcd.io/etcd/api/v3: v3.5.22 → v3.6.6</li>
+<li>go.etcd.io/etcd/client/pkg/v3: v3.5.22 → v3.6.6</li>
+<li>go.etcd.io/etcd/client/v3: v3.5.22 → v3.6.6</li>
+<li>go.etcd.io/etcd/pkg/v3: v3.5.21 → v3.6.4</li>
+<li>go.etcd.io/etcd/server/v3: v3.5.21 → v3.6.4</li>
+<li>go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc: v0.58.0 → v0.60.0</li>
+<li>go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc: v1.33.0 → v1.34.0</li>
+<li>go.opentelemetry.io/otel/exporters/otlp/otlptrace: v1.33.0 → v1.34.0</li>
+<li>go.opentelemetry.io/otel/metric: v1.34.0 → v1.35.0</li>
+<li>go.opentelemetry.io/otel/trace: v1.34.0 → v1.35.0</li>
+<li>go.opentelemetry.io/otel: v1.34.0 → v1.35.0</li>
+<li>go.opentelemetry.io/proto/otlp: v1.4.0 → v1.5.0</li>
+<li>go.uber.org/zap: v1.27.0 → v1.27.1</li>
+<li>go.yaml.in/yaml/v3: v3.0.3 → v3.0.4</li>
+<li>golang.org/x/crypto: v0.41.0 → v0.45.0</li>
+<li>golang.org/x/mod: v0.27.0 → v0.30.0</li>
+<li>golang.org/x/net: v0.43.0 → v0.47.0</li>
+<li>golang.org/x/oauth2: v0.30.0 → v0.33.0</li>
+<li>golang.org/x/sync: v0.16.0 → v0.18.0</li>
+<li>golang.org/x/sys: v0.35.0 → v0.38.0</li>
+<li>golang.org/x/telemetry: 1a19826 → bc8e575</li>
+<li>golang.org/x/term: v0.34.0 → v0.37.0</li>
+<li>golang.org/x/text: v0.28.0 → v0.31.0</li>
+<li>golang.org/x/tools: v0.36.0 → v0.39.0</li>
+<li>google.golang.org/genproto/googleapis/api: 5f5ef82 → a0af3ef</li>
+<li>google.golang.org/genproto/googleapis/rpc: 1a7da9e → a0af3ef</li>
+<li>google.golang.org/grpc: v1.71.3 → v1.72.3</li>
+<li>google.golang.org/protobuf: v1.36.6 → v1.36.7</li>
+<li>k8s.io/api: v0.33.3 → v0.34.2</li>
+<li>k8s.io/apiextensions-apiserver: v0.33.3 → v0.34.2</li>
+<li>k8s.io/apimachinery: v0.33.3 → v0.34.2</li>
+<li>k8s.io/apiserver: v0.33.3 → v0.34.2</li>
+<li>k8s.io/client-go: v0.33.3 → v0.34.2</li>
+<li>k8s.io/cluster-bootstrap: v0.33.3 → v0.34.2</li>
+<li>k8s.io/code-generator: v0.33.3 → v0.34.2</li>
+<li>k8s.io/component-base: v0.33.3 → v0.34.2</li>
+<li>k8s.io/gengo/v2: 1244d31 → 85fd79d</li>
+<li>k8s.io/kms: v0.33.3 → v0.34.2</li>
+<li>k8s.io/kube-openapi: c8a335a → f3f2b99</li>
+<li>k8s.io/utils: 3ea5e8c → 4c0f3b2</li>
+<li>sigs.k8s.io/cluster-api: v1.11.1 → v1.12.0-rc.1</li>
+<li>sigs.k8s.io/controller-runtime: v0.21.0 → v0.22.4</li>
+<li>sigs.k8s.io/json: 9aa6b5e → cfa47c3</li>
+<li>sigs.k8s.io/structured-merge-diff/v4: v4.6.0 → v4.4.1</li>
+</ul>
+
+<h3 id="removed-1">Removed</h3>
+
+<ul>
+<li>github.com/golang-jwt/jwt/v4: <a href="https://github.com/golang-jwt/jwt/tree/v4.5.2" target="_blank">v4.5.2</a></li>
+<li>github.com/grpc-ecosystem/go-grpc-middleware: <a href="https://github.com/grpc-ecosystem/go-grpc-middleware/tree/v1.3.0" target="_blank">v1.3.0</a></li>
+<li>github.com/grpc-ecosystem/grpc-gateway: <a href="https://github.com/grpc-ecosystem/grpc-gateway/tree/v1.16.0" target="_blank">v1.16.0</a></li>
+<li>github.com/prashantv/gostub: <a href="https://github.com/prashantv/gostub/tree/v1.1.0" target="_blank">v1.1.0</a></li>
+<li>go.etcd.io/etcd/client/v2: v2.305.21</li>
+<li>go.etcd.io/etcd/raft/v3: v3.5.21</li>
+<li>google.golang.org/genproto: ef43131</li>
+</ul>
+
+<p></details>
+<br/>
+<em>Thanks to all our contributors!</em> 😊</p>
+<br><h2>kubernetes-sigs/cluster-api</h2> <h3>Release notes for v1.12.0-rc.1</h3><h4>2025-12-02</h4><p>🚨 This is a RELEASE CANDIDATE. Use it only for testing purposes. If you find any bugs, file an <a href="https://github.com/kubernetes-sigs/cluster-api/issues/new" target="_blank">issue</a>.</p>
+
+<h2 id="kubernetes-version-support">👌 Kubernetes version support</h2>
+
+<ul>
+<li>Management Cluster: v1.31.x -&gt; v1.34.x</li>
+<li>Workload Cluster: v1.29.x -&gt; v1.34.x</li>
+</ul>
+
+<p><a href="https://cluster-api.sigs.k8s.io/reference/versions.html" target="_blank">More information about version support can be found here</a></p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+<li>Bumped to Go 1.24, controller-runtime v0.22, k8s.io/* v0.34, controller-gen v0.19</li>
+<li>In-place updates
+
+<ul>
+<li>Cluster API introduces support for update extensions allowing users to execute changes on existing machines without deleting the machines and creating a new one.</li>
+<li>Both KCP and Machine deployments support in-place updates based on the new update extension</li>
+<li>Can be enabled with the new <code>InPlaceUpdates</code> feature gate</li>
+<li>More details can be found in the <a href="https://github.com/kubernetes-sigs/cluster-api/blob/main/docs/proposals/20240807-in-place-updates.md" target="_blank">proposal</a></li>
+</ul></li>
+<li>Chained upgrades
+
+<ul>
+<li>Clusters using managed topologies can now upgrade by more than one minor Kubernetes version by performing chained and efficient upgrades.</li>
+<li>Upgrade plan will be computed using Kubernetes version from the ClusterClass or by calling a new runtimeExtension (also defined in the ClusterClass)</li>
+<li>Existing lifecycle hooks have been adapted to the new workflow, new lifecycle hooks have been introduced to allow granular control of the upgrade steps.</li>
+<li>More details can be found in the <a href="https://github.com/kubernetes-sigs/cluster-api/blob/main/docs/proposals/20250513-chained-and-efficient-upgrades-for-clusters-with-managed-topologies.md" target="_blank">proposal</a></li>
+</ul></li>
+<li>MachineHealthCheck: Add support for checking Machine conditions (#12827)</li>
+<li>Machine: First part of the <a href="https://github.com/kubernetes-sigs/cluster-api/blob/main/docs/proposals/20250513-propogate-taints.md" target="_blank">Taint propagation proposal</a> (Machine/MachineSet/MachineDeployment) (#12936, #12966)
+
+<ul>
+<li><a href="https://github.com/kubernetes-sigs/cluster-api/issues/12972" target="_blank">Feature tracking issue</a></li>
+<li>Can be enabled with the new <code>MachineTaintPropagation</code> feature gate</li>
+</ul></li>
+<li>KCP/CABPK: Add EncryptionAlgorithm field to Kubeadmconfig to support keys generated with <code>RSA-3072</code>, <code>RSA-4096</code>, <code>ECDSA-P256</code>, <code>ECDSA-P384</code> (#12859)</li>
+<li>Introduce ReconcilerRateLimiting feature (#13006)
+
+<ul>
+<li>Can be enabled with the new <code>ReconcilerRateLimiting</code> feature gate</li>
+<li>Rate-limits all reconcilers to at most 1 request per second</li>
+</ul></li>
+</ul>
+
+<p>Note: Cluster API is only supported on conformant Kubernetes Clusters and contract-relevant provider resources (e.g. InfraCluster) have to be implemented as CRDs (i.e. not via an aggregated apiserver).</p>
+
+<h2 id="other-changes">Other changes</h2>
+
+<ul>
+<li>clusterctl: Add conditions filter for clusterctl describe (#12991)</li>
+<li>clusterctl: <code>clusterctl move</code> blocks when Cluster or ClusterClass is paused (#12786)</li>
+<li>KCP: Enable websocket dialer with fallback to spdy (for communication with etcd) (#12902)</li>
+<li>Runtime SDK: Add defensive response status checking in runtime client (#12898)</li>
+<li>Improved logging across several controllers</li>
+<li>Improved e2e test coverage, e.g.: CAPD: Add scale from/to 0 support for CAPD (#12572)</li>
+<li>New providers in clusterctl: HCP (#12800) control plane provider, Metal3 IPAM provider (#12756), metal-stack infrastructure provider (#12925)</li>
+</ul>
+
+<h2 id="deprecation-and-removals-warning">Deprecation and Removals Warning</h2>
+
+<ul>
+<li>ClusterResourceSet: Remove deprecated ClusterResourceSet feature gate (#12950)</li>
+<li>Reminder: <a href="https://github.com/kubernetes-sigs/cluster-api/issues/11919" target="_blank">v1alpha3 &amp; v1alpha4 will be removed in CAPI v1.13</a> (they are already not served since a while)</li>
+<li>Reminder: <a href="https://github.com/kubernetes-sigs/cluster-api/issues/11920" target="_blank">v1beta1 is on track to be unserved in CAPI v1.14</a>
+
+<ul>
+<li>Reminder: Provider should start implementing the v1beta2 contract ASAP.</li>
+</ul></li>
+</ul>
+
+<p>For additional details for providers, please take a look at <a href="https://main.cluster-api.sigs.k8s.io/developer/providers/migrations/v1.11-to-v1.12" target="_blank">Cluster API v1.11 compared to v1.12</a>.</p>
+
+<h2 id="changes-since-v1-12-0-rc-0">Changes since v1.12.0-rc.0</h2>
+
+<h2 id="chart-with-upwards-trend-overview">:chart_with_upwards_trend: Overview</h2>
+
+<ul>
+<li>14 new commits merged</li>
+<li>7 bugs fixed 🐛</li>
+</ul>
+
+<h2 id="bug-bug-fixes">:bug: Bug Fixes</h2>
+
+<ul>
+<li>ClusterClass: Do not overwrite global http.DefaultClient TLSConfig (#13063)</li>
+<li>e2e: Fix WaitForMachinesReady interval (#13051)</li>
+<li>e2e: Increase reconcile timeout for DockerMachine (#13099)</li>
+<li>KCP: Grant <code>delete</code> permissions to Secrets. (#13097)</li>
+<li>Machine/MachineSet: Use MachineSet template values in completeMoveMachine for in-place updates (#13085)</li>
+<li>Testing/e2e: Fix unit test flakes, improve clusterctl download error in e2e tests (#13056)</li>
+<li>util: Fix a panic in conditions.Delete method if the sources condition list is empty (#13053)</li>
+</ul>
+
+<h2 id="seedling-others">:seedling: Others</h2>
+
+<ul>
+<li>API: Relax validation for Machine .status.addresses to maximum of 128 instead of 32 items (#13090)</li>
+<li>CI: Bump softprops/action-gh-release from 2.4.2 to 2.5.0 in the all-github-actions group (#13094)</li>
+<li>e2e: Do not expect Machines for MachinePools not supporting Machines (#13077)</li>
+<li>e2e: Make clusterctl upgrade test to work when there are no machines (#13074)</li>
+<li>Runtime SDK: Add httpClientCache to runtime client (#13080)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<p><details>
+<summary>More details about the release</summary></p>
+
+<h2 id="changes-since-v1-11-0">Changes since v1.11.0</h2>
+
+<h2 id="chart-with-upwards-trend-overview-1">:chart_with_upwards_trend: Overview</h2>
+
+<ul>
+<li>287 new commits merged</li>
+<li>5 breaking changes :warning:</li>
+<li>42 feature additions ✨</li>
+<li>42 bugs fixed 🐛</li>
+</ul>
+
+<h2 id="warning-breaking-changes">:warning: Breaking Changes</h2>
+
+<ul>
+<li>CI: Improve KAL config docs for forbidding OpenAPI defaulting (#12869)</li>
+<li>clusterctl: Block move when Cluster or ClusterClass is paused (#12786)</li>
+<li>Dependency: Bump to controller-runtime v0.22 &amp; controller-tools v0.19 (#12634)</li>
+<li>Runtime SDK: Improve chained upgrade observability (#12973)</li>
+<li>Runtime SDK: Make the AfterClusterUpgrade hook blocking (#12984)</li>
+</ul>
+
+<h2 id="sparkles-new-features">:sparkles: New Features</h2>
+
+<ul>
+<li>API/Machine/MachineSet/MachineDeployment: Machine related API changes, conversion and feature gate (#12936)</li>
+<li>CABPK: Add EncryptionAlgorithm to Kubeadmconfig (#12859)</li>
+<li>CAPD: Add scale from/to 0 support for CAPD (#12572)</li>
+<li>CI: Bump autoscaler to a9cb59fdd (#12643)</li>
+<li>CI: Bump Kubernetes in tests to v1.34.0 and claim support for v1.34 (#12699)</li>
+<li>ClusterCache/KCP: Deprecate GetClientCertificatePrivateKey and stop using it in KCP (#12846)</li>
+<li>ClusterCache: Add GetUncachedClient() (#12803)</li>
+<li>ClusterClass: Add .spec.upgrade.external.generateUpgradePlanExtension field to ClusterClass (#12809)</li>
+<li>ClusterClass: Add types and hook for GenerateUpgradePlan (#12823)</li>
+<li>ClusterClass: Additional validation in Cluster/ClusterClass webhook for chained upgrades (#12816)</li>
+<li>ClusterClass: Call GenerateUpgradePlanRequest Runtime Extension (#12903)</li>
+<li>ClusterClass: Implement core logic for chained upgrades (#12726)</li>
+<li>clusterctl: Add conditions filter for clusterctl describe (#12991)</li>
+<li>Control-plane: Add new control-plane provider HCP (#12800)</li>
+<li>e2e: Bump Kubernetes version used for testing to v1.34.0-rc.1 (#12623)</li>
+<li>e2e: Bump Kubernetes version used for testing to v1.34.0-rc.2 (#12658)</li>
+<li>e2e: Bump Kubernetes version used for testing to v1.35.0-beta.0 (#13029)</li>
+<li>e2e: Change RuntimeSDK e2e test ClusterClass to use GenerateUpgradePlan extension (#12955)</li>
+<li>e2e: Implement e2e test for in-place updates (#12938)</li>
+<li>KCP/CABPK/CI: Bump KAL to pick up latest requiredfields linter, add Min/MaxLength to BootstrapToken (#12563)</li>
+<li>KCP/MachineSet: Refactor BootstrapConfig/InfraMachine managedFields for in-place (#12890)</li>
+<li>KCP: Bump coredns/corefile-migration to v1.0.28 (#12748)</li>
+<li>KCP: Bump coredns/corefile-migration to v1.0.29 (#12862)</li>
+<li>KCP: Bump corefile-migration to v1.0.27 (#12636)</li>
+<li>KCP: Compare ClusterConfiguration via KubeadmConfig instead of annotation on Machine (#12758)</li>
+<li>KCP: Extend rollout logic for in-place updates (#12840)</li>
+<li>KCP: Implement CanUpdateMachine (#12857)</li>
+<li>KCP: Implement trigger in-place update (#12897)</li>
+<li>Machine: Add in-place updates support for machine controller (#12831)</li>
+<li>MachineDeployment: Add in-place to rollout planner (#12865)</li>
+<li>MachineDeployment: Implement CanUpdateMachineSet (#12965)</li>
+<li>MachineHealthCheck: Add support for checking Machine conditions in MachineHealthCheck (#12827)</li>
+<li>Misc: Add inplace updates featuregate (#12755)</li>
+<li>Misc: Improve logs, errors and conditions (#12992)</li>
+<li>Misc: Introduce &amp; use wait for cache utils (#12957)</li>
+<li>Misc: Introduce reconciler rate-limiting and hook caching (#13006)</li>
+<li>Runtime SDK/IPAM/MachinePool: Cleanup exp packages (#12651)</li>
+<li>Runtime SDK: Add in-place update hooks to API (#12343)</li>
+<li>Runtime SDK: Add lifecycle hooks for chained-upgrade (#12878)</li>
+<li>Runtime SDK: Call new lifecycle hooks for chained-upgrades (#12891)</li>
+<li>Runtime SDK: Ensure ExtensionConfig controller can be used outside of the core provider (#12754)</li>
+<li>Runtime SDK: Implement GenerateUpgradePlan handler (#12927)</li>
+</ul>
+
+<h2 id="bug-bug-fixes-1">:bug: Bug Fixes</h2>
+
+<ul>
+<li>API: Only try to convert infraRefs if they are set (#12686)</li>
+<li>API: Register conversion funcs in schemes (#12687)</li>
+<li>CABPK: Always use latest apiVersion when getting owner of KubeadmConfig in CABPK (#12685)</li>
+<li>CAPD: CAPD on rootless podman (#12941)</li>
+<li>CAPD: Fix the format error of healthCheck in test templates (#12787)</li>
+<li>CAPD: Remove finalizers during deletion if ownerRef was never set (#12675)</li>
+<li>CAPD: Run CAPD conversion tests in CI (#12583)</li>
+<li>CAPIM: Eliminate data race in DialContext (#12778)</li>
+<li>ClusterClass/MachinePool: Fix MP error in desired state calculation during Cluster creation (#12607)</li>
+<li>ClusterClass: Do not overwrite global http.DefaultClient TLSConfig (#13063)</li>
+<li>ClusterClass: Ensure holder field path in GeneratePatchRequest is set based on contract (#12684)</li>
+<li>ClusterClass: Fix field paths in ClusterClass compatibility validation errors (#12660)</li>
+<li>ClusterClass: Fix wait for cache in reconcile_state.go (#13032)</li>
+<li>ClusterClass: Stop adding conversion-data annotation to Cluster object (#12719)</li>
+<li>ClusterClass: Stop writing zero values for spec.controlPlaneEndpoint to ControlPlane objects (#12958)</li>
+<li>clusterctl: Removing Ready/Available prefix from STATUS Column (#12729)</li>
+<li>clusterctl: Verify providers need upgrade before applying (#12753)</li>
+<li>Devtools: Fix kube-state-metrics deployment (#13024)</li>
+<li>e2e: Do not require kubetest configration if not needed (#12948)</li>
+<li>e2e: Fix autoscaler e2e test flake (#12613)</li>
+<li>e2e: Fix e2e test issues introduced by chained upgrades (#12766)</li>
+<li>e2e: Fix objects with Changed Resource Versions flake (#12848)</li>
+<li>e2e: Fix upgrade runtimesdk test (#12833)</li>
+<li>e2e: Fix WaitForMachinesReady interval (#13051)</li>
+<li>e2e: Increase reconcile timeout for DockerMachine (#13099)</li>
+<li>e2e: Propagate clusterctl variables for cluster upgrades (#12949)</li>
+<li>KCP: Fix ControlPlaneComponentHealthCheckSeconds validation in KubeadmConfigSpec.Validate (#12609)</li>
+<li>KCP: Fix conversion issue in KubeadmControlPlaneTemplate with rolloutStrategy.type (#12608)</li>
+<li>KCP: Fix KCP KubeadmConfig isJoin detection (#13035)</li>
+<li>KCP: Grant <code>delete</code> permissions to Secrets. (#13097)</li>
+<li>Machine/MachinePool: Fix MachinePool nodeRef UID mismatch after K8s upgrade (#12392)</li>
+<li>Machine/MachineSet: Use MachineSet template values in completeMoveMachine for in-place updates (#13085)</li>
+<li>MachineDeployment: Fix race conditions ScaleDownOldMS (#12812)</li>
+<li>MachineDeployment: Fix race conditions ScaleDownOldMS OnDelete (#12830)</li>
+<li>MachineDeployment: Fix rollout with unavailable machines (#13020)</li>
+<li>Runtime SDK: Export ExtensionConfig webhook (#12598)</li>
+<li>Testing/e2e: Fix unit test flakes, improve clusterctl download error in e2e tests (#13056)</li>
+<li>Testing: Fix flaky TestFuzzyConversion (Cluster) test (#12618)</li>
+<li>Testing: Fix flaky TestReconcileMachinePhases unit test (#12616)</li>
+<li>Testing: Fix flaky TestReconcileState unit test (#12617)</li>
+<li>Testing: Fix KubeadmConfig fuzz test flake (#12679)</li>
+<li>util: Fix a panic in conditions.Delete method if the sources condition list is empty (#13053)</li>
+</ul>
+
+<h2 id="seedling-others-1">:seedling: Others</h2>
+
+<ul>
+<li>API: Relax validation for Machine .status.addresses to maximum of 128 instead of 32 items (#13090)</li>
+<li>Autoscaling: Bump autoscaler in e2e tests to v1.33.1 (#12790)</li>
+<li>CABPK: Migrate from Requeue to RequeueAfter in CABPK (#12988)</li>
+<li>CAPD: Cleanup CAPD exp packages (#12672)</li>
+<li>CAPD: Recreate container if we re-enter reconciliation and it exists but is not running (#12923)</li>
+<li>CI: Add OpenAPI defaulting detection for KubeadmConfig by using forbiddenmarkers (#12851)</li>
+<li>CI: Block FIXME comments (#12772)</li>
+<li>CI: Bump KAL &amp; add nodurations linter (#12743)</li>
+<li>CI: Bump KAL &amp; add nonullable and forbiddenmarkers linter (#12724)</li>
+<li>CI: Bump KAL &amp; drop schemaless excludes (#12646)</li>
+<li>CI: Bump KAL, adjust excludes (#12650)</li>
+<li>CI: Bump Kube API Linter version (#12974)</li>
+<li>CI: Bump softprops/action-gh-release from 2.4.2 to 2.5.0 in the all-github-actions group (#13094)</li>
+<li>CI: Bump to golangci-linter version to v2.4.0 (#12703)</li>
+<li>CI: Update metrics configuration to v1beta2 (#12642)</li>
+<li>Cluster: Allow &gt;1 minor version upgrades if generateUpgradePlan extension is defined (#12979)</li>
+<li>Cluster: Simplify Cluster webhook (#12895)</li>
+<li>ClusterClass: Add input validations for desired state generator function (#12655)</li>
+<li>ClusterClass: Improve topology reconciled condition (#13002)</li>
+<li>clusterctl: Add metal-stack infrastructure provider (#12925)</li>
+<li>clusterctl: Add Metal3 as an IPAMProvider (#12756)</li>
+<li>clusterctl: Allow metadata.yaml&rsquo;s Kind to be empty (#12714)</li>
+<li>clusterctl: Bump cert-manager to v1.19.0 (#12828)</li>
+<li>clusterctl: Bump cert-manager to v1.19.1 (#12873)</li>
+<li>clusterctl: Bumping tablewriter to v1.0.9 - latest (#12781)</li>
+<li>clusterctl: Show Available condition for CP (#12759)</li>
+<li>ClusterResourceSet: Remove deprecated ClusterResourceSet feature gate (#12950)</li>
+<li>Dependency: Bump github.com/go-viper/mapstructure/v2 to fix CVE (#12677)</li>
+<li>Dependency: Bump Go to v1.24.10 (#12962)</li>
+<li>Dependency: Bump Go to v1.24.6 (#12611)</li>
+<li>Dependency: Bump go to v1.24.7 (#12733)</li>
+<li>Dependency: Bump Go to v1.24.8 (#12826)</li>
+<li>Dependency: Bump Go to v1.24.9 (#12867)</li>
+<li>Dependency: Bump golang.org/x/crypto to v0.45 to fix CVE (#13036)</li>
+<li>Dependency: Bump to envtest v1.34.0 (#12702)</li>
+<li>Devtools: Drop ALL groups in tilt (#13001)</li>
+<li>Devtools: Extend CR dashboard to handle capi_reconcile metrics (#13040)</li>
+<li>Devtools: Promtail to alloy migration (#11945)</li>
+<li>Documentation/MachinePool: Add structure for area/machinepool ownership in OWNERS files (#13018)</li>
+<li>e2e: Add quickstart e2e test with v1beta1 with ClusterClass and RuntimeSDK (#12577)</li>
+<li>e2e: Bump autoscaler in e2e tests to v1.34.0 (#12806)</li>
+<li>e2e: Bump pause image in e2e tests to 3.10.1 (default for Kubernetes v1.34) (#12731)</li>
+<li>e2e: Bump to kind v0.30.0 (#12701)</li>
+<li>e2e: Do not expect Machines for MachinePools not supporting Machines (#13077)</li>
+<li>e2e: E2e coverage via md rollout test (#12966)</li>
+<li>e2e: Enable IPv6 test again (#12597)</li>
+<li>e2e: Fix autoscaler test (#12978)</li>
+<li>e2e: Fix kind build git commit setting (#12858)</li>
+<li>e2e: Fix md-rollout test to test in-place taint changes before doing the rollout change (#13031)</li>
+<li>e2e: Fix self-hosted to actually read DOCKER_PRELOAD_IMAGES from the e2e config (#12907)</li>
+<li>e2e: Get kind mgmt cluster logs in clusterctl upgrade test (#12676)</li>
+<li>e2e: Improve check for Cluster Available condition in e2e tests (#12594)</li>
+<li>e2e: Make clusterctl upgrade test to work when there are no machines (#13074)</li>
+<li>e2e: Set startup taint for autoscaler in e2e tests (#12736)</li>
+<li>e2e: Start testing against Kubernetes v1.35 (#12709)</li>
+<li>e2e: Use wait-machine-upgrade timeout in ClusterClassChanges tests to wait for machines to be ready (#13013)</li>
+<li>e2e: Wait for cluster deletion in runtime sdk test (#12956)</li>
+<li>KCP/CABPK: Stop using unsafe for EnvVar conversion (#12619)</li>
+<li>KCP/MachineSet/MachineDeployment: Remove unused CleanUpManagedFieldsForSSAAdoption code (#12788)</li>
+<li>KCP: Add current/desired objects to NotUpToDateResult &amp; refactor object creation (#12817)</li>
+<li>KCP: Avoid KCP rollouts if only ControlPlaneComponentHealthCheckSeconds is changed (#13026)</li>
+<li>KCP: Check for error before checking reconcile result (#12935)</li>
+<li>KCP: Enable websocket dialer with fallback to spdy (#12902)</li>
+<li>KCP: Fix race condition on KCP initialized condition (#12980)</li>
+<li>KCP: Improve KCP etcd client crt/key caching (#12977)</li>
+<li>KCP: Simplify cleanupConfigFields in KCP (#12776)</li>
+<li>KCP: Simplify KCP matchesKubeadmConfig (#12813)</li>
+<li>KCP: Variable/func renames, func order (#12793)</li>
+<li>Logging: Reduce noisy logs (#12606)</li>
+<li>Machine/MachineSet/MachineDeployment: Adjust UpToDate condition to consider Updating, move UpToDate condition to Machine ctrl for workers (#12959)</li>
+<li>Machine: Add DisableCertPrivateKey function for clustercache for test flake (#12921)</li>
+<li>Machine: Consider updating condition when computing Machine&rsquo;s ready condition (#12939)</li>
+<li>Machine: Fix TestReconcileMachinePhases flake (#12818)</li>
+<li>Machine: Implement Updating Machine phase (#12940)</li>
+<li>Machine: Requeue for Machine Available condition (#12953)</li>
+<li>Machine: Use apireader to directly talk to apiserver (#12819)</li>
+<li>MachineDeployment: Add in-place to machineset controller (#12906)</li>
+<li>MachineDeployment: Add more info to logs for rollout changes (#12997)</li>
+<li>MachineDeployment: Add rollout planner (#12804)</li>
+<li>MachineDeployment: Cleanup getMachinesSucceeded flag from MD controller (#12882)</li>
+<li>MachineDeployment: Defer in-place updates for machines not yet provisioned (#13007)</li>
+<li>MachineDeployment: Fix misleading log statements and optimize logic (#12871)</li>
+<li>MachineDeployment: Move compute and create ms to rollout planner (#12841)</li>
+<li>MachineDeployment: Refactor MachineTemplateUpToDate (#12811)</li>
+<li>MachineDeployment: Rollout-planner improve checks for scalingOrInPlaceUpdateInProgress (#12954)</li>
+<li>MachineDeployment: Simplify rollout planner (#12899)</li>
+<li>MachineHealthCheck: Add reason to condition, add reason+message to log (#12987)</li>
+<li>MachineHealthCheck: No longer requeue when remediation is not allowed (#12924)</li>
+<li>MachinePool: Migrate from Requeue to RequeueAfter in MachinePool tests (#13027)</li>
+<li>MachineSet: Fix flakes in syncMachines unit test (#12918)</li>
+<li>MachineSet: Fix race conditions with global scheme in TestMachineSetReconciler_reconcileUnhealthyMachines (#12919)</li>
+<li>MachineSet: Refactor BootstrapConfig/InfraMachine creation in MachineSet controller (#12881)</li>
+<li>Misc: Add Proxy Support to Docker Build-Args (#12669)</li>
+<li>Misc: Avoid using deprecated client.Patch method (#12737)</li>
+<li>Misc: Cleanup TestReconcileMachinePhases (#12976)</li>
+<li>Misc: Consistent webhook file/folder structure (#12791)</li>
+<li>Misc: Improve mark hook utils (#12994)</li>
+<li>Misc: Improve wait for cache (#12993)</li>
+<li>Misc: Log version and git commit on controller start (#12694)</li>
+<li>Misc: Stop setting and relying on TypeMeta in typed objects (#12533)</li>
+<li>Misc: Use errors package of Go (#10875)</li>
+<li>Release/clusterctl: Add CAPRKE2 to release tool’s issue-opening providers list (#12713)</li>
+<li>Release/Testing: Added test cases for list.go and github.go (#11937)</li>
+<li>Release: Clarify semantic of &ndash;previous-release-version (#12995)</li>
+<li>Release: Prepare main branch for v1.12 development (#12723)</li>
+<li>Release: Update release notes tool to handle multiples_areas and colons (#12738)</li>
+<li>Runtime SDK: Add defensive response status checking in runtime client (#12898)</li>
+<li>Runtime SDK: Add hint to look into controller logs to runtime client error response (#12849)</li>
+<li>Runtime SDK: Add httpClientCache to runtime client (#13080)</li>
+<li>Runtime SDK: Deduplicate extension filtering and response validation logic (#12905)</li>
+<li>Runtime SDK: Migrate from Requeue to RequeueAfter in extensionconfig (#13000)</li>
+<li>Testing: Add clusterapi crd groups to audit logs for envtest (#12883)</li>
+<li>Testing: Enable audit logs for envtest-based unit tests if ARTIFACTS env var is set (#12847)</li>
+<li>Testing: Implement unit-tests for desired state generator (#12656)</li>
+<li>Testing: Update version matrix for GitHub workflows for release 1.11 (#12586)</li>
+<li>util: Add check version against metadata utility (#12529)</li>
+<li>util: Add items to cache immediately after apply (#12877)</li>
+</ul>
+
+<p>:book: Additionally, there have been 44 contributions to our documentation and book. (#12085, #12199, #12329, #12562, #12581, #12582, #12593, #12600, #12601, #12647, #12662, #12663, #12673, #12710, #12741, #12761, #12777, #12779, #12797, #12810, #12814, #12835, #12836, #12854, #12866, #12880, #12885, #12892, #12893, #12896, #12917, #12934, #12942, #12944, #12951, #12961, #12970, #12998, #13010, #13011, #13012, #13021, #13057, #13098)</p>
+
+<h2 id="dependencies-1">Dependencies</h2>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
+<li>github.com/gkampitakis/ciinfo: <a href="https://github.com/gkampitakis/ciinfo/tree/v0.3.2" target="_blank">v0.3.2</a></li>
+<li>github.com/gkampitakis/go-diff: <a href="https://github.com/gkampitakis/go-diff/tree/v1.3.2" target="_blank">v1.3.2</a></li>
+<li>github.com/gkampitakis/go-snaps: <a href="https://github.com/gkampitakis/go-snaps/tree/v0.5.15" target="_blank">v0.5.15</a></li>
+<li>github.com/go-jose/go-jose/v4: <a href="https://github.com/go-jose/go-jose/tree/v4.0.4" target="_blank">v4.0.4</a></li>
+<li>github.com/goccy/go-yaml: <a href="https://github.com/goccy/go-yaml/tree/v1.18.0" target="_blank">v1.18.0</a></li>
+<li>github.com/golang-jwt/jwt/v5: <a href="https://github.com/golang-jwt/jwt/tree/v5.2.2" target="_blank">v5.2.2</a></li>
+<li>github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus: <a href="https://github.com/grpc-ecosystem/go-grpc-middleware/tree/providers/prometheus/v1.0.1" target="_blank">v1.0.1</a></li>
+<li>github.com/grpc-ecosystem/go-grpc-middleware/v2: <a href="https://github.com/grpc-ecosystem/go-grpc-middleware/tree/v2.3.0" target="_blank">v2.3.0</a></li>
+<li>github.com/joshdk/go-junit: <a href="https://github.com/joshdk/go-junit/tree/v1.0.0" target="_blank">v1.0.0</a></li>
+<li>github.com/maruel/natural: <a href="https://github.com/maruel/natural/tree/v1.1.1" target="_blank">v1.1.1</a></li>
+<li>github.com/mfridman/tparse: <a href="https://github.com/mfridman/tparse/tree/v0.18.0" target="_blank">v0.18.0</a></li>
+<li>github.com/olekukonko/cat: <a href="https://github.com/olekukonko/cat/tree/50322a0" target="_blank">50322a0</a></li>
+<li>github.com/olekukonko/errors: <a href="https://github.com/olekukonko/errors/tree/v1.1.0" target="_blank">v1.1.0</a></li>
+<li>github.com/olekukonko/ll: <a href="https://github.com/olekukonko/ll/tree/v0.1.1" target="_blank">v0.1.1</a></li>
+<li>github.com/olekukonko/ts: <a href="https://github.com/olekukonko/ts/tree/78ecb04" target="_blank">78ecb04</a></li>
+<li>github.com/spiffe/go-spiffe/v2: <a href="https://github.com/spiffe/go-spiffe/tree/v2.5.0" target="_blank">v2.5.0</a></li>
+<li>github.com/tidwall/gjson: <a href="https://github.com/tidwall/gjson/tree/v1.18.0" target="_blank">v1.18.0</a></li>
+<li>github.com/tidwall/match: <a href="https://github.com/tidwall/match/tree/v1.1.1" target="_blank">v1.1.1</a></li>
+<li>github.com/tidwall/pretty: <a href="https://github.com/tidwall/pretty/tree/v1.2.1" target="_blank">v1.2.1</a></li>
+<li>github.com/tidwall/sjson: <a href="https://github.com/tidwall/sjson/tree/v1.2.5" target="_blank">v1.2.5</a></li>
+<li>github.com/zeebo/errs: <a href="https://github.com/zeebo/errs/tree/v1.4.0" target="_blank">v1.4.0</a></li>
+<li>go.etcd.io/raft/v3: v3.6.0</li>
+<li>sigs.k8s.io/structured-merge-diff/v6: v6.3.0</li>
+</ul>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
+<li>cel.dev/expr: v0.19.1 → v0.24.0</li>
+<li>cloud.google.com/go/storage: v1.49.0 → v1.5.0</li>
+<li>cloud.google.com/go: v0.116.0 → v0.53.0</li>
+<li>github.com/GoogleCloudPlatform/opentelemetry-operations-go/detectors/gcp: <a href="https://github.com/GoogleCloudPlatform/opentelemetry-operations-go/compare/detectors/gcp/v1.25.0...detectors/gcp/v1.26.0" target="_blank">v1.25.0 → v1.26.0</a></li>
+<li>github.com/Masterminds/semver/v3: <a href="https://github.com/Masterminds/semver/compare/v3.3.0...v3.4.0" target="_blank">v3.3.0 → v3.4.0</a></li>
+<li>github.com/census-instrumentation/opencensus-proto: <a href="https://github.com/census-instrumentation/opencensus-proto/compare/v0.4.1...v0.2.1" target="_blank">v0.4.1 → v0.2.1</a></li>
+<li>github.com/cncf/xds/go: <a href="https://github.com/cncf/xds/compare/cff3c89...2f00578" target="_blank">cff3c89 → 2f00578</a></li>
+<li>github.com/coredns/corefile-migration: <a href="https://github.com/coredns/corefile-migration/compare/v1.0.27...v1.0.29" target="_blank">v1.0.27 → v1.0.29</a></li>
+<li>github.com/emicklei/go-restful/v3: <a href="https://github.com/emicklei/go-restful/compare/v3.12.2...v3.13.0" target="_blank">v3.12.2 → v3.13.0</a></li>
+<li>github.com/fsnotify/fsnotify: <a href="https://github.com/fsnotify/fsnotify/compare/v1.8.0...v1.9.0" target="_blank">v1.8.0 → v1.9.0</a></li>
+<li>github.com/fxamacker/cbor/v2: <a href="https://github.com/fxamacker/cbor/compare/v2.7.0...v2.9.0" target="_blank">v2.7.0 → v2.9.0</a></li>
+<li>github.com/go-viper/mapstructure/v2: <a href="https://github.com/go-viper/mapstructure/compare/v2.3.0...v2.4.0" target="_blank">v2.3.0 → v2.4.0</a></li>
+<li>github.com/golang/groupcache: <a href="https://github.com/golang/groupcache/compare/41bb18b...8c9f03a" target="_blank">41bb18b → 8c9f03a</a></li>
+<li>github.com/google/cel-go: <a href="https://github.com/google/cel-go/compare/v0.23.2...v0.26.0" target="_blank">v0.23.2 → v0.26.0</a></li>
+<li>github.com/google/gnostic-models: <a href="https://github.com/google/gnostic-models/compare/v0.6.9...v0.7.0" target="_blank">v0.6.9 → v0.7.0</a></li>
+<li>github.com/google/pprof: <a href="https://github.com/google/pprof/compare/27863c8...f64d9cf" target="_blank">27863c8 → f64d9cf</a></li>
+<li>github.com/googleapis/gax-go/v2: <a href="https://github.com/googleapis/gax-go/compare/v2.14.1...v2.0.5" target="_blank">v2.14.1 → v2.0.5</a></li>
+<li>github.com/grpc-ecosystem/grpc-gateway/v2: <a href="https://github.com/grpc-ecosystem/grpc-gateway/compare/v2.24.0...v2.26.3" target="_blank">v2.24.0 → v2.26.3</a></li>
+<li>github.com/ianlancetaylor/demangle: <a href="https://github.com/ianlancetaylor/demangle/compare/bd984b5...f615e6b" target="_blank">bd984b5 → f615e6b</a></li>
+<li>github.com/jonboulle/clockwork: <a href="https://github.com/jonboulle/clockwork/compare/v0.4.0...v0.5.0" target="_blank">v0.4.0 → v0.5.0</a></li>
+<li>github.com/mattn/go-colorable: <a href="https://github.com/mattn/go-colorable/compare/v0.1.13...v0.1.14" target="_blank">v0.1.13 → v0.1.14</a></li>
+<li>github.com/mattn/go-runewidth: <a href="https://github.com/mattn/go-runewidth/compare/v0.0.14...v0.0.16" target="_blank">v0.0.14 → v0.0.16</a></li>
+<li>github.com/modern-go/reflect2: <a href="https://github.com/modern-go/reflect2/compare/v1.0.2...35a7c28" target="_blank">v1.0.2 → 35a7c28</a></li>
+<li>github.com/olekukonko/tablewriter: <a href="https://github.com/olekukonko/tablewriter/compare/v0.0.5...v1.0.9" target="_blank">v0.0.5 → v1.0.9</a></li>
+<li>github.com/onsi/ginkgo/v2: <a href="https://github.com/onsi/ginkgo/compare/v2.23.4...v2.27.2" target="_blank">v2.23.4 → v2.27.2</a></li>
+<li>github.com/onsi/gomega: <a href="https://github.com/onsi/gomega/compare/v1.38.0...v1.38.2" target="_blank">v1.38.0 → v1.38.2</a></li>
+<li>github.com/pelletier/go-toml/v2: <a href="https://github.com/pelletier/go-toml/compare/v2.2.3...v2.2.4" target="_blank">v2.2.3 → v2.2.4</a></li>
+<li>github.com/prometheus/client_model: <a href="https://github.com/prometheus/client_model/compare/v0.6.1...v0.6.2" target="_blank">v0.6.1 → v0.6.2</a></li>
+<li>github.com/rivo/uniseg: <a href="https://github.com/rivo/uniseg/compare/v0.4.2...v0.4.7" target="_blank">v0.4.2 → v0.4.7</a></li>
+<li>github.com/rogpeppe/go-internal: <a href="https://github.com/rogpeppe/go-internal/compare/v1.13.1...v1.14.1" target="_blank">v1.13.1 → v1.14.1</a></li>
+<li>github.com/sagikazarmark/locafero: <a href="https://github.com/sagikazarmark/locafero/compare/v0.7.0...v0.11.0" target="_blank">v0.7.0 → v0.11.0</a></li>
+<li>github.com/sourcegraph/conc: <a href="https://github.com/sourcegraph/conc/compare/v0.3.0...5f936ab" target="_blank">v0.3.0 → 5f936ab</a></li>
+<li>github.com/spf13/afero: <a href="https://github.com/spf13/afero/compare/v1.12.0...v1.15.0" target="_blank">v1.12.0 → v1.15.0</a></li>
+<li>github.com/spf13/cast: <a href="https://github.com/spf13/cast/compare/v1.7.1...v1.10.0" target="_blank">v1.7.1 → v1.10.0</a></li>
+<li>github.com/spf13/cobra: <a href="https://github.com/spf13/cobra/compare/v1.9.1...v1.10.1" target="_blank">v1.9.1 → v1.10.1</a></li>
+<li>github.com/spf13/pflag: <a href="https://github.com/spf13/pflag/compare/v1.0.7...v1.0.10" target="_blank">v1.0.7 → v1.0.10</a></li>
+<li>github.com/spf13/viper: <a href="https://github.com/spf13/viper/compare/v1.20.1...v1.21.0" target="_blank">v1.20.1 → v1.21.0</a></li>
+<li>github.com/stretchr/testify: <a href="https://github.com/stretchr/testify/compare/v1.10.0...v1.11.1" target="_blank">v1.10.0 → v1.11.1</a></li>
+<li>go.etcd.io/bbolt: v1.3.11 → v1.4.2</li>
+<li>go.etcd.io/etcd/api/v3: v3.5.22 → v3.6.6</li>
+<li>go.etcd.io/etcd/client/pkg/v3: v3.5.22 → v3.6.6</li>
+<li>go.etcd.io/etcd/client/v3: v3.5.22 → v3.6.6</li>
+<li>go.etcd.io/etcd/pkg/v3: v3.5.21 → v3.6.4</li>
+<li>go.etcd.io/etcd/server/v3: v3.5.21 → v3.6.4</li>
+<li>go.opencensus.io: v0.24.0 → v0.22.3</li>
+<li>go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc: v0.58.0 → v0.60.0</li>
+<li>go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc: v1.33.0 → v1.34.0</li>
+<li>go.opentelemetry.io/otel/exporters/otlp/otlptrace: v1.33.0 → v1.34.0</li>
+<li>go.opentelemetry.io/otel/metric: v1.34.0 → v1.35.0</li>
+<li>go.opentelemetry.io/otel/trace: v1.34.0 → v1.35.0</li>
+<li>go.opentelemetry.io/otel: v1.34.0 → v1.35.0</li>
+<li>go.opentelemetry.io/proto/otlp: v1.4.0 → v1.5.0</li>
+<li>go.uber.org/zap: v1.27.0 → v1.27.1</li>
+<li>go.yaml.in/yaml/v3: v3.0.3 → v3.0.4</li>
+<li>golang.org/x/crypto: v0.40.0 → v0.45.0</li>
+<li>golang.org/x/mod: v0.25.0 → v0.29.0</li>
+<li>golang.org/x/net: v0.42.0 → v0.47.0</li>
+<li>golang.org/x/oauth2: v0.30.0 → v0.33.0</li>
+<li>golang.org/x/sync: v0.16.0 → v0.18.0</li>
+<li>golang.org/x/sys: v0.34.0 → v0.38.0</li>
+<li>golang.org/x/telemetry: bda5523 → 078029d</li>
+<li>golang.org/x/term: v0.33.0 → v0.37.0</li>
+<li>golang.org/x/text: v0.27.0 → v0.31.0</li>
+<li>golang.org/x/tools: v0.34.0 → v0.38.0</li>
+<li>google.golang.org/api: v0.215.0 → v0.17.0</li>
+<li>google.golang.org/genproto/googleapis/api: 5f5ef82 → a0af3ef</li>
+<li>google.golang.org/genproto/googleapis/rpc: 1a7da9e → a0af3ef</li>
+<li>google.golang.org/genproto: e639e21 → 66ed5ce</li>
+<li>google.golang.org/grpc: v1.71.3 → v1.72.3</li>
+<li>google.golang.org/protobuf: v1.36.6 → v1.36.7</li>
+<li>k8s.io/api: v0.33.3 → v0.34.2</li>
+<li>k8s.io/apiextensions-apiserver: v0.33.3 → v0.34.2</li>
+<li>k8s.io/apimachinery: v0.33.3 → v0.34.2</li>
+<li>k8s.io/apiserver: v0.33.3 → v0.34.2</li>
+<li>k8s.io/client-go: v0.33.3 → v0.34.2</li>
+<li>k8s.io/cluster-bootstrap: v0.33.3 → v0.34.2</li>
+<li>k8s.io/code-generator: v0.33.3 → v0.34.2</li>
+<li>k8s.io/component-base: v0.33.3 → v0.34.2</li>
+<li>k8s.io/gengo/v2: 1244d31 → 85fd79d</li>
+<li>k8s.io/kms: v0.33.3 → v0.34.2</li>
+<li>k8s.io/kube-openapi: c8a335a → f3f2b99</li>
+<li>k8s.io/utils: 3ea5e8c → 4c0f3b2</li>
+<li>sigs.k8s.io/controller-runtime: v0.21.0 → v0.22.4</li>
+<li>sigs.k8s.io/json: 9aa6b5e → cfa47c3</li>
+</ul>
+
+<h3 id="removed-1">Removed</h3>
+
+<ul>
+<li>cloud.google.com/go/auth/oauth2adapt: v0.2.6</li>
+<li>cloud.google.com/go/auth: v0.13.0</li>
+<li>cloud.google.com/go/iam: v1.2.2</li>
+<li>cloud.google.com/go/monitoring: v1.21.2</li>
+<li>github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric: <a href="https://github.com/GoogleCloudPlatform/opentelemetry-operations-go/tree/exporter/metric/v0.48.1" target="_blank">v0.48.1</a></li>
+<li>github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping: <a href="https://github.com/GoogleCloudPlatform/opentelemetry-operations-go/tree/internal/resourcemapping/v0.48.1" target="_blank">v0.48.1</a></li>
+<li>github.com/golang-jwt/jwt/v4: <a href="https://github.com/golang-jwt/jwt/tree/v4.5.2" target="_blank">v4.5.2</a></li>
+<li>github.com/google/s2a-go: <a href="https://github.com/google/s2a-go/tree/v0.1.8" target="_blank">v0.1.8</a></li>
+<li>github.com/googleapis/enterprise-certificate-proxy: <a href="https://github.com/googleapis/enterprise-certificate-proxy/tree/v0.3.4" target="_blank">v0.3.4</a></li>
+<li>github.com/grpc-ecosystem/go-grpc-middleware: <a href="https://github.com/grpc-ecosystem/go-grpc-middleware/tree/v1.3.0" target="_blank">v1.3.0</a></li>
+<li>github.com/grpc-ecosystem/grpc-gateway: <a href="https://github.com/grpc-ecosystem/grpc-gateway/tree/v1.16.0" target="_blank">v1.16.0</a></li>
+<li>github.com/kr/fs: <a href="https://github.com/kr/fs/tree/v0.1.0" target="_blank">v0.1.0</a></li>
+<li>github.com/pkg/sftp: <a href="https://github.com/pkg/sftp/tree/v1.13.7" target="_blank">v1.13.7</a></li>
+<li>github.com/prashantv/gostub: <a href="https://github.com/prashantv/gostub/tree/v1.1.0" target="_blank">v1.1.0</a></li>
+<li>go.etcd.io/etcd/client/v2: v2.305.21</li>
+<li>go.etcd.io/etcd/raft/v3: v3.5.21</li>
+<li>go.uber.org/atomic: v1.9.0</li>
+<li>sigs.k8s.io/structured-merge-diff/v4: v4.6.0</li>
+</ul>
+
+<p></details>
+<br/>
+<em>Thanks to all our contributors!</em> 😊</p>
+<br><h2>prometheus/prometheus</h2> <h3>Release notes for 3.8.0 / 2025-11-28</h3><h4>2025-12-02</h4><h2 id="note-for-users-of-native-histograms">Note for users of Native Histograms</h2>
+
+<p>This is the first release with Native Histograms as a stable feature. However, scraping Native Histograms has to be activated explicitly via the <code>scrape_native_histograms</code> config setting (newly introduced in this release). To ease the transition, the <code>--enable-feature=native-histograms</code> flag is not a complete no-op in this release, but changes the default value of <code>scrape_native_histograms</code> to <code>true</code>. In the next release (v3.9), the feature flag <em>will</em> be a complete no-op, and the default value of <code>scrape_native_histograms</code> will always be <code>false</code>. If you have been using the feature flag so far, the recommended course of action is the following:</p>
+
+<ol>
+<li>Upgrade to v3.8 and keep the feature flag. Everything should work as before.</li>
+<li>At your own pace, set <code>scrape_native_histograms</code> to <code>true</code> in all relevant scrape configs. (There is a global and a per-scrape-config version of  <code>scrape_native_histograms</code>, allowing granular control if needed. It is a good idea to also set <code>scrape_native_histograms</code> explicitly to <code>false</code> where you do not want to scrape Native Histograms. In this way, you do not depend on the default value of the setting anymore.)</li>
+<li>Remove the feature flag and make sure that everything still works as intended.</li>
+<li>Now you are ready for an upgrade to the next release (v3.9).</li>
+</ol>
+
+<h2 id="changelog">Changelog</h2>
+
+<ul>
+<li>[CHANGE] Remote-write 2 (receiving): Update to <a href="https://github.com/prometheus/docs/blob/60c24e450010df38cfcb4f65df874f6f9b26dbcb/docs/specs/prw/remote_write_spec_2_0.md" target="_blank">2.0-rc.4 spec</a>. &ldquo;created timestamp&rdquo; (CT) is now called &ldquo;start timestamp&rdquo; (ST). #17411</li>
+<li>[CHANGE] TSDB: Native Histogram Custom Bounds with a NaN threshold are now rejected. #17287</li>
+<li>[FEATURE] OAuth2: support jwt-bearer grant-type (RFC7523 3.1). #17592</li>
+<li>[FEATURE] Dockerfile: Add OpenContainers spec labels to Dockerfile. #16483</li>
+<li>[FEATURE] SD: Add unified AWS service discovery for ec2, lightsail and ecs services. #17046</li>
+<li>[FEATURE] Native histograms are now a stable, but optional feature, use the <code>scrape_native_histograms</code> config setting. #17232 #17315</li>
+<li>[FEATURE] UI: Support anchored and smoothed keyword in promql editor. #17239</li>
+<li>[FEATURE] UI: Show detailed relabeling steps for each discovered target. #17337</li>
+<li>[FEATURE] Alerting: Add urlQueryEscape to template functions. #17403</li>
+<li>[FEATURE] Promtool: Add  Remote-Write 2.0 support to <code>promtool push metrics</code> via the <code>--protobuf_message</code> flag. #17417</li>
+<li>[ENHANCEMENT] Clarify the docs about handling negative native histograms.  #17249</li>
+<li>[ENHANCEMENT] Mixin: Add static UID to the remote-write dashboard. #17256</li>
+<li>[ENHANCEMENT] PromQL: Reconcile mismatched NHCB bounds in <code>Add</code> and <code>Sub</code>. #17278</li>
+<li>[ENHANCEMENT] Alerting: Add &ldquo;unknown&rdquo; state for alerting rules that haven&rsquo;t been evaluated yet. #17282</li>
+<li>[ENHANCEMENT] Scrape: Allow simultaneous use of classic histogram → NHCB conversion and zero-timestamp ingestion. #17305</li>
+<li>[ENHANCEMENT] UI: Add smoothed/anchored in explain. #17334</li>
+<li>[ENHANCEMENT] OTLP: De-duplicate any <code>target_info</code> samples with the same timestamp for the same series. #17400</li>
+<li>[ENHANCEMENT] Document <code>use_fips_sts_endpoint</code> in <code>sigv4</code> config sections. #17304</li>
+<li>[ENHANCEMENT] Document Prometheus Agent. #14519</li>
+<li>[PERF] PromQL: Speed up parsing of variadic functions. #17316</li>
+<li>[PERF] UI: Speed up alerts/rules/&hellip; pages by not rendering collapsed content. #17485</li>
+<li>[PERF] UI: Performance improvement when getting label name and values in promql editor. #17194</li>
+<li>[PERF] UI: Speed up /alerts for many firing alerts via virtual scrolling.  #17254</li>
+<li>[BUGFIX] PromQL: Fix slice indexing bug in info function on churning series. #17199</li>
+<li>[BUGFIX] API: Reduce lock contention on <code>/api/v1/targets</code>. #17306</li>
+<li>[BUGFIX] PromQL: Consistent handling of gauge vs. counter histograms in aggregations. #17312</li>
+<li>[BUGFIX] TSDB: Allow NHCB with -Inf as the first custom value. #17320</li>
+<li>[BUGFIX] UI: Fix duplicate loading of data from the API speed up rendering of some pages. #17357</li>
+<li>[BUGFIX] Old UI: Fix createExpressionLink to correctly build /graph URLs so links from Alerts/Rules work again. #17365</li>
+<li>[BUGFIX] PromQL: Avoid panic when parsing malformed <code>info</code> call. #17379</li>
+<li>[BUGFIX] PromQL: Include histograms when enforcing sample_limit. #17390</li>
+<li>[BUGFIX] Config: Fix panic if TLS CA file is absent. #17418</li>
+<li>[BUGFIX] PromQL: Fix <code>histogram_fraction</code> for classic histograms and NHCB if lower bound is in the first bucket. #17424</li>
+</ul>
+<br><h2>cri-o/cri-o</h2> <h3>Release notes for v1.34.3</h3><h4>2025-12-02</h4><ul>
+<li><a href="#cri-o-v1343">CRI-O v1.34.3</a>
+
+<ul>
+<li><a href="#downloads">Downloads</a></li>
+<li><a href="#changelog-since-v1342">Changelog since v1.34.2</a>
+
+<ul>
+<li><a href="#changes-by-kind">Changes by Kind</a>
+
+<ul>
+<li><a href="#feature">Feature</a></li>
+<li><a href="#bug-or-regression">Bug or Regression</a></li>
+<li><a href="#uncategorized">Uncategorized</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a>
+
+<ul>
+<li><a href="#added">Added</a></li>
+<li><a href="#changed">Changed</a></li>
+<li><a href="#removed">Removed</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="cri-o-v1-34-3">CRI-O v1.34.3</h1>
+
+<p>The release notes have been generated for the commit range
+<a href="https://github.com/cri-o/cri-o/compare/v1.34.2...v1.34.3" target="_blank">v1.34.2&hellip;v1.34.3</a> on Tue, 02 Dec 2025 00:25:30 UTC.</p>
+
+<h2 id="downloads">Downloads</h2>
+
+<p>Download one of our static release bundles via our Google Cloud Bucket:</p>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.3.tar.gz" target="_blank">cri-o.amd64.v1.34.3.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.3.tar.gz.sha256sum" target="_blank">cri-o.amd64.v1.34.3.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.3.tar.gz.sig" target="_blank">cri-o.amd64.v1.34.3.tar.gz.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.3.tar.gz.cert" target="_blank">cri-o.amd64.v1.34.3.tar.gz.cert</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.3.tar.gz.spdx" target="_blank">cri-o.amd64.v1.34.3.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.3.tar.gz.spdx.sig" target="_blank">cri-o.amd64.v1.34.3.tar.gz.spdx.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.3.tar.gz.spdx.cert" target="_blank">cri-o.amd64.v1.34.3.tar.gz.spdx.cert</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.3.tar.gz" target="_blank">cri-o.arm64.v1.34.3.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.3.tar.gz.sha256sum" target="_blank">cri-o.arm64.v1.34.3.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.3.tar.gz.sig" target="_blank">cri-o.arm64.v1.34.3.tar.gz.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.3.tar.gz.cert" target="_blank">cri-o.arm64.v1.34.3.tar.gz.cert</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.3.tar.gz.spdx" target="_blank">cri-o.arm64.v1.34.3.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.3.tar.gz.spdx.sig" target="_blank">cri-o.arm64.v1.34.3.tar.gz.spdx.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.3.tar.gz.spdx.cert" target="_blank">cri-o.arm64.v1.34.3.tar.gz.spdx.cert</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.3.tar.gz" target="_blank">cri-o.ppc64le.v1.34.3.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.3.tar.gz.sha256sum" target="_blank">cri-o.ppc64le.v1.34.3.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.3.tar.gz.sig" target="_blank">cri-o.ppc64le.v1.34.3.tar.gz.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.3.tar.gz.cert" target="_blank">cri-o.ppc64le.v1.34.3.tar.gz.cert</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.3.tar.gz.spdx" target="_blank">cri-o.ppc64le.v1.34.3.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.3.tar.gz.spdx.sig" target="_blank">cri-o.ppc64le.v1.34.3.tar.gz.spdx.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.3.tar.gz.spdx.cert" target="_blank">cri-o.ppc64le.v1.34.3.tar.gz.spdx.cert</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.3.tar.gz" target="_blank">cri-o.s390x.v1.34.3.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.3.tar.gz.sha256sum" target="_blank">cri-o.s390x.v1.34.3.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.3.tar.gz.sig" target="_blank">cri-o.s390x.v1.34.3.tar.gz.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.3.tar.gz.cert" target="_blank">cri-o.s390x.v1.34.3.tar.gz.cert</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.3.tar.gz.spdx" target="_blank">cri-o.s390x.v1.34.3.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.3.tar.gz.spdx.sig" target="_blank">cri-o.s390x.v1.34.3.tar.gz.spdx.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.3.tar.gz.spdx.cert" target="_blank">cri-o.s390x.v1.34.3.tar.gz.spdx.cert</a></li>
+</ul></li>
+</ul>
+
+<p>To verify the artifact signatures via <a href="https://github.com/sigstore/cosign" target="_blank">cosign</a>, run:</p>
+
+<pre><code class="language-console">&gt; export COSIGN_EXPERIMENTAL=1
+&gt; cosign verify-blob cri-o.amd64.v1.34.3.tar.gz \
+    --certificate-identity https://github.com/cri-o/packaging/.github/workflows/obs.yml@refs/heads/main \
+    --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+    --certificate-github-workflow-repository cri-o/packaging \
+    --certificate-github-workflow-ref refs/heads/main \
+    --signature cri-o.amd64.v1.34.3.tar.gz.sig \
+    --certificate cri-o.amd64.v1.34.3.tar.gz.cert
+</code></pre>
+
+<p>To verify the bill of materials (SBOM) in <a href="https://spdx.org" target="_blank">SPDX</a> format using the <a href="https://sigs.k8s.io/bom" target="_blank">bom</a> tool, run:</p>
+
+<pre><code class="language-console">&gt; tar xfz cri-o.amd64.v1.34.3.tar.gz
+&gt; bom validate -e cri-o.amd64.v1.34.3.tar.gz.spdx -d cri-o
+</code></pre>
+
+<h2 id="changelog-since-v1-34-2">Changelog since v1.34.2</h2>
+
+<h3 id="changes-by-kind">Changes by Kind</h3>
+
+<h4 id="feature">Feature</h4>
+
+<ul>
+<li>Add support for the credential provider: <a href="https://github.com/cri-o/crio-credential-provider" target="_blank">https://github.com/cri-o/crio-credential-provider</a> (#9512, @saschagrunert)</li>
+</ul>
+
+<h4 id="bug-or-regression">Bug or Regression</h4>
+
+<ul>
+<li>Fixed CVE-2025-58183: Updated tar-split to v0.12.2 to fix unbounded memory allocation vulnerability when parsing malicious container images with GNU sparse tar files. (#9590, @saschagrunert)</li>
+</ul>
+
+<h4 id="uncategorized">Uncategorized</h4>
+
+<ul>
+<li>This commit introduces a new <code>housekeeping</code> value for the <code>irq-load-balancing.crio.io</code> annotation.</li>
+</ul>
+
+<p>When <code>housekeeping</code> is set:</p>
+
+<ul>
+<li>The housekeeping CPU set is injected into the container&rsquo;s environment variables as <code>OPENSHIFT_HOUSEKEEPING_CPUS</code></li>
+<li>IRQ SMP affinity bits are not disabled on the housekeeping CPUs when adding a new container</li>
+<li>The housekeeping CPUs are chosen as the first CPU within each container plus its thread siblings (#9564, @openshift-cherrypick-robot)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<ul>
+<li>github.com/cri-o/crio-credential-provider: <a href="https://github.com/cri-o/crio-credential-provider/tree/v0.1.1" target="_blank">v0.1.1</a></li>
+<li>github.com/joho/godotenv: <a href="https://github.com/joho/godotenv/tree/v1.5.1" target="_blank">v1.5.1</a></li>
+<li>go.podman.io/image/v5: v5.37.0</li>
+<li>go.podman.io/storage: v1.60.0</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>github.com/containers/storage: <a href="https://github.com/containers/storage/compare/v1.59.1...606f1e4" target="_blank">v1.59.1 → 606f1e4</a></li>
+<li>github.com/golang-jwt/jwt/v5: <a href="https://github.com/golang-jwt/jwt/compare/v5.2.2...v5.3.0" target="_blank">v5.2.2 → v5.3.0</a></li>
+<li>github.com/vbatts/tar-split: <a href="https://github.com/vbatts/tar-split/compare/v0.12.1...v0.12.2" target="_blank">v0.12.1 → v0.12.2</a></li>
+<li>k8s.io/api: v0.34.0 → v0.34.1</li>
+<li>k8s.io/apimachinery: v0.34.0 → v0.34.1</li>
+<li>k8s.io/apiserver: v0.34.0 → v0.34.1</li>
+<li>k8s.io/client-go: v0.34.0 → v0.34.1</li>
+<li>k8s.io/component-base: v0.34.0 → v0.34.1</li>
+<li>k8s.io/cri-api: v0.34.0 → v0.34.1</li>
+<li>k8s.io/kms: v0.34.0 → v0.34.1</li>
+<li>k8s.io/kubelet: v0.34.0 → v0.34.1</li>
+</ul>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+<br><h3>Release notes for v1.33.7</h3><h4>2025-12-02</h4><ul>
+<li><a href="#cri-o-v1337">CRI-O v1.33.7</a>
+
+<ul>
+<li><a href="#downloads">Downloads</a></li>
+<li><a href="#changelog-since-v1336">Changelog since v1.33.6</a>
+
+<ul>
+<li><a href="#changes-by-kind">Changes by Kind</a>
+
+<ul>
+<li><a href="#bug-or-regression">Bug or Regression</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a>
+
+<ul>
+<li><a href="#added">Added</a></li>
+<li><a href="#changed">Changed</a></li>
+<li><a href="#removed">Removed</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="cri-o-v1-33-7">CRI-O v1.33.7</h1>
+
+<p>The release notes have been generated for the commit range
+<a href="https://github.com/cri-o/cri-o/compare/v1.33.6...v1.33.7" target="_blank">v1.33.6&hellip;v1.33.7</a> on Tue, 02 Dec 2025 00:25:28 UTC.</p>
+
+<h2 id="downloads">Downloads</h2>
+
+<p>Download one of our static release bundles via our Google Cloud Bucket:</p>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.33.7.tar.gz" target="_blank">cri-o.amd64.v1.33.7.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.33.7.tar.gz.sha256sum" target="_blank">cri-o.amd64.v1.33.7.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.33.7.tar.gz.sig" target="_blank">cri-o.amd64.v1.33.7.tar.gz.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.33.7.tar.gz.cert" target="_blank">cri-o.amd64.v1.33.7.tar.gz.cert</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.33.7.tar.gz.spdx" target="_blank">cri-o.amd64.v1.33.7.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.33.7.tar.gz.spdx.sig" target="_blank">cri-o.amd64.v1.33.7.tar.gz.spdx.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.33.7.tar.gz.spdx.cert" target="_blank">cri-o.amd64.v1.33.7.tar.gz.spdx.cert</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.33.7.tar.gz" target="_blank">cri-o.arm64.v1.33.7.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.33.7.tar.gz.sha256sum" target="_blank">cri-o.arm64.v1.33.7.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.33.7.tar.gz.sig" target="_blank">cri-o.arm64.v1.33.7.tar.gz.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.33.7.tar.gz.cert" target="_blank">cri-o.arm64.v1.33.7.tar.gz.cert</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.33.7.tar.gz.spdx" target="_blank">cri-o.arm64.v1.33.7.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.33.7.tar.gz.spdx.sig" target="_blank">cri-o.arm64.v1.33.7.tar.gz.spdx.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.33.7.tar.gz.spdx.cert" target="_blank">cri-o.arm64.v1.33.7.tar.gz.spdx.cert</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.33.7.tar.gz" target="_blank">cri-o.ppc64le.v1.33.7.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.33.7.tar.gz.sha256sum" target="_blank">cri-o.ppc64le.v1.33.7.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.33.7.tar.gz.sig" target="_blank">cri-o.ppc64le.v1.33.7.tar.gz.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.33.7.tar.gz.cert" target="_blank">cri-o.ppc64le.v1.33.7.tar.gz.cert</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.33.7.tar.gz.spdx" target="_blank">cri-o.ppc64le.v1.33.7.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.33.7.tar.gz.spdx.sig" target="_blank">cri-o.ppc64le.v1.33.7.tar.gz.spdx.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.33.7.tar.gz.spdx.cert" target="_blank">cri-o.ppc64le.v1.33.7.tar.gz.spdx.cert</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.33.7.tar.gz" target="_blank">cri-o.s390x.v1.33.7.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.33.7.tar.gz.sha256sum" target="_blank">cri-o.s390x.v1.33.7.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.33.7.tar.gz.sig" target="_blank">cri-o.s390x.v1.33.7.tar.gz.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.33.7.tar.gz.cert" target="_blank">cri-o.s390x.v1.33.7.tar.gz.cert</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.33.7.tar.gz.spdx" target="_blank">cri-o.s390x.v1.33.7.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.33.7.tar.gz.spdx.sig" target="_blank">cri-o.s390x.v1.33.7.tar.gz.spdx.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.33.7.tar.gz.spdx.cert" target="_blank">cri-o.s390x.v1.33.7.tar.gz.spdx.cert</a></li>
+</ul></li>
+</ul>
+
+<p>To verify the artifact signatures via <a href="https://github.com/sigstore/cosign" target="_blank">cosign</a>, run:</p>
+
+<pre><code class="language-console">&gt; export COSIGN_EXPERIMENTAL=1
+&gt; cosign verify-blob cri-o.amd64.v1.33.7.tar.gz \
+    --certificate-identity https://github.com/cri-o/cri-o/.github/workflows/test.yml@refs/tags/v1.33.7 \
+    --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+    --certificate-github-workflow-repository cri-o/cri-o \
+    --certificate-github-workflow-ref refs/tags/v1.33.7 \
+    --signature cri-o.amd64.v1.33.7.tar.gz.sig \
+    --certificate cri-o.amd64.v1.33.7.tar.gz.cert
+</code></pre>
+
+<p>To verify the bill of materials (SBOM) in <a href="https://spdx.org" target="_blank">SPDX</a> format using the <a href="https://sigs.k8s.io/bom" target="_blank">bom</a> tool, run:</p>
+
+<pre><code class="language-console">&gt; tar xfz cri-o.amd64.v1.33.7.tar.gz
+&gt; bom validate -e cri-o.amd64.v1.33.7.tar.gz.spdx -d cri-o
+</code></pre>
+
+<h2 id="changelog-since-v1-33-6">Changelog since v1.33.6</h2>
+
+<h3 id="changes-by-kind">Changes by Kind</h3>
+
+<h4 id="bug-or-regression">Bug or Regression</h4>
+
+<ul>
+<li>Fixed CVE-2025-58183: Updated tar-split to v0.12.2 to fix unbounded memory allocation vulnerability when parsing malicious container images with GNU sparse tar files. (#9591, @saschagrunert)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+<br><h3>Release notes for v1.32.11</h3><h4>2025-12-02</h4><ul>
+<li><a href="#cri-o-v13211">CRI-O v1.32.11</a>
+
+<ul>
+<li><a href="#downloads">Downloads</a></li>
+<li><a href="#changelog-since-v13210">Changelog since v1.32.10</a>
+
+<ul>
+<li><a href="#changes-by-kind">Changes by Kind</a>
+
+<ul>
+<li><a href="#bug-or-regression">Bug or Regression</a></li>
+<li><a href="#uncategorized">Uncategorized</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a>
+
+<ul>
+<li><a href="#added">Added</a></li>
+<li><a href="#changed">Changed</a></li>
+<li><a href="#removed">Removed</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="cri-o-v1-32-11">CRI-O v1.32.11</h1>
+
+<p>The release notes have been generated for the commit range
+<a href="https://github.com/cri-o/cri-o/compare/v1.32.10...v1.32.11" target="_blank">v1.32.10&hellip;v1.32.11</a> on Tue, 02 Dec 2025 00:25:32 UTC.</p>
+
+<h2 id="downloads">Downloads</h2>
+
+<p>Download one of our static release bundles via our Google Cloud Bucket:</p>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.32.11.tar.gz" target="_blank">cri-o.amd64.v1.32.11.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.32.11.tar.gz.sha256sum" target="_blank">cri-o.amd64.v1.32.11.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.32.11.tar.gz.sig" target="_blank">cri-o.amd64.v1.32.11.tar.gz.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.32.11.tar.gz.cert" target="_blank">cri-o.amd64.v1.32.11.tar.gz.cert</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.32.11.tar.gz.spdx" target="_blank">cri-o.amd64.v1.32.11.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.32.11.tar.gz.spdx.sig" target="_blank">cri-o.amd64.v1.32.11.tar.gz.spdx.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.32.11.tar.gz.spdx.cert" target="_blank">cri-o.amd64.v1.32.11.tar.gz.spdx.cert</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.32.11.tar.gz" target="_blank">cri-o.arm64.v1.32.11.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.32.11.tar.gz.sha256sum" target="_blank">cri-o.arm64.v1.32.11.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.32.11.tar.gz.sig" target="_blank">cri-o.arm64.v1.32.11.tar.gz.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.32.11.tar.gz.cert" target="_blank">cri-o.arm64.v1.32.11.tar.gz.cert</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.32.11.tar.gz.spdx" target="_blank">cri-o.arm64.v1.32.11.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.32.11.tar.gz.spdx.sig" target="_blank">cri-o.arm64.v1.32.11.tar.gz.spdx.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.32.11.tar.gz.spdx.cert" target="_blank">cri-o.arm64.v1.32.11.tar.gz.spdx.cert</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.32.11.tar.gz" target="_blank">cri-o.ppc64le.v1.32.11.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.32.11.tar.gz.sha256sum" target="_blank">cri-o.ppc64le.v1.32.11.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.32.11.tar.gz.sig" target="_blank">cri-o.ppc64le.v1.32.11.tar.gz.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.32.11.tar.gz.cert" target="_blank">cri-o.ppc64le.v1.32.11.tar.gz.cert</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.32.11.tar.gz.spdx" target="_blank">cri-o.ppc64le.v1.32.11.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.32.11.tar.gz.spdx.sig" target="_blank">cri-o.ppc64le.v1.32.11.tar.gz.spdx.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.32.11.tar.gz.spdx.cert" target="_blank">cri-o.ppc64le.v1.32.11.tar.gz.spdx.cert</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.32.11.tar.gz" target="_blank">cri-o.s390x.v1.32.11.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.32.11.tar.gz.sha256sum" target="_blank">cri-o.s390x.v1.32.11.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.32.11.tar.gz.sig" target="_blank">cri-o.s390x.v1.32.11.tar.gz.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.32.11.tar.gz.cert" target="_blank">cri-o.s390x.v1.32.11.tar.gz.cert</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.32.11.tar.gz.spdx" target="_blank">cri-o.s390x.v1.32.11.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.32.11.tar.gz.spdx.sig" target="_blank">cri-o.s390x.v1.32.11.tar.gz.spdx.sig</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.32.11.tar.gz.spdx.cert" target="_blank">cri-o.s390x.v1.32.11.tar.gz.spdx.cert</a></li>
+</ul></li>
+</ul>
+
+<p>To verify the artifact signatures via <a href="https://github.com/sigstore/cosign" target="_blank">cosign</a>, run:</p>
+
+<pre><code class="language-console">&gt; export COSIGN_EXPERIMENTAL=1
+&gt; cosign verify-blob cri-o.amd64.v1.32.11.tar.gz \
+    --certificate-identity https://github.com/cri-o/cri-o/.github/workflows/test.yml@refs/tags/v1.32.11 \
+    --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+    --certificate-github-workflow-repository cri-o/cri-o \
+    --certificate-github-workflow-ref refs/tags/v1.32.11 \
+    --signature cri-o.amd64.v1.32.11.tar.gz.sig \
+    --certificate cri-o.amd64.v1.32.11.tar.gz.cert
+</code></pre>
+
+<p>To verify the bill of materials (SBOM) in <a href="https://spdx.org" target="_blank">SPDX</a> format using the <a href="https://sigs.k8s.io/bom" target="_blank">bom</a> tool, run:</p>
+
+<pre><code class="language-console">&gt; tar xfz cri-o.amd64.v1.32.11.tar.gz
+&gt; bom validate -e cri-o.amd64.v1.32.11.tar.gz.spdx -d cri-o
+</code></pre>
+
+<h2 id="changelog-since-v1-32-10">Changelog since v1.32.10</h2>
+
+<h3 id="changes-by-kind">Changes by Kind</h3>
+
+<h4 id="bug-or-regression">Bug or Regression</h4>
+
+<ul>
+<li>Fixed CVE-2025-58183: Updated tar-split to v0.12.2 to fix unbounded memory allocation vulnerability when parsing malicious container images with GNU sparse tar files. (#9592, @saschagrunert)</li>
+</ul>
+
+<h4 id="uncategorized">Uncategorized</h4>
+
+<ul>
+<li>Server: Fix network cleanup failures when NetNS path is empty (#9617, @openshift-cherrypick-robot)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+<br>
+</body>
+
+</html>
