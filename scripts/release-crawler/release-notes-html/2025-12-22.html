@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2025-12-15 - 2025-12-22</h1><h2>containerd/containerd</h2> <h3>Release notes for containerd 2.2.1</h3><h4>2025-12-18</h4><p>Welcome to the v2.2.1 release of containerd!</p>
+
+<p>The first patch release for containerd 2.2 contains various fixes and improvements.</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<h4 id="container-runtime-interface-cri">Container Runtime Interface (CRI)</h4>
+
+<ul>
+<li><strong>Redact all query parameters in CRI error logs</strong> (<a href="https://github.com/containerd/containerd/pull/12546" target="_blank">#12546</a>)</li>
+</ul>
+
+<h4 id="image-distribution">Image Distribution</h4>
+
+<ul>
+<li><strong>Fix image defaults on Darwin to usable configuration</strong> (<a href="https://github.com/containerd/containerd/pull/12544" target="_blank">#12544</a>)</li>
+<li><strong>Fix possible panic from WithMediaTypeKeyPrefix</strong> (<a href="https://github.com/containerd/containerd/pull/12516" target="_blank">#12516</a>)</li>
+</ul>
+
+<h4 id="runtime">Runtime</h4>
+
+<ul>
+<li><strong>Update runc binary to v1.3.4</strong> (<a href="https://github.com/containerd/containerd/pull/12593" target="_blank">#12593</a>)</li>
+<li><strong>Fix parsing of hugetlb.<size>.events files</strong> (<a href="https://github.com/containerd/cgroups/pull/379" target="_blank">containerd/cgroups#379</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Krisztian Litkey</li>
+<li>Markus Lehtonen</li>
+<li>Akihiro Suda</li>
+<li>Mike Brown</li>
+<li>Sebastiaan van Stijn</li>
+<li>Derek McGowan</li>
+<li>Heran Yang</li>
+<li>Wei Fu</li>
+<li>Phil Estes</li>
+<li>Samuel Karp</li>
+<li>Austin Vazquez</li>
+<li>Sascha Grunert</li>
+<li>Akhil Mohan</li>
+<li>Andrey Noskov</li>
+<li>Brian Goff</li>
+<li>CrazyMax</li>
+<li>Davanum Srinivas</li>
+<li>Gaurav Ghildiyal</li>
+<li>Neeraj Krishna Gopalakrishna</li>
+<li>Paweł Gronowski</li>
+<li>Tariq Ibrahim</li>
+<li>TomerLev</li>
+<li>Tõnis Tiigi</li>
+<li>bo.jiang</li>
+<li>ningmingxiao</li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<details><summary>53 commits</summary>
+<p>
+
+* Prepare release notes for v2.2.1 ([#12677](https://github.com/containerd/containerd/pull/12677))
+  * [`f6bae1f88`](https://github.com/containerd/containerd/commit/f6bae1f8807a099a0b101e584f1f8aabddab91a6) Prepare release notes for v2.2.1
+* cri,nri: bump NRI dependencies to v0.11.0 ([#12701](https://github.com/containerd/containerd/pull/12701))
+  * [`c22cf5d49`](https://github.com/containerd/containerd/commit/c22cf5d49819a2996f184db954c53c2060916314) cri,nri: pass any linux security profile to plugins.
+  * [`d7532de75`](https://github.com/containerd/containerd/commit/d7532de751f81eee4f03001bb46e49d76a1607fb) cri,nri: pass any linux RDT constraints to plugins.
+  * [`ef36e6181`](https://github.com/containerd/containerd/commit/ef36e6181456ebb9919d2a51d786f416f85f780b) cri,nri: pass any linux net devices to plugins.
+  * [`d56faf426`](https://github.com/containerd/containerd/commit/d56faf4261b5f946caa92c4869963f89f63a9b22) cri,nri: pass any linux scheduler attributes to plugins.
+  * [`e1824d261`](https://github.com/containerd/containerd/commit/e1824d2613d32793cf1fd7282f0b9f5f6f622613) cri,nri: pass any linux I/O priority to plugins.
+  * [`01d5490ae`](https://github.com/containerd/containerd/commit/01d5490ae26a05b1a73ca9e253761005c7286754) go.{mod,sum}: bump NRI deps to v0.11.0, re-vendor.
+* pkg/tracing: HTTPStatusCodeAttributes: remove use of deprecated SemConv const ([#12697](https://github.com/containerd/containerd/pull/12697))
+  * [`58d23ab63`](https://github.com/containerd/containerd/commit/58d23ab63830dc41d7c2e1035a9c0a7a28b6fed2) pkg/tracing: HTTPStatusCodeAttributes: remove use of deprecated SemConv const
+* cri/nri: short-circuit nil adjustment. ([#12672](https://github.com/containerd/containerd/pull/12672))
+  * [`05ccbb3a7`](https://github.com/containerd/containerd/commit/05ccbb3a7eb10a72427c722155a2eacdc2908a61) cri/nri: short-circuit nil adjustment.
+* go.{mod,sum}: bump CDI deps to v1.1.0. ([#12664](https://github.com/containerd/containerd/pull/12664))
+  * [`c166a577d`](https://github.com/containerd/containerd/commit/c166a577d0638de704d6c9f999858ed47cf06a60) go.{mod,sum} bump CDI deps to v1.1.0.
+* go.mod: containerd/zfs v2.0.0; remove exclude rules ([#12654](https://github.com/containerd/containerd/pull/12654))
+  * [`73a08aa00`](https://github.com/containerd/containerd/commit/73a08aa00dc98a0662a40d45ed50dac534dce1e6) go.mod: remove exclude rules
+  * [`cee08c8af`](https://github.com/containerd/containerd/commit/cee08c8af836002863b30e2ef8cd3c45b6ae56ad) build(deps): bump github.com/containerd/zfs/v2 from 2.0.0-rc.0 to 2.0.0
+* go.mod: github.com/containernetworking/plugins v1.9.0 ([#12658](https://github.com/containerd/containerd/pull/12658))
+  * [`8a5fc8641`](https://github.com/containerd/containerd/commit/8a5fc86416926d2a2189861391cd77b07d7f4443) go.mod: github.com/containernetworking/plugins v1.9.0
+* go.mod: golang.org/x/crypto v0.45.0 ([#12638](https://github.com/containerd/containerd/pull/12638))
+  * [`55c93d6fb`](https://github.com/containerd/containerd/commit/55c93d6fb85333d4988122b2ae97b947bcde02b7) go.mod: golang.org/x/crypto v0.45.0
+* ci :bump Go 1.24.11, 1.25.5 ([#12625](https://github.com/containerd/containerd/pull/12625))
+  * [`aedd29bb4`](https://github.com/containerd/containerd/commit/aedd29bb4ecabfae1d8806dc1011a347a3401fb2) ci: bump Go 1.24.11, 1.25.5
+  * [`26628f139`](https://github.com/containerd/containerd/commit/26628f1397f991a9ee2fe7de32a6a2df70ab89bd) ci: bump Go 1.24.10, 1.25.4
+  * [`8bb0e9be6`](https://github.com/containerd/containerd/commit/8bb0e9be6ceebc1ad1d76c88a661bacf84921b3d) ci(release): set GO_VERSION in Dockerfile
+* core/runtime/v2: remove uses of otelgrpc.UnaryClientInterceptor ([#12622](https://github.com/containerd/containerd/pull/12622))
+  * [`ed19c5420`](https://github.com/containerd/containerd/commit/ed19c542003cc00988760b0f72e487c20dc198a0) core/runtime/v2: remove uses of otelgrpc.UnaryClientInterceptor
+* ci: update CIFuzz actions to support Ubuntu 24.04 ([#12632](https://github.com/containerd/containerd/pull/12632))
+  * [`952237d9b`](https://github.com/containerd/containerd/commit/952237d9ba4390f4fa740f3832492e3870f0f9f9) ci: update CIFuzz actions to support Ubuntu 24.04
+* Update runc binary to v1.3.4 ([#12593](https://github.com/containerd/containerd/pull/12593))
+  * [`fb5b818a9`](https://github.com/containerd/containerd/commit/fb5b818a9a34ad4fe3b0901c73cd7432ae4bb8bc) runc: Update runc binary to v1.3.4
+* : update containerd/cgroups from v3.1.0 to v3.1.2 ([#12598](https://github.com/containerd/containerd/pull/12598))
+  * [`51582ed27`](https://github.com/containerd/containerd/commit/51582ed27b13941f6bbf1526d909a00deadfcc0f) bump containerd/cgroups to v3.1.2
+  * [`50d0e4fd4`](https://github.com/containerd/containerd/commit/50d0e4fd4cb909829d9965d9da5be04ee812fe29) build(deps): bump github.com/containerd/cgroups/v3 from 3.1.0 to 3.1.1
+* core/mount: should not call removeLoop when set autoclear ([#12587](https://github.com/containerd/containerd/pull/12587))
+  * [`41a69eb0d`](https://github.com/containerd/containerd/commit/41a69eb0d19cafbf40e03c36ef6be259a52d6f5e) core/mount: should not call removeLoop when set autoclear
+* build(deps): bump github.com/opencontainers/selinux ([#12589](https://github.com/containerd/containerd/pull/12589))
+  * [`e3bf2b80b`](https://github.com/containerd/containerd/commit/e3bf2b80b9ca3280fd64a2bd0436fcdb894c4410) build(deps): bump github.com/opencontainers/selinux
+* .github: skip 5 critest cases for window-2022 ([#12584](https://github.com/containerd/containerd/pull/12584))
+  * [`da8e846f9`](https://github.com/containerd/containerd/commit/da8e846f97a081f580eccc4a7384f3f050dd5b5e) .github: skip 5 critest cases in window CI pipeline
+* Fix image defaults on Darwin to usable configuration ([#12544](https://github.com/containerd/containerd/pull/12544))
+  * [`d154e234b`](https://github.com/containerd/containerd/commit/d154e234b29c5bed4f14a72d605e92e4728415a2) Update the ctr pull defaults when using the transfer service
+  * [`09364216d`](https://github.com/containerd/containerd/commit/09364216de92aab056118507da59fabf642d88ac) Fix transfer unpack defaults on darwin
+  * [`2055d3c62`](https://github.com/containerd/containerd/commit/2055d3c62e85350642c4b031c35a63b22e2ec6f7) Update default differs on darwin
+  * [`9da97686d`](https://github.com/containerd/containerd/commit/9da97686d151da046d5512bb9f7f1d67ea4c8393) Use default writable size in erofs snapshotter for non-Linux hosts
+  * [`eeb0f889a`](https://github.com/containerd/containerd/commit/eeb0f889aed826b58a3033a5a5b14dff6ccd1979) Update default erofs block size on macOS during erofs diff
+* Redact all query parameters in CRI error logs ([#12546](https://github.com/containerd/containerd/pull/12546))
+  * [`c707f771a`](https://github.com/containerd/containerd/commit/c707f771a872f9dd22ad8f2f827317a800e4a74f) fix: redact all query parameters in CRI error logs
+* Revert "Implement io.ReaderAt on docker fetch reader" ([#12542](https://github.com/containerd/containerd/pull/12542))
+  * [`678f944dd`](https://github.com/containerd/containerd/commit/678f944dd16601d08ecbb19e350acc027728b656) Revert "Implement io.ReaderAt on docker fetch reader"
+* Fix possible panic from WithMediaTypeKeyPrefix ([#12516](https://github.com/containerd/containerd/pull/12516))
+  * [`8b73c2de3`](https://github.com/containerd/containerd/commit/8b73c2de310e95fe3a143473b511fcf99d03692f) remotes: fix possible panic from WithMediaTypeKeyPrefix
+</p>
+</details>
+
+<h3 id="changes-from-containerd-cgroups">Changes from containerd/cgroups</h3>
+
+<details><summary>13 commits</summary>
+<p>
+
+* ci: bump golangci-lint to v2.6.2 ([containerd/cgroups#382](https://github.com/containerd/cgroups/pull/382))
+  * [`a302e56`](https://github.com/containerd/cgroups/commit/a302e56b258f818a3dacb6e282907904f17ea239) ci: bump golangci-lint to v2.6.2
+  * [`731cf7a`](https://github.com/containerd/cgroups/commit/731cf7a96296e8eccffe9b986aece85ec4ab9b5b) ci: suppress errcheck
+  * [`9bee663`](https://github.com/containerd/cgroups/commit/9bee663879fd7f5b873fa40f61a837309c4be8b0) utils: move Close() to defer block
+  * [`9d7647c`](https://github.com/containerd/cgroups/commit/9d7647ce3bae2f67cc4ecfe1df51796caba49d52) rdma: use strings.Cut in Go 1.18
+  * [`109f063`](https://github.com/containerd/cgroups/commit/109f063d1c6cefbc3def1a8e0a169b746f7f5f0a) memory_test: apply De Morgan's law
+  * [`e6fcf3f`](https://github.com/containerd/cgroups/commit/e6fcf3fda4200609bb6323428e2d1f24f712e62e) memory_test: omit type from declaration
+* build(deps): bump actions/checkout from 5 to 6 ([containerd/cgroups#381](https://github.com/containerd/cgroups/pull/381))
+  * [`4e30098`](https://github.com/containerd/cgroups/commit/4e3009894821335455c4b804600eb9667b818f81) build(deps): bump actions/checkout from 5 to 6
+* Fix parsing of hugetlb.<size>.events files ([containerd/cgroups#379](https://github.com/containerd/cgroups/pull/379))
+  * [`2ad7a12`](https://github.com/containerd/cgroups/commit/2ad7a1241827ef1bc4f964fe8a5248b073f2db82) hugetlb: correctly parse hugetlb.<size>.events files
+* go.mod: github.com/opencontainers/runtime-spec v1.3.0 ([containerd/cgroups#376](https://github.com/containerd/cgroups/pull/376))
+  * [`34ef430`](https://github.com/containerd/cgroups/commit/34ef430d727e569c31b4f2bbc7d83bffeb1c0165) go.mod: github.com/opencontainers/runtime-spec v1.3.0
+</p>
+</details>
+
+<h3 id="changes-from-containerd-nri">Changes from containerd/nri</h3>
+
+<details><summary>79 commits</summary>
+<p>
+
+* adaptation: allow compiling out WASM support altogether. ([containerd/nri#253](https://github.com/containerd/nri/pull/253))
+  * [`ab88fe6`](https://github.com/containerd/nri/commit/ab88fe680c11b35234c38c7d4eac72335721c78d) adaptation: allow compiling out WASM support altogether.
+* Support direct editing of the intelRdt config ([containerd/nri#215](https://github.com/containerd/nri/pull/215))
+  * [`8c0c9f6`](https://github.com/containerd/nri/commit/8c0c9f67a905fb24682239a4d6d94b0dd52c13e7) Implement removal of RDT
+  * [`dfbae8a`](https://github.com/containerd/nri/commit/dfbae8a616b80037798e3cfb8315d70f3f2eff7e) plugins: add sample rdt plugin
+  * [`d05dd81`](https://github.com/containerd/nri/commit/d05dd818ed26c3dbeae0fce88289387b62e4665c) pkg/adaptation: support new RDT fields
+  * [`725289b`](https://github.com/containerd/nri/commit/725289b256878de8e965327ab6e70dc883ea771b) pkg/runtime-tools/generate: support new RDT fields
+  * [`a7832a2`](https://github.com/containerd/nri/commit/a7832a241411573e03982490197d7eb98a1c9d29) api: add rdt
+* update wazero/wazero version to v1.10.1 ([containerd/nri#252](https://github.com/containerd/nri/pull/252))
+  * [`9eb9a0f`](https://github.com/containerd/nri/commit/9eb9a0f0f6e223e6060805b55957f117f159f5cc) update tetratelabs/wazero version to v1.10.1
+* support specifying a custom NRI socket path ([containerd/nri#249](https://github.com/containerd/nri/pull/249))
+  * [`2df6565`](https://github.com/containerd/nri/commit/2df656516e73b31e013257f713a1df5baa7fdcb0) [plugins] support specifying a custom NRI socket path
+* pkg/api: add OptionalRepeatedString type ([containerd/nri#212](https://github.com/containerd/nri/pull/212))
+  * [`687c1a6`](https://github.com/containerd/nri/commit/687c1a6a8b5c75056acd176dc89c45251926d0bb) pkg/api: add OptionalRepeatedString type
+* api,adaptation,generate: allow setting kernel scheduling policy attributes. ([containerd/nri#160](https://github.com/containerd/nri/pull/160))
+  * [`6a371ac`](https://github.com/containerd/nri/commit/6a371ac5e7afcd185ee575828f4822d779f0ded9) device-injector: add scheduling policy adjustment.
+  * [`e06369e`](https://github.com/containerd/nri/commit/e06369e8d1cad80f12eaf6f2c0da19c7ac78396c) api,adaptation,generate: allow setting scheduler attributes.
+* device-injector: always log injection summary. ([containerd/nri#246](https://github.com/containerd/nri/pull/246))
+  * [`14cc2e2`](https://github.com/containerd/nri/commit/14cc2e2fb6b9504c5241e3156b24b1055ed4e3ed) device-injector: always log injection summary.
+* api,adaptation,generate: allow adjusting linux net devices ([containerd/nri#157](https://github.com/containerd/nri/pull/157))
+  * [`5145c92`](https://github.com/containerd/nri/commit/5145c92e7c215ce3969805005ebdb0f37749e68b) device-injector: add network device injection.
+  * [`8a03823`](https://github.com/containerd/nri/commit/8a03823fe8afbca00b30f669805c911414c58803) api,adaptation,generate: allow adjusting linux net devices.
+* Add support for sysctl adjustment ([containerd/nri#248](https://github.com/containerd/nri/pull/248))
+  * [`914fbf3`](https://github.com/containerd/nri/commit/914fbf3faf42da144376c133541c37211d2f9200) default-validator: restrict sysctl adjustment
+  * [`a418956`](https://github.com/containerd/nri/commit/a4189560f80f7c02579eec252ae43034bf21cb8a) api: apply sysctl adjustments
+  * [`8705f9b`](https://github.com/containerd/nri/commit/8705f9b1eb3107ad8bc422978b0412527e3fd236) api: add sysctl container adjustment
+* feat: Make logger a configurable struct member for stub ([containerd/nri#239](https://github.com/containerd/nri/pull/239))
+  * [`08a891a`](https://github.com/containerd/nri/commit/08a891a81d90b03b5e5ae14734f5ad74e74c264b) feat: Make logger a configurable struct member for stub
+* Drop dependency on opencontainers/runtime-tools ([containerd/nri#247](https://github.com/containerd/nri/pull/247))
+  * [`5e5c2be`](https://github.com/containerd/nri/commit/5e5c2be5f57436228f2762e0deb2c4f9873f3e9b) Drop dependency on opencontainers/runtime-tools
+* deps: bump runtime-spec to v1.3.0. ([containerd/nri#243](https://github.com/containerd/nri/pull/243))
+  * [`29c5811`](https://github.com/containerd/nri/commit/29c581117267cb5d2289ff08902a93ff263caf0e) (v0.1.0) examples: lock NRI, runtime spec deps.
+  * [`d812952`](https://github.com/containerd/nri/commit/d8129529588cca090c972aa5e5f7775162af59da) v010-adapter: lock NRI, runtime spec and tools deps.
+  * [`7dd7c7f`](https://github.com/containerd/nri/commit/7dd7c7f8b21c08242de41634b12ab2ee71b91000) api,runtime-tools: adjust for runtime-spec v1.3.0.
+  * [`5d5d4c4`](https://github.com/containerd/nri/commit/5d5d4c4c877fdef4fe0938e627b11b97234195b8) go.{mod,sum}: update runtime-tools, runtime-spec to v1.3.0.
+* adaptation: ensure sync'ed plugins are fully registered in tests. ([containerd/nri#234](https://github.com/containerd/nri/pull/234))
+  * [`c840397`](https://github.com/containerd/nri/commit/c84039771e9c2cee68952b4b7cc52cba1909784e) adaptation: ensure sync'ed plugins are fully registered in tests.
+* Fix wasm example ([containerd/nri#237](https://github.com/containerd/nri/pull/237))
+  * [`44b2861`](https://github.com/containerd/nri/commit/44b2861a26c8e392229cd8b27a20cf689925f176) Fix wasm example
+* Makefile: build proto files unconditionally ([containerd/nri#229](https://github.com/containerd/nri/pull/229))
+  * [`d99f960`](https://github.com/containerd/nri/commit/d99f96028e5226c004f94a3394be82190980c4bd) Fix dockerized proto build
+  * [`9623748`](https://github.com/containerd/nri/commit/9623748f543343bfe6b2312df47a7ed9000d47fe) Makefile: build proto files unconditionally
+  * [`25d9391`](https://github.com/containerd/nri/commit/25d9391690a7158d851364ef011e1f56fd607a70) build: ensure we use correct version of protoc and its deps.
+* adaptation: test with populated initial resources. ([containerd/nri#231](https://github.com/containerd/nri/pull/231))
+  * [`b6b98b5`](https://github.com/containerd/nri/commit/b6b98b56a60df29da312cc1e1e070697dec43583) adaptation: test with populated initial resources.
+* Install protoc locally in the source tree ([containerd/nri#232](https://github.com/containerd/nri/pull/232))
+  * [`2394daa`](https://github.com/containerd/nri/commit/2394daa45f1c7c0fcf28e9e39895c8b871a7445c) Install protoc locally in the source tree
+* plugins/logger: fix default event subscription mask. ([containerd/nri#158](https://github.com/containerd/nri/pull/158))
+  * [`33b1db1`](https://github.com/containerd/nri/commit/33b1db1add2e9a603f7c47e1efa95d386f4af560) logger: fix default event subscription mask.
+* extract memory and CPU resource helpers ([containerd/nri#210](https://github.com/containerd/nri/pull/210))
+  * [`7afb32a`](https://github.com/containerd/nri/commit/7afb32a3a444fd0a24e36988e0906ad35590c672) extract memory and CPU resource helpers
+* api: expose container user/group ID to plugins. ([containerd/nri#230](https://github.com/containerd/nri/pull/230))
+  * [`22aeb46`](https://github.com/containerd/nri/commit/22aeb467e553bffd7650930b3bc6c28b95a2dee5) docs: update README with container uid/gid info.
+  * [`71b0335`](https://github.com/containerd/nri/commit/71b0335fdc262451ab2ff71591f1126c8a036265) api,adaptation: add container uid/gid info.
+* contrib: add example for enabling per-container RDT monitoring ([containerd/nri#228](https://github.com/containerd/nri/pull/228))
+  * [`91fbf06`](https://github.com/containerd/nri/commit/91fbf06ed654e46629cb7aefb11856953720c9cf) contrib: add example for enabling per-container RDT monitoring
+* ci: enable image signing ([containerd/nri#224](https://github.com/containerd/nri/pull/224))
+  * [`fb54916`](https://github.com/containerd/nri/commit/fb5491601ca84bf52b70e75d0e99ddc4dfe6a922) ci: enable image signing
+* golangci: disable QF1008 from staticcheck linter ([containerd/nri#226](https://github.com/containerd/nri/pull/226))
+  * [`0b3b577`](https://github.com/containerd/nri/commit/0b3b5770d1f6845d3a3e52ccb5218f2b3ce1f34e) golangci: disable QF1008 from staticcheck linter
+* ci: bump golangci-lint to v2.4 ([containerd/nri#225](https://github.com/containerd/nri/pull/225))
+  * [`9787127`](https://github.com/containerd/nri/commit/9787127c0f3e69726b968e12b29dae31e35e250b) Bump golangci-lint to v2.4
+  * [`1a50ff5`](https://github.com/containerd/nri/commit/1a50ff585624f01763fd20aafaeaa92aa8b27c46) Add nolint directives
+  * [`00fa1a1`](https://github.com/containerd/nri/commit/00fa1a124e605590d3ceea1e687600785ae6518d) Add and fix comments for exported types
+  * [`ac21da7`](https://github.com/containerd/nri/commit/ac21da7be8f991a8699cef41acba8783dee5351e) pkg/api/seccomp: add comments for exported functions
+  * [`3aff986`](https://github.com/containerd/nri/commit/3aff986af5f8abefda8552edae991608782df46c) pkg/runtime-tools/generate: remove embedded field "Generator"
+  * [`c0c4bb6`](https://github.com/containerd/nri/commit/c0c4bb648ae46207f47d5b18bf447f7d5b32e26b) pkg/api/validate: add comments for exported methods
+  * [`c0ba9da`](https://github.com/containerd/nri/commit/c0ba9da712934c860a64af54d96b5cfc74672ff5) adaptation/builtin: add comment for exported symbols
+* .gitignore: revert hastily reviewed editor-specific addition. ([containerd/nri#221](https://github.com/containerd/nri/pull/221))
+  * [`02376f3`](https://github.com/containerd/nri/commit/02376f371c707718144dd509172618c69ce6670c) .gitignore: add comment about global gitignore.
+  * [`9336a79`](https://github.com/containerd/nri/commit/9336a7933c666dbe6da09fe3cb46e80b478fb268) Revert "nit: Add .idea folder to gitignore"
+* nit: Add .idea folder to gitignore ([containerd/nri#218](https://github.com/containerd/nri/pull/218))
+  * [`f578ea2`](https://github.com/containerd/nri/commit/f578ea2804642f2cd59594edc17b59d995289223) nit: Add .idea folder to gitignore
+* chore: clean and unify nolint directives ([containerd/nri#217](https://github.com/containerd/nri/pull/217))
+  * [`21741b9`](https://github.com/containerd/nri/commit/21741b9ee40d69eb9ee3d5688e45b0b022c32738) chore: clean and unify nolint directives
+* Downgrade go to require 1.24.0 ([containerd/nri#214](https://github.com/containerd/nri/pull/214))
+  * [`d26e910`](https://github.com/containerd/nri/commit/d26e910702c62126decc6befe835e7315cd738a9) Downgrade go to require 1.24.0
+* Add dockerized target for building proto files ([containerd/nri#211](https://github.com/containerd/nri/pull/211))
+  * [`13fcc07`](https://github.com/containerd/nri/commit/13fcc0773d23520ff44d54549122ec78c8f1e473) Add dockerized target for building proto files
+</p>
+</details>
+
+<h3 id="changes-from-containerd-zfs">Changes from containerd/zfs</h3>
+
+<details><summary>11 commits</summary>
+<p>
+
+* go.mod: update to stable containerd v2.0 ([containerd/zfs#89](https://github.com/containerd/zfs/pull/89))
+  * [`f11f891`](https://github.com/containerd/zfs/commit/f11f891ff42b3f8cd6f15d0fb18b2644a002bb85) go.mod: update to stable containerd v2.0
+* ci: update actions, test against go1.23, fix linting, and update golangci-lint ([containerd/zfs#88](https://github.com/containerd/zfs/pull/88))
+  * [`662ad3c`](https://github.com/containerd/zfs/commit/662ad3cefa596775e20a44a1c6b1037b0a0d539d) gha: update golangci/golangci-lint-action@v9, golangci-lint v2.7
+  * [`b0b2584`](https://github.com/containerd/zfs/commit/b0b25847ac875af99d62e9d4f83b2875a2f39df9) remove nolint comments
+  * [`7c4274b`](https://github.com/containerd/zfs/commit/7c4274bfa0a0df14d66fabb51269bfdfbf4e0b06) fix error capitalization
+  * [`24ce1b9`](https://github.com/containerd/zfs/commit/24ce1b93f0579fe5ecaec4bd55290ff7e2f456db) fix inconsistent receiver name
+  * [`c8545c3`](https://github.com/containerd/zfs/commit/c8545c33c3c9f4d881c45a22688be49f4ff1502a) gha: update actions/checkout@v6
+  * [`d23ec04`](https://github.com/containerd/zfs/commit/d23ec046338e9a5761083cef373be2bab1551995) gha: update actions/setup-go@v6
+  * [`bb45f6e`](https://github.com/containerd/zfs/commit/bb45f6e4d3965616dcaae6eaab9342af0e4c1cad) gha: update containerd/project-checks@v1.2.2
+  * [`65bc451`](https://github.com/containerd/zfs/commit/65bc451f6abab9d7133abd7c227be227ad6b1f0d) gha: test against go1.23
+</p>
+</details>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<ul>
+<li><strong>github.com/containerd/cgroups/v3</strong>                  v3.1.0 -&gt; v3.1.2</li>
+<li><strong>github.com/containerd/nri</strong>                         v0.10.0 -&gt; v0.11.0</li>
+<li><strong>github.com/containerd/zfs/v2</strong>                      v2.0.0-rc.0 -&gt; v2.0.0</li>
+<li><strong>github.com/containernetworking/plugins</strong>            v1.8.0 -&gt; v1.9.0</li>
+<li><strong>github.com/cyphar/filepath-securejoin</strong>             v0.5.1 <strong><em>new</em></strong></li>
+<li><strong>github.com/opencontainers/runtime-spec</strong>            v1.2.1 -&gt; v1.3.0</li>
+<li><strong>github.com/opencontainers/runtime-tools</strong>           0ea5ed0382a2 -&gt; edf4cb3d2116</li>
+<li><strong>github.com/opencontainers/selinux</strong>                 v1.12.0 -&gt; v1.13.1</li>
+<li><strong>github.com/tetratelabs/wazero</strong>                     v1.9.0 -&gt; v1.10.1</li>
+<li><strong>golang.org/x/crypto</strong>                               v0.41.0 -&gt; v0.45.0</li>
+<li><strong>golang.org/x/net</strong>                                  v0.43.0 -&gt; v0.47.0</li>
+<li><strong>golang.org/x/sync</strong>                                 v0.17.0 -&gt; v0.18.0</li>
+<li><strong>golang.org/x/sys</strong>                                  v0.37.0 -&gt; v0.38.0</li>
+<li><strong>golang.org/x/term</strong>                                 v0.34.0 -&gt; v0.37.0</li>
+<li><strong>golang.org/x/text</strong>                                 v0.28.0 -&gt; v0.31.0</li>
+<li><strong>tags.cncf.io/container-device-interface</strong>           v1.0.1 -&gt; v1.1.0</li>
+<li><strong>tags.cncf.io/container-device-interface/specs-go</strong>  v1.0.0 -&gt; v1.1.0</li>
+</ul>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v2.2.0" target="_blank">v2.2.0</a></p>
+
+<h3 id="which-file-should-i-download">Which file should I download?</h3>
+
+<ul>
+<li><code>containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:         ✅Recommended. Dynamically linked with glibc 2.35 (Ubuntu 22.04).</li>
+<li><code>containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:  Statically linked. Expected to be used on Linux distributions that do not use glibc &gt;= 2.35. Not position-independent.</li>
+</ul>
+
+<p>In addition to containerd, typically you will have to install <a href="https://github.com/opencontainers/runc/releases" target="_blank">runc</a>
+and <a href="https://github.com/containernetworking/plugins/releases" target="_blank">CNI plugins</a> from their official sites too.</p>
+
+<p>See also the <a href="https://github.com/containerd/containerd/blob/main/docs/getting-started.md" target="_blank">Getting Started</a> documentation.</p>
+<br><h3>Release notes for containerd 2.1.6</h3><h4>2025-12-18</h4><p>Welcome to the v2.1.6 release of containerd!</p>
+
+<p>The sixth patch release for containerd 2.1 contains various fixes and updates.</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<h4 id="runtime">Runtime</h4>
+
+<ul>
+<li><strong>Update runc binary to v1.3.4</strong> (<a href="https://github.com/containerd/containerd/pull/12618" target="_blank">#12618</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Akihiro Suda</li>
+<li>Derek McGowan</li>
+<li>Mike Brown</li>
+<li>Phil Estes</li>
+<li>Austin Vazquez</li>
+<li>Kirtana Ashok</li>
+<li>Andrey Noskov</li>
+<li>CrazyMax</li>
+<li>Davanum Srinivas</li>
+<li>Krisztian Litkey</li>
+<li>Maksym Pavlenko</li>
+<li>Michael Weibel</li>
+<li>Paweł Gronowski</li>
+<li>Sebastiaan van Stijn</li>
+<li>Wei Fu</li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<details><summary>28 commits</summary>
+<p>
+
+* Prepare release notes for v2.1.6 ([#12653](https://github.com/containerd/containerd/pull/12653))
+  * [`93f79087a`](https://github.com/containerd/containerd/commit/93f79087acf3fc3f01e80b354fbe2cea771304b6) Prepare release notes for v2.1.6
+* go.mod: containerd/zfs v2.0.0 ([#12655](https://github.com/containerd/containerd/pull/12655))
+  * [`7e75db3a9`](https://github.com/containerd/containerd/commit/7e75db3a929414f46a3e7c8790ea0eec3288e394) build(deps): bump github.com/containerd/zfs/v2 from 2.0.0-rc.0 to 2.0.0
+* cri/nri: short-circuit nil adjustment. ([#12673](https://github.com/containerd/containerd/pull/12673))
+  * [`2b8e11b12`](https://github.com/containerd/containerd/commit/2b8e11b12b97ada3d9741ebb29d0d8088ee3cbb8) cri/nri: short-circuit nil adjustment.
+* go.mod: github.com/containernetworking/plugins v1.9.0 ([#12659](https://github.com/containerd/containerd/pull/12659))
+  * [`69efd067c`](https://github.com/containerd/containerd/commit/69efd067caca778588edd945a5e9f2a4feb156a6) go.mod: github.com/containernetworking/plugins v1.9.0
+* go.mod: golang.org/x/crypto v0.45.0 (drop support for Go 1.23) ([#12639](https://github.com/containerd/containerd/pull/12639))
+  * [`e81678853`](https://github.com/containerd/containerd/commit/e816788537ca2b9484aa86da58391923e873f571) go.mod: golang.org/x/crypto v0.45.0
+  * [`55a2d8c8d`](https://github.com/containerd/containerd/commit/55a2d8c8d0bf6c5a7481c8922eb5a351f82f9344) CI: drop Go 1.23
+  * [`fd8e3c39b`](https://github.com/containerd/containerd/commit/fd8e3c39b952b2fb9278df64f9de4e46fa78dd36) Update Go requirements in BUILDING
+* core/runtime/v2: remove uses of otelgrpc.UnaryClientInterceptor ([#12623](https://github.com/containerd/containerd/pull/12623))
+  * [`a4454c49a`](https://github.com/containerd/containerd/commit/a4454c49a66b48309c0d9a1f5c386daf5d692614) core/runtime/v2: remove uses of otelgrpc.UnaryClientInterceptor
+* Update runc binary to v1.3.4 ([#12618](https://github.com/containerd/containerd/pull/12618))
+  * [`251f0a285`](https://github.com/containerd/containerd/commit/251f0a2854f7831ca040d7ba2dab181fd02f2240) runc: Update runc binary to v1.3.4
+* ci: bump Go 1.24.11, 1.25.5 ([#12626](https://github.com/containerd/containerd/pull/12626))
+  * [`c07c29bca`](https://github.com/containerd/containerd/commit/c07c29bca60eeff9454b005e9856acfb12cfd68c) ci: bump Go 1.24.11, 1.25.5
+  * [`e52817652`](https://github.com/containerd/containerd/commit/e528176522bc3df790ea923cfac15c18336ae429) ci: bump Go 1.24.10, 1.25.4
+  * [`04bbb66e4`](https://github.com/containerd/containerd/commit/04bbb66e408602872693282063c080bb2e9e6cf9) ci(release): set GO_VERSION in Dockerfile
+* ci: update CIFuzz actions to support Ubuntu 24.04 ([#12633](https://github.com/containerd/containerd/pull/12633))
+  * [`492987ccc`](https://github.com/containerd/containerd/commit/492987cccf044c4015ec35ce161606cc514de75e) ci: update CIFuzz actions to support Ubuntu 24.04
+* build(deps): bump github.com/opencontainers/selinux ([#12590](https://github.com/containerd/containerd/pull/12590))
+  * [`55a25ec6e`](https://github.com/containerd/containerd/commit/55a25ec6efa335cdb9e6b56207643f33277be4d4) build(deps): bump github.com/opencontainers/selinux
+* Redact all query parameters in CRI error logs ([#12547](https://github.com/containerd/containerd/pull/12547))
+  * [`b72d0dfe0`](https://github.com/containerd/containerd/commit/b72d0dfe0458e1b5f1e67ba70476fc4887ee5f08) fix: redact all query parameters in CRI error logs
+* Update 2.1 branch to no longer build as latest ([#12487](https://github.com/containerd/containerd/pull/12487))
+  * [`ecd58bd65`](https://github.com/containerd/containerd/commit/ecd58bd6507cb6c566c68b440ceea5d7d99b3260) Update 2.1 branch to no longer build as latest
+</p>
+</details>
+
+<h3 id="changes-from-containerd-platforms">Changes from containerd/platforms</h3>
+
+<details><summary>5 commits</summary>
+<p>
+
+* use windowsMatchComparer for OSVersion match order ([containerd/platforms#25](https://github.com/containerd/platforms/pull/25))
+  * [`8c0d9f9`](https://github.com/containerd/platforms/commit/8c0d9f9835bbe848b9c6f6f4a3a23f7dc97de927) use windowsMatchComparer for OSVersion match order
+* Add WS2025 to Windows matcher and code optimizations ([containerd/platforms#24](https://github.com/containerd/platforms/pull/24))
+  * [`8447b0a`](https://github.com/containerd/platforms/commit/8447b0ad126eb97a40c5bde800d38370a39ba52f) Update ci.yml
+  * [`4549974`](https://github.com/containerd/platforms/commit/4549974181760492ffc528fae4d7f29620a2c67c) Add WS2025 to Windows matcher and code optimizations
+</p>
+</details>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<ul>
+<li><strong>github.com/containerd/platforms</strong>         v1.0.0-rc.1 -&gt; v1.0.0-rc.2</li>
+<li><strong>github.com/containerd/zfs/v2</strong>            v2.0.0-rc.0 -&gt; v2.0.0</li>
+<li><strong>github.com/containernetworking/plugins</strong>  v1.7.1 -&gt; v1.9.0</li>
+<li><strong>github.com/coreos/go-systemd/v22</strong>        v22.5.0 -&gt; v22.6.0</li>
+<li><strong>github.com/cyphar/filepath-securejoin</strong>   v0.5.1 <strong><em>new</em></strong></li>
+<li><strong>github.com/go-logr/logr</strong>                 v1.4.2 -&gt; v1.4.3</li>
+<li><strong>github.com/opencontainers/selinux</strong>       v1.12.0 -&gt; v1.13.1</li>
+<li><strong>github.com/vishvananda/netlink</strong>          0e7078ed04c8 -&gt; v1.3.1</li>
+<li><strong>golang.org/x/crypto</strong>                     v0.36.0 -&gt; v0.45.0</li>
+<li><strong>golang.org/x/mod</strong>                        v0.24.0 -&gt; v0.29.0</li>
+<li><strong>golang.org/x/net</strong>                        v0.38.0 -&gt; v0.47.0</li>
+<li><strong>golang.org/x/sync</strong>                       v0.14.0 -&gt; v0.18.0</li>
+<li><strong>golang.org/x/sys</strong>                        v0.33.0 -&gt; v0.38.0</li>
+<li><strong>golang.org/x/term</strong>                       v0.30.0 -&gt; v0.37.0</li>
+<li><strong>golang.org/x/text</strong>                       v0.23.0 -&gt; v0.31.0</li>
+<li><strong>google.golang.org/protobuf</strong>              v1.36.6 -&gt; v1.36.7</li>
+</ul>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v2.1.5" target="_blank">v2.1.5</a></p>
+
+<h3 id="which-file-should-i-download">Which file should I download?</h3>
+
+<ul>
+<li><code>containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:         ✅Recommended. Dynamically linked with glibc 2.35 (Ubuntu 22.04).</li>
+<li><code>containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:  Statically linked. Expected to be used on Linux distributions that do not use glibc &gt;= 2.35. Not position-independent.</li>
+</ul>
+
+<p>In addition to containerd, typically you will have to install <a href="https://github.com/opencontainers/runc/releases" target="_blank">runc</a>
+and <a href="https://github.com/containernetworking/plugins/releases" target="_blank">CNI plugins</a> from their official sites too.</p>
+
+<p>See also the <a href="https://github.com/containerd/containerd/blob/main/docs/getting-started.md" target="_blank">Getting Started</a> documentation.</p>
+<br><h3>Release notes for containerd 1.7.30</h3><h4>2025-12-18</h4><p>Welcome to the v1.7.30 release of containerd!</p>
+
+<p>The thirtieth patch release for containerd 1.7 contains various fixes
+and updates.</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<h4 id="container-runtime-interface-cri">Container Runtime Interface (CRI)</h4>
+
+<ul>
+<li><strong>Fix NRI dropping requested CDI devices silently</strong> (<a href="https://github.com/containerd/containerd/pull/12650" target="_blank">#12650</a>)</li>
+<li><strong>Redact all query parameters in CRI error logs</strong> (<a href="https://github.com/containerd/containerd/pull/12551" target="_blank">#12551</a>)</li>
+</ul>
+
+<h4 id="runtime">Runtime</h4>
+
+<ul>
+<li><strong>Update runc binary to v1.3.4</strong> (<a href="https://github.com/containerd/containerd/pull/12619" target="_blank">#12619</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Derek McGowan</li>
+<li>Akihiro Suda</li>
+<li>Austin Vazquez</li>
+<li>Mike Brown</li>
+<li>Wei Fu</li>
+<li>Andrey Noskov</li>
+<li>CrazyMax</li>
+<li>Davanum Srinivas</li>
+<li>Jin Dong</li>
+<li>Krisztian Litkey</li>
+<li>Maksym Pavlenko</li>
+<li>Paweł Gronowski</li>
+<li>Phil Estes</li>
+<li>Samuel Karp</li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<details><summary>26 commits</summary>
+<p>
+
+* Prepare release notes for v1.7.30 ([#12652](https://github.com/containerd/containerd/pull/12652))
+  * [`3d0ca6d2e`](https://github.com/containerd/containerd/commit/3d0ca6d2e7ba597bf0423e5f5f49e47b81c1e7a0) Prepare release notes for v1.7.30
+* Fix NRI dropping requested CDI devices silently ([#12650](https://github.com/containerd/containerd/pull/12650))
+  * [`0bc74f47e`](https://github.com/containerd/containerd/commit/0bc74f47e708bd843e676c5a8617f0498ea6459a) cri,nri: don't drop requested CDI devices silently.
+* script/setup/install-cni: install CNI plugins v1.9.0 ([#12660](https://github.com/containerd/containerd/pull/12660))
+  * [`7db16b562`](https://github.com/containerd/containerd/commit/7db16b5627a550caf05d9a902e16cb0d04bf1ee1) script/setup/install-cni: install CNI plugins v1.9.0
+* go.mod: golang.org/x/crypto v0.45.0 (drop support for Go 1.23) ([#12640](https://github.com/containerd/containerd/pull/12640))
+  * [`bca897b47`](https://github.com/containerd/containerd/commit/bca897b4739fef9b6a34c54ac6050d1621e53f92) go.mod: golang.org/x/crypto v0.45.0
+  * [`37cbd2224`](https://github.com/containerd/containerd/commit/37cbd2224e674c317e25b03bbf4ab5a9ed644a5d) CI: drop Go 1.23
+  * [`ee49d1747`](https://github.com/containerd/containerd/commit/ee49d1747c357cd45119750d4db464f957f4d793) Update Go requirements in BUILDING
+* ci: bump Go 1.24.11, 1.25.5 ([#12627](https://github.com/containerd/containerd/pull/12627))
+  * [`145978224`](https://github.com/containerd/containerd/commit/1459782247cc3eb2a6a2693a614766a86bcf6826) ci: bump Go 1.24.11, 1.25.5
+  * [`3dbadfaa1`](https://github.com/containerd/containerd/commit/3dbadfaa158ebff9862606fe14a454f668a41d49) ci: bump Go 1.24.10, 1.25.4
+  * [`2bac971f0`](https://github.com/containerd/containerd/commit/2bac971f0c91a1668bf1ec9c5ec1aa3f0484bd03) ci(release): set GO_VERSION in Dockerfile
+* Update runc binary to v1.3.4 ([#12619](https://github.com/containerd/containerd/pull/12619))
+  * [`34b89a574`](https://github.com/containerd/containerd/commit/34b89a5744330f098774356cc592bcc38f3279d8) runc: Update runc binary to v1.3.4
+* ci: update CIFuzz actions to support Ubuntu 24.04 ([#12635](https://github.com/containerd/containerd/pull/12635))
+  * [`6e0dd8956`](https://github.com/containerd/containerd/commit/6e0dd89566553cc1be1cd4823df5d5faeb839b31) ci: update CIFuzz actions to support Ubuntu 24.04
+* build(deps): bump github.com/opencontainers/selinux ([#12591](https://github.com/containerd/containerd/pull/12591))
+  * [`3eea2a4af`](https://github.com/containerd/containerd/commit/3eea2a4af8b7e20c6c299551782aeccab0a10c0a) build(deps): bump github.com/opencontainers/selinux
+* remove sha256-simd ([#12576](https://github.com/containerd/containerd/pull/12576))
+  * [`1194f5128`](https://github.com/containerd/containerd/commit/1194f5128f342d40b3ef0c3a4baea3d5ecf15d3b) remove sha256-simd
+* .github: skip 5 critest cases for window-2022 ([#12586](https://github.com/containerd/containerd/pull/12586))
+  * [`ce2d3a67f`](https://github.com/containerd/containerd/commit/ce2d3a67f2b4e3dc2e804bb9ecde609f04e1e1f6) .github: skip 5 critest cases in window CI pipeline
+* Redact all query parameters in CRI error logs ([#12551](https://github.com/containerd/containerd/pull/12551))
+  * [`65271ea89`](https://github.com/containerd/containerd/commit/65271ea895cd62016f2baf0e758b1cd7388344e7) fix: redact all query parameters in CRI error logs
+</p>
+</details>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<ul>
+<li><strong>github.com/cyphar/filepath-securejoin</strong>  v0.5.1 <strong><em>new</em></strong></li>
+<li><strong>github.com/opencontainers/selinux</strong>      v1.11.0 -&gt; v1.13.1</li>
+<li><strong>golang.org/x/crypto</strong>                    v0.40.0 -&gt; v0.45.0</li>
+<li><strong>golang.org/x/mod</strong>                       v0.26.0 -&gt; v0.29.0</li>
+<li><strong>golang.org/x/net</strong>                       v0.42.0 -&gt; v0.47.0</li>
+<li><strong>golang.org/x/sync</strong>                      v0.16.0 -&gt; v0.18.0</li>
+<li><strong>golang.org/x/sys</strong>                       v0.34.0 -&gt; v0.38.0</li>
+<li><strong>golang.org/x/term</strong>                      v0.33.0 -&gt; v0.37.0</li>
+<li><strong>golang.org/x/text</strong>                      v0.27.0 -&gt; v0.31.0</li>
+</ul>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v1.7.29" target="_blank">v1.7.29</a></p>
+<br><h2>kubernetes-sigs/cluster-api-provider-vsphere</h2> <h3>Release notes for v1.15.0</h3><h4>2025-12-19</h4><h2 id="highlights">Highlights</h2>
+
+<ul>
+<li>Tested with Kubernetes v1.35 &amp; cloud-provider-vsphere v1.35</li>
+<li>Based on Cluster API v1.12</li>
+<li>Bumped to Go 1.24, controller-runtime v0.22, k8s.io/* v0.34, controller-gen v0.19</li>
+<li>Introduce a separate CAPV ServiceAccount (#3640)</li>
+</ul>
+
+<p>govmomi:</p>
+
+<ul>
+<li>Allow customization of CPU and memory shares, reservations and limits (#3607)</li>
+</ul>
+
+<h2 id="changes-since-v1-14-0">Changes since v1.14.0</h2>
+
+<h2 id="chart-with-upwards-trend-overview">:chart_with_upwards_trend: Overview</h2>
+
+<ul>
+<li>76 new commits merged</li>
+<li>1 breaking change :warning:</li>
+<li>5 feature additions ✨</li>
+<li>8 bugs fixed 🐛</li>
+</ul>
+
+<h2 id="warning-breaking-changes">:warning: Breaking Changes</h2>
+
+<ul>
+<li>Bump to CAPI main (05.09.2025) (#3628)</li>
+</ul>
+
+<h2 id="sparkles-new-features">:sparkles: New Features</h2>
+
+<ul>
+<li>Add flags to allow customization of CPU and memory shares, reservations and limits (#3607)</li>
+<li>Bump autoscaler to a9cb59fdd (#3577)</li>
+<li>Bump to CAPI v1.11.0 (#3583)</li>
+<li>Enable KAL in CI (#3582)</li>
+<li>Feat: add capv serviceaccount (#3640)</li>
+</ul>
+
+<h2 id="bug-bug-fixes">:bug: Bug Fixes</h2>
+
+<ul>
+<li>Bump test module to get latest version of upgrade test (#3604)</li>
+<li>Fix make lint-api (#3612)</li>
+<li>Fix: use machine&rsquo;s .spec.failureDomain with fallback to vspheremachine&rsquo;s .spec.failureDomain if not defined (#3576)</li>
+<li>Increase unit test timeouts to fixup flakes (#3691)</li>
+<li>Register conversion funcs in schemes (#3603)</li>
+<li>Remove finalizer from VSphereMachine during deletion if ownerRef was never set (#3591)</li>
+<li>Remove invalid kustomizeconfig (#3685)</li>
+<li>Remove the CEL validation on VSphereMachineTemplate.spec.network (#3621)</li>
+</ul>
+
+<h2 id="seedling-others">:seedling: Others</h2>
+
+<ul>
+<li>Add retry for govc binary download during tests (#3574)</li>
+<li>Bump actions for v1.15 (#3688)</li>
+<li>Bump autoscaler in e2e tests to v1.33.1 (#3642)</li>
+<li>Bump autoscaler in e2e tests to v1.34.0 (#3644)</li>
+<li>Bump autoscaler version used for testing to v1.34.2 (#3696)</li>
+<li>Bump capi rc.1 release 1.15 (#3699)</li>
+<li>Bump CAPI to main Oct 29 (#3656)</li>
+<li>Bump CPI to v1.34.0 (#3618)</li>
+<li>Bump CPI to v1.35.0-beta.0 (#3686)</li>
+<li>Bump cpi to v1.35.0-rc.0 (#3705)</li>
+<li>Bump Go to 1.24.10 (#3665)</li>
+<li>Bump Go to 1.24.11 (#3717)</li>
+<li>Bump Kubernetes to v1.34 and add new OVA&rsquo;s (#3616)</li>
+<li>Bump Kubernetes version used for testing to v1.35.0 (#3722)</li>
+<li>Bump Kubernetes version used for testing to v1.35.0-rc.0 (#3697)</li>
+<li>Bump Kubernetes version used for testing to v1.35.0-rc.1 (#3711)</li>
+<li>Bump to CAPI v1.11.1 (#3626)</li>
+<li>Bump to CAPI v1.12.0 (#3712)</li>
+<li>Bump to CAPI v1.12.0-beta.0 (#3662)</li>
+<li>Bump to CAPI v1.12.0-beta.1 (#3684)</li>
+<li>Bump to CAPI v1.12.0-rc.0 (#3692)</li>
+<li>Bump to CAPI v1.12.1 (#3724)</li>
+<li>Bump to Go 1.24.9 (#3657)</li>
+<li>CI: clear /etc/sysconfig/kubelet to ensure &ndash;pod-infra-container-image is not set (#3661)</li>
+<li>Extend e2e.sh to allow running a periodic network debug job (#3676)</li>
+<li>Fix KAL config (#3593)</li>
+<li>Hack/e2e.sh create a junit file when running e2e.sh (#3670)</li>
+<li>Improve network debug output of e2e.sh (#3675)</li>
+<li>Lint: bump to v2.7.0 (#3702)</li>
+<li>Log version and git commit on controller start (#3610)</li>
+<li>Prepare main for release 1.15 (#3638)</li>
+<li>Remove mirror prow handling from scripts (#3578)</li>
+<li>Set log collector for clusterctl upgrade tests (#3594)</li>
+<li>Set startup taint for autoscaler in e2e tests (#3629)</li>
+<li>Start testing 1.35 (#3623)</li>
+<li>Start testing with Kubernetes v1.35.0-beta.0 (#3687)</li>
+<li>Start using 1.35 ova (#3727)</li>
+<li>Temporary fix for ResourceVersion flake (#3601)</li>
+<li>Update GitHub actions for CAPV v1.15 (#3580)</li>
+<li>Update InterfaceSpec MTU minimum value (#3585)</li>
+<li>Update OVA list with K8s v1.34 images (#3615)</li>
+<li>VSphereClusterIdentity: ensure namespace in tests exists when not using the default (#3635)</li>
+</ul>
+
+<p>:book: Additionally, there have been 3 contributions to our documentation and book. (#3581, #3614, #3622)</p>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<ul>
+<li>github.com/gkampitakis/ciinfo: <a href="https://github.com/gkampitakis/ciinfo/tree/v0.3.2" target="_blank">v0.3.2</a></li>
+<li>github.com/gkampitakis/go-diff: <a href="https://github.com/gkampitakis/go-diff/tree/v1.3.2" target="_blank">v1.3.2</a></li>
+<li>github.com/gkampitakis/go-snaps: <a href="https://github.com/gkampitakis/go-snaps/tree/v0.5.15" target="_blank">v0.5.15</a></li>
+<li>github.com/go-jose/go-jose/v4: <a href="https://github.com/go-jose/go-jose/tree/v4.0.4" target="_blank">v4.0.4</a></li>
+<li>github.com/goccy/go-yaml: <a href="https://github.com/goccy/go-yaml/tree/v1.18.0" target="_blank">v1.18.0</a></li>
+<li>github.com/golang-jwt/jwt/v5: <a href="https://github.com/golang-jwt/jwt/tree/v5.2.2" target="_blank">v5.2.2</a></li>
+<li>github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus: <a href="https://github.com/grpc-ecosystem/go-grpc-middleware/tree/providers/prometheus/v1.0.1" target="_blank">v1.0.1</a></li>
+<li>github.com/grpc-ecosystem/go-grpc-middleware/v2: <a href="https://github.com/grpc-ecosystem/go-grpc-middleware/tree/v2.3.0" target="_blank">v2.3.0</a></li>
+<li>github.com/joshdk/go-junit: <a href="https://github.com/joshdk/go-junit/tree/v1.0.0" target="_blank">v1.0.0</a></li>
+<li>github.com/maruel/natural: <a href="https://github.com/maruel/natural/tree/v1.1.1" target="_blank">v1.1.1</a></li>
+<li>github.com/mfridman/tparse: <a href="https://github.com/mfridman/tparse/tree/v0.18.0" target="_blank">v0.18.0</a></li>
+<li>github.com/olekukonko/cat: <a href="https://github.com/olekukonko/cat/tree/50322a0" target="_blank">50322a0</a></li>
+<li>github.com/olekukonko/errors: <a href="https://github.com/olekukonko/errors/tree/v1.1.0" target="_blank">v1.1.0</a></li>
+<li>github.com/olekukonko/ll: <a href="https://github.com/olekukonko/ll/tree/v0.1.1" target="_blank">v0.1.1</a></li>
+<li>github.com/spiffe/go-spiffe/v2: <a href="https://github.com/spiffe/go-spiffe/tree/v2.5.0" target="_blank">v2.5.0</a></li>
+<li>github.com/tidwall/gjson: <a href="https://github.com/tidwall/gjson/tree/v1.18.0" target="_blank">v1.18.0</a></li>
+<li>github.com/tidwall/match: <a href="https://github.com/tidwall/match/tree/v1.1.1" target="_blank">v1.1.1</a></li>
+<li>github.com/tidwall/pretty: <a href="https://github.com/tidwall/pretty/tree/v1.2.1" target="_blank">v1.2.1</a></li>
+<li>github.com/tidwall/sjson: <a href="https://github.com/tidwall/sjson/tree/v1.2.5" target="_blank">v1.2.5</a></li>
+<li>github.com/zeebo/errs: <a href="https://github.com/zeebo/errs/tree/v1.4.0" target="_blank">v1.4.0</a></li>
+<li>go.etcd.io/raft/v3: v3.6.0</li>
+<li>sigs.k8s.io/structured-merge-diff/v6: v6.3.0</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>cel.dev/expr: v0.19.1 → v0.24.0</li>
+<li>github.com/GoogleCloudPlatform/opentelemetry-operations-go/detectors/gcp: <a href="https://github.com/GoogleCloudPlatform/opentelemetry-operations-go/compare/detectors/gcp/v1.25.0...detectors/gcp/v1.26.0" target="_blank">v1.25.0 → v1.26.0</a></li>
+<li>github.com/Masterminds/semver/v3: <a href="https://github.com/Masterminds/semver/compare/v3.3.0...v3.4.0" target="_blank">v3.3.0 → v3.4.0</a></li>
+<li>github.com/a8m/tree: <a href="https://github.com/a8m/tree/compare/36ae24d...2c8764a" target="_blank">36ae24d → 2c8764a</a></li>
+<li>github.com/cncf/xds/go: <a href="https://github.com/cncf/xds/compare/cff3c89...2f00578" target="_blank">cff3c89 → 2f00578</a></li>
+<li>github.com/coredns/corefile-migration: <a href="https://github.com/coredns/corefile-migration/compare/v1.0.27...v1.0.29" target="_blank">v1.0.27 → v1.0.29</a></li>
+<li>github.com/emicklei/go-restful/v3: <a href="https://github.com/emicklei/go-restful/compare/v3.12.2...v3.13.0" target="_blank">v3.12.2 → v3.13.0</a></li>
+<li>github.com/fsnotify/fsnotify: <a href="https://github.com/fsnotify/fsnotify/compare/v1.8.0...v1.9.0" target="_blank">v1.8.0 → v1.9.0</a></li>
+<li>github.com/fxamacker/cbor/v2: <a href="https://github.com/fxamacker/cbor/compare/v2.7.0...v2.9.0" target="_blank">v2.7.0 → v2.9.0</a></li>
+<li>github.com/google/cel-go: <a href="https://github.com/google/cel-go/compare/v0.23.2...v0.26.0" target="_blank">v0.23.2 → v0.26.0</a></li>
+<li>github.com/google/gnostic-models: <a href="https://github.com/google/gnostic-models/compare/v0.6.9...v0.7.0" target="_blank">v0.6.9 → v0.7.0</a></li>
+<li>github.com/google/pprof: <a href="https://github.com/google/pprof/compare/27863c8...f64d9cf" target="_blank">27863c8 → f64d9cf</a></li>
+<li>github.com/grpc-ecosystem/grpc-gateway/v2: <a href="https://github.com/grpc-ecosystem/grpc-gateway/compare/v2.24.0...v2.26.3" target="_blank">v2.24.0 → v2.26.3</a></li>
+<li>github.com/ianlancetaylor/demangle: <a href="https://github.com/ianlancetaylor/demangle/compare/bd984b5...f615e6b" target="_blank">bd984b5 → f615e6b</a></li>
+<li>github.com/jonboulle/clockwork: <a href="https://github.com/jonboulle/clockwork/compare/v0.4.0...v0.5.0" target="_blank">v0.4.0 → v0.5.0</a></li>
+<li>github.com/mattn/go-colorable: <a href="https://github.com/mattn/go-colorable/compare/v0.1.13...v0.1.14" target="_blank">v0.1.13 → v0.1.14</a></li>
+<li>github.com/mattn/go-runewidth: <a href="https://github.com/mattn/go-runewidth/compare/v0.0.14...v0.0.16" target="_blank">v0.0.14 → v0.0.16</a></li>
+<li>github.com/modern-go/reflect2: <a href="https://github.com/modern-go/reflect2/compare/v1.0.2...35a7c28" target="_blank">v1.0.2 → 35a7c28</a></li>
+<li>github.com/olekukonko/tablewriter: <a href="https://github.com/olekukonko/tablewriter/compare/v0.0.5...v1.0.9" target="_blank">v0.0.5 → v1.0.9</a></li>
+<li>github.com/onsi/ginkgo/v2: <a href="https://github.com/onsi/ginkgo/compare/v2.23.4...v2.27.2" target="_blank">v2.23.4 → v2.27.2</a></li>
+<li>github.com/onsi/gomega: <a href="https://github.com/onsi/gomega/compare/v1.38.0...v1.38.2" target="_blank">v1.38.0 → v1.38.2</a></li>
+<li>github.com/pelletier/go-toml/v2: <a href="https://github.com/pelletier/go-toml/compare/v2.2.3...v2.2.4" target="_blank">v2.2.3 → v2.2.4</a></li>
+<li>github.com/prometheus/client_model: <a href="https://github.com/prometheus/client_model/compare/v0.6.1...v0.6.2" target="_blank">v0.6.1 → v0.6.2</a></li>
+<li>github.com/rivo/uniseg: <a href="https://github.com/rivo/uniseg/compare/v0.4.2...v0.4.7" target="_blank">v0.4.2 → v0.4.7</a></li>
+<li>github.com/rogpeppe/go-internal: <a href="https://github.com/rogpeppe/go-internal/compare/v1.13.1...v1.14.1" target="_blank">v1.13.1 → v1.14.1</a></li>
+<li>github.com/sagikazarmark/locafero: <a href="https://github.com/sagikazarmark/locafero/compare/v0.7.0...v0.11.0" target="_blank">v0.7.0 → v0.11.0</a></li>
+<li>github.com/sourcegraph/conc: <a href="https://github.com/sourcegraph/conc/compare/v0.3.0...5f936ab" target="_blank">v0.3.0 → 5f936ab</a></li>
+<li>github.com/spf13/afero: <a href="https://github.com/spf13/afero/compare/v1.12.0...v1.15.0" target="_blank">v1.12.0 → v1.15.0</a></li>
+<li>github.com/spf13/cast: <a href="https://github.com/spf13/cast/compare/v1.7.1...v1.10.0" target="_blank">v1.7.1 → v1.10.0</a></li>
+<li>github.com/spf13/cobra: <a href="https://github.com/spf13/cobra/compare/v1.9.1...v1.10.1" target="_blank">v1.9.1 → v1.10.1</a></li>
+<li>github.com/spf13/pflag: <a href="https://github.com/spf13/pflag/compare/v1.0.7...v1.0.10" target="_blank">v1.0.7 → v1.0.10</a></li>
+<li>github.com/spf13/viper: <a href="https://github.com/spf13/viper/compare/v1.20.1...v1.21.0" target="_blank">v1.20.1 → v1.21.0</a></li>
+<li>github.com/stretchr/testify: <a href="https://github.com/stretchr/testify/compare/v1.10.0...v1.11.1" target="_blank">v1.10.0 → v1.11.1</a></li>
+<li>github.com/vmware/govmomi: <a href="https://github.com/vmware/govmomi/compare/v0.51.0...v0.52.0" target="_blank">v0.51.0 → v0.52.0</a></li>
+<li>go.etcd.io/bbolt: v1.3.11 → v1.4.2</li>
+<li>go.etcd.io/etcd/api/v3: v3.5.22 → v3.6.6</li>
+<li>go.etcd.io/etcd/client/pkg/v3: v3.5.22 → v3.6.6</li>
+<li>go.etcd.io/etcd/client/v3: v3.5.22 → v3.6.6</li>
+<li>go.etcd.io/etcd/pkg/v3: v3.5.21 → v3.6.4</li>
+<li>go.etcd.io/etcd/server/v3: v3.5.21 → v3.6.4</li>
+<li>go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc: v0.58.0 → v0.60.0</li>
+<li>go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc: v1.33.0 → v1.34.0</li>
+<li>go.opentelemetry.io/otel/exporters/otlp/otlptrace: v1.33.0 → v1.34.0</li>
+<li>go.opentelemetry.io/otel/metric: v1.34.0 → v1.35.0</li>
+<li>go.opentelemetry.io/otel/trace: v1.34.0 → v1.35.0</li>
+<li>go.opentelemetry.io/otel: v1.34.0 → v1.35.0</li>
+<li>go.opentelemetry.io/proto/otlp: v1.4.0 → v1.5.0</li>
+<li>go.uber.org/zap: v1.27.0 → v1.27.1</li>
+<li>go.yaml.in/yaml/v3: v3.0.3 → v3.0.4</li>
+<li>golang.org/x/crypto: v0.41.0 → v0.45.0</li>
+<li>golang.org/x/mod: v0.27.0 → v0.30.0</li>
+<li>golang.org/x/net: v0.43.0 → v0.47.0</li>
+<li>golang.org/x/oauth2: v0.30.0 → v0.33.0</li>
+<li>golang.org/x/sync: v0.16.0 → v0.18.0</li>
+<li>golang.org/x/sys: v0.35.0 → v0.38.0</li>
+<li>golang.org/x/telemetry: 1a19826 → bc8e575</li>
+<li>golang.org/x/term: v0.34.0 → v0.37.0</li>
+<li>golang.org/x/text: v0.28.0 → v0.31.0</li>
+<li>golang.org/x/tools: v0.36.0 → v0.39.0</li>
+<li>google.golang.org/genproto/googleapis/api: 5f5ef82 → a0af3ef</li>
+<li>google.golang.org/genproto/googleapis/rpc: 1a7da9e → a0af3ef</li>
+<li>google.golang.org/grpc: v1.71.3 → v1.72.3</li>
+<li>google.golang.org/protobuf: v1.36.6 → v1.36.7</li>
+<li>k8s.io/api: v0.33.3 → v0.34.2</li>
+<li>k8s.io/apiextensions-apiserver: v0.33.3 → v0.34.2</li>
+<li>k8s.io/apimachinery: v0.33.3 → v0.34.2</li>
+<li>k8s.io/apiserver: v0.33.3 → v0.34.2</li>
+<li>k8s.io/client-go: v0.33.3 → v0.34.2</li>
+<li>k8s.io/cluster-bootstrap: v0.33.3 → v0.34.2</li>
+<li>k8s.io/code-generator: v0.33.3 → v0.34.2</li>
+<li>k8s.io/component-base: v0.33.3 → v0.34.2</li>
+<li>k8s.io/gengo/v2: 1244d31 → 85fd79d</li>
+<li>k8s.io/kms: v0.33.3 → v0.34.2</li>
+<li>k8s.io/kube-openapi: c8a335a → f3f2b99</li>
+<li>k8s.io/utils: 3ea5e8c → 4c0f3b2</li>
+<li>sigs.k8s.io/cluster-api: v1.11.1 → v1.12.1</li>
+<li>sigs.k8s.io/controller-runtime: v0.21.0 → v0.22.4</li>
+<li>sigs.k8s.io/json: 9aa6b5e → cfa47c3</li>
+<li>sigs.k8s.io/structured-merge-diff/v4: v4.6.0 → v4.4.1</li>
+</ul>
+
+<h3 id="removed">Removed</h3>
+
+<ul>
+<li>github.com/golang-jwt/jwt/v4: <a href="https://github.com/golang-jwt/jwt/tree/v4.5.2" target="_blank">v4.5.2</a></li>
+<li>github.com/grpc-ecosystem/go-grpc-middleware: <a href="https://github.com/grpc-ecosystem/go-grpc-middleware/tree/v1.3.0" target="_blank">v1.3.0</a></li>
+<li>github.com/grpc-ecosystem/grpc-gateway: <a href="https://github.com/grpc-ecosystem/grpc-gateway/tree/v1.16.0" target="_blank">v1.16.0</a></li>
+<li>github.com/prashantv/gostub: <a href="https://github.com/prashantv/gostub/tree/v1.1.0" target="_blank">v1.1.0</a></li>
+<li>go.etcd.io/etcd/client/v2: v2.305.21</li>
+<li>go.etcd.io/etcd/raft/v3: v3.5.21</li>
+<li>google.golang.org/genproto: ef43131</li>
+</ul>
+
+<p><em>Thanks to all our contributors!</em> 😊</p>
+<br><h3>Release notes for templates/v1.35.0</h3><h4>2025-12-18</h4><p>VM templates for Kubernetes v1.35.0\n\nIf an OVA image consists of multiple parts, use <code>cat &lt;image&gt;-parts* &gt; &lt;image&gt;.ova</code> to join them back.</p>
+<br><h2>kubernetes-sigs/cluster-api</h2> <h3>Release notes for v1.12.1</h3><h4>2025-12-18</h4><h2 id="kubernetes-version-support">👌 Kubernetes version support</h2>
+
+<ul>
+<li>Management Cluster: v1.31.x -&gt; v1.35.x</li>
+<li>Workload Cluster: v1.29.x -&gt; v1.35.x</li>
+</ul>
+
+<p><a href="https://cluster-api.sigs.k8s.io/reference/versions.html" target="_blank">More information about version support can be found here</a></p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+<li>Support for Kubernetes v1.35</li>
+</ul>
+
+<h2 id="changes-since-v1-12-0">Changes since v1.12.0</h2>
+
+<h2 id="chart-with-upwards-trend-overview">:chart_with_upwards_trend: Overview</h2>
+
+<ul>
+<li>8 new commits merged</li>
+<li>1 bug fixed 🐛</li>
+</ul>
+
+<h2 id="bug-bug-fixes">:bug: Bug Fixes</h2>
+
+<ul>
+<li>KCP/MachineSet: Preserve existing object names for backward compatibility with pre-v1.7 in-place updates (#13147)</li>
+</ul>
+
+<h2 id="seedling-others">:seedling: Others</h2>
+
+<ul>
+<li>CI: Bump Kubernetes version used for testing to v1.35.0-rc.1 (#13139)</li>
+<li>e2e: Bump kind to v0.31.0 (#13163)</li>
+<li>e2e: Bump Kubernetes version used for testing to v1.35.0 (#13161)</li>
+<li>e2e: Bump to etcd-v3.6.6-0 (#13145)</li>
+</ul>
+
+<p>:book: Additionally, there have been 3 contributions to our documentation and book. (#13141, #13154, #13160)</p>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<p><em>Thanks to all our contributors!</em> 😊</p>
+<br><h2>kubernetes-sigs/kind</h2> <h3>Release notes for v0.31.0</h3><h4>2025-12-18</h4><p>This release contains dependency updates and defaults to Kubernetes 1.35.0.</p>
+
+<p>Please take note of the breaking changes from Kubernetes 1.35, and how to prepare for <strong>future</strong> changes to move off of the deprecated kubeam v1beta3 in favor of v1beta4. We will include updated reminders for both again in subsequent releases.</p>
+
+<h1 id="breaking-changes">Breaking Changes</h1>
+
+<p>The default node image is now <code>kindest/node:v1.35.0@sha256:452d707d4862f52530247495d180205e029056831160e22870e37e3f6c1ac31f</code></p>
+
+<h2 id="kubernetes-cgroupv1">Kubernetes 1.35+ Cgroup v1</h2>
+
+<p>Kubernetes <a href="https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/#removal-of-cgroup-v1-support" target="_blank">will be removing cgroup v1 support</a>, and therefore kind node images at those versions will also be dropping support.</p>
+
+<p>You can read more about this change in the Kubernetes release blog: <a href="https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/#removal-of-cgroup-v1-support" target="_blank">https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/#removal-of-cgroup-v1-support</a></p>
+
+<p>If you must use kind on cgroup v1, we recommend using an older Kubernetes release for the immediate future, but we also strongly recommend migrating to cgroup v2.</p>
+
+<p>In the near future as Kubernetes support dwindles, KIND will also clean up cgroup v1 workarounds and drop support in future kind releases and images, regardless of Kubernetes version.</p>
+
+<p>Most stable linux distros should be on cgroupv2 out of the box.</p>
+
+<p>This is a reminder to use pinned images by digest, see the note below about images for this release.</p>
+
+<h2 id="kubeadm-config">Kubeadm Config *Future* Breaking Change</h2>
+
+<p><strong>WARNING</strong>: Future kind releases will <a href="https://github.com/kubernetes-sigs/kind/issues/3847" target="_blank">adopt kubeadm v1beta4</a> configuration, <a href="https://github.com/kubernetes/kubeadm" target="_blank">kubeadm</a> v1beta4 has a breaking change to <code>extraArgs</code>: <a href="https://kubernetes.io/blog/2024/08/23/kubernetes-1-31-kubeadm-v1beta4/" target="_blank">https://kubernetes.io/blog/2024/08/23/kubernetes-1-31-kubeadm-v1beta4/</a>.</p>
+
+<p>If you use the <code>kubeadmConfigPatches</code> feature then you may need to prepare for this change.
+We recommend that you use versioned config patches that explicitly match the version required.</p>
+
+<p>KIND uses kubeadm v1beta3 for Kubernetes 1.23+, and will likely use v1beta4 for Kubernetes 1.36+
+The exact version is TBD pending work to fix this but expected to be 1.36.
+It will definitely be an as-of-yet-unreleased Kubernetes version to avoid surprises, and it will not be on a patch-release boundary.</p>
+
+<p>KIND <em>may</em> still work with older Kubernetes versions at v1beta2, but we no longer test or actively support these as Kubernetes only supports 1.32+ currently: <a href="https://kubernetes.io/releases/" target="_blank">https://kubernetes.io/releases/</a></p>
+
+<p>You likely only need v1beta3 + v1beta4 patches, you can take your existing patches that work with v1beta3, explicitly set <code>apiVersion: kubeadm.k8s.io/v1beta3</code> in the patch at the top level, and make another copy for v1beta4. The v1beta4 patch will need to move <code>extraArgs</code> from a map to a list, for examples see: <a href="https://kubernetes.io/docs/reference/config-api/kubeadm-config.v1beta4/" target="_blank">https://kubernetes.io/docs/reference/config-api/kubeadm-config.v1beta4/</a></p>
+
+<p>For a concrete example of kind config with kubeadm config patch targeting both v1beta3 and v1beta4, consider this simple kind config that sets verbosity of the apiserver logs:</p>
+
+<pre><code class="language-yaml">kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+kubeadmConfigPatches:
+# patch for v1beta3 (1.23 ...)
+- |
+  kind: ClusterConfiguration
+  apiVersion: kubeadm.k8s.io/v1beta3
+  apiServer:
+    extraArgs:
+      &quot;v&quot;: &quot;4&quot;
+# patch for v1beta4 (future)
+- |
+  kind: ClusterConfiguration
+  apiVersion: kubeadm.k8s.io/v1beta4
+  apiServer:
+    extraArgs:
+      - name: &quot;v&quot;
+        value: &quot;4&quot;
+</code></pre>
+
+<p>If you only need to target a particular release, you can use one version.</p>
+
+<p>If you only need to target fields that did not change between kubeadm beta versions, you can use a versionless patch, which may be more convenient, but we cannot guarantee there will be no future kubeadm config breaking changes.</p>
+
+<h1 id="new-features">New Features</h1>
+
+<ul>
+<li>Assorted unspecified dependency updates</li>
+</ul>
+
+<p>Images pre-built for this release:</p>
+
+<ul>
+<li>v1.35.0: <code>kindest/node:v1.35.0@sha256:452d707d4862f52530247495d180205e029056831160e22870e37e3f6c1ac31f</code></li>
+<li>v1.34.3: <code>kindest/node:v1.34.3@sha256:08497ee19eace7b4b5348db5c6a1591d7752b164530a36f855cb0f2bdcbadd48</code></li>
+<li>v1.33.7: <code>kindest/node:v1.33.7@sha256:d26ef333bdb2cbe9862a0f7c3803ecc7b4303d8cea8e814b481b09949d353040</code></li>
+<li>v1.32.11: <code>kindest/node:v1.32.11@sha256:5fc52d52a7b9574015299724bd68f183702956aa4a2116ae75a63cb574b35af8</code></li>
+<li>v1.31.14: <code>kindest/node:v1.31.14@sha256:6f86cf509dbb42767b6e79debc3f2c32e4ee01386f0489b3b2be24b0a55aac2b</code></li>
+</ul>
+
+<p><strong>NOTE</strong>: You <em>must</em> use the <code>@sha256</code> digest to guarantee an image built for this release, until such a time as we switch to a different tagging scheme. Even then we will highly encourage digest pinning for security and reproducibility reasons.</p>
+
+<p>See also:</p>
+
+<ul>
+<li><a href="https://kind.sigs.k8s.io/docs/user/quick-start/#creating-a-cluster" target="_blank">https://kind.sigs.k8s.io/docs/user/quick-start/#creating-a-cluster</a></li>
+<li><a href="https://kind.sigs.k8s.io/docs/user/quick-start/#building-images" target="_blank">https://kind.sigs.k8s.io/docs/user/quick-start/#building-images</a></li>
+</ul>
+
+<p>NOTE: These node images support amd64 and arm64, both of our supported platforms. <strong>You must use the same platform as your host,</strong> for more context see <a href="https://github.com/kubernetes-sigs/kind/issues/2718" target="_blank">https://github.com/kubernetes-sigs/kind/issues/2718</a></p>
+
+<h1 id="fixes">Fixes</h1>
+
+<ul>
+<li>Detect additional edge case with ipv6 support on the host</li>
+<li>Make development / release scripts GOTOOLCHAIN aware</li>
+</ul>
+
+<h1 id="contributors">Contributors</h1>
+
+<p>Committers for this release:</p>
+
+<ul>
+<li>@AkihiroSuda</li>
+<li>@adambkaplan</li>
+<li>@afbjorklund</li>
+<li>@aoxn</li>
+<li>@BenTheElder</li>
+<li>@dependabot[bot]</li>
+<li>@k8s-ci-robot</li>
+<li>@kalexmills</li>
+<li>@kishen-v</li>
+<li>@mikejoh</li>
+<li>@rayowang</li>
+<li>@shahar1</li>
+<li>@stmcginnis</li>
+</ul>
+<br><h2>etcd-io/etcd</h2> <h3>Release notes for v3.6.7</h3><h4>2025-12-17</h4><p>Please check out <a href="https://github.com/etcd-io/etcd/blob/main/CHANGELOG/CHANGELOG-3.6.md" target="_blank">CHANGELOG</a> for a full list of changes. And make sure to read <a href="https://etcd.io/docs/v3.6/upgrades/upgrade_3_6/" target="_blank">upgrade guide</a> before upgrading etcd (there may be breaking changes).</p>
+
+<p>For installation guides, please check out <a href="http://play.etcd.io" target="_blank">play.etcd.io</a> and <a href="https://etcd.io/docs/v3.6/op-guide/" target="_blank">operating etcd</a>. Latest support status for common architectures and operating systems can be found at <a href="https://etcd.io/docs/v3.6/op-guide/supported-platform/" target="_blank">supported platforms</a>.</p>
+
+<h6 id="linux">Linux</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.6.7
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C /tmp/etcd-download-test --strip-components=1 --no-same-owner
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+
+# start a local etcd server
+/tmp/etcd-download-test/etcd
+
+# write,read to etcd
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 put foo bar
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 get foo
+</code></pre>
+
+<h6 id="macos-darwin">macOS (Darwin)</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.6.7
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-darwin-amd64.zip -o /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+unzip /tmp/etcd-${ETCD_VER}-darwin-amd64.zip -d /tmp &amp;&amp; rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+mv /tmp/etcd-${ETCD_VER}-darwin-amd64/* /tmp/etcd-download-test &amp;&amp; rm -rf mv /tmp/etcd-${ETCD_VER}-darwin-amd64
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+</code></pre>
+
+<h6 id="docker">Docker</h6>
+
+<p>etcd uses <a href="https://gcr.io/etcd-development/etcd" target="_blank"><code>gcr.io/etcd-development/etcd</code></a> as a primary container registry, and <a href="https://quay.io/coreos/etcd" target="_blank"><code>quay.io/coreos/etcd</code></a> as secondary.</p>
+
+<pre><code class="language-sh">ETCD_VER=v3.6.7
+
+rm -rf /tmp/etcd-data.tmp &amp;&amp; mkdir -p /tmp/etcd-data.tmp &amp;&amp; \
+  docker rmi gcr.io/etcd-development/etcd:${ETCD_VER} || true &amp;&amp; \
+  docker run \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  --mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+  --name etcd-gcr-${ETCD_VER} \
+  gcr.io/etcd-development/etcd:${ETCD_VER} \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:2379 \
+  --advertise-client-urls http://0.0.0.0:2379 \
+  --listen-peer-urls http://0.0.0.0:2380 \
+  --initial-advertise-peer-urls http://0.0.0.0:2380 \
+  --initial-cluster s1=http://0.0.0.0:2380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new \
+  --log-level info \
+  --logger zap \
+  --log-outputs stderr
+
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcd --version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdutl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl endpoint health
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl put foo bar
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl get foo
+</code></pre>
+<br><h3>Release notes for v3.5.26</h3><h4>2025-12-17</h4><p>Please check out <a href="https://github.com/etcd-io/etcd/blob/main/CHANGELOG/CHANGELOG-3.5.md" target="_blank">CHANGELOG</a> for a full list of changes. And make sure to read <a href="https://etcd.io/docs/v3.5/upgrades/upgrade_3_5/" target="_blank">upgrade guide</a> before upgrading etcd (there may be breaking changes).</p>
+
+<p>For installation guides, please check out <a href="http://play.etcd.io" target="_blank">play.etcd.io</a> and <a href="https://etcd.io/docs/v3.5/op-guide/" target="_blank">operating etcd</a>. Latest support status for common architectures and operating systems can be found at <a href="https://etcd.io/docs/v3.5/op-guide/supported-platform/" target="_blank">supported platforms</a>.</p>
+
+<h6 id="linux">Linux</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.5.26
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C /tmp/etcd-download-test --strip-components=1 --no-same-owner
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+
+# start a local etcd server
+/tmp/etcd-download-test/etcd
+
+# write,read to etcd
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 put foo bar
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 get foo
+</code></pre>
+
+<h6 id="macos-darwin">macOS (Darwin)</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.5.26
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-darwin-amd64.zip -o /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+unzip /tmp/etcd-${ETCD_VER}-darwin-amd64.zip -d /tmp &amp;&amp; rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+mv /tmp/etcd-${ETCD_VER}-darwin-amd64/* /tmp/etcd-download-test &amp;&amp; rm -rf mv /tmp/etcd-${ETCD_VER}-darwin-amd64
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+</code></pre>
+
+<h6 id="docker">Docker</h6>
+
+<p>etcd uses <a href="https://gcr.io/etcd-development/etcd" target="_blank"><code>gcr.io/etcd-development/etcd</code></a> as a primary container registry, and <a href="https://quay.io/coreos/etcd" target="_blank"><code>quay.io/coreos/etcd</code></a> as secondary.</p>
+
+<pre><code class="language-sh">ETCD_VER=v3.5.26
+
+rm -rf /tmp/etcd-data.tmp &amp;&amp; mkdir -p /tmp/etcd-data.tmp &amp;&amp; \
+  docker rmi gcr.io/etcd-development/etcd:${ETCD_VER} || true &amp;&amp; \
+  docker run \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  --mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+  --name etcd-gcr-${ETCD_VER} \
+  gcr.io/etcd-development/etcd:${ETCD_VER} \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:2379 \
+  --advertise-client-urls http://0.0.0.0:2379 \
+  --listen-peer-urls http://0.0.0.0:2380 \
+  --initial-advertise-peer-urls http://0.0.0.0:2380 \
+  --initial-cluster s1=http://0.0.0.0:2380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new \
+  --log-level info \
+  --logger zap \
+  --log-outputs stderr
+
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcd --version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdutl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl endpoint health
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl put foo bar
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl get foo
+</code></pre>
+<br><h3>Release notes for v3.4.40</h3><h4>2025-12-17</h4><p>Please check out <a href="https://github.com/etcd-io/etcd/blob/main/CHANGELOG/CHANGELOG-3.4.md" target="_blank">CHANGELOG</a> for a full list of changes. And make sure to read <a href="https://etcd.io/docs/v3.4/upgrades/upgrade_3_4/" target="_blank">upgrade guide</a> before upgrading etcd (there may be breaking changes).</p>
+
+<p>For installation guides, please check out <a href="http://play.etcd.io" target="_blank">play.etcd.io</a> and <a href="https://etcd.io/docs/v3.4/op-guide/" target="_blank">operating etcd</a>. Latest support status for common architectures and operating systems can be found at <a href="https://etcd.io/docs/v3.4/op-guide/supported-platform/" target="_blank">supported platforms</a>.</p>
+
+<h6 id="linux">Linux</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.4.40
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C /tmp/etcd-download-test --strip-components=1 --no-same-owner
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+
+# start a local etcd server
+/tmp/etcd-download-test/etcd
+
+# write,read to etcd
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 put foo bar
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 get foo
+</code></pre>
+
+<h6 id="macos-darwin">macOS (Darwin)</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.4.40
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-darwin-amd64.zip -o /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+unzip /tmp/etcd-${ETCD_VER}-darwin-amd64.zip -d /tmp &amp;&amp; rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+mv /tmp/etcd-${ETCD_VER}-darwin-amd64/* /tmp/etcd-download-test &amp;&amp; rm -rf mv /tmp/etcd-${ETCD_VER}-darwin-amd64
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+</code></pre>
+
+<h6 id="docker">Docker</h6>
+
+<p>etcd uses <a href="https://gcr.io/etcd-development/etcd" target="_blank"><code>gcr.io/etcd-development/etcd</code></a> as a primary container registry, and <a href="https://quay.io/coreos/etcd" target="_blank"><code>quay.io/coreos/etcd</code></a> as secondary.</p>
+
+<pre><code class="language-sh">ETCD_VER=v3.4.40
+
+rm -rf /tmp/etcd-data.tmp &amp;&amp; mkdir -p /tmp/etcd-data.tmp &amp;&amp; \
+  docker rmi gcr.io/etcd-development/etcd:${ETCD_VER} || true &amp;&amp; \
+  docker run \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  --mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+  --name etcd-gcr-${ETCD_VER} \
+  gcr.io/etcd-development/etcd:${ETCD_VER} \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:2379 \
+  --advertise-client-urls http://0.0.0.0:2379 \
+  --listen-peer-urls http://0.0.0.0:2380 \
+  --initial-advertise-peer-urls http://0.0.0.0:2380 \
+  --initial-cluster s1=http://0.0.0.0:2380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new \
+  --log-level info \
+  --logger zap \
+  --log-outputs stderr
+
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcd --version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdutl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl endpoint health
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl put foo bar
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl get foo
+</code></pre>
+<br><h2>prometheus/prometheus</h2> <h3>Release notes for 3.8.1 / 2025-12-16</h3><h4>2025-12-16</h4><ul>
+<li>[BUGFIX] remote: Fix Remote Write receiver, so it does not send wrong response headers for v1 flow and cause Prometheus senders to emit false partial error log and metrics. #17683</li>
+</ul>
+<br>
+</body>
+
+</html>
