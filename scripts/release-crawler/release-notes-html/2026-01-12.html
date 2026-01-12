@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2026-01-05 - 2026-01-12</h1><h2>kubernetes-sigs/cluster-api</h2> <h3>Release notes for v1.10.10</h3><h4>2026-01-08</h4><h2 id="kubernetes-version-support">👌 Kubernetes version support</h2>
+
+<ul>
+<li>Management Cluster: v1.28.x -&gt; v1.33.x</li>
+<li>Workload Cluster: v1.26.x -&gt; v1.33.x</li>
+</ul>
+
+<p><a href="https://cluster-api.sigs.k8s.io/reference/versions.html" target="_blank">More information about version support can be found here</a></p>
+
+<h2 id="changes-since-v1-10-9">Changes since v1.10.9</h2>
+
+<h2 id="chart-with-upwards-trend-overview">:chart_with_upwards_trend: Overview</h2>
+
+<ul>
+<li>1 new commit merged</li>
+<li>1 bug fixed 🐛</li>
+</ul>
+
+<h2 id="bug-bug-fixes">:bug: Bug Fixes</h2>
+
+<ul>
+<li>Runtime SDK: Improve client cert/key rotation of the RuntimeSDK client (#13215)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<p><em>Thanks to all our contributors!</em> 😊</p>
+<br><h2>prometheus/prometheus</h2> <h3>Release notes for 3.9.1 / 2026-01-07</h3><h4>2026-01-07</h4><ul>
+<li>[BUGFIX] Agent: fix crash shortly after startup from invalid type of object. #17802</li>
+<li>[BUGFIX] Scraping: fix relabel keep/drop not working. #17807</li>
+</ul>
+<br><h3>Release notes for 3.9.0 / 2026-01-06</h3><h4>2026-01-07</h4><h2 id="note-for-users-of-native-histograms">Note for users of Native Histograms</h2>
+
+<p>In version 3.9, Native Histograms is no longer experimental, and the feature flag <code>native-histogram</code> has no effect.  You must now turn on
+the config setting <code>scrape_native_histograms</code> to collect Native Histogram samples from exporters.</p>
+
+<h2 id="changelog">Changelog</h2>
+
+<ul>
+<li>[CHANGE] Native Histograms are no longer experimental! Make the <code>native-histogram</code> feature flag a no-op. Use <code>scrape_native_histograms</code> config option instead. #17528</li>
+<li>[CHANGE] API: Add maximum limit of 10,000 sets of statistics to TSDB status endpoint. #17647</li>
+<li>[FEATURE] API: Add /api/v1/features for clients to understand which features are supported. #17427</li>
+<li>[FEATURE] Promtool: Add <code>start_timestamp</code> field for unit tests. #17636</li>
+<li>[FEATURE] Promtool: Add <code>--format seriesjson</code> option to <code>tsdb dump</code> to output just series labels in JSON format. #13409</li>
+<li>[FEATURE] Add <code>--storage.tsdb.delay-compact-file.path</code> flag for better interoperability with Thanos. #17435</li>
+<li>[FEATURE] UI: Add an option on the query drop-down menu to duplicate that query panel. #17714</li>
+<li>[ENHANCEMENT]: TSDB: add flag <code>--storage.tsdb.block-reload-interval</code> to configure TSDB Block Reload Interval. #16728</li>
+<li>[ENHANCEMENT] UI: Add graph option to start the chart&rsquo;s Y axis at zero. #17565</li>
+<li>[ENHANCEMENT] Scraping: Classic protobuf format no longer requires the unit in the metric name. #16834</li>
+<li>[ENHANCEMENT] PromQL, Rules, SD, Scraping: Add native histograms to complement existing summaries. #17374</li>
+<li>[ENHANCEMENT] Notifications: Add a histogram <code>prometheus_notifications_latency_histogram_seconds</code> to complement the existing summary. #16637</li>
+<li>[ENHANCEMENT] Remote-write: Add custom scope support for AzureAD authentication. #17483</li>
+<li>[ENHANCEMENT] SD: add a <code>config</code> label with job name for most <code>prometheus_sd_refresh</code> metrics. #17138</li>
+<li>[ENHANCEMENT] TSDB: New histogram <code>prometheus_tsdb_sample_ooo_delta</code>, the distribution of out-of-order samples in seconds. Collected for all samples, accepted or not. #17477</li>
+<li>[ENHANCEMENT] Remote-read: Validate histograms received via remote-read. #17561</li>
+<li>[PERF] TSDB: Small optimizations to postings index. #17439</li>
+<li>[PERF] Scraping: Speed up relabelling of series. #17530</li>
+<li>[PERF] PromQL: Small optimisations in binary operators. #17524, #17519.</li>
+<li>[BUGFIX] UI: PromQL autocomplete now shows the correct type and HELP text for OpenMetrics counters whose samples end in <code>_total</code>. #17682</li>
+<li>[BUGFIX] UI: Fixed codemirror-promql incorrectly showing label completion suggestions after the closing curly brace of a vector selector. #17602</li>
+<li>[BUGFIX] UI: Query editor no longer suggests a duration unit if one is already present after a number. #17605</li>
+<li>[BUGFIX] PromQL: Fix some &ldquo;vector cannot contain metrics with the same labelset&rdquo; errors when experimental delayed name removal is enabled. #17678</li>
+<li>[BUGFIX] PromQL: Fix possible corruption of PromQL text if the query had an empty <code>ignoring()</code> and non-empty grouping. #17643</li>
+<li>[BUGFIX] PromQL: Fix resets/changes to return empty results for anchored selectors when all samples are outside the range. #17479</li>
+<li>[BUGFIX] PromQL: Check more consistently for many-to-one matching in filter binary operators. #17668</li>
+<li>[BUGFIX] PromQL: Fix collision in unary negation with non-overlapping series. #17708</li>
+<li>[BUGFIX] PromQL: Fix collision in label_join and label_replace with non-overlapping series. #17703</li>
+<li>[BUGFIX] PromQL: Fix bug with inconsistent results for queries with OR expression when experimental delayed name removal is enabled. #17161</li>
+<li>[BUGFIX] PromQL: Ensure that <code>rate</code>/<code>increase</code>/<code>delta</code> of histograms results in a gauge histogram. #17608</li>
+<li>[BUGFIX] PromQL: Do not panic while iterating over invalid histograms. #17559</li>
+<li>[BUGFIX] TSDB: Reject chunk files whose encoded chunk length overflows int. #17533</li>
+<li>[BUGFIX] TSDB: Do not panic during resolution reduction of invalid histograms. #17561</li>
+<li>[BUGFIX] Remote-write Receive: Avoid duplicate labels when experimental type-and-unit-label feature is enabled. #17546</li>
+<li>[BUGFIX] OTLP Receiver: Only write metadata to disk when experimental metadata-wal-records feature is enabled. #17472</li>
+</ul>
+<br><h2>coredns/coredns</h2> <h3>Release notes for v1.14.0</h3><h4>2026-01-08</h4><p>This release focuses on security hardening and operational reliability. Core updates
+introduce a regex length limit to reduce resource-exhaustion risk. Plugin updates
+improve error consolidation (<code>show_first</code>), reduce misleading SOA warnings, add
+Kubernetes API rate limiting, enhance metrics with plugin chain tracking, and fix
+issues in azure and sign. This release also includes additional security fixes;
+see the security advisory for details.</p>
+
+<h2 id="brought-to-you-by">Brought to You By</h2>
+
+<p>cangming
+pasteley
+Raisa Kabir
+Ross Golder
+rusttech
+Syed Azeez
+Ville Vesilehto
+Yong Tang</p>
+
+<h2 id="noteworthy-changes">Noteworthy Changes</h2>
+
+<ul>
+<li>core: Fix gosec G115 integer overflow warnings (<a href="https://github.com/coredns/coredns/pull/7799" target="_blank">https://github.com/coredns/coredns/pull/7799</a>)</li>
+<li>core: Add regex length limit (<a href="https://github.com/coredns/coredns/pull/7802" target="_blank">https://github.com/coredns/coredns/pull/7802</a>)</li>
+<li>plugin/azure: Fix slice init length (<a href="https://github.com/coredns/coredns/pull/6901" target="_blank">https://github.com/coredns/coredns/pull/6901</a>)</li>
+<li>plugin/errors: Add optional <code>show_first</code> flag to consolidate directive (<a href="https://github.com/coredns/coredns/pull/7703" target="_blank">https://github.com/coredns/coredns/pull/7703</a>)</li>
+<li>plugin/file: Fix for misleading SOA parser warnings (<a href="https://github.com/coredns/coredns/pull/7774" target="_blank">https://github.com/coredns/coredns/pull/7774</a>)</li>
+<li>plugin/kubernetes: Rate limits to api server (<a href="https://github.com/coredns/coredns/pull/7771" target="_blank">https://github.com/coredns/coredns/pull/7771</a>)</li>
+<li>plugin/metrics: Implement plugin chain tracking (<a href="https://github.com/coredns/coredns/pull/7791" target="_blank">https://github.com/coredns/coredns/pull/7791</a>)</li>
+<li>plugin/sign: Report parser err before missing SOA (<a href="https://github.com/coredns/coredns/pull/7775" target="_blank">https://github.com/coredns/coredns/pull/7775</a>)</li>
+</ul>
+<br><h2>cri-o/cri-o</h2> <h3>Release notes for v1.34.4</h3><h4>2026-01-06</h4><ul>
+<li><a href="#cri-o-v1344">CRI-O v1.34.4</a>
+
+<ul>
+<li><a href="#downloads">Downloads</a></li>
+<li><a href="#changelog-since-v1343">Changelog since v1.34.3</a>
+
+<ul>
+<li><a href="#changes-by-kind">Changes by Kind</a>
+
+<ul>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#bug-or-regression">Bug or Regression</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a>
+
+<ul>
+<li><a href="#added">Added</a></li>
+<li><a href="#changed">Changed</a></li>
+<li><a href="#removed">Removed</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="cri-o-v1-34-4">CRI-O v1.34.4</h1>
+
+<p>The release notes have been generated for the commit range
+<a href="https://github.com/cri-o/cri-o/compare/v1.34.3...v1.34.4" target="_blank">v1.34.3&hellip;v1.34.4</a> on Tue, 06 Jan 2026 00:27:13 UTC.</p>
+
+<h2 id="downloads">Downloads</h2>
+
+<p>Download one of our static release bundles via our Google Cloud Bucket:</p>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.4.tar.gz" target="_blank">cri-o.amd64.v1.34.4.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.4.tar.gz.sha256sum" target="_blank">cri-o.amd64.v1.34.4.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.4.tar.gz.bundle" target="_blank">cri-o.amd64.v1.34.4.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.4.tar.gz.spdx" target="_blank">cri-o.amd64.v1.34.4.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.4.tar.gz.spdx.bundle" target="_blank">cri-o.amd64.v1.34.4.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.4.tar.gz" target="_blank">cri-o.arm64.v1.34.4.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.4.tar.gz.sha256sum" target="_blank">cri-o.arm64.v1.34.4.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.4.tar.gz.bundle" target="_blank">cri-o.arm64.v1.34.4.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.4.tar.gz.spdx" target="_blank">cri-o.arm64.v1.34.4.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.4.tar.gz.spdx.bundle" target="_blank">cri-o.arm64.v1.34.4.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.4.tar.gz" target="_blank">cri-o.ppc64le.v1.34.4.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.4.tar.gz.sha256sum" target="_blank">cri-o.ppc64le.v1.34.4.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.4.tar.gz.bundle" target="_blank">cri-o.ppc64le.v1.34.4.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.4.tar.gz.spdx" target="_blank">cri-o.ppc64le.v1.34.4.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.4.tar.gz.spdx.bundle" target="_blank">cri-o.ppc64le.v1.34.4.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.4.tar.gz" target="_blank">cri-o.s390x.v1.34.4.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.4.tar.gz.sha256sum" target="_blank">cri-o.s390x.v1.34.4.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.4.tar.gz.bundle" target="_blank">cri-o.s390x.v1.34.4.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.4.tar.gz.spdx" target="_blank">cri-o.s390x.v1.34.4.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.4.tar.gz.spdx.bundle" target="_blank">cri-o.s390x.v1.34.4.tar.gz.spdx.bundle</a></li>
+</ul></li>
+</ul>
+
+<p>To verify the artifact signatures via <a href="https://github.com/sigstore/cosign" target="_blank">cosign</a>, run:</p>
+
+<pre><code class="language-console">&gt; export COSIGN_EXPERIMENTAL=1
+&gt; cosign verify-blob cri-o.amd64.v1.34.4.tar.gz \
+    --certificate-identity https://github.com/cri-o/packaging/.github/workflows/obs.yml@refs/heads/main \
+    --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+    --certificate-github-workflow-repository cri-o/packaging \
+    --certificate-github-workflow-ref refs/heads/main \
+    --bundle cri-o.amd64.v1.34.4.tar.gz.bundle
+</code></pre>
+
+<p>To verify the bill of materials (SBOM) in <a href="https://spdx.org" target="_blank">SPDX</a> format using the <a href="https://sigs.k8s.io/bom" target="_blank">bom</a> tool, run:</p>
+
+<pre><code class="language-console">&gt; tar xfz cri-o.amd64.v1.34.4.tar.gz
+&gt; bom validate -e cri-o.amd64.v1.34.4.tar.gz.spdx -d cri-o
+</code></pre>
+
+<h2 id="changelog-since-v1-34-3">Changelog since v1.34.3</h2>
+
+<h3 id="changes-by-kind">Changes by Kind</h3>
+
+<h4 id="documentation">Documentation</h4>
+
+<ul>
+<li>Fixed release description to use cosigns new bundle format. (#9656, @saschagrunert)</li>
+</ul>
+
+<h4 id="bug-or-regression">Bug or Regression</h4>
+
+<ul>
+<li>Fix Exec CPU affinity doesn&rsquo;t work when CPU load balancing is disabled. (#9681, @bitoku)</li>
+<li>Respect user specified selinux label for systemd or init container. (#9671, @bitoku)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+<br><h3>Release notes for v1.33.8</h3><h4>2026-01-06</h4><ul>
+<li><a href="#cri-o-v1338">CRI-O v1.33.8</a>
+
+<ul>
+<li><a href="#downloads">Downloads</a></li>
+<li><a href="#changelog-since-v1337">Changelog since v1.33.7</a>
+
+<ul>
+<li><a href="#changes-by-kind">Changes by Kind</a>
+
+<ul>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#uncategorized">Uncategorized</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a>
+
+<ul>
+<li><a href="#added">Added</a></li>
+<li><a href="#changed">Changed</a></li>
+<li><a href="#removed">Removed</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="cri-o-v1-33-8">CRI-O v1.33.8</h1>
+
+<p>The release notes have been generated for the commit range
+<a href="https://github.com/cri-o/cri-o/compare/v1.33.7...v1.33.8" target="_blank">v1.33.7&hellip;v1.33.8</a> on Tue, 06 Jan 2026 00:27:17 UTC.</p>
+
+<h2 id="downloads">Downloads</h2>
+
+<p>Download one of our static release bundles via our Google Cloud Bucket:</p>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.33.8.tar.gz" target="_blank">cri-o.amd64.v1.33.8.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.33.8.tar.gz.sha256sum" target="_blank">cri-o.amd64.v1.33.8.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.33.8.tar.gz.bundle" target="_blank">cri-o.amd64.v1.33.8.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.33.8.tar.gz.spdx" target="_blank">cri-o.amd64.v1.33.8.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.33.8.tar.gz.spdx.bundle" target="_blank">cri-o.amd64.v1.33.8.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.33.8.tar.gz" target="_blank">cri-o.arm64.v1.33.8.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.33.8.tar.gz.sha256sum" target="_blank">cri-o.arm64.v1.33.8.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.33.8.tar.gz.bundle" target="_blank">cri-o.arm64.v1.33.8.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.33.8.tar.gz.spdx" target="_blank">cri-o.arm64.v1.33.8.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.33.8.tar.gz.spdx.bundle" target="_blank">cri-o.arm64.v1.33.8.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.33.8.tar.gz" target="_blank">cri-o.ppc64le.v1.33.8.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.33.8.tar.gz.sha256sum" target="_blank">cri-o.ppc64le.v1.33.8.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.33.8.tar.gz.bundle" target="_blank">cri-o.ppc64le.v1.33.8.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.33.8.tar.gz.spdx" target="_blank">cri-o.ppc64le.v1.33.8.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.33.8.tar.gz.spdx.bundle" target="_blank">cri-o.ppc64le.v1.33.8.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.33.8.tar.gz" target="_blank">cri-o.s390x.v1.33.8.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.33.8.tar.gz.sha256sum" target="_blank">cri-o.s390x.v1.33.8.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.33.8.tar.gz.bundle" target="_blank">cri-o.s390x.v1.33.8.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.33.8.tar.gz.spdx" target="_blank">cri-o.s390x.v1.33.8.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.33.8.tar.gz.spdx.bundle" target="_blank">cri-o.s390x.v1.33.8.tar.gz.spdx.bundle</a></li>
+</ul></li>
+</ul>
+
+<p>To verify the artifact signatures via <a href="https://github.com/sigstore/cosign" target="_blank">cosign</a>, run:</p>
+
+<pre><code class="language-console">&gt; export COSIGN_EXPERIMENTAL=1
+&gt; cosign verify-blob cri-o.amd64.v1.33.8.tar.gz \
+    --certificate-identity https://github.com/cri-o/packaging/.github/workflows/obs.yml@refs/heads/main \
+    --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+    --certificate-github-workflow-repository cri-o/packaging \
+    --certificate-github-workflow-ref refs/heads/main \
+    --bundle cri-o.amd64.v1.33.8.tar.gz.bundle
+</code></pre>
+
+<p>To verify the bill of materials (SBOM) in <a href="https://spdx.org" target="_blank">SPDX</a> format using the <a href="https://sigs.k8s.io/bom" target="_blank">bom</a> tool, run:</p>
+
+<pre><code class="language-console">&gt; tar xfz cri-o.amd64.v1.33.8.tar.gz
+&gt; bom validate -e cri-o.amd64.v1.33.8.tar.gz.spdx -d cri-o
+</code></pre>
+
+<h2 id="changelog-since-v1-33-7">Changelog since v1.33.7</h2>
+
+<h3 id="changes-by-kind">Changes by Kind</h3>
+
+<h4 id="documentation">Documentation</h4>
+
+<ul>
+<li>Fixed release description to use cosigns new bundle format. (#9657, @saschagrunert)</li>
+</ul>
+
+<h4 id="uncategorized">Uncategorized</h4>
+
+<ul>
+<li>Respect user specified selinux label for systemd or init container. (#9674, @openshift-cherrypick-robot)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+<br><h3>Release notes for v1.32.12</h3><h4>2026-01-06</h4><ul>
+<li><a href="#cri-o-v13212">CRI-O v1.32.12</a>
+
+<ul>
+<li><a href="#downloads">Downloads</a></li>
+<li><a href="#changelog-since-v13211">Changelog since v1.32.11</a>
+
+<ul>
+<li><a href="#changes-by-kind">Changes by Kind</a>
+
+<ul>
+<li><a href="#documentation">Documentation</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a>
+
+<ul>
+<li><a href="#added">Added</a></li>
+<li><a href="#changed">Changed</a></li>
+<li><a href="#removed">Removed</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="cri-o-v1-32-12">CRI-O v1.32.12</h1>
+
+<p>The release notes have been generated for the commit range
+<a href="https://github.com/cri-o/cri-o/compare/v1.32.11...v1.32.12" target="_blank">v1.32.11&hellip;v1.32.12</a> on Tue, 06 Jan 2026 00:27:18 UTC.</p>
+
+<h2 id="downloads">Downloads</h2>
+
+<p>Download one of our static release bundles via our Google Cloud Bucket:</p>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.32.12.tar.gz" target="_blank">cri-o.amd64.v1.32.12.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.32.12.tar.gz.sha256sum" target="_blank">cri-o.amd64.v1.32.12.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.32.12.tar.gz.bundle" target="_blank">cri-o.amd64.v1.32.12.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.32.12.tar.gz.spdx" target="_blank">cri-o.amd64.v1.32.12.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.32.12.tar.gz.spdx.bundle" target="_blank">cri-o.amd64.v1.32.12.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.32.12.tar.gz" target="_blank">cri-o.arm64.v1.32.12.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.32.12.tar.gz.sha256sum" target="_blank">cri-o.arm64.v1.32.12.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.32.12.tar.gz.bundle" target="_blank">cri-o.arm64.v1.32.12.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.32.12.tar.gz.spdx" target="_blank">cri-o.arm64.v1.32.12.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.32.12.tar.gz.spdx.bundle" target="_blank">cri-o.arm64.v1.32.12.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.32.12.tar.gz" target="_blank">cri-o.ppc64le.v1.32.12.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.32.12.tar.gz.sha256sum" target="_blank">cri-o.ppc64le.v1.32.12.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.32.12.tar.gz.bundle" target="_blank">cri-o.ppc64le.v1.32.12.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.32.12.tar.gz.spdx" target="_blank">cri-o.ppc64le.v1.32.12.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.32.12.tar.gz.spdx.bundle" target="_blank">cri-o.ppc64le.v1.32.12.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.32.12.tar.gz" target="_blank">cri-o.s390x.v1.32.12.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.32.12.tar.gz.sha256sum" target="_blank">cri-o.s390x.v1.32.12.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.32.12.tar.gz.bundle" target="_blank">cri-o.s390x.v1.32.12.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.32.12.tar.gz.spdx" target="_blank">cri-o.s390x.v1.32.12.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.32.12.tar.gz.spdx.bundle" target="_blank">cri-o.s390x.v1.32.12.tar.gz.spdx.bundle</a></li>
+</ul></li>
+</ul>
+
+<p>To verify the artifact signatures via <a href="https://github.com/sigstore/cosign" target="_blank">cosign</a>, run:</p>
+
+<pre><code class="language-console">&gt; export COSIGN_EXPERIMENTAL=1
+&gt; cosign verify-blob cri-o.amd64.v1.32.12.tar.gz \
+    --certificate-identity https://github.com/cri-o/packaging/.github/workflows/obs.yml@refs/heads/main \
+    --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+    --certificate-github-workflow-repository cri-o/packaging \
+    --certificate-github-workflow-ref refs/heads/main \
+    --bundle cri-o.amd64.v1.32.12.tar.gz.bundle
+</code></pre>
+
+<p>To verify the bill of materials (SBOM) in <a href="https://spdx.org" target="_blank">SPDX</a> format using the <a href="https://sigs.k8s.io/bom" target="_blank">bom</a> tool, run:</p>
+
+<pre><code class="language-console">&gt; tar xfz cri-o.amd64.v1.32.12.tar.gz
+&gt; bom validate -e cri-o.amd64.v1.32.12.tar.gz.spdx -d cri-o
+</code></pre>
+
+<h2 id="changelog-since-v1-32-11">Changelog since v1.32.11</h2>
+
+<h3 id="changes-by-kind">Changes by Kind</h3>
+
+<h4 id="documentation">Documentation</h4>
+
+<ul>
+<li>Fixed release description to use cosigns new bundle format. (#9658, @saschagrunert)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+<br>
+</body>
+
+</html>
