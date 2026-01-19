@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2026-01-12 - 2026-01-19</h1><h2>kubernetes/cloud-provider-openstack</h2> <h3>Release notes for openstack-cloud-controller-manager-2.34.2</h3><h4>2026-01-16</h4><p>Openstack Cloud Controller Manager Helm Chart</p>
+<br><h3>Release notes for openstack-cinder-csi-2.34.2</h3><h4>2026-01-15</h4><p>Cinder CSI Chart for OpenStack</p>
+<br><h2>kubernetes/kompose</h2> <h3>Release notes for v1.38.0</h3><h4>2026-01-15</h4><h1 id="installation">Installation</h1>
+
+<p><strong>Linux and macOS:</strong></p>
+
+<pre><code class="language-sh"># Linux
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-linux-amd64 -o kompose
+
+# Linux ARM64
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-linux-arm64 -o kompose
+
+# macOS
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-darwin-amd64 -o kompose
+
+# macOS ARM64
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-darwin-arm64 -o kompose
+
+chmod +x kompose
+sudo mv ./kompose /usr/local/bin/kompose
+</code></pre>
+
+<p><strong>Windows:</strong></p>
+
+<p>Download from <a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-windows-amd64.exe" target="_blank">GitHub</a> and add the binary to your PATH.</p>
+
+<p><strong>Checksums:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Filename</th>
+<th align="center">SHA256 Hash</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-darwin-amd64" target="_blank">kompose-darwin-amd64</a></td>
+<td align="center">a6c663df22610dec6b005e7c93b66bb46e33161707b7bb1cbee3bcdbf09cbb34</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-darwin-amd64.tar.gz" target="_blank">kompose-darwin-amd64.tar.gz</a></td>
+<td align="center">b0a75ea83ce64babd7ab7d7d9c6db6b55844929f6910d82d0d5b38bab2b733ad</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-darwin-arm64" target="_blank">kompose-darwin-arm64</a></td>
+<td align="center">5687d79633854d5fc8151a0148fd6045b643e3f745f7413106c807fe63fe97eb</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-darwin-arm64.tar.gz" target="_blank">kompose-darwin-arm64.tar.gz</a></td>
+<td align="center">aff7b2eb9c7cd80cb19ecadaa4344a16cc153172bc236637fabb13443ad82bae</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-linux-amd64" target="_blank">kompose-linux-amd64</a></td>
+<td align="center">65a6a720605bead3964e8b22d423a0763de451a236fe03de902e366cf3d9c147</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-linux-amd64.tar.gz" target="_blank">kompose-linux-amd64.tar.gz</a></td>
+<td align="center">60a1c57d15d7499226eb4045bb9a64fa598f2a8bd9f09b5c59f4ce1c74313a11</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-linux-arm" target="_blank">kompose-linux-arm</a></td>
+<td align="center">53119ee98adfe6fe430704876f4ad80f571733aaba4701eac1a17012efbb71c8</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-linux-arm.tar.gz" target="_blank">kompose-linux-arm.tar.gz</a></td>
+<td align="center">2888b4080f0feea623598843a61a7a0e372413c7b6fc88b5f494fc781fd81691</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-linux-arm64" target="_blank">kompose-linux-arm64</a></td>
+<td align="center">24faf6212ec34d325e4724118098d34b9dd321cda2d9ca22efa0f04cdb909894</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-linux-arm64.tar.gz" target="_blank">kompose-linux-arm64.tar.gz</a></td>
+<td align="center">10db6666f3d6d8ab183c5ecd075231fa427cf2dfc6b469d169dda4105e06dcba</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-windows-amd64.exe" target="_blank">kompose-windows-amd64.exe</a></td>
+<td align="center">6fb08b4d73590b1467aa60b9af8d4bd308829aba2b147cc184b94738a2a736ed</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-windows-amd64.exe.tar.gz" target="_blank">kompose-windows-amd64.exe.tar.gz</a></td>
+<td align="center">29a893a145819897995f40166392c8dd37e106fb27f237f791b3cef88cef33c1</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kubernetes/kompose/releases/download/v1.38.0/SHA256_SUM" target="_blank">SHA256_SUM</a></td>
+<td align="center">656e9e433fa129e0416a1b53417d944e5a9076d4426b09031b7def2c35e80db1</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>chore(deps)(deps): bump github.com/spf13/pflag from 1.0.7 to 1.0.10 by @dependabot[bot] in <a href="https://github.com/kubernetes/kompose/pull/2055" target="_blank">https://github.com/kubernetes/kompose/pull/2055</a></li>
+<li>chore(ci)(deps): bump actions/checkout from 4 to 6 by @dependabot[bot] in <a href="https://github.com/kubernetes/kompose/pull/2068" target="_blank">https://github.com/kubernetes/kompose/pull/2068</a></li>
+<li>fix issue   <a href="https://github.com/kubernetes/kompose/issues/2054" target="_blank">https://github.com/kubernetes/kompose/issues/2054</a> by @hurzelpurzel in <a href="https://github.com/kubernetes/kompose/pull/2065" target="_blank">https://github.com/kubernetes/kompose/pull/2065</a></li>
+<li>chore(deps): bump rexml from 3.3.9 to 3.4.2 in /docs by @dependabot[bot] in <a href="https://github.com/kubernetes/kompose/pull/2061" target="_blank">https://github.com/kubernetes/kompose/pull/2061</a></li>
+<li>fix: fix ci log failing with logrus by @cdrage in <a href="https://github.com/kubernetes/kompose/pull/2078" target="_blank">https://github.com/kubernetes/kompose/pull/2078</a></li>
+<li>chore(deps)(deps): bump golang.org/x/tools from 0.27.0 to 0.41.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/kompose/pull/2077" target="_blank">https://github.com/kubernetes/kompose/pull/2077</a></li>
+<li>chore(deps)(deps): bump github.com/go-viper/mapstructure/v2 from 2.3.0 to 2.4.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/kompose/pull/2048" target="_blank">https://github.com/kubernetes/kompose/pull/2048</a></li>
+<li>chore(ci)(deps): bump actions/upload-artifact from 4 to 6 by @dependabot[bot] in <a href="https://github.com/kubernetes/kompose/pull/2069" target="_blank">https://github.com/kubernetes/kompose/pull/2069</a></li>
+<li>chore(deps)(deps): bump github.com/spf13/cast from 1.9.2 to 1.10.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/kompose/pull/2070" target="_blank">https://github.com/kubernetes/kompose/pull/2070</a></li>
+<li>chore(deps)(deps): bump github.com/fsouza/go-dockerclient from 1.12.0 to 1.12.3 by @dependabot[bot] in <a href="https://github.com/kubernetes/kompose/pull/2075" target="_blank">https://github.com/kubernetes/kompose/pull/2075</a></li>
+<li>chore(deps)(deps): bump github.com/spf13/cobra from 1.8.0 to 1.10.2 by @dependabot[bot] in <a href="https://github.com/kubernetes/kompose/pull/2071" target="_blank">https://github.com/kubernetes/kompose/pull/2071</a></li>
+<li>chore(deps)(deps): bump github.com/compose-spec/compose-go/v2 from 2.8.1 to 2.10.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/kompose/pull/2076" target="_blank">https://github.com/kubernetes/kompose/pull/2076</a></li>
+<li>chore(deps)(deps): bump github.com/sirupsen/logrus from 1.9.3 to 1.9.4 by @dependabot[bot] in <a href="https://github.com/kubernetes/kompose/pull/2079" target="_blank">https://github.com/kubernetes/kompose/pull/2079</a></li>
+<li>fix(tests): improve test compatibility for macOS and podman by @cdrage in <a href="https://github.com/kubernetes/kompose/pull/2080" target="_blank">https://github.com/kubernetes/kompose/pull/2080</a></li>
+<li>1.38.0 Release by @cdrage in <a href="https://github.com/kubernetes/kompose/pull/2081" target="_blank">https://github.com/kubernetes/kompose/pull/2081</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes/kompose/compare/v1.37.0...v1.38.0" target="_blank">https://github.com/kubernetes/kompose/compare/v1.37.0&hellip;v1.38.0</a></p>
+<br><h2>kubernetes/cloud-provider-alibaba-cloud</h2> <h3>Release notes for v2.12.4</h3><h4>2026-01-12</h4><h2 id="image">Image</h2>
+
+<p>registry-cn-hangzhou.ack.aliyuncs.com/acs/cloud-controller-manager:v2.12.4</p>
+
+<h2 id="new-features">New features:</h2>
+
+<h3 id="clb">CLB</h3>
+
+<ul>
+<li><p>The default instance charge type for newly created CLB instances is changed from PayBySpec to PayByCLCU.</p>
+
+<h3 id="node">Node</h3></li>
+
+<li><p>Lingjun nodes: support automatically cleaning up Lingjun node resources in the cluster after the Lingjun instance is released.</p></li>
+
+<li><p>Skip reconcilation of hybrid-cloud nodes.</p>
+
+<h2 id="improvements">Improvements:</h2></li>
+
+<li><p>When processing node change events, ignore Services for serviceBackendType=eni.</p></li>
+
+<li><p>Improve CLB/NLB processing performance.</p></li>
+
+<li><p>Perform a limited number of attempts when NLB OpenAPI calls are throttled.</p></li>
+
+<li><p>Optimize metrics related to the time spent synchronizing Services, routes, and nodes.</p></li>
+
+<li><p>Change the readinessGate retry wait time from exponential backoff to a fixed interval.</p></li>
+
+<li><p>When it cannot find the ENI corresponding to a backend Pod IP, the error logs include the Pod name (targetRef) and the node information.</p>
+
+<h2 id="fixed-bugs">Fixed bugs</h2></li>
+
+<li><p>Fixed an issue  that it failed to automatically configure the backend targetPort as the health check port when NLB is manually configured with a listener port range and health checks.</p></li>
+
+<li><p>Fixed an issue in ECS + ECI/ACS mixed deployment scenarios where ECI/ACS instances could not be attached or backend weights were set incorrectly.</p></li>
+
+<li><p>Fixed a panic during Service synchronization when querying NLB information or when waiting for asynchronous task calls failed.</p></li>
+</ul>
+<br><h2>grpc/grpc</h2> <h3>Release notes for Release v1.78.0-pre2</h3><h4>2026-01-15</h4><p>This is a prerelease of gRPC Core 1.78.0 (gutsy).</p>
+
+<p>For gRPC documentation, see <a href="https://grpc.io/" target="_blank">grpc.io</a>. For previous releases, see <a href="https://github.com/grpc/grpc/releases" target="_blank">Releases</a>.</p>
+
+<p>This prerelease contains refinements, improvements, and bug fixes.</p>
+<br><h2>coredns/coredns</h2> <h3>Release notes for v1.14.1</h3><h4>2026-01-16</h4><p>This release primarily addresses security vulnerabilities affecting Go versions prior to
+Go 1.25.6 and Go 1.24.12 (CVE-2025-61728, CVE-2025-61726, CVE-2025-68121, CVE-2025-61731,
+CVE-2025-68119). It also includes performance improvements to the proxy plugin via
+multiplexed connections, along with various documentation updates.</p>
+
+<h2 id="brought-to-you-by">Brought to You By</h2>
+
+<p>Alex Massy
+Shiv Tyagi
+Ville Vesilehto
+Yong Tang</p>
+
+<h2 id="noteworthy-changes">Noteworthy Changes</h2>
+
+<ul>
+<li>plugin/proxy: Use mutex-based connection pool (<a href="https://github.com/coredns/coredns/pull/7790" target="_blank">https://github.com/coredns/coredns/pull/7790</a>)</li>
+</ul>
+<br><h2>kubernetes-sigs/cluster-api-provider-vsphere</h2> <h3>Release notes for v1.15.2</h3><h4>2026-01-12</h4><h2 id="changes-since-v1-15-1">Changes since v1.15.1</h2>
+
+<h2 id="chart-with-upwards-trend-overview">:chart_with_upwards_trend: Overview</h2>
+
+<ul>
+<li>1 new commit merged</li>
+</ul>
+
+<h2 id="seedling-others">:seedling: Others</h2>
+
+<ul>
+<li>Supervisor: adjust cache configuration to only cache CAPV VirtualMachine objects (#3753)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<p><em>Thanks to all our contributors!</em> 😊</p>
+<br>
+</body>
+
+</html>
