@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2026-01-19 - 2026-01-26</h1><h2>prometheus/prometheus</h2> <h3>Release notes for 3.5.1 / 2026-01-07</h3><h4>2026-01-22</h4><p>This is the current &ldquo;Long Term Support&rdquo; release.
+No code changes since 3.5.0, just some dependency updates:</p>
+
+<ul>
+<li>Docker library updated from 28.2.2 to 28.5.2. #17821</li>
+<li>Built with Go 1.24.11.</li>
+</ul>
+<br><h2>kubernetes/cloud-provider-openstack</h2> <h3>Release notes for Release v1.35.0</h3><h4>2026-01-23</h4><h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>[manila-csi-plugin] Fix unresolved name for release version on worker node setup by @silvacarloss in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/2997" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/2997</a></li>
+<li>fix bump scripts by @zetaab in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3013" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3013</a></li>
+<li>[manila-csi-plugin] Seed fsName to ceph-csi&rsquo;s node plugin by @gouthampacha in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/2994" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/2994</a></li>
+<li>update test deps by @zetaab in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3017" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3017</a></li>
+<li>update helm charts to 1.34.1 by @zetaab in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3019" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3019</a></li>
+<li>[docs] add more uses cases to node-selector service annotation by @kayrus in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/2869" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/2869</a></li>
+<li>Bump golang.org/x/crypto from 0.42.0 to 0.45.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3021" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3021</a></li>
+<li>[manila-csi-plugin] Support multiple share rules by @silvacarloss in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/2915" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/2915</a></li>
+<li>Replace custom Contains() with slices.Contains() by @jongwooo in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3025" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3025</a></li>
+<li>[occm] Add node affinity to schedule cloud controller manager only on control plane nodes. by @fakman0 in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/2929" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/2929</a></li>
+<li>Bump k8s.io/kubernetes from 1.34.1 to 1.34.2 by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3029" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3029</a></li>
+<li>Bump github.com/opencontainers/selinux from 1.12.0 to 1.13.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3022" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3022</a></li>
+<li>[occm] Support keystone token for openstack auth by @archerwu9425 in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/2964" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/2964</a></li>
+<li>chore: bump golang in Dockerfile by @kayrus in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3037" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3037</a></li>
+<li>[occm] Fix incorrect SA name in auth-delegate clusterRoleBiding in OCCM helm chart by @HaoruiPeng in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/2907" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/2907</a></li>
+<li>[cinder-csi-plugin] podSecurityContext is missing in nodePlugin DaemonSet by @mreho in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/2981" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/2981</a></li>
+<li>[occm] Add container-level securityContext to Helm chart by @zwindler in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3041" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3041</a></li>
+<li>[manila-csi-plugin] Allow manila e2e testing with DHSS=true by @eshulman2 in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3045" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3045</a></li>
+<li>[cinder-csi-plugin] Bump Cinder CSI sidecar versions to latest minor version by @jauru in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3046" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3046</a></li>
+<li>[manila-csi-plugin] Bump Manila CSI sidecar versions to latest minor version by @jauru in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3047" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3047</a></li>
+<li>[all] update deps to 1.35 by @jauru in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3044" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3044</a></li>
+<li>tests: bump devstack to stable/2025.2 by @kayrus in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3042" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3042</a></li>
+<li>tests: split kubectl download task into multiple with retries by @kayrus in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3059" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3059</a></li>
+<li>release 1.35.0 by @stephenfin in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3054" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3054</a></li>
+</ul>
+
+<h2 id="new-contributors">New Contributors</h2>
+
+<ul>
+<li>@silvacarloss made their first contribution in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/2997" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/2997</a></li>
+<li>@HaoruiPeng made their first contribution in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/2907" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/2907</a></li>
+<li>@mreho made their first contribution in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/2981" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/2981</a></li>
+<li>@zwindler made their first contribution in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3041" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3041</a></li>
+<li>@eshulman2 made their first contribution in <a href="https://github.com/kubernetes/cloud-provider-openstack/pull/3045" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/pull/3045</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes/cloud-provider-openstack/compare/v1.34.0...v1.35.0" target="_blank">https://github.com/kubernetes/cloud-provider-openstack/compare/v1.34.0&hellip;v1.35.0</a></p>
+<br><h3>Release notes for openstack-manila-csi-2.35.0</h3><h4>2026-01-23</h4><p>Manila CSI Chart for OpenStack</p>
+<br><h3>Release notes for openstack-cloud-controller-manager-2.35.0</h3><h4>2026-01-23</h4><p>Openstack Cloud Controller Manager Helm Chart</p>
+<br><h3>Release notes for openstack-cinder-csi-2.35.0</h3><h4>2026-01-23</h4><p>Cinder CSI Chart for OpenStack</p>
+<br><h3>Release notes for openstack-manila-csi-2.34.2</h3><h4>2026-01-21</h4><p>Manila CSI Chart for OpenStack</p>
+<br><h2>kubernetes-sigs/cluster-api</h2> <h3>Release notes for v1.12.2</h3><h4>2026-01-20</h4><h2 id="kubernetes-version-support">👌 Kubernetes version support</h2>
+
+<ul>
+<li>Management Cluster: v1.31.x -&gt; v1.35.x</li>
+<li>Workload Cluster: v1.29.x -&gt; v1.35.x</li>
+</ul>
+
+<p><a href="https://cluster-api.sigs.k8s.io/reference/versions.html" target="_blank">More information about version support can be found here</a></p>
+
+<h2 id="changes-since-v1-12-1">Changes since v1.12.1</h2>
+
+<h2 id="chart-with-upwards-trend-overview">:chart_with_upwards_trend: Overview</h2>
+
+<ul>
+<li>14 new commits merged</li>
+<li>4 bugs fixed 🐛</li>
+</ul>
+
+<h2 id="bug-bug-fixes">:bug: Bug Fixes</h2>
+
+<ul>
+<li>API: Fix v1beta1 ControlPlane contract to handle .status.initialized correctly (#13188)</li>
+<li>ClusterClass: Allow adding spec via ClusterClass JSON patches (#13226)</li>
+<li>Runtime SDK: Improve client  cert/key rotation of the RuntimeSDK client (#13217)</li>
+<li>Testing: Fix webhook envtest tests for Kubernetes &lt; v1.35 (#13172)</li>
+</ul>
+
+<h2 id="seedling-others">:seedling: Others</h2>
+
+<ul>
+<li>CI: Use env test 1.35.0 (#13169)</li>
+<li>ClusterClass: Improve topology diff (#13173)</li>
+<li>Dependency: Bump Go to v1.24.12 (#13241)</li>
+<li>Dependency: Bump to controller-runtime v0.22.5 (#13246)</li>
+<li>KCP: Remove the ControlPlaneKubeletLocalMode for kubeadm 1.36 later (#13211)</li>
+<li>MachineHealthCheck: Decrease verbosity for MHC log entry (#13203)</li>
+</ul>
+
+<p>:book: Additionally, there have been 4 contributions to our documentation and book. (#13197, #13198, #13208, #13219)</p>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+<li>k8s.io/api: v0.34.2 → v0.34.3</li>
+<li>k8s.io/apiextensions-apiserver: v0.34.2 → v0.34.3</li>
+<li>k8s.io/apimachinery: v0.34.2 → v0.34.3</li>
+<li>k8s.io/apiserver: v0.34.2 → v0.34.3</li>
+<li>k8s.io/client-go: v0.34.2 → v0.34.3</li>
+<li>k8s.io/code-generator: v0.34.2 → v0.34.3</li>
+<li>k8s.io/component-base: v0.34.2 → v0.34.3</li>
+<li>k8s.io/kms: v0.34.2 → v0.34.3</li>
+<li>sigs.k8s.io/controller-runtime: v0.22.4 → v0.22.5</li>
+</ul>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<p><em>Thanks to all our contributors!</em> 😊</p>
+<br><h3>Release notes for v1.11.5</h3><h4>2026-01-20</h4><h2 id="kubernetes-version-support">👌 Kubernetes version support</h2>
+
+<ul>
+<li>Management Cluster: v1.30.x -&gt; v1.34.x</li>
+<li>Workload Cluster: v1.28.x -&gt; v1.34.x</li>
+</ul>
+
+<p><a href="https://cluster-api.sigs.k8s.io/reference/versions.html" target="_blank">More information about version support can be found here</a></p>
+
+<h2 id="changes-since-v1-11-4">Changes since v1.11.4</h2>
+
+<h2 id="chart-with-upwards-trend-overview">:chart_with_upwards_trend: Overview</h2>
+
+<ul>
+<li>5 new commits merged</li>
+<li>4 bugs fixed 🐛</li>
+</ul>
+
+<h2 id="bug-bug-fixes">:bug: Bug Fixes</h2>
+
+<ul>
+<li>API: Fix v1beta1 ControlPlane contract to handle .status.initialized correctly (#13189)</li>
+<li>ClusterClass: Allow adding spec via ClusterClass JSON patches (#13227)</li>
+<li>KCP: Grant <code>delete</code> permissions to Secrets. (#13230)</li>
+<li>Runtime SDK: Improve client cert/key rotation of the RuntimeSDK client (#13214)</li>
+</ul>
+
+<h2 id="seedling-others">:seedling: Others</h2>
+
+<ul>
+<li>Dependency: Bump Go to v1.24.12 (#13244)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<p><em>Thanks to all our contributors!</em> 😊</p>
+<br><h2>kubernetes-sigs/kubebuilder</h2> <h3>Release notes for v4.11.0</h3><h4>2026-01-21</h4><h3 id="keep-your-scaffold-updated">🚀 Keep Your Scaffold Updated</h3>
+
+<p>🎉 Our migration guide was fully updated to help you upgrade from <code>any</code> version to the <code>latest</code>. It also now includes AI migration helpers/commands to guide upgrades for old scaffolds where manual steps are required. See the <a href="https://book.kubebuilder.io/migrations.html" target="_blank">migrations guidance</a>.</p>
+
+<blockquote>
+<p>_Automate updates with <a href="https://book.kubebuilder.io/plugins/available/autoupdate-v1-alpha" target="_blank"><code>kubebuilder edit --plugins=&quot;autoupdate.kubebuilder.io/v1-alpha&quot;</code></a> or run them manually with <a href="https://book.kubebuilder.io/reference/commands/alpha_update" target="_blank"><code>kubebuilder alpha update</code></a>. If your <code>PROJECT</code> file does <strong>not</strong> include <code>cliVersion</code>, you may need a one-time upgrade, and <a href="https://book.kubebuilder.io/reference/commands/alpha_generate.html" target="_blank"><code>kubebuilder alpha generate</code></a> can fully re-scaffold the project in one step. After that, updates work seamlessly. (<a href="https://master.book.kubebuilder.io/migrations.html" target="_blank">More info</a>)_</p>
+</blockquote>
+
+<h2 id="breaking-changes">⚠️ Breaking changes</h2>
+
+<h3 id="controller-runtime-v0-23-0-upgrade-v0-22-4-v0-23-0">controller-runtime<code>v0.23.0</code> upgrade (<code>v0.22.4</code> → <code>v0.23.0</code>)</h3>
+
+<p>This release updates Kubebuilder scaffolding to match controller-runtime v0.23.0. This version includes breaking changes that impact generated projects:</p>
+
+<ol>
+<li><strong>Type-safe webhook builder API</strong> — webhooks now use generics for stronger type safety</li>
+<li><strong>New Events API</strong> — migration from <code>tools/record</code> to <code>tools/events</code></li>
+<li><strong>ENVTEST teardown</strong> — <code>testEnv.Stop()</code> now requires an <code>Eventually</code> wrapper for graceful shutdown</li>
+</ol>
+
+<ul>
+<li>For manual upgrade steps for older projects, see: <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5378" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5378</a></li>
+<li>For the full upstream change list, see controller-runtime v0.23.0 release notes: <a href="https://github.com/kubernetes-sigs/controller-runtime/releases/tag/v0.23.0" target="_blank">https://github.com/kubernetes-sigs/controller-runtime/releases/tag/v0.23.0</a></li>
+</ul>
+
+<h3 id="if-you-use-the-helm-plugin-to-distribute-your-project">If you use the Helm plugin to distribute your project</h3>
+
+<p>This release includes major Helm plugin changes (community-raised fixes and improvements have been addressed). Please update your project:</p>
+
+<ul>
+<li><p><strong>If you use <a href="https://book.kubebuilder.io/plugins/available/helm-v1-alpha" target="_blank">helm/v1-alpha</a></strong>: upgrade to <strong><a href="https://book.kubebuilder.io/plugins/available/helm-v2-alpha" target="_blank">helm/v2-alpha</a></strong>. Using <a href="https://book.kubebuilder.io/reference/commands/alpha_generate" target="_blank">kubebuilder alpha generate</a> or <a href="https://book.kubebuilder.io/reference/commands/alpha_update" target="_blank">kubebuilder alpha update</a> will re-scaffold your project and auto-migrate Helm v1 → v2.</p></li>
+
+<li><p><strong>If you use helm/v2-alpha and you update manually</strong> (not via <a href="https://book.kubebuilder.io/reference/commands/alpha_generate" target="_blank">kubebuilder alpha generate</a> / <a href="https://book.kubebuilder.io/reference/commands/alpha_update" target="_blank">kubebuilder alpha update</a>, or neither has the <a href="https://book.kubebuilder.io/plugins/available/autoupdate-v1-alpha" target="_blank">AutoUpdate Plugin</a> configured), then re-generate the chart with all fixes:</p></li>
+</ul>
+
+<pre><code class="language-shell">kubebuilder edit --plugins=helm/v2-alpha --force
+</code></pre>
+
+<p>If you have customisations, back up your current Helm chart first so you can re-apply them on top of the latest version.</p>
+
+<p><strong>Tip:</strong> Check the <code>PROJECT</code> file to see which plugin/version your project is using.</p>
+
+<h2 id="new-features">✨ New features</h2>
+
+<ul>
+<li><strong>(helm/v2-alpha)</strong>: Add tolerations, nodeSelector, and affinity support. (#5247)</li>
+<li><strong>(go/v4)</strong>: Improve devcontainer for Codespaces compatibility. (#5295)</li>
+<li><strong>(go/v4)</strong>: Add <code>AGENTS.md</code> to generated projects. (#5273, #5322, #5327)</li>
+<li><strong>(alpha)</strong>: Auto-migrate <code>helm/v1-alpha</code> projects to <code>helm/v2-alpha</code> during <code>generate</code>. (#5349)</li>
+<li><strong>(helm/v2-alpha)</strong>: Improve <code>_helpers.tpl</code> readability. (#5359)</li>
+<li><strong>(helm/v2-alpha)</strong>: Standardise generated <code>values.yaml</code> comment conventions (single <code>#</code> vs <code>##</code>). (#5357)</li>
+<li><strong>(helm/v2-alpha)</strong>: Add standard Helm labels to generated resources. (#5340)</li>
+<li><strong>(helm/v2-alpha)</strong>: Add custom resources to <code>templates/extras</code>. (#5339)</li>
+<li><strong>(helm/v2-alpha)</strong>: Add support for parsing <code>imagePullSecrets</code> and including them in the generated chart. (#5242)</li>
+</ul>
+
+<h2 id="upgrades">✨ Upgrades</h2>
+
+<ul>
+<li><strong>(go/v4)</strong>: Upgrade controller-runtime from <code>v0.22.4</code> to <code>v0.23.0</code>. (#5378)</li>
+<li><strong>(go/v4)</strong>: Upgrade golangci-lint from <code>v2.5.0</code> → <code>v2.7.2</code>. (#5221, #5258)</li>
+<li><strong>(go/v4)</strong>: Upgrade Go version from <code>1.24</code> → <code>1.25</code>. (#5285)</li>
+<li><strong>(go/v4)</strong>: Upgrade controller-gen from <code>v0.19.0</code> → <code>v0.20.0</code>. (#5284)</li>
+<li><strong>(go/v4)</strong>: Upgrade cert-manager used by e2e test utilities from <code>v1.19.1</code> → <code>v1.19.2</code>. (#5293)</li>
+</ul>
+
+<h2 id="bug-fixes">🐛 Bug fixes</h2>
+
+<ul>
+<li><strong>(go/v4)</strong>: Remove redundant <code>config/webhook/kustomizeconfig.yaml</code> and <code>config/crd/kustomizeconfig.yaml</code> (Kustomize <code>v3.5.4+</code> has built-in support), fixing namespace transformation issues when using projects as bases/overlays. (#5245, #5243)</li>
+<li><strong>(alpha update)</strong>: Fix <code>--from-version</code> “Invalid SemVer” error. (#5309)</li>
+<li><strong>(go/v4)</strong>: Fix e2e suite race condition that could inadvertently delete cert-manager from environments. (#5329)</li>
+<li><strong>(go/v4)</strong>: Re-add cert-manager logs to e2e runs. (#5338)</li>
+<li><strong>(autoupdate/v1-alpha)</strong>: Make GitHub Models opt-in to prevent 403 errors. (#5333)</li>
+<li><strong>(CLI)</strong>: Fix error unwrapping in <code>updateFileModel</code> when files are missing. (#5345)</li>
+<li><strong>(go/v4)</strong>: Support incremental webhook additions without overwriting custom code. (#5353)</li>
+<li><strong>(helm/v2-alpha)</strong>: Add <code>nameOverride</code>/<code>fullnameOverride</code> support and fix cert-manager templating. (#5294)</li>
+<li><strong>(helm/v2-alpha)</strong>: Fix <code>--force</code> behaviour to overwrite all files except <code>Chart.yaml</code>. (#5361)</li>
+<li><strong>(helm/v2-alpha)</strong>: Fix cross-namespace RBAC file naming and namespace handling. (#5360)</li>
+</ul>
+
+<p>🎉 <strong>Thanks to all contributors!</strong></p>
+
+<h2 id="what-s-changed-full-changelog">What&rsquo;s Changed  ( <strong>Full Changelog</strong> )</h2>
+
+<ul>
+<li>🌱 Upgrade github.com/joelanford/go-apidiff from <code>v0.6.1</code> to <code>v0.8.3</code> by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5222" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5222</a></li>
+<li>✨ (go/v4): Upgrade golangci-lint from <code>v2.5.0</code> to <code>v2.6.0</code> by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5221" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5221</a></li>
+<li>🌱 (ci): Config action to test release only when we push against master branch by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5223" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5223</a></li>
+<li>📖 (doc): Move section Versions Compatibility and Supportability for references by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5226" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5226</a></li>
+<li>📖 (doc): Improve note for deploy image plugin in quick start by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5225" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5225</a></li>
+<li>📖 (doc): Update note about The Bootstrapping Problem by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5228" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5228</a></li>
+<li>📖 (docs): Remove epilog since no info has been added on it by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5231" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5231</a></li>
+<li>📖 Update badge for latest release in README.md by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5234" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5234</a></li>
+<li>📖  Bump sigs.k8s.io/kubebuilder/v4 from 4.9.0 to 4.10.1 in /docs/book/src/simple-external-plugin-tutorial/testdata/sampleexternalplugin/v1 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5235" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5235</a></li>
+<li>📖 (doc): Improve note about other examples for the tests by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5230" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5230</a></li>
+<li>📖 (doc): Improve note in the quick start to use autoupdate by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5224" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5224</a></li>
+<li>📖 Migrate to mdBook v0.5.0 by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5207" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5207</a></li>
+<li>🐛 Removed <code>config/webhook/kustomizeconfig.yaml</code> and <code>config/crd/kustomizeconfig.yaml</code> - these are redundant since Kustomize <code>v3.5.4+</code> has built-in support. This also fixes namespace transformation bugs when using projects as Kustomize bases/overlays. by @mdbooth in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5245" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5245</a></li>
+<li>🌱 Add vitorfloriano as reviewer by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5252" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5252</a></li>
+<li>🌱  Bump actions/checkout from 5 to 6 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5243" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5243</a></li>
+<li>✨ (go/v4): Upgrade golangci-lint to v2.7.2 and add modernize check by @dongjiang1989 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5258" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5258</a></li>
+<li>🌱  Bump golang.org/x/text from 0.31.0 to 0.32.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5260" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5260</a></li>
+<li>📖 (docs): Show webhook configuration in cronjob tutorial  by @BadisLaffet1 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5257" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5257</a></li>
+<li>🌱 Bump github.com/onsi/ginkgo/v2 from 2.27.2 to 2.27.3 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5259" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5259</a></li>
+<li>🌱  Bump github.com/spf13/cobra from 1.10.1 to 1.10.2 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5254" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5254</a></li>
+<li>📖 (docs/quick-start): Fix generated controller file path by @shinebayar-g in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5255" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5255</a></li>
+<li>🌱  Bump github.com/onsi/gomega from 1.38.2 to 1.38.3 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5261" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5261</a></li>
+<li>🌱  Bump golang.org/x/mod from 0.30.0 to 0.31.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5262" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5262</a></li>
+<li>🌱  Bump golang.org/x/tools from 0.39.0 to 0.40.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5263" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5263</a></li>
+<li>✨  (helm/v2alpha): Add support for parsing <code>imagePullSecrets</code> and including them in the generated chart by @zarcen in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5242" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5242</a></li>
+<li>🌱  Bump helm.sh/helm/v3 from 3.19.2 to 3.19.3 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5268" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5268</a></li>
+<li>🌱 Bump helm.sh/helm/v3 from 3.19.3 to 3.19.4 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5271" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5271</a></li>
+<li>🌱  Bump actions/upload-artifact from 5 to 6 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5270" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5270</a></li>
+<li>📖 (docs): Fix duplicate content and collapse markers in writing tests tutorial by @BadisLaffet1 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5269" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5269</a></li>
+<li>🌱  Change <code>sort</code> to <code>slices</code> package by @dongjiang1989 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5265" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5265</a></li>
+<li>📖 Revamp migrations guides to reflect current tooling and options by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5233" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5233</a></li>
+<li>📖 (doc): remove strict doc merged by mistake by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5272" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5272</a></li>
+<li>🌱  Bump k8s.io/apimachinery from 0.34.2 to 0.34.3 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5267" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5267</a></li>
+<li>🌱 Fix Doc Build after change the image used by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5274" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5274</a></li>
+<li>📖 (docs): Add Go Reference badge to README by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5282" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5282</a></li>
+<li>🌱 (infra/build): Remove Bazel config file by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5278" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5278</a></li>
+<li>🌱 (infra/git): Remove .gitattributes file by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5279" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5279</a></li>
+<li>✨ Upgrade go version from 1.24 to 1.25 by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5285" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5285</a></li>
+<li>✨ (go/v4): Upgrade controller-gen from v0.19.0 to v0.20.0 by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5284" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5284</a></li>
+<li>🌱 Bump k8s.io/apimachinery from 0.34.3 to 0.35.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5283" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5283</a></li>
+<li>📖 Update Roadmap 2025 status by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5289" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5289</a></li>
+<li>📖 Add docs: custom markers for unsupported file extensions by @nerdeveloper in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5107" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5107</a></li>
+<li>✨ (helm/v2-alpha) add tolerations, nodeselector and affinity by @robinlioret in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5247" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5247</a></li>
+<li>📖 Upgrade certmanager from v1.18.2 to v1.19.2 in the samples by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5292" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5292</a></li>
+<li>✨ (go/v4): Upgrade cert-manager from <code>v1.19.1</code> to <code>v1.19.2</code> used by e2e test utilities by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5293" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5293</a></li>
+<li>📖 Add 2026 Roadmap and Main Goals by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5290" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5290</a></li>
+<li>🌱 Enhance AGENTS.md for Kubebuilder repo by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5296" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5296</a></li>
+<li>📖 Update Roadmaps since with status of cronjob tutorials update by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5301" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5301</a></li>
+<li>📖  docs: fix multiple documentation issues in RELEASE.md by @kube-gopher in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5306" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5306</a></li>
+<li>✨ (go/v4): Improve devcontainer for Codespaces compatibility by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5295" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5295</a></li>
+<li>✨ (go/v4): Add AGENTS.md to the projects by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5273" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5273</a></li>
+<li>📖 Update controller tests for tutorial samples by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5298" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5298</a></li>
+<li>🐛 (alpha update): Fix &ndash;from-version Invalid SemVer error by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5309" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5309</a></li>
+<li>📖  docs: Fix typo &ldquo;UncommendCode&rdquo; to &ldquo;UncommentCode&rdquo; in contributing guide by @kube-gopher in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5312" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5312</a></li>
+<li>📖  Update cronjob samples to fetch Cronjob resource before update by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5297" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5297</a></li>
+<li>🌱 ci(security): add OpenSSF workflow and Scorecard badge by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5314" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5314</a></li>
+<li>🌱 Bump github/codeql-action from 3 to 4 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5317" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5317</a></li>
+<li>🌱 Bump actions/upload-artifact from 4.6.1 to 6.0.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5316" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5316</a></li>
+<li>🌱 Bump ossf/scorecard-action from 2.4.1 to 2.4.3 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5319" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5319</a></li>
+<li>🌱  Bump actions/checkout from 4.2.2 to 6.0.1 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5318" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5318</a></li>
+<li>🌱 (fix) Allow use helm installed locally for e2e tests by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5320" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5320</a></li>
+<li>✨ (go/v4): Improve the generated AGENTS.md guidance by fixing multi-group migration steps (API/controller/webhook moves) and standardizing the document layout by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5322" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5322</a></li>
+<li>🌱 Fix testdata for new year by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5326" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5326</a></li>
+<li>📖 (Manual Process to Migrate): Fix and enhance manual migration guide to keep instructions straightforward. by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5328" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5328</a></li>
+<li>🐛 (fix): AGENTS.md generated with extra \ and missing hub info by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5327" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5327</a></li>
+<li>📖 (docs) - Update multigroup layout change by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5321" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5321</a></li>
+<li>📖 Manual process (migration guide):  Add “AI Instructions Helper” examples to support end users. by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5324" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5324</a></li>
+<li>🌱 Add support to k8s 1.35 by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5334" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5334</a></li>
+<li>🐛 (go/v4): Fix E2E suite race condition that could delete cert-manager from environments inadvertently by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5329" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5329</a></li>
+<li>🌱 Fix cmd version to keep value used by vendor by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5337" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5337</a></li>
+<li>🐛 (go/v4): Re-add e2e cert-manager logs by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5338" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5338</a></li>
+<li>🐛 (autoupdate/v1-alpha): Make GitHub Models opt-in to prevent 403 errors by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5333" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5333</a></li>
+<li>🌱 Add test coverage for plugins by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5344" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5344</a></li>
+<li>🌱 (test): Add missing kustomize/v2 and autoupdate plugins to coverage report by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5346" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5346</a></li>
+<li>🌱 Increase coverage for the CLI/API by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5347" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5347</a></li>
+<li>🐛 (CLI): Fix error unwrapping in updateFileModel for missing files by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5345" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5345</a></li>
+<li>🌱 (test): Fix coverage config and exclude template directories by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5348" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5348</a></li>
+<li>🌱 Add unit tests for CLI and external plugin helpers by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5350" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5350</a></li>
+<li>📖 (doc) Streamline quick start plugins and next steps sections by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5342" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5342</a></li>
+<li>✨ (alpha): Auto-migrate helm/v1-alpha to helm/v2-alpha in generate command by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5349" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5349</a></li>
+<li>🐛 (go/v4): Support incremental webhook additions without losing custom code by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5353" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5353</a></li>
+<li>🌱 chore: Move rashmigottipati and Kavinjsir to emeritus by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5341" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5341</a></li>
+<li>✨  (helm/v2-alpha): Add nameOverride/fullnameOverride support and fix cert-manager templating by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5294" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5294</a></li>
+<li>✨ (helm/v2-alpha): Improve generated values.yaml comment conventions (single # vs ##) by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5357" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5357</a></li>
+<li>🐛 (helm/v2-alpha): add Helm standard labels to resources by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5340" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5340</a></li>
+<li>✨ (helm/v2-alpha): add custom resources to templates/extras by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5339" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5339</a></li>
+<li>✨ (helm/v2-alpha): improve _helpers.tpl readability by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5359" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5359</a></li>
+<li>📖 (helm/v2-alpha): Update plugin docs to match actual chart output by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5363" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5363</a></li>
+<li>🐛 (helm/v2-alpha): Fix force option to overwriten all files less Chart.yaml by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5361" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5361</a></li>
+<li>🌱 Bump github.com/onsi/gomega from 1.38.3 to 1.39.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5366" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5366</a></li>
+<li>🌱 Bump github.com/onsi/ginkgo/v2 from 2.27.3 to 2.27.4 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5367" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5367</a></li>
+<li>🌱 Bump golang.org/x/mod from 0.31.0 to 0.32.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5368" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5368</a></li>
+<li>🌱 Bump golang.org/x/text from 0.32.0 to 0.33.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5369" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5369</a></li>
+<li>🌱 Bump github.com/onsi/ginkgo/v2 from 2.27.4 to 2.27.5 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5370" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5370</a></li>
+<li>🌱  Bump golang.org/x/tools from 0.40.0 to 0.41.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5371" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5371</a></li>
+<li>📖 (docs): Limit code rendering to relevant sections in multiversion webhook tutorial by @BadisLaffet1 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5372" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5372</a></li>
+<li>🌱 Bump helm.sh/helm/v3 from 3.19.4 to 3.19.5 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5374" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5374</a></li>
+<li>🐛 (helm/v2-alpha): Fix cross-namespace RBAC file naming and namespace handling by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5360" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5360</a></li>
+<li>📖 Recommend options of migrations by @mloskot in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5377" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5377</a></li>
+<li>🌱 (ci): make e2e tests more robust for prow to avoid flakes by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5376" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5376</a></li>
+<li>📖 docs: show only relevant webhook sections in kustomization tutorial by @BadisLaffet1 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5379" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5379</a></li>
+<li>⚠️ Upgrade controller-runtime from <code>v0.22.4</code> to <code>v0.23.0</code> by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5378" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5378</a></li>
+</ul>
+
+<h2 id="new-contributors">New Contributors</h2>
+
+<ul>
+<li>@mdbooth made their first contribution in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5245" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5245</a></li>
+<li>@BadisLaffet1 made their first contribution in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5257" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5257</a></li>
+<li>@shinebayar-g made their first contribution in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5255" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5255</a></li>
+<li>@zarcen made their first contribution in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5242" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5242</a></li>
+<li>@robinlioret made their first contribution in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5247" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5247</a></li>
+<li>@kube-gopher made their first contribution in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5306" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5306</a></li>
+<li>@mloskot made their first contribution in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5377" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5377</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes-sigs/kubebuilder/compare/v4.10.1...v4.11.0" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/compare/v4.10.1&hellip;v4.11.0</a></p>
+<br>
+</body>
+
+</html>
