@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2026-02-09 - 2026-02-16</h1><h2>kubernetes-sigs/kustomize</h2> <h3>Release notes for kyaml/v0.21.1</h3><h4>2026-02-09</h4><br><h3>Release notes for kustomize/v5.8.1</h3><h4>2026-02-09</h4><h2 id="introduction">Introduction</h2>
+
+<p>This release completes a fix for namespace propagation that occurred in v5.8.0. <a href="https://github.com/kubernetes-sigs/kustomize/issues/6031#issuecomment-3594321206" target="_blank">https://github.com/kubernetes-sigs/kustomize/issues/6031#issuecomment-3594321206</a>
+Also addressed the breaking changes introduced in helm v4. #6016</p>
+
+<h2 id="fix">fix</h2>
+
+<p>#5990: fix: allow empty patches files
+#6016: fix: support helm v4 beside v3
+#6038: Fix a failing test
+#6044: Fix namespace propagation problem at v5.8.0</p>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<p>#6057: Upgrade json-patch to v4.13.0 to remove pkg/errors dependency</p>
+
+<h2 id="chore">chore</h2>
+
+<p>#6065: Update kyaml to v0.21.1
+#6066: Update cmd/config to v0.21.1
+#6067: Update api to v0.21.1</p>
+<br><h3>Release notes for cmd/config/v0.21.1</h3><h4>2026-02-09</h4><h2 id="chore">Chore</h2>
+
+<p>#6065: Update kyaml to v0.21.1</p>
+<br><h3>Release notes for api/v0.21.1</h3><h4>2026-02-09</h4><p>#5990: fix: allow empty patches files
+#6016: fix: support helm v4 beside v3
+#6038: Fix a failing test
+#6044: Fix namespace propagation problem at v5.8.0
+#6057: Upgrade json-patch to v4.13.0 to remove pkg/errors dependency
+#6065: Update kyaml to v0.21.1</p>
+<br><h2>kubernetes-csi/csi-driver-nfs</h2> <h3>Release notes for v4.13.1 release</h3><h4>2026-02-10</h4><h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>[release-4.13] chore: validate mount path by @k8s-infra-cherrypick-robot in <a href="https://github.com/kubernetes-csi/csi-driver-nfs/pull/1041" target="_blank">https://github.com/kubernetes-csi/csi-driver-nfs/pull/1041</a></li>
+<li>[release-4.13] chore: Update csi release tools by @andyzhangx in <a href="https://github.com/kubernetes-csi/csi-driver-nfs/pull/1043" target="_blank">https://github.com/kubernetes-csi/csi-driver-nfs/pull/1043</a></li>
+<li>doc: cut v4.13.1 release by @andyzhangx in <a href="https://github.com/kubernetes-csi/csi-driver-nfs/pull/1042" target="_blank">https://github.com/kubernetes-csi/csi-driver-nfs/pull/1042</a></li>
+</ul>
+
+<h2 id="new-contributors">New Contributors</h2>
+
+<ul>
+<li>@k8s-infra-cherrypick-robot made their first contribution in <a href="https://github.com/kubernetes-csi/csi-driver-nfs/pull/1041" target="_blank">https://github.com/kubernetes-csi/csi-driver-nfs/pull/1041</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes-csi/csi-driver-nfs/compare/v4.13.0...v4.13.1" target="_blank">https://github.com/kubernetes-csi/csi-driver-nfs/compare/v4.13.0&hellip;v4.13.1</a></p>
+<br><h2>kubernetes-csi/csi-driver-host-path</h2> <h3>Release notes for v1.17.1</h3><h4>2026-02-10</h4><p>Container
+docker pull registry.k8s.io/sig-storage/hostpathplugin:v1.17.1</p>
+
+<p>Full Changelog
+<a href="https://github.com/kubernetes-csi/csi-driver-host-path/blob/v1.17.1/CHANGELOG/CHANGELOG-1.17.md" target="_blank">https://github.com/kubernetes-csi/csi-driver-host-path/blob/v1.17.1/CHANGELOG/CHANGELOG-1.17.md</a></p>
+<br><h2>kubernetes/kops</h2> <h3>Release notes for v1.35.0-beta.1</h3><h4>2026-02-14</h4><h1 id="significant-changes">Significant changes</h1>
+
+<ul>
+<li><p><code>bridge-utils</code>, <code>conntrack</code>, <code>pigz</code>, <code>libltdl</code> are no longer installed by default.</p></li>
+
+<li><p>OpenStack: the InsecureSkipVerify field from the Cluster object is now propagated to all components</p></li>
+</ul>
+
+<h1 id="deprecations">Deprecations</h1>
+
+<ul>
+<li><p>Support for Kubernetes version 1.29 is removed in kOps 1.35.</p></li>
+
+<li><p>Support for Kubernetes version 1.30 is deprecated and will be removed in kOps 1.36.</p></li>
+
+<li><p>Support for Amazon Linux 2 is deprecated and will be removed in kOps 1.36</p></li>
+</ul>
+
+<h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>recognise rhel 10 and its variants + fedora + centos stream by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17785" target="_blank">https://github.com/kubernetes/kops/pull/17785</a></li>
+<li>chore(channels): update alpha k8s and ubuntu ami versions by @moshevayner in <a href="https://github.com/kubernetes/kops/pull/17787" target="_blank">https://github.com/kubernetes/kops/pull/17787</a></li>
+<li>chore(upup): bump metrics-server to 0.8.0 by @moshevayner in <a href="https://github.com/kubernetes/kops/pull/17788" target="_blank">https://github.com/kubernetes/kops/pull/17788</a></li>
+<li>iptables is deprecated and broken on rhel10+ so use nftables by default by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17789" target="_blank">https://github.com/kubernetes/kops/pull/17789</a></li>
+<li>gcp: Update ccm to fix broken arm64 jobs by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17793" target="_blank">https://github.com/kubernetes/kops/pull/17793</a></li>
+<li>build(deps): bump actions/checkout from 6.0.0 to 6.0.1 by @dependabot[bot] in <a href="https://github.com/kubernetes/kops/pull/17795" target="_blank">https://github.com/kubernetes/kops/pull/17795</a></li>
+<li>chore(upup): bump aws-cni to 1.20.5 by @moshevayner in <a href="https://github.com/kubernetes/kops/pull/17783" target="_blank">https://github.com/kubernetes/kops/pull/17783</a></li>
+<li>chore(channels): Promote Alpha to Stable by @moshevayner in <a href="https://github.com/kubernetes/kops/pull/17796" target="_blank">https://github.com/kubernetes/kops/pull/17796</a></li>
+<li>aws: Allow warm pool with mixed instances policy by @kimxogus in <a href="https://github.com/kubernetes/kops/pull/17800" target="_blank">https://github.com/kubernetes/kops/pull/17800</a></li>
+<li>aws: Disable the kubelet systemd unit during warm pool warming by @dezmodue in <a href="https://github.com/kubernetes/kops/pull/17792" target="_blank">https://github.com/kubernetes/kops/pull/17792</a></li>
+<li>Update cert-manager to v1.19.2 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17808" target="_blank">https://github.com/kubernetes/kops/pull/17808</a></li>
+<li>build(deps): bump actions/upload-artifact from 5 to 6 by @dependabot[bot] in <a href="https://github.com/kubernetes/kops/pull/17811" target="_blank">https://github.com/kubernetes/kops/pull/17811</a></li>
+<li>etcd-manager: Update etcd versions by @hakman in <a href="https://github.com/kubernetes/kops/pull/17812" target="_blank">https://github.com/kubernetes/kops/pull/17812</a></li>
+<li>azure: Fix the setting of creationTimestamp label for tests by @hakman in <a href="https://github.com/kubernetes/kops/pull/17815" target="_blank">https://github.com/kubernetes/kops/pull/17815</a></li>
+<li>codebot: update-dependencies by @ameukam in <a href="https://github.com/kubernetes/kops/pull/17816" target="_blank">https://github.com/kubernetes/kops/pull/17816</a></li>
+<li>Update coredns to v1.13.2 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17817" target="_blank">https://github.com/kubernetes/kops/pull/17817</a></li>
+<li>enable deploying a released version of kops by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17819" target="_blank">https://github.com/kubernetes/kops/pull/17819</a></li>
+<li>chore(channels): update alpha k8s and ubuntu ami versions by @moshevayner in <a href="https://github.com/kubernetes/kops/pull/17822" target="_blank">https://github.com/kubernetes/kops/pull/17822</a></li>
+<li>chore(networking): bump aws-cni to 1.21.0 by @moshevayner in <a href="https://github.com/kubernetes/kops/pull/17823" target="_blank">https://github.com/kubernetes/kops/pull/17823</a></li>
+<li>Remove spurious indent by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17824" target="_blank">https://github.com/kubernetes/kops/pull/17824</a></li>
+<li>kubetest2: Fix cloud-labels for non-Azure providers by @hakman in <a href="https://github.com/kubernetes/kops/pull/17826" target="_blank">https://github.com/kubernetes/kops/pull/17826</a></li>
+<li>kubetest2-kops: use ephemeral discovery store for AWS by @ameukam in <a href="https://github.com/kubernetes/kops/pull/17809" target="_blank">https://github.com/kubernetes/kops/pull/17809</a></li>
+<li>Bump and introduce new assets versions by @ameukam in <a href="https://github.com/kubernetes/kops/pull/17827" target="_blank">https://github.com/kubernetes/kops/pull/17827</a></li>
+<li>gce: Support cloudLabels for InstanceGroup by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17821" target="_blank">https://github.com/kubernetes/kops/pull/17821</a></li>
+<li>test: Update test skipping for K8s 1.35 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17829" target="_blank">https://github.com/kubernetes/kops/pull/17829</a></li>
+<li>Bump containerd to 2.1.6 by @ameukam in <a href="https://github.com/kubernetes/kops/pull/17828" target="_blank">https://github.com/kubernetes/kops/pull/17828</a></li>
+<li>Update Calico to v3.31.2 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17831" target="_blank">https://github.com/kubernetes/kops/pull/17831</a></li>
+<li>azure: Use VXLAN encapsulation for pod traffic with Calico by @hakman in <a href="https://github.com/kubernetes/kops/pull/17832" target="_blank">https://github.com/kubernetes/kops/pull/17832</a></li>
+<li>chore(networking): bump aws-cni to 1.21.1 by @moshevayner in <a href="https://github.com/kubernetes/kops/pull/17834" target="_blank">https://github.com/kubernetes/kops/pull/17834</a></li>
+<li>azure: Dump VM logs with toolbox dump  by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17820" target="_blank">https://github.com/kubernetes/kops/pull/17820</a></li>
+<li>chore(channels): promote alpha to stable (k8s and aws ubuntu AMI versions) by @moshevayner in <a href="https://github.com/kubernetes/kops/pull/17837" target="_blank">https://github.com/kubernetes/kops/pull/17837</a></li>
+<li>Update Calico to v3.31.3 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17838" target="_blank">https://github.com/kubernetes/kops/pull/17838</a></li>
+<li>channels: Add Kubernetes 1.35.0 support by @hakman in <a href="https://github.com/kubernetes/kops/pull/17839" target="_blank">https://github.com/kubernetes/kops/pull/17839</a></li>
+<li>gcp: bump ccm to v35 by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17841" target="_blank">https://github.com/kubernetes/kops/pull/17841</a></li>
+<li>test: Disable IRSA for AWS scale jobs by default by @hakman in <a href="https://github.com/kubernetes/kops/pull/17842" target="_blank">https://github.com/kubernetes/kops/pull/17842</a></li>
+<li>Move url util to where it&rsquo;s solely used by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17848" target="_blank">https://github.com/kubernetes/kops/pull/17848</a></li>
+<li>Delete dead code by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17846" target="_blank">https://github.com/kubernetes/kops/pull/17846</a></li>
+<li>Simple discovery server by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17818" target="_blank">https://github.com/kubernetes/kops/pull/17818</a></li>
+<li>Use dns=none for apiserver-nodes test by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17851" target="_blank">https://github.com/kubernetes/kops/pull/17851</a></li>
+<li>Use public dns for apiserver-nodes e2e by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17852" target="_blank">https://github.com/kubernetes/kops/pull/17852</a></li>
+<li>Add iam:ListInstanceProfiles permission to Karpenter by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17854" target="_blank">https://github.com/kubernetes/kops/pull/17854</a></li>
+<li>Continue to skip failing e2e tests in k8s CI versions by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17859" target="_blank">https://github.com/kubernetes/kops/pull/17859</a></li>
+<li>Remove unused pointer helper functions by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17857" target="_blank">https://github.com/kubernetes/kops/pull/17857</a></li>
+<li>Enable RBAC in E2E templates by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17860" target="_blank">https://github.com/kubernetes/kops/pull/17860</a></li>
+<li>Add unit test for jsonutils.SortSlice by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17850" target="_blank">https://github.com/kubernetes/kops/pull/17850</a></li>
+<li>Add test for taints util by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17855" target="_blank">https://github.com/kubernetes/kops/pull/17855</a></li>
+<li>Support API field mapping for bastion.loadBalancer.type by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17858" target="_blank">https://github.com/kubernetes/kops/pull/17858</a></li>
+<li>Deprecate version util in pkg/k8sversion by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17856" target="_blank">https://github.com/kubernetes/kops/pull/17856</a></li>
+<li>Update metrics-server container port by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17862" target="_blank">https://github.com/kubernetes/kops/pull/17862</a></li>
+<li>Fix upgrades to CI k8s versions by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17864" target="_blank">https://github.com/kubernetes/kops/pull/17864</a></li>
+<li>Use a different systemd-networkd configuration for AL2023 by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17867" target="_blank">https://github.com/kubernetes/kops/pull/17867</a></li>
+<li>Continue skipping hostPort protocol test with Cilium by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17865" target="_blank">https://github.com/kubernetes/kops/pull/17865</a></li>
+<li>Skip SupplementalGroupsPolicy in deb11 jobs by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17866" target="_blank">https://github.com/kubernetes/kops/pull/17866</a></li>
+<li>kube-scheduler: Wait for the auth conf from the API server by @hakman in <a href="https://github.com/kubernetes/kops/pull/17868" target="_blank">https://github.com/kubernetes/kops/pull/17868</a></li>
+<li>build(deps): bump actions/setup-go from 6.1.0 to 6.2.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/kops/pull/17869" target="_blank">https://github.com/kubernetes/kops/pull/17869</a></li>
+<li>Allow release of the discovery service by @ameukam in <a href="https://github.com/kubernetes/kops/pull/17863" target="_blank">https://github.com/kubernetes/kops/pull/17863</a></li>
+<li>Removed dead code in upup/pkg/fi/timestamp.go by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17871" target="_blank">https://github.com/kubernetes/kops/pull/17871</a></li>
+<li>Update openstack csi images by @jauru in <a href="https://github.com/kubernetes/kops/pull/17872" target="_blank">https://github.com/kubernetes/kops/pull/17872</a></li>
+<li>fix: add kops details to Hetzner Cloud client user agent by @lukasmetzner in <a href="https://github.com/kubernetes/kops/pull/17875" target="_blank">https://github.com/kubernetes/kops/pull/17875</a></li>
+<li>Pull cluster name from context in <code>kops version --server</code> by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17870" target="_blank">https://github.com/kubernetes/kops/pull/17870</a></li>
+<li>Delete more dead code by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17876" target="_blank">https://github.com/kubernetes/kops/pull/17876</a></li>
+<li>Bump golang to 1.25.6 by @ameukam in <a href="https://github.com/kubernetes/kops/pull/17879" target="_blank">https://github.com/kubernetes/kops/pull/17879</a></li>
+<li>build(deps): bump actions/checkout from 6.0.1 to 6.0.2 by @dependabot[bot] in <a href="https://github.com/kubernetes/kops/pull/17883" target="_blank">https://github.com/kubernetes/kops/pull/17883</a></li>
+<li>metal: support dns=none, use API server IP for kops-controller by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17884" target="_blank">https://github.com/kubernetes/kops/pull/17884</a></li>
+<li>truncate very long sqs queue names by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17877" target="_blank">https://github.com/kubernetes/kops/pull/17877</a></li>
+<li>fix truncate long sqs by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17885" target="_blank">https://github.com/kubernetes/kops/pull/17885</a></li>
+<li>fix aws scalability tests by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17880" target="_blank">https://github.com/kubernetes/kops/pull/17880</a></li>
+<li>fix podidentitywebhook test by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17887" target="_blank">https://github.com/kubernetes/kops/pull/17887</a></li>
+<li>Add EtcdEventsHTTP feature flag for HTTP on events etcd by @dims in <a href="https://github.com/kubernetes/kops/pull/17891" target="_blank">https://github.com/kubernetes/kops/pull/17891</a></li>
+<li>Disable cloud-init network hotplug on Ubuntu 24.04 for Cilium and Ama… by @yilmaz-burak in <a href="https://github.com/kubernetes/kops/pull/17882" target="_blank">https://github.com/kubernetes/kops/pull/17882</a></li>
+<li>Consolidate env var utils by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17889" target="_blank">https://github.com/kubernetes/kops/pull/17889</a></li>
+<li>Enable EtcdEventsHTTP in scalability tests by @dims in <a href="https://github.com/kubernetes/kops/pull/17892" target="_blank">https://github.com/kubernetes/kops/pull/17892</a></li>
+<li>Add tip to use gotestfail when doing local development by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17893" target="_blank">https://github.com/kubernetes/kops/pull/17893</a></li>
+<li>Add Scenario for AI conformance by @ameukam in <a href="https://github.com/kubernetes/kops/pull/17886" target="_blank">https://github.com/kubernetes/kops/pull/17886</a></li>
+<li>Remove year from copyright header boilerplate by @hakman in <a href="https://github.com/kubernetes/kops/pull/17895" target="_blank">https://github.com/kubernetes/kops/pull/17895</a></li>
+<li>fix broken metrics server test by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17896" target="_blank">https://github.com/kubernetes/kops/pull/17896</a></li>
+<li>Update Cilium to v1.18.6 by @hakman in <a href="https://github.com/kubernetes/kops/pull/17899" target="_blank">https://github.com/kubernetes/kops/pull/17899</a></li>
+<li>gce: Require zones on instancegroup creation by @Camila-B in <a href="https://github.com/kubernetes/kops/pull/17849" target="_blank">https://github.com/kubernetes/kops/pull/17849</a></li>
+<li>Add well-known hashes for latest CNI by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17901" target="_blank">https://github.com/kubernetes/kops/pull/17901</a></li>
+<li>Skip kube-proxy nfacct metric test on rhel + rocky distros by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17902" target="_blank">https://github.com/kubernetes/kops/pull/17902</a></li>
+<li>versionbump tools/metal: bump go version to 1.25.6 by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17912" target="_blank">https://github.com/kubernetes/kops/pull/17912</a></li>
+<li>versionbump: bump dependencies in tests/e2e/go.mod by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17909" target="_blank">https://github.com/kubernetes/kops/pull/17909</a></li>
+<li>chore: fix govet issue in tester.go by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17913" target="_blank">https://github.com/kubernetes/kops/pull/17913</a></li>
+<li>traceserver tool: fix compilation error by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17910" target="_blank">https://github.com/kubernetes/kops/pull/17910</a></li>
+<li>Use go get -tool instead of hack/tools.go by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17911" target="_blank">https://github.com/kubernetes/kops/pull/17911</a></li>
+<li>hetzner: Update Getting Started docs by @hakman in <a href="https://github.com/kubernetes/kops/pull/17916" target="_blank">https://github.com/kubernetes/kops/pull/17916</a></li>
+<li>openstack: pass through InsecureSkipVerify into openstack components by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17908" target="_blank">https://github.com/kubernetes/kops/pull/17908</a></li>
+<li>hetzner: Update default server type to <code>cx23</code> by @hakman in <a href="https://github.com/kubernetes/kops/pull/17917" target="_blank">https://github.com/kubernetes/kops/pull/17917</a></li>
+<li>dns-controller: use the pod IPs when creating records for pods annotated with AnnotationNameDNSInternal by @dezmodue in <a href="https://github.com/kubernetes/kops/pull/17791" target="_blank">https://github.com/kubernetes/kops/pull/17791</a></li>
+<li>Add constructor for kopscontrollerclient so that internal http client can be cleanly initialized by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17890" target="_blank">https://github.com/kubernetes/kops/pull/17890</a></li>
+<li>cleanup: fix vet warnings in traceserver by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17919" target="_blank">https://github.com/kubernetes/kops/pull/17919</a></li>
+<li>Announce AL2 deprecation in 1.35 by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17921" target="_blank">https://github.com/kubernetes/kops/pull/17921</a></li>
+<li>gce: Simplify resource lister by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17924" target="_blank">https://github.com/kubernetes/kops/pull/17924</a></li>
+<li>Add unit test for GuessCloudForPath by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17926" target="_blank">https://github.com/kubernetes/kops/pull/17926</a></li>
+<li>Move localmutexes.go to GCE-specific cloudup by @rramkumar1 in <a href="https://github.com/kubernetes/kops/pull/17925" target="_blank">https://github.com/kubernetes/kops/pull/17925</a></li>
+<li>build k/k when running presubmit jobs in kubernetes repo by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17927" target="_blank">https://github.com/kubernetes/kops/pull/17927</a></li>
+<li>make some etcd variables configurable by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17929" target="_blank">https://github.com/kubernetes/kops/pull/17929</a></li>
+<li>Add DeleteCollectionWorkers field to KubeAPIServerConfig by @ronaldngounou in <a href="https://github.com/kubernetes/kops/pull/17928" target="_blank">https://github.com/kubernetes/kops/pull/17928</a></li>
+<li>add exponential backoffs to calling kops-controller by @upodroid in <a href="https://github.com/kubernetes/kops/pull/17930" target="_blank">https://github.com/kubernetes/kops/pull/17930</a></li>
+<li>Upgrade scenario cleanup by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17931" target="_blank">https://github.com/kubernetes/kops/pull/17931</a></li>
+<li>fix: set proxyMode to nftables on rhel10 by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17920" target="_blank">https://github.com/kubernetes/kops/pull/17920</a></li>
+<li>Migrate karpenter and LBC scenario scripts to use &ndash;test=exec by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17932" target="_blank">https://github.com/kubernetes/kops/pull/17932</a></li>
+<li>Set MACAddressPolicy=none for AWS VPC CNI on AL2023 by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17933" target="_blank">https://github.com/kubernetes/kops/pull/17933</a></li>
+<li>Increase delete-collections-workers flag value to speed up namespace deletion by @ronaldngounou in <a href="https://github.com/kubernetes/kops/pull/17934" target="_blank">https://github.com/kubernetes/kops/pull/17934</a></li>
+<li>tests: dump /proc/modules from e2e tests by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17937" target="_blank">https://github.com/kubernetes/kops/pull/17937</a></li>
+<li>Replace deprecated kops CLI flags by @rifelpet in <a href="https://github.com/kubernetes/kops/pull/17939" target="_blank">https://github.com/kubernetes/kops/pull/17939</a></li>
+<li>Release 1.35.0-beta.1 by @justinsb in <a href="https://github.com/kubernetes/kops/pull/17941" target="_blank">https://github.com/kubernetes/kops/pull/17941</a></li>
+</ul>
+
+<h2 id="new-contributors">New Contributors</h2>
+
+<ul>
+<li>@rramkumar1 made their first contribution in <a href="https://github.com/kubernetes/kops/pull/17824" target="_blank">https://github.com/kubernetes/kops/pull/17824</a></li>
+<li>@lukasmetzner made their first contribution in <a href="https://github.com/kubernetes/kops/pull/17875" target="_blank">https://github.com/kubernetes/kops/pull/17875</a></li>
+<li>@yilmaz-burak made their first contribution in <a href="https://github.com/kubernetes/kops/pull/17882" target="_blank">https://github.com/kubernetes/kops/pull/17882</a></li>
+<li>@Camila-B made their first contribution in <a href="https://github.com/kubernetes/kops/pull/17849" target="_blank">https://github.com/kubernetes/kops/pull/17849</a></li>
+<li>@ronaldngounou made their first contribution in <a href="https://github.com/kubernetes/kops/pull/17928" target="_blank">https://github.com/kubernetes/kops/pull/17928</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes/kops/compare/v1.35.0-alpha.1...v1.35.0-beta.1" target="_blank">https://github.com/kubernetes/kops/compare/v1.35.0-alpha.1&hellip;v1.35.0-beta.1</a></p>
+<br><h2>etcd-io/etcd</h2> <h3>Release notes for v3.6.8</h3><h4>2026-02-13</h4><p>Please check out <a href="https://github.com/etcd-io/etcd/blob/main/CHANGELOG/CHANGELOG-3.6.md" target="_blank">CHANGELOG</a> for a full list of changes. And make sure to read <a href="https://etcd.io/docs/v3.6/upgrades/upgrade_3_6/" target="_blank">upgrade guide</a> before upgrading etcd (there may be breaking changes).</p>
+
+<p>For installation guides, please check out <a href="http://play.etcd.io" target="_blank">play.etcd.io</a> and <a href="https://etcd.io/docs/v3.6/op-guide/" target="_blank">operating etcd</a>. Latest support status for common architectures and operating systems can be found at <a href="https://etcd.io/docs/v3.6/op-guide/supported-platform/" target="_blank">supported platforms</a>.</p>
+
+<h6 id="linux">Linux</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.6.8
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C /tmp/etcd-download-test --strip-components=1 --no-same-owner
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+
+# start a local etcd server
+/tmp/etcd-download-test/etcd
+
+# write,read to etcd
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 put foo bar
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 get foo
+</code></pre>
+
+<h6 id="macos-darwin">macOS (Darwin)</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.6.8
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-darwin-amd64.zip -o /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+unzip /tmp/etcd-${ETCD_VER}-darwin-amd64.zip -d /tmp &amp;&amp; rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+mv /tmp/etcd-${ETCD_VER}-darwin-amd64/* /tmp/etcd-download-test &amp;&amp; rm -rf mv /tmp/etcd-${ETCD_VER}-darwin-amd64
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+</code></pre>
+
+<h6 id="docker">Docker</h6>
+
+<p>etcd uses <a href="https://gcr.io/etcd-development/etcd" target="_blank"><code>gcr.io/etcd-development/etcd</code></a> as a primary container registry, and <a href="https://quay.io/coreos/etcd" target="_blank"><code>quay.io/coreos/etcd</code></a> as secondary.</p>
+
+<pre><code class="language-sh">ETCD_VER=v3.6.8
+
+rm -rf /tmp/etcd-data.tmp &amp;&amp; mkdir -p /tmp/etcd-data.tmp &amp;&amp; \
+  docker rmi gcr.io/etcd-development/etcd:${ETCD_VER} || true &amp;&amp; \
+  docker run \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  --mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+  --name etcd-gcr-${ETCD_VER} \
+  gcr.io/etcd-development/etcd:${ETCD_VER} \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:2379 \
+  --advertise-client-urls http://0.0.0.0:2379 \
+  --listen-peer-urls http://0.0.0.0:2380 \
+  --initial-advertise-peer-urls http://0.0.0.0:2380 \
+  --initial-cluster s1=http://0.0.0.0:2380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new \
+  --log-level info \
+  --logger zap \
+  --log-outputs stderr
+
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcd --version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdutl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl endpoint health
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl put foo bar
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl get foo
+</code></pre>
+<br><h3>Release notes for v3.5.27</h3><h4>2026-02-13</h4><p>Please check out <a href="https://github.com/etcd-io/etcd/blob/main/CHANGELOG/CHANGELOG-3.5.md" target="_blank">CHANGELOG</a> for a full list of changes. And make sure to read <a href="https://etcd.io/docs/v3.5/upgrades/upgrade_3_5/" target="_blank">upgrade guide</a> before upgrading etcd (there may be breaking changes).</p>
+
+<p>For installation guides, please check out <a href="http://play.etcd.io" target="_blank">play.etcd.io</a> and <a href="https://etcd.io/docs/v3.5/op-guide/" target="_blank">operating etcd</a>. Latest support status for common architectures and operating systems can be found at <a href="https://etcd.io/docs/v3.5/op-guide/supported-platform/" target="_blank">supported platforms</a>.</p>
+
+<h6 id="linux">Linux</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.5.27
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C /tmp/etcd-download-test --strip-components=1 --no-same-owner
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+
+# start a local etcd server
+/tmp/etcd-download-test/etcd
+
+# write,read to etcd
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 put foo bar
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 get foo
+</code></pre>
+
+<h6 id="macos-darwin">macOS (Darwin)</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.5.27
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-darwin-amd64.zip -o /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+unzip /tmp/etcd-${ETCD_VER}-darwin-amd64.zip -d /tmp &amp;&amp; rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+mv /tmp/etcd-${ETCD_VER}-darwin-amd64/* /tmp/etcd-download-test &amp;&amp; rm -rf mv /tmp/etcd-${ETCD_VER}-darwin-amd64
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+</code></pre>
+
+<h6 id="docker">Docker</h6>
+
+<p>etcd uses <a href="https://gcr.io/etcd-development/etcd" target="_blank"><code>gcr.io/etcd-development/etcd</code></a> as a primary container registry, and <a href="https://quay.io/coreos/etcd" target="_blank"><code>quay.io/coreos/etcd</code></a> as secondary.</p>
+
+<pre><code class="language-sh">ETCD_VER=v3.5.27
+
+rm -rf /tmp/etcd-data.tmp &amp;&amp; mkdir -p /tmp/etcd-data.tmp &amp;&amp; \
+  docker rmi gcr.io/etcd-development/etcd:${ETCD_VER} || true &amp;&amp; \
+  docker run \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  --mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+  --name etcd-gcr-${ETCD_VER} \
+  gcr.io/etcd-development/etcd:${ETCD_VER} \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:2379 \
+  --advertise-client-urls http://0.0.0.0:2379 \
+  --listen-peer-urls http://0.0.0.0:2380 \
+  --initial-advertise-peer-urls http://0.0.0.0:2380 \
+  --initial-cluster s1=http://0.0.0.0:2380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new \
+  --log-level info \
+  --logger zap \
+  --log-outputs stderr
+
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcd --version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdutl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl endpoint health
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl put foo bar
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl get foo
+</code></pre>
+<br><h3>Release notes for v3.4.41</h3><h4>2026-02-13</h4><p>Please check out <a href="https://github.com/etcd-io/etcd/blob/main/CHANGELOG/CHANGELOG-3.4.md" target="_blank">CHANGELOG</a> for a full list of changes. And make sure to read <a href="https://etcd.io/docs/v3.4/upgrades/upgrade_3_4/" target="_blank">upgrade guide</a> before upgrading etcd (there may be breaking changes).</p>
+
+<p>For installation guides, please check out <a href="http://play.etcd.io" target="_blank">play.etcd.io</a> and <a href="https://etcd.io/docs/v3.4/op-guide/" target="_blank">operating etcd</a>. Latest support status for common architectures and operating systems can be found at <a href="https://etcd.io/docs/v3.4/op-guide/supported-platform/" target="_blank">supported platforms</a>.</p>
+
+<h6 id="linux">Linux</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.4.41
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C /tmp/etcd-download-test --strip-components=1 --no-same-owner
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+
+# start a local etcd server
+/tmp/etcd-download-test/etcd
+
+# write,read to etcd
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 put foo bar
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 get foo
+</code></pre>
+
+<h6 id="macos-darwin">macOS (Darwin)</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.4.41
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-darwin-amd64.zip -o /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+unzip /tmp/etcd-${ETCD_VER}-darwin-amd64.zip -d /tmp &amp;&amp; rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+mv /tmp/etcd-${ETCD_VER}-darwin-amd64/* /tmp/etcd-download-test &amp;&amp; rm -rf mv /tmp/etcd-${ETCD_VER}-darwin-amd64
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+</code></pre>
+
+<h6 id="docker">Docker</h6>
+
+<p>etcd uses <a href="https://gcr.io/etcd-development/etcd" target="_blank"><code>gcr.io/etcd-development/etcd</code></a> as a primary container registry, and <a href="https://quay.io/coreos/etcd" target="_blank"><code>quay.io/coreos/etcd</code></a> as secondary.</p>
+
+<pre><code class="language-sh">ETCD_VER=v3.4.41
+
+rm -rf /tmp/etcd-data.tmp &amp;&amp; mkdir -p /tmp/etcd-data.tmp &amp;&amp; \
+  docker rmi gcr.io/etcd-development/etcd:${ETCD_VER} || true &amp;&amp; \
+  docker run \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  --mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+  --name etcd-gcr-${ETCD_VER} \
+  gcr.io/etcd-development/etcd:${ETCD_VER} \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:2379 \
+  --advertise-client-urls http://0.0.0.0:2379 \
+  --listen-peer-urls http://0.0.0.0:2380 \
+  --initial-advertise-peer-urls http://0.0.0.0:2380 \
+  --initial-cluster s1=http://0.0.0.0:2380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new \
+  --log-level info \
+  --logger zap \
+  --log-outputs stderr
+
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcd --version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdutl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl endpoint health
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl put foo bar
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl get foo
+</code></pre>
+<br>
+</body>
+
+</html>
