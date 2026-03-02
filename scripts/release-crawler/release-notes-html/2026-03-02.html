@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2026-02-23 - 2026-03-02</h1><h2>kubernetes/cloud-provider-aws</h2> <h3>Release notes for v1.32.6</h3><h4>2026-02-27</h4><h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>Update SDK version to latest by @haoranleo in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1277" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1277</a></li>
+<li>Automated cherry pick of #1266: bump go sdk to 1.24.7 for CVE by @yue9944882 in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1272" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1272</a></li>
+<li>Automated cherry pick of #1284: support new aws partition in credential provider by @sam-berning in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1289" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1289</a></li>
+<li>Backport go version upgrade to 1.24.9 from master to release-1.32 branch by @adp-825 in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1306" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1306</a></li>
+<li>Automated cherry pick of #1153: e2e/deps: enhance test scenarios with NLB
+#1161: e2e/loadbalancer: implement hairpin connection cases
+#1215: refact: e2e tests documenting hooks and enhance logging/steps
+#1217: e2e/debug: increase data collection on e2e failures
+#1214: doc/service: describe supported target group attributes by @kmala in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1317" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1317</a></li>
+<li>update the go version and dependencies to fix the CVE&rsquo;s by @kmala in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1342" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1342</a></li>
+<li>release 1.32.6 ccm version by @kmala in <a href="https://github.com/kubernetes/cloud-provider-aws/pull/1343" target="_blank">https://github.com/kubernetes/cloud-provider-aws/pull/1343</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes/cloud-provider-aws/compare/v1.32.5...v1.32.6" target="_blank">https://github.com/kubernetes/cloud-provider-aws/compare/v1.32.5&hellip;v1.32.6</a></p>
+<br><h2>kubernetes-sigs/kubebuilder</h2> <h3>Release notes for v4.13.0</h3><h4>2026-02-27</h4><h2 id="keep-your-scaffold-updated">🚀 Keep Your Scaffold Updated</h2>
+
+<p>The <a href="https://master.book.kubebuilder.io/migrations.html" target="_blank">migration guide</a> covers upgrading from <code>any</code> version to the <code>latest</code>, including AI-assisted helpers/commands for legacy scaffolds that may require manual steps. For the smoothest path, enable the <a href="https://book.kubebuilder.io/plugins/available/autoupdate-v1-alpha" target="_blank">AutoUpdate Plugin (uses GitHub Actions)</a> or run <a href="https://book.kubebuilder.io/reference/commands/alpha_update" target="_blank"><code>kubebuilder alpha update</code></a> locally—both use the same update logic. The other options are primarily for older projects missing <code>cliVersion</code> in the <code>PROJECT</code> file <strong>as a one-time step to reach a supported version</strong>; after that, you can rely on these workflows for ongoing updates.</p>
+
+<h2 id="upgrades">✨ Upgrades</h2>
+
+<ul>
+<li><strong>(go/v4)</strong>: Upgrade cert-manager used in the e2e tests from <code>v1.19.3</code> to <code>v1.19.4</code> (#5509)</li>
+</ul>
+
+<h2 id="new-features">✨ New Features</h2>
+
+<ul>
+<li><strong>(helm/v2-alpha)</strong>: Add <code>manager.envOverrides</code> to support overriding manager environment variables via Helm CLI (e.g. <code>--set manager.envOverrides.LOG_LEVEL=debug</code>) (#5495)</li>
+</ul>
+
+<h2 id="bug-fixes">🐛 Bug Fixes</h2>
+
+<ul>
+<li><strong>(go/v4)</strong>: Fix lint execution to ensure the project’s configured lint rules are properly applied (#5493)</li>
+<li><strong>(helm/v2-alpha)</strong>: Fix <code>manager.replicas</code> so values from <code>values.yaml</code> are correctly applied in the chart template (#5494)</li>
+<li><strong>(helm/v2-alpha)</strong>: Ensure generated  Helm Chart files use consistent 2-space indentation (#5490)</li>
+<li><strong>(CLI/alpha update)</strong>: Fix panic when multiple plugins define the same CLI flag (e.g. <code>edit</code> with go/v4 + helm/v2-alpha) (#5506)</li>
+<li><strong>(go/v4, helm/v2-alpha)</strong>: Standardize generated file and directory permissions (files: <code>0644</code>, directories: <code>0755</code>) (#5508)</li>
+</ul>
+
+<p>🎉 <strong>Thanks to all contributors!</strong></p>
+
+<h2 id="what-s-changed-full-changelog">What&rsquo;s Changed ( Full Changelog )</h2>
+
+<ul>
+<li>🐛 (go/v4): CI lint by using make lint instead of golangci-lint-action so the custom binary (with logcheck plugin) is built and used. by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5493" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5493</a></li>
+<li>✨ (helm/v2-alpha): Add manager.envOverrides for CLI env overrides by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5495" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5495</a></li>
+<li>🐛(helm/v2-alpha): use manager.replicas from values in chart template by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5494" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5494</a></li>
+<li>🌱 Bump goreleaser/goreleaser-action from 6 to 7 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5499" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5499</a></li>
+<li>🐛 (helm/v2-alpha): use sigs.k8s.io/yaml for 2-space YAML indentation in generated value files by @v47 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5490" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5490</a></li>
+<li>🐛 fix: resolve panic when multiple plugins define the same flag (e.g. edit with go/v4 + helm) by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5506" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5506</a></li>
+<li>🌱 (infra/demos): Remove asciicinema demos by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5281" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5281</a></li>
+<li>✨ chore(go/v4): Upgrade cert-manager from 1.19.3 to 1.19.4 by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5509" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5509</a></li>
+<li>🌱 cleanup(docs): remove script no longer used to build samples under books by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5511" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5511</a></li>
+<li>🌱 chore: add yamllint config for 2-space indentation and Kubernetes YAML best practices by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5507" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5507</a></li>
+<li>🌱 infra: Remove pkg/internal/validation by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5512" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5512</a></li>
+<li>🌱 Bump actions/upload-artifact from 6.0.0 to 7.0.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5515" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5515</a></li>
+<li>🐛 fix(go/v4,helm/v2-alpha): use 0644/0755 for generated files by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5508" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5508</a></li>
+</ul>
+
+<h2 id="new-contributors">New Contributors</h2>
+
+<ul>
+<li>@v47 made their first contribution in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5490" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5490</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes-sigs/kubebuilder/compare/v4.12.0...v4.13.0" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/compare/v4.12.0&hellip;v4.13.0</a></p>
+<br><h2>prometheus/prometheus</h2> <h3>Release notes for 3.10.0 / 2026-02-24</h3><h4>2026-02-26</h4><p>Prometheus now offers a distroless Docker image variant alongside the default
+busybox image. The distroless variant provides enhanced security with a minimal
+base image, uses UID/GID 65532 (nonroot) instead of nobody, and removes the
+VOLUME declaration. Both variants are available with <code>-busybox</code> and <code>-distroless</code>
+tag suffixes (e.g., <code>prom/prometheus:latest-busybox</code>, <code>prom/prometheus:latest-distroless</code>).
+The busybox image remains the default with no suffix for backwards compatibility
+(e.g., <code>prom/prometheus:latest</code> points to the busybox variant).</p>
+
+<p>For users migrating existing <strong>named</strong> volumes from the busybox image to the distroless variant, the ownership can be adjusted with:</p>
+
+<pre><code>docker run --rm -v prometheus-data:/prometheus alpine chown -R 65532:65532 /prometheus
+</code></pre>
+
+<p>Then, the container can be started with the old volume with:</p>
+
+<pre><code>docker run -v prometheus-data:/prometheus prom/prometheus:latest-distroless
+</code></pre>
+
+<p>User migrating from bind mounts might need to ajust permissions too, depending on their setup.</p>
+
+<ul>
+<li>[CHANGE] Alerting: Add <code>alertmanager</code> dimension to following metrics: <code>prometheus_notifications_dropped_total</code>, <code>prometheus_notifications_queue_capacity</code>, <code>prometheus_notifications_queue_length</code>. #16355</li>
+<li>[CHANGE] UI: Hide expanded alert annotations by default, enabling more information density on the <code>/alerts</code> page. #17611</li>
+<li>[FEATURE] AWS SD: Add MSK Role. #17600</li>
+<li>[FEATURE] PromQL: Add <code>fill()</code> / <code>fill_left()</code> / <code>fill_right()</code> binop modifiers for specifying default values for missing series. #17644</li>
+<li>[FEATURE] Web: Add OpenAPI 3.2 specification for the HTTP API at <code>/api/v1/openapi.yaml</code>. #17825</li>
+<li>[FEATURE] Dockerfile: Add distroless image variant using UID/GID 65532 and no VOLUME declaration. Busybox image remains default. #17876</li>
+<li>[FEATURE] Web: Add on-demand wall time profiling under <code>&lt;URL&gt;/debug/pprof/fgprof</code>. #18027</li>
+<li>[ENHANCEMENT] PromQL: Add more detail to histogram quantile monotonicity info annotations. #15578</li>
+<li>[ENHANCEMENT] Alerting: Independent alertmanager sendloops. #16355</li>
+<li>[ENHANCEMENT] TSDB: Experimental support for early compaction of stale series in the memory with configurable threshold <code>stale_series_compaction_threshold</code> in the config file. #16929</li>
+<li>[ENHANCEMENT] Service Discovery: Service discoveries are now removable from the Prometheus binary through the Go build tag <code>remove_all_sd</code> and individual service discoveries can be re-added with the build tags <code>enable_&lt;sd name&gt;_sd</code>. Users can build a custom Prometheus with only the necessary SDs for a smaller binary size. #17736</li>
+<li>[ENHANCEMENT] Promtool: Support promql syntax features <code>promql-duration-expr</code> and <code>promql-extended-range-selectors</code>. #17926</li>
+<li>[PERF] PromQL: Avoid unnecessary label extraction in PromQL functions. #17676</li>
+<li>[PERF] PromQL: Improve performance of regex matchers like <code>.*-.*-.*</code>. #17707</li>
+<li>[PERF] OTLP: Add label caching for OTLP-to-Prometheus conversion to reduce allocations and improve latency. #17860</li>
+<li>[PERF] API: Compute <code>/api/v1/targets/relabel_steps</code> in a single pass instead of re-running relabeling for each prefix. #17969</li>
+<li>[PERF] tsdb: Optimize LabelValues intersection performance for matchers. #18069</li>
+<li>[BUGFIX] PromQL: Prevent query strings containing only UTF-8 continuation bytes from crashing Prometheus. #17735</li>
+<li>[BUGFIX] Web: Fix missing <code>X-Prometheus-Stopping</code> header for <code>/-/ready</code> endpoint in <code>NotReady</code> state. #17795</li>
+<li>[BUGFIX] PromQL: Fix PromQL <code>info()</code> function returning empty results when filtering by a label that exists on both the input metric and <code>target_info</code>. #17817</li>
+<li>[BUGFIX] TSDB: Fix a bug during exemplar buffer grow/shrink that could cause exemplars to be incorrectly discarded. #17863</li>
+<li>[BUGFIX] UI: Fix broken graph display after page reload, due to broken Y axis min encoding/decoding. #17869</li>
+<li>[BUGFIX] TSDB: Fix memory leaks in buffer pools by clearing reference fields (Labels, Histogram pointers, metadata strings) before returning buffers to pools. #17879</li>
+<li>[BUGFIX] PromQL: info function: fix series without identifying labels not being returned. #17898</li>
+<li>[BUGFIX] OTLP: Filter <code>__name__</code> from OTLP attributes to prevent duplicate labels. #17917</li>
+<li>[BUGFIX] TSDB: Fix division by zero when computing stale series ratio with empty head. #17952</li>
+<li>[BUGFIX] OTLP: Fix potential silent data loss for sum metrics. #17954</li>
+<li>[BUGFIX] PromQL: Fix smoothed interpolation across counter resets. #17988</li>
+<li>[BUGFIX] PromQL: Fix panic with <code>@</code> modifier on empty ranges. #18020</li>
+<li>[BUGFIX] PromQL: Fix <code>avg_over_time</code> for a single native histogram. #18058</li>
+</ul>
+<br>
+</body>
+
+</html>
