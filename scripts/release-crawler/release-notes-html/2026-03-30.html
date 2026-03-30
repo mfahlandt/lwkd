@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2026-03-23 - 2026-03-30</h1><h2>kubernetes-sigs/kubebuilder</h2> <h3>Release notes for v4.13.1</h3><h4>2026-03-25</h4><h2 id="keep-your-scaffold-updated">🚀 Keep Your Scaffold Updated</h2>
+
+<p>The <a href="https://master.book.kubebuilder.io/migrations.html" target="_blank">migration guide</a> covers upgrading from <code>any</code> version to the <code>latest</code>, including AI-assisted helpers/commands for legacy scaffolds that may require manual steps. For the smoothest path, enable the <a href="https://book.kubebuilder.io/plugins/available/autoupdate-v1-alpha" target="_blank">AutoUpdate Plugin (uses GitHub Actions)</a> or run <a href="https://book.kubebuilder.io/reference/commands/alpha_update" target="_blank"><code>kubebuilder alpha update</code></a> locally—both use the same update logic. The other options are primarily for older projects missing <code>cliVersion</code> in the <code>PROJECT</code> file <strong>as a one-time step to reach a supported version</strong>; after that, you can rely on these workflows for ongoing updates.</p>
+
+<h2 id="upgrades">✨ Upgrades</h2>
+
+<ul>
+<li><strong>(go/v4)</strong>: Upgrade cert-manager from <code>v1.19.4</code> to <code>v1.20.0</code> (#5531)</li>
+<li><strong>(go/v4)</strong>: Upgrade controller-runtime from <code>v0.23.1</code> to <code>v0.23.3</code> (#5532)</li>
+</ul>
+
+<h2 id="bug-fixes">🐛 Bug Fixes</h2>
+
+<ul>
+<li><strong>(API)</strong>: Move test/e2e/helpers to test/e2e/internal (#5516<br>
+</li>
+<li><strong>(API)</strong>: Move logging and alpha packages to internal (#5514)<br>
+</li>
+<li><strong>(helm/v2-alpha)</strong>: Fix double-escaping of YAML-encoded quotes in template expressions (#5529)<br>
+</li>
+<li><strong>(go/v4)</strong>: Add SchemeGroupVersion for applyconfiguration compatibility (#5491)</li>
+<li><strong>(config/v3)</strong>: Ignore unknown fields in the PROJECT file for forward compatibility (#5540)<br>
+</li>
+<li><strong>(alpha/generate)</strong>: Skip Go version check by default (#5547)</li>
+</ul>
+
+<h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>🐛 fix(API): Move test/e2e/helpers to test/e2e/internal by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5516" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5516</a></li>
+<li>🐛 fix(API): Move logging and alpha packages to internal by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5514" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5514</a></li>
+<li>📖 docs: make ToC highlight current page by @vitorfloriano in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5523" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5523</a></li>
+<li>🌱: Bump k8s.io/apimachinery from 0.35.1 to 0.35.2 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5521" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5521</a></li>
+<li>🐛 (helm/v2-alpha): fix double-escaping of YAML-encoded quotes in template expressions by @v47 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5529" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5529</a></li>
+<li>🌱 fix: update stale import paths in alpha update integration tests by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5530" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5530</a></li>
+<li>✨ (go/v4): Upgrade certmanager from <code>1.19.4</code> to <code>1.20.0</code> by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5531" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5531</a></li>
+<li>✨ (go/v4): upgrade controller-runtime from <code>0.23.1</code> to <code>0.23.3</code> by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5532" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5532</a></li>
+<li>🐛 (go/v4): add SchemeGroupVersion for applyconfiguration compatibility by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5491" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5491</a></li>
+<li>🌱 ci(alpha update): increase the coverage of the alpha update command by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5503" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5503</a></li>
+<li>🌱: Bump golang.org/x/mod from 0.33.0 to 0.34.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5535" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5535</a></li>
+<li>🌱 Bump golang.org/x/text from 0.34.0 to 0.35.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5534" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5534</a></li>
+<li>🌱 Bump golang.org/x/tools from 0.42.0 to 0.43.0 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5537" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5537</a></li>
+<li>🌱 Bump helm.sh/helm/v3 from 3.20.0 to 3.20.1 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5538" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5538</a></li>
+<li>🌱 Update deps for external plugin sample by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5541" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5541</a></li>
+<li>🐛 fix(config/v3):  Unknown fields in the PROJECT file should be ignored for forward compatibility by @camilamacedo86 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5540" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5540</a></li>
+<li>🌱 Bump k8s.io/apimachinery from 0.35.2 to 0.35.3 by @dependabot[bot] in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5545" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5545</a></li>
+<li>🐛 (alpha/generate): Skip go version check by default by @prash2512 in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5547" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5547</a></li>
+</ul>
+
+<h2 id="new-contributors">New Contributors</h2>
+
+<ul>
+<li>@prash2512 made their first contribution in <a href="https://github.com/kubernetes-sigs/kubebuilder/pull/5547" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/pull/5547</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes-sigs/kubebuilder/compare/v4.13.0...v4.13.1" target="_blank">https://github.com/kubernetes-sigs/kubebuilder/compare/v4.13.0&hellip;v4.13.1</a></p>
+<br><h2>grpc/grpc</h2> <h3>Release notes for Release v1.80.0</h3><h4>2026-03-26</h4><p>This is release 1.80.0 (<a href="https://github.com/grpc/grpc/blob/master/doc/g_stands_for.md" target="_blank">glimmering</a>) of gRPC Core.</p>
+
+<p>For gRPC documentation, see <a href="https://grpc.io/" target="_blank">grpc.io</a>. For previous releases, see <a href="https://github.com/grpc/grpc/releases" target="_blank">Releases</a>.</p>
+
+<p>This release contains refinements, improvements, and bug fixes, with highlights listed below.</p>
+
+<h2 id="core">Core</h2>
+
+<ul>
+<li>[ssl] Implement TLS private key signer in Python. (<a href="https://github.com/grpc/grpc/pull/41701" target="_blank">#41701</a>)</li>
+<li>[TLS Credentials]: Private Key Offload Implementation. (<a href="https://github.com/grpc/grpc/pull/41606" target="_blank">#41606</a>)</li>
+<li>Fix max sockaddr struct size on OpenBSD. (<a href="https://github.com/grpc/grpc/pull/40454" target="_blank">#40454</a>)</li>
+<li>[core] Enable EventEngine for Python by default, and EventEngine fork support in Python and Ruby. (<a href="https://github.com/grpc/grpc/pull/41432" target="_blank">#41432</a>)</li>
+<li>[TLS Credentials]: Create InMemoryCertificateProvider to update certificates independently. (<a href="https://github.com/grpc/grpc/pull/41484" target="_blank">#41484</a>)</li>
+<li>[Ruby] Build/test ruby 4.0 and build native gems with Ruby 4.0 support. (<a href="https://github.com/grpc/grpc/pull/41324" target="_blank">#41324</a>)</li>
+<li>[EventEngine] Remove an incorrect std::move in DNSServiceResolver constructor. (<a href="https://github.com/grpc/grpc/pull/41502" target="_blank">#41502</a>)</li>
+<li>[RR and WRR] enable change to connect from a random index. (<a href="https://github.com/grpc/grpc/pull/41472" target="_blank">#41472</a>)</li>
+<li>[xds] Implement gRFC A101. (<a href="https://github.com/grpc/grpc/pull/41051" target="_blank">#41051</a>)</li>
+</ul>
+
+<h2 id="c">C++</h2>
+
+<ul>
+<li>[C++] Add SNI override option to C++ channel credentials options API. (<a href="https://github.com/grpc/grpc/pull/41460" target="_blank">#41460</a>)</li>
+</ul>
+
+<h2 id="c-1">C#</h2>
+
+<ul>
+<li>[C# tools] Option to append Async to server side method names #39010. (<a href="https://github.com/grpc/grpc/pull/39797" target="_blank">#39797</a>)</li>
+<li>[C# tools] Fix Grpc.Tools 2.69.0 stops working on ARM64 (<a href="https://github.com/grpc/grpc/pull/41543" target="_blank">#41543</a>)</li>
+</ul>
+
+<h2 id="objective-c">Objective-C</h2>
+
+<ul>
+<li>[Fix][Compiler] Plugins fall back to the edition 2023 for older protobuf. (<a href="https://github.com/grpc/grpc/pull/41357" target="_blank">#41357</a>)</li>
+</ul>
+
+<h2 id="php">PHP</h2>
+
+<ul>
+<li>[PHP] Disable php infinite recursion check for callback from Core to PHP. (<a href="https://github.com/grpc/grpc/pull/41835" target="_blank">#41835</a>)</li>
+<li>[PHP] Fix runtime error with PHp8.5 alpha because zend_exception_get_defaul…. (<a href="https://github.com/grpc/grpc/pull/40337" target="_blank">#40337</a>)</li>
+</ul>
+
+<h2 id="python">Python</h2>
+
+<ul>
+<li>[Python] Fix <code>GRPC_TRACE</code> not working when absl log initialized in cython. (<a href="https://github.com/grpc/grpc/pull/41814" target="_blank">#41814</a>)</li>
+<li>Revert &ldquo;[Python] Align GRPC_ENABLE_FORK_SUPPORT env defaults in core and python (#41455)&rdquo;. (<a href="https://github.com/grpc/grpc/pull/41769" target="_blank">#41769</a>)</li>
+<li>[Python] Fix AsyncIO Server maximum_concurrent_rpcs enforcement preventing negative active_rpcs count. (<a href="https://github.com/grpc/grpc/pull/41532" target="_blank">#41532</a>)</li>
+<li>[Python] Docs: correct <code>grpc.Compression</code> references. (<a href="https://github.com/grpc/grpc/pull/41705" target="_blank">#41705</a>)</li>
+<li>[Python] [Typeguard] Part 4 - Add Typeguard to AIO stack in tests . (<a href="https://github.com/grpc/grpc/pull/40226" target="_blank">#40226</a>)</li>
+<li>[Python] Fix multi-thread exception for Asyncio gRPC clients - Fixes #25364. (<a href="https://github.com/grpc/grpc/pull/41483" target="_blank">#41483</a>)</li>
+<li>[Python] Resolve absl::InitializeLog warning. (<a href="https://github.com/grpc/grpc/pull/39779" target="_blank">#39779</a>)</li>
+<li>[Python] Remove IF usage in Cython. (<a href="https://github.com/grpc/grpc/pull/41400" target="_blank">#41400</a>)</li>
+<li>[Python] Add language features to exported proto files. (<a href="https://github.com/grpc/grpc/pull/41501" target="_blank">#41501</a>)</li>
+<li>[Python] Resolve absl::InitializeLog warning. (<a href="https://github.com/grpc/grpc/pull/39779" target="_blank">#39779</a>)</li>
+<li>[Python] Fix crash when iterating on AIO Metadata keys(), values(), items() or list(metadata.values()) etc. . (<a href="https://github.com/grpc/grpc/pull/41481" target="_blank">#41481</a>)</li>
+<li>[Python] Modernize and revamp Public API Docs. (<a href="https://github.com/grpc/grpc/pull/41287" target="_blank">#41287</a>)</li>
+</ul>
+
+<h2 id="ruby">Ruby</h2>
+
+<ul>
+<li>[Ruby] Added support to push native-debug packages off rubygems to public gcs bucket. (<a href="https://github.com/grpc/grpc/pull/41270" target="_blank">#41270</a>)</li>
+</ul>
+<br><h2>kubernetes/cloud-provider-aws</h2> <h3>Release notes for helm-chart-aws-cloud-controller-manager-0.0.11</h3><h4>2026-03-25</h4><p>Installs Cloud Controller Manager for AWS Cloud Provider</p>
+<br><h2>kubernetes/cloud-provider-vsphere</h2> <h3>Release notes for v1.36.0-beta.0</h3><h4>2026-03-23</h4><h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<ul>
+<li>:seedling: (chore): Bump actions/checkout from 5.0.1 to 6.0.1 in the all-github-actions group by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1658" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1658</a></li>
+<li>:seedling: (chore): Bump the kubernetes group across 1 directory with 6 updates by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1659" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1659</a></li>
+<li>:seedling: (chore): Bump github.com/spf13/cobra from 1.10.1 to 1.10.2 by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1660" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1660</a></li>
+<li>:seedling: (chore): Bump github.com/onsi/ginkgo/v2 from 2.27.2 to 2.27.3 in /hack/tools by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1661" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1661</a></li>
+<li>:seedling: (chore): Bump the onsi group in /test/e2e with 2 updates by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1662" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1662</a></li>
+<li>:seedling: (chore): Bump golang.org/x/net from 0.47.0 to 0.48.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1664" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1664</a></li>
+<li>🌱 (chore): Bump k8s dependencies and cluster-api versions in /test/e2e by @silvery1622 in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1666" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1666</a></li>
+<li>Bump Kubernetes dependencies to v1.35.0 by @silvery1622 in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1667" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1667</a></li>
+<li>Update documents for release 1.35.0 by @silvery1622 in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1668" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1668</a></li>
+<li>Update version in releases/README.md by @silvery1622 in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1670" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1670</a></li>
+<li>Update e2e tests for Kubernetes v1.35.0 with custom image preloader by @silvery1622 in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1671" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1671</a></li>
+<li>Update CPI image version to 1.35.0 in test by @silvery1622 in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1674" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1674</a></li>
+<li>:seedling: (chore): Bump actions/checkout from 6.0.1 to 6.0.2 in the all-github-actions group by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1686" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1686</a></li>
+<li>:seedling: (chore): Bump the kubernetes group in /test/e2e with 3 updates by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1673" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1673</a></li>
+<li>:seedling: (chore): Bump github.com/vmware/govmomi from 0.52.0 to 0.53.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1696" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1696</a></li>
+<li>:seedling: (chore): Bump golang.org/x/net from 0.49.0 to 0.51.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1699" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1699</a></li>
+<li>:seedling: (chore): Bump github.com/vmware/govmomi from 0.52.0 to 0.53.0 in /test/e2e by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1697" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1697</a></li>
+<li>:seedling: (chore): Bump github.com/onsi/ginkgo/v2 from 2.27.3 to 2.28.1 in /hack/tools by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1688" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1688</a></li>
+<li>Fix CVE from go.opentelemetry.io/otel/metric 1.36.0 by @zhanggbj in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1703" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1703</a></li>
+<li>Update security scan actions by @zhanggbj in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1704" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1704</a></li>
+<li>:seedling: (chore): Bump golang.org/x/net from 0.51.0 to 0.52.0 by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1705" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1705</a></li>
+<li>fix go version in security scan by @zhanggbj in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1706" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1706</a></li>
+<li>pin go version to 1.25.8 by @zhanggbj in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1707" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1707</a></li>
+<li>Bump trivy and go version for security scan and fix by @zhanggbj in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1708" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1708</a></li>
+<li>:seedling: (chore): Bump golang.org/x/crypto from 0.47.0 to 0.49.0 in /test/e2e by @dependabot[bot] in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1712" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1712</a></li>
+<li>Bump k8s group to v0.36.0-beta.0 by @zhanggbj in <a href="https://github.com/kubernetes/cloud-provider-vsphere/pull/1714" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/pull/1714</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/kubernetes/cloud-provider-vsphere/compare/v1.35.0-rc.0...v1.36.0-beta.0" target="_blank">https://github.com/kubernetes/cloud-provider-vsphere/compare/v1.35.0-rc.0&hellip;v1.36.0-beta.0</a></p>
+<br>
+</body>
+
+</html>
