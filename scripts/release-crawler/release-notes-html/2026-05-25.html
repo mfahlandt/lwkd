@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2026-05-18 - 2026-05-25</h1><h2>prometheus/prometheus</h2> <h3>Release notes for 3.12.0-rc.0 / 2026-05-19</h3><h4>2026-05-19</h4><p>This release contains security fixes, new features (especially around PromQL and Service Discovery), performance improvements in TSDB, Start Timestamp improvements and numerous bug fixes.</p>
+
+<p>Thanks to all contributors!</p>
+
+<h2 id="key-highlights">Key Highlights</h2>
+
+<ul>
+<li><strong>Security</strong>: Two security vulnerabilities have been addressed: a denial of service in remote-write (snappy decompression limit) and a secret exposure leak in STACKIT service discovery.</li>
+<li><strong>PromQL &amp; Metadata</strong>: Several features and bug fixes related to the experimental &ldquo;start timestamps&rdquo; support, including updates to <code>rate()</code>, <code>irate()</code>, <code>increase()</code>, and <code>resets()</code>. New experimental functions <code>start()</code>, <code>end()</code>, <code>range()</code>, and <code>step()</code> are introduced.</li>
+<li><strong>TSDB Performance</strong>: Optimizations in head chunk lookup (constant time) and mmap operations to reduce CPU usage.</li>
+<li><strong>Service Discovery</strong>: Added support for DigitalOcean Managed Databases and Outscale VM, along with improvements to AWS SD (IPv6 support for EC2, external ID support).</li>
+<li><strong>UI</strong>: Added a web interface for deleting time series and cleaning tombstones.</li>
+</ul>
+
+<h2 id="changelog">Changelog</h2>
+
+<ul>
+<li>[SECURITY] Remote: Reject snappy-compressed received requests via Remote Write whose declared decoded length exceeds the 32MB. Thanks to @hibrian827 for reporting it. #18642</li>
+<li>[SECURITY] STACKIT SD: Fix secrets being exposed in plaintext via <code>/-/config</code> endpoint. Thanks to @August829 and @Phaxma for reporting. GHSA-39j6-789q-qxvh #18649</li>
+<li>[CHANGE] TSDB/Agent: Adds Start Timestamp field to all WAL Histogram samples in memory; used <code>st-storage</code> flag is enabled. #18221</li>
+<li>[FEATURE] API: Add <code>/api/v1/status/self_metrics</code> endpoint returning the current state of the Prometheus server&rsquo;s own metrics about itself as JSON. #18411</li>
+<li>[FEATURE] Discovery: Add DigitalOcean Managed Databases service discovery #18287</li>
+<li>[FEATURE] Prometheus: Add support for the aix/ppc64 compilation target #18321</li>
+<li>[FEATURE] Discovery: Add Outscale VM service discovery (<code>outscale_sd_configs</code>) for discovering scrape targets from the Outscale Cloud API. #18139</li>
+<li>[FEATURE] PromQL: Emit a warning when <code>sort</code>, <code>sort_by_label</code> or <code>sort_by_label_desc</code> is used within range (matrix) queries, as these functions do not have effect in that context. #18498</li>
+<li>[FEATURE] PromQL: Add <code>start()</code>, <code>end()</code>, <code>range()</code>, and <code>step()</code> experimental functions #17877</li>
+<li>[FEATURE] PromQL: Update <code>resets()</code> function to consider start timestamp resets. Hidden behind <code>use-start-timestamps</code> feature flag. #18627</li>
+<li>[FEATURE] Prometheus: Promote auto-reload-config as stable #18620</li>
+<li>[FEATURE] TSDB/Agent: Add <code>CheckpointFromInMemorySeries</code> option to <code>agent.DB</code> that enables checkpoint based on in-memory series. #17948</li>
+<li>[FEATURE] UI: Add a web interface for deleting time series and cleaning tombstones, accessible from the Status menu. #18390</li>
+<li>[FEATURE] PromQL: Use start timestamps for <code>rate()</code>, <code>irate()</code>, and <code>increase()</code> calculations, behind a feature flag <code>use-start-timestamps</code>. Doesn&rsquo;t work together with extended range selectors <code>anchored</code> and <code>smoothed</code>. #18344</li>
+<li>[FEATURE] Scrape: Added a feature flag <code>st-synthesis</code> which synthesizes unknown STs for scraped cumulative metrics. Useful when Remote Writing 2.0 with delta or Otel-based backends. #18279</li>
+<li>[FEATURE] promqltest: support <code>@st</code> annotation in <code>load</code> blocks to specify per-sample start timestamps. #18360</li>
+<li>[ENHANCEMENT] API: reject concurrent fgprof profiles. #18651</li>
+<li>[ENHANCEMENT] AWS SD: Add optional <code>external_id</code> field to ECS/MSK/RDS/Elasticache. #18579</li>
+<li>[ENHANCEMENT] AWS SD: Add optional <code>external_id</code> field. #17171</li>
+<li>[ENHANCEMENT] Discovery: Propagate SD target updates faster by introducing dynamic backoff interval instead of static 5s interval for throttling. #18187</li>
+<li>[ENHANCEMENT] Promtool: Add <code>--header</code> flag to <code>query instant</code> command, matching existing <code>query range</code> behaviour. #18418</li>
+<li>[ENHANCEMENT]: AWS SD: Allows EC2 service discovery to discover IPv6 addresses to communicate with target endpoints. The private IPv4 address remains the default when both IPv4 and IPv6 addresses are present. #16088</li>
+<li>[PERF] TSDB: Make head chunk lookup in range queries constant time instead of quadratic time #18302</li>
+<li>[PERF] TSDB: Skip entire stripes in mmapHeadChunks when no series need mmapping, reducing CPU utilization significantly at production-relevant scales. #18541</li>
+<li>[PERF] TSDB: Skip clean series during periodic head chunk mmap using cached head chunk count #18272</li>
+<li>[PERF] PromQL: Address FloatHistogram.KahanAdd performance regression on Go 1.26. #18568</li>
+<li>[BUGFIX] PromQL: Fix <code>info()</code> function incorrectly handling negated <code>__name__</code> matchers #17932</li>
+<li>[BUGFIX] API: Return duration expressions in <code>/parse_ast</code>. #18624</li>
+<li>[BUGFIX] API: correctly document formats accepted for duration query request parameters (step, timeout and lookback delta) in OpenAPI spec #18305</li>
+<li>[BUGFIX] Scrape: AppenderV2 now tracks staleness even when OOO/duplicate series errors happen similar to AppenderV1 #18567</li>
+<li>[BUGFIX] Config: Validate remote_write queue_config fields at load time to prevent runtime panic and silent misconfiguration. #18209</li>
+<li>[BUGFIX] Discovery/Consul: Add <code>health_filter</code> for Health API filtering, fixing breakage when using Catalog-only fields like <code>ServiceTags</code> in <code>filter</code>. #18479 #18499</li>
+<li>[BUGFIX] OTLP: limit decompressed body size for gzip-encoded OTLP write requests. #18408</li>
+<li>[BUGFIX] PromQL: Fix <code>smoothed</code> rate/increase returning zero instead of no result when all data falls strictly after the query range. #18523</li>
+<li>[BUGFIX] PromQL: Fix metric name not being dropped when last_over_time or first_over_time is applied to subqueries containing name-dropping functions like abs(). #18409</li>
+<li>[BUGFIX] PromQL: Fix missing warning when mixing exponential and custom-bucket histograms in stats queries. #18660</li>
+<li>[BUGFIX] PromQL: Fix parsing of <code>range()</code> keyword in duration expressions such as <code>foo[5m+range()]</code>. #18623</li>
+<li>[BUGFIX] PromQL: Fix smoothed vector selector returning no results in binary operations when the <code>@</code> modifier is used. #18531</li>
+<li>[BUGFIX] PromQL: Reject NaN, infinite, and out-of-range duration expressions instead of silently producing an out-of-range time.Duration. #18639</li>
+<li>[BUGFIX] Scrape: Fix panic when scraping malformed native histograms. #18414</li>
+<li>[BUGFIX] Scrape: fix panic when scraping a target exposing a summary with no quantiles via the protobuf format. #18382</li>
+<li>[BUGFIX] Scrape: fix scrape failure log file occasionally not applied after a configuration reload. #18421</li>
+<li>[BUGFIX] TSDB: Allow retention percentage with new data path. #18628</li>
+<li>[BUGFIX] TSDB: Preserve decimal precision in percentage-based retention #18374</li>
+<li>[BUGFIX] TSDB: fix prometheus_tsdb_head_chunks going negative after WAL replay #18401</li>
+<li>[BUGFIX] TSDB: panic with native histograms during query of overlapping chunks. #18692</li>
+<li>[BUGFIX] Tracing: fix startup failure for insecure OTLP HTTP tracing #18469</li>
+<li>[BUGFIX] UI: Escape label values offered by PromQL autocomplete. #18658</li>
+<li>[BUGFIX] UI: Improve Y-axis tick label precision for graph values over small ranges. #18682</li>
+<li>[BUGFIX] <code>prometheus_sd_refresh*</code> and <code>prometheus_sd_discovered_targets</code> metrics for specific scrape jobs are deleted when the scrape job is removed. #17614</li>
+<li>[BUGFIX] Remote: fixed validation for received RW2 requests when parsing metadata unit symbols. This fixes a case when request would cause (recovered) handler panic. #18641</li>
+<li>[BUGFIX] TSDB/Agent: fix race in agent appender where concurrent appends for the same label set could produce duplicate in-memory series and duplicate WAL records. #18292</li>
+<li>[BUGFIX] Config: Update <code>--enable-feature</code>  flag description and sort feature names. #18487</li>
+</ul>
+<br><h2>containerd/containerd</h2> <h3>Release notes for containerd 2.3.1</h3><h4>2026-05-20</h4><p>Welcome to the v2.3.1 release of containerd!</p>
+
+<p>The first patch release for containerd 2.3 contains various fixes and improvements.</p>
+
+<h3 id="security-updates">Security Updates</h3>
+
+<ul>
+<li><a href="https://github.com/containerd/containerd/security/advisories/GHSA-fqw6-gf59-qr4w" target="_blank"><strong>CVE-2026-46680</strong></a></li>
+</ul>
+
+<h3 id="highlights">Highlights</h3>
+
+<ul>
+<li>Fix bug where failed gRPC plugins were not tolerated when starting listeners (<a href="https://github.com/containerd/containerd/pull/13390" target="_blank">#13390</a>)</li>
+</ul>
+
+<h4 id="image-storage">Image Storage</h4>
+
+<ul>
+<li>Ensure metadata and mount plugin boltdb files are closed on server shutdown (<a href="https://github.com/containerd/containerd/pull/13379" target="_blank">#13379</a>)</li>
+</ul>
+
+<h4 id="runtime">Runtime</h4>
+
+<ul>
+<li>Fix handling of out-of-range USER values in OCI spec to avoid unexpected username/group lookups (<a href="https://github.com/containerd/containerd/pull/13447" target="_blank">#13447</a>)</li>
+<li>Fix sandbox task API endpoints for non-runc runtimes and deprecate task fields in Runc options (<a href="https://github.com/containerd/containerd/pull/13422" target="_blank">#13422</a>)</li>
+<li>Apply hardening to default seccomp socket policy by blocking AF_ALG (<a href="https://github.com/containerd/containerd/pull/13409" target="_blank">#13409</a>)</li>
+</ul>
+
+<h4 id="snapshotters">Snapshotters</h4>
+
+<ul>
+<li>Disable overlayfs &ldquo;rebase&rdquo; capability when running in user namespace (<a href="https://github.com/containerd/containerd/pull/13394" target="_blank">#13394</a>)</li>
+<li>Fix transfer plugin error when EROFS differ is configured but mkfs.erofs is unavailable (<a href="https://github.com/containerd/containerd/pull/13364" target="_blank">#13364</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Maksym Pavlenko</li>
+<li>Akihiro Suda</li>
+<li>Derek McGowan</li>
+<li>Paweł Gronowski</li>
+<li>Brian Goff</li>
+<li>Austin Vazquez</li>
+<li>LEI WANG</li>
+<li>Samuel Karp</li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<details><summary>24 commits</summary>
+<p>
+
+* Prepare release notes for v2.3.1 ([#13405](https://github.com/containerd/containerd/pull/13405))
+  * [`58af96519`](https://github.com/containerd/containerd/commit/58af9651939577f81969b387b6b2e2aed45ead7d) Prepare release notes for v2.3.1
+  * [`8f0b3ca83`](https://github.com/containerd/containerd/commit/8f0b3ca83015873d643db246202b63b8384f14fd) Update api to v1.11.1
+* oci: return explicit error for out-of-range USER values ([#13447](https://github.com/containerd/containerd/pull/13447))
+  * [`a05ae7885`](https://github.com/containerd/containerd/commit/a05ae78850384eb24effbc597ebc5b19a5e4ba04) oci: return explicit error for out-of-range USER values
+* Prepare release notes for api/v1.11.1 ([#13444](https://github.com/containerd/containerd/pull/13444))
+  * [`da7aef299`](https://github.com/containerd/containerd/commit/da7aef299c57cc1f290700ade8fa0a5fec69a462) Prepare release notes for api/v1.11.1
+* Fix sandbox task API endpoints for non-runc runtimes ([#13422](https://github.com/containerd/containerd/pull/13422))
+  * [`5282d4e09`](https://github.com/containerd/containerd/commit/5282d4e09d3bc8b0957780caa7a4644fac7c86a7) Wire task address and version fields
+  * [`e44f5f9ec`](https://github.com/containerd/containerd/commit/e44f5f9ec610d95a712d230e8a19ae516e0a26ac) protos: include task API address to CreateTaskRequest
+* seccomp: Block AF_ALG in default socket policy ([#13409](https://github.com/containerd/containerd/pull/13409))
+  * [`4d80a31bf`](https://github.com/containerd/containerd/commit/4d80a31bf637bc15e83e50a15941bf5bb0cb3988) seccomp: Block AF_ALG in default socket policy
+  * [`2ed0d97b6`](https://github.com/containerd/containerd/commit/2ed0d97b6e58def34684a1bffc2ab6931182f221) seccomp: Document socket rule scope and socketcall limitation
+* server: tolerate failed gRPC plugins when starting listeners ([#13390](https://github.com/containerd/containerd/pull/13390))
+  * [`3a88fdde0`](https://github.com/containerd/containerd/commit/3a88fdde0c613e62415e61738e946b903f1bf32f) server: tolerate failed gRPC plugins when starting listeners
+* overlay: disable "rebase" capability when running in UserNS ([#13394](https://github.com/containerd/containerd/pull/13394))
+  * [`2be0710b8`](https://github.com/containerd/containerd/commit/2be0710b81b99f47aa4ef0fa2951cd69f80b7e19) overlay: disable "rebase" capability when running in UserNS
+* Update Go to 1.26.3 ([#13374](https://github.com/containerd/containerd/pull/13374))
+  * [`3b199c22b`](https://github.com/containerd/containerd/commit/3b199c22b13495bd442b32121c2015f301594387) Update Go to 1.26.3
+* fix: close boltdb on metadata and mount plugin close ([#13379](https://github.com/containerd/containerd/pull/13379))
+  * [`1d601271a`](https://github.com/containerd/containerd/commit/1d601271a73a649de465ed94fa973564211b7f46) fix: close boltdb on metadata and mount plugin close
+* Fix optional EROFS differ setup in transfer plugin ([#13364](https://github.com/containerd/containerd/pull/13364))
+  * [`d666d2e42`](https://github.com/containerd/containerd/commit/d666d2e4261da664a50c7b1663461747ba8ebb2e) Refactor transfer unpack configuration setup
+  * [`ccc3bd7b9`](https://github.com/containerd/containerd/commit/ccc3bd7b90be7afce7a903391d2a34b83424c5e0) Fix optional transfer differ setup
+</p>
+</details>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<ul>
+<li><strong>github.com/containerd/containerd/api</strong>  v1.11.0 -&gt; v1.11.1</li>
+</ul>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v2.3.0" target="_blank">v2.3.0</a></p>
+
+<h3 id="which-file-should-i-download">Which file should I download?</h3>
+
+<ul>
+<li><code>containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:         ✅Recommended. Dynamically linked with glibc 2.35 (Ubuntu 22.04).</li>
+<li><code>containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:  Statically linked. Expected to be used on Linux distributions that do not use glibc &gt;= 2.35. Not position-independent.</li>
+</ul>
+
+<p>In addition to containerd, typically you will have to install <a href="https://github.com/opencontainers/runc/releases" target="_blank">runc</a>
+and <a href="https://github.com/containernetworking/plugins/releases" target="_blank">CNI plugins</a> from their official sites too.</p>
+
+<p>See also the <a href="https://github.com/containerd/containerd/blob/main/docs/getting-started.md" target="_blank">Getting Started</a> documentation.</p>
+<br><h3>Release notes for containerd 2.2.4</h3><h4>2026-05-20</h4><p>Welcome to the v2.2.4 release of containerd!</p>
+
+<p>The fourth patch release for containerd 2.2 contains various fixes
+and updates including security patches.</p>
+
+<ul>
+<li><p><strong>containerd</strong></p>
+
+<ul>
+<li><a href="https://github.com/containerd/containerd/security/advisories/GHSA-fqw6-gf59-qr4w" target="_blank"><strong>CVE-2026-46680</strong></a></li>
+</ul></li>
+
+<li><p><strong>go-jose</strong></p>
+
+<ul>
+<li><a href="https://github.com/go-jose/go-jose/security/advisories/GHSA-78h2-9frx-2jm8" target="_blank"><strong>CVE-2026-34986</strong></a></li>
+</ul></li>
+
+<li><p>Use mount manager during image volume processing to support snapshotters that require writable block volumes (e.g., EROFS) (<a href="https://github.com/containerd/containerd/pull/13242" target="_blank">#13242</a>)</p></li>
+
+<li><p>Fix handling of out-of-range USER values in OCI spec to avoid unexpected username/group lookups (<a href="https://github.com/containerd/containerd/pull/13448" target="_blank">#13448</a>)</p></li>
+
+<li><p>Apply hardening to block AF_ALG in default socket policy (<a href="https://github.com/containerd/containerd/pull/13408" target="_blank">#13408</a>)</p></li>
+
+<li><p>Fix bugs in sandbox service affecting sandbox creation configuration and event publishing (<a href="https://github.com/containerd/containerd/pull/13266" target="_blank">#13266</a>)</p></li>
+
+<li><p>Set AppArmor abi conditionally to support versions &lt; 3.0 (<a href="https://github.com/containerd/containerd/pull/13275" target="_blank">#13275</a>)</p></li>
+
+<li><p>Disable overlay &ldquo;rebase&rdquo; capability when running in a user namespace to fix layer extraction failures (<a href="https://github.com/containerd/containerd/pull/13393" target="_blank">#13393</a>)</p></li>
+
+<li><p>Support both &ldquo;volatile&rdquo; and &ldquo;fsync=volatile&rdquo; mount options for volatile snapshotter (<a href="https://github.com/containerd/containerd/pull/13296" target="_blank">#13296</a>)</p></li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<ul>
+<li>Wei Fu</li>
+<li>Akihiro Suda</li>
+<li>Chris Henzie</li>
+<li>Paweł Gronowski</li>
+<li>Samuel Karp</li>
+<li>Brian Goff</li>
+<li>Champ-Goblem</li>
+<li>Chris Chang</li>
+<li>LEI WANG</li>
+<li>Phil Estes</li>
+<li>William Myers</li>
+</ul>
+
+<details><summary>21 commits</summary>
+<p>
+
+* oci: return explicit error for out-of-range USER values ([#13448](https://github.com/containerd/containerd/pull/13448))
+  * [`d20c6267b`](https://github.com/containerd/containerd/commit/d20c6267b88bfd52277337184916e293c627542a) oci: return explicit error for out-of-range USER values
+* seccomp: Block AF_ALG in default socket policy ([#13408](https://github.com/containerd/containerd/pull/13408))
+  * [`db34dc4b4`](https://github.com/containerd/containerd/commit/db34dc4b4a111883d21ebf088d0fd0db48d82558) seccomp: Block AF_ALG in default socket policy
+  * [`214b141ee`](https://github.com/containerd/containerd/commit/214b141ee94410058db80602efdfa47d21d77513) seccomp: Document socket rule scope and socketcall limitation
+* update Go to 1.25.10, 1.26.3 ([#13375](https://github.com/containerd/containerd/pull/13375))
+  * [`c2b1856fa`](https://github.com/containerd/containerd/commit/c2b1856fae4f237cda30f59f879b7a0f15ad6033) update Go to 1.25.10, 1.26.3
+* overlay: disable "rebase" capability when running in UserNS ([#13393](https://github.com/containerd/containerd/pull/13393))
+  * [`63874d262`](https://github.com/containerd/containerd/commit/63874d262ca46871ff291ef5005e739e55702d07) overlay: disable "rebase" capability when running in UserNS
+* Support both styles of volatile mount option ([#13296](https://github.com/containerd/containerd/pull/13296))
+  * [`2c7d48acf`](https://github.com/containerd/containerd/commit/2c7d48acf2d91a8ac11d11c24c27461acf276101) Support both styles of volatile mount option
+* Bump go-jose/go-jose to v4.1.4 to fix GHSA-78h2-9frx-2jm8 ([#13292](https://github.com/containerd/containerd/pull/13292))
+  * [`80311db63`](https://github.com/containerd/containerd/commit/80311db633ba2bf339badb18c0ce152994911d27) chore: update go-jose for CVE-2026-34986
+* sandbox: forward Create fields, fix event topics ([#13266](https://github.com/containerd/containerd/pull/13266))
+  * [`caa29a741`](https://github.com/containerd/containerd/commit/caa29a741321999d2296fc3d89f190b15ce40495) sandbox: forward Create fields, fix event topics
+* apparmor: Set abi conditionally ([#13275](https://github.com/containerd/containerd/pull/13275))
+  * [`5ab0a1206`](https://github.com/containerd/containerd/commit/5ab0a12065f2a0724d3f8d20012f2065db6d5716) apparmor: Set abi conditionally
+* Parameterize K8s version in node-e2e workflow ([#13247](https://github.com/containerd/containerd/pull/13247))
+  * [`f9c34f7b1`](https://github.com/containerd/containerd/commit/f9c34f7b1446ff186a717bddd6aa55d68f9e3385) Parameterize K8s version in node-e2e workflow
+* cri: use mount manager when image has volumes ([#13242](https://github.com/containerd/containerd/pull/13242))
+  * [`39dc2a475`](https://github.com/containerd/containerd/commit/39dc2a47585c42037d6a900dff7570b23fa53745) cri: use mount manager when image has volumes
+</p>
+</details>
+
+<ul>
+<li><strong>github.com/go-jose/go-jose/v4</strong>  v4.1.3 -&gt; v4.1.4</li>
+</ul>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v2.2.3" target="_blank">v2.2.3</a></p>
+
+<ul>
+<li><code>containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:         ✅Recommended. Dynamically linked with glibc 2.35 (Ubuntu 22.04).</li>
+<li><code>containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:  Statically linked. Expected to be used on Linux distributions that do not use glibc &gt;= 2.35. Not position-independent.</li>
+</ul>
+
+<p>In addition to containerd, typically you will have to install <a href="https://github.com/opencontainers/runc/releases" target="_blank">runc</a>
+and <a href="https://github.com/containernetworking/plugins/releases" target="_blank">CNI plugins</a> from their official sites too.</p>
+
+<p>See also the <a href="https://github.com/containerd/containerd/blob/main/docs/getting-started.md" target="_blank">Getting Started</a> documentation.</p>
+<br><h3>Release notes for containerd 2.0.9</h3><h4>2026-05-20</h4><p>Welcome to the v2.0.9 release of containerd!</p>
+
+<p>The ninth patch release for containerd 2.0 includes various bug fixes and updates, including a security fix.</p>
+
+<ul>
+<li><p><strong>containerd</strong></p>
+
+<ul>
+<li><a href="https://github.com/containerd/containerd/security/advisories/GHSA-fqw6-gf59-qr4w" target="_blank"><strong>CVE-2026-46680</strong></a></li>
+</ul></li>
+
+<li><p>Ensure container exit events are not lost during containerd restart (<a href="https://github.com/containerd/containerd/pull/11633" target="_blank">#11633</a>)</p></li>
+
+<li><p>Apply hardening to avoid TOCTOU race in tar extraction (<a href="https://github.com/containerd/containerd/pull/13237" target="_blank">#13237</a>)</p></li>
+
+<li><p>Fix handling of out-of-range USER values in OCI spec to avoid unexpected username/group lookups (<a href="https://github.com/containerd/containerd/pull/13449" target="_blank">#13449</a>)</p></li>
+
+<li><p>Apply hardening to block AF_ALG in default socket policy (<a href="https://github.com/containerd/containerd/pull/13407" target="_blank">#13407</a>)</p></li>
+
+<li><p>Support both &ldquo;volatile&rdquo; and &ldquo;fsync=volatile&rdquo; mount options for volatile snapshotter (<a href="https://github.com/containerd/containerd/pull/13298" target="_blank">#13298</a>)</p></li>
+
+<li><p>Fix bugs in sandbox service affecting sandbox creation configuration and event publishing (<a href="https://github.com/containerd/containerd/pull/13271" target="_blank">#13271</a>)</p></li>
+
+<li><p>Set AppArmor abi conditionally to support versions &lt; 3.0 (<a href="https://github.com/containerd/containerd/pull/13277" target="_blank">#13277</a>)</p></li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<ul>
+<li>Samuel Karp</li>
+<li>Chris Henzie</li>
+<li>Maksym Pavlenko</li>
+<li>Paweł Gronowski</li>
+<li>Wei Fu</li>
+<li>Brian Goff</li>
+<li>LEI WANG</li>
+<li>Shachar Tal</li>
+<li>William Myers</li>
+<li>ningmingxiao</li>
+</ul>
+
+<details><summary>18 commits</summary>
+<p>
+
+  * [`2da65b8bd`](https://github.com/containerd/containerd/commit/2da65b8bd9b32ad7b2e75161306b6dc0e08bd57f) Prepare release notes for v2.0.9
+* oci: return explicit error for out-of-range USER values ([#13449](https://github.com/containerd/containerd/pull/13449))
+  * [`1a3d1c85e`](https://github.com/containerd/containerd/commit/1a3d1c85e0d048ca15a735805a4a71a7c09e5906) oci: return explicit error for out-of-range USER values
+* seccomp: Block AF_ALG in default socket policy ([#13407](https://github.com/containerd/containerd/pull/13407))
+  * [`fa2a97505`](https://github.com/containerd/containerd/commit/fa2a9750584401a50f3a07e39d9efdd5097c76e2) seccomp: Block AF_ALG in default socket policy
+  * [`4b2b07879`](https://github.com/containerd/containerd/commit/4b2b07879d7c11ef05074e7b2fa9cb636f7b63cb) seccomp: Document socket rule scope and socketcall limitation
+* Support both styles of volatile mount option ([#13298](https://github.com/containerd/containerd/pull/13298))
+  * [`ea56c9605`](https://github.com/containerd/containerd/commit/ea56c960571d981f66b005df82bee9ce0ccaf79f) Support both styles of volatile mount option
+* backport: sandbox: forward Create fields, fix event topics ([#13271](https://github.com/containerd/containerd/pull/13271))
+  * [`3d34dc820`](https://github.com/containerd/containerd/commit/3d34dc82065b8cab9d20188583ce6979cdf6d30b) sandbox: forward Create fields, fix event topics
+* apparmor: Set abi conditionally ([#13277](https://github.com/containerd/containerd/pull/13277))
+  * [`4b260843e`](https://github.com/containerd/containerd/commit/4b260843e3f6c5b75962829a1e8c878f344dbb71) apparmor: Set abi conditionally
+* Add GitHub Action for k8s node e2e tests ([#13257](https://github.com/containerd/containerd/pull/13257))
+  * [`3e9c4d1e0`](https://github.com/containerd/containerd/commit/3e9c4d1e0c12d0fc7f26fe57fa9c44e4803874b9) Add GitHub Action for k8s node e2e tests
+* Fix TOCTOU race bug in tar extraction ([#13237](https://github.com/containerd/containerd/pull/13237))
+  * [`cf73e6873`](https://github.com/containerd/containerd/commit/cf73e68731f80077fad3124bee8c0cfe6aa063f8) Fix TOCTOU race bug in tar extraction
+* cri:fix lost container exit events if they arrive before info is cached ([#11633](https://github.com/containerd/containerd/pull/11633))
+  * [`2320b319e`](https://github.com/containerd/containerd/commit/2320b319e096c5926f956d4abfe52177c5e05727) cri:fix lost container exit events if they arrive before info is cached
+</p>
+</details>
+
+<p>This release has no dependency changes</p>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v2.0.8" target="_blank">v2.0.8</a></p>
+
+<ul>
+<li><code>containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:         ✅Recommended. Dynamically linked with glibc 2.31 (Ubuntu 20.04).</li>
+<li><code>containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:  Statically linked. Expected to be used on non-glibc Linux distributions. Not position-independent.</li>
+</ul>
+
+<p>In addition to containerd, typically you will have to install <a href="https://github.com/opencontainers/runc/releases" target="_blank">runc</a>
+and <a href="https://github.com/containernetworking/plugins/releases" target="_blank">CNI plugins</a> from their official sites too.</p>
+
+<p>See also the <a href="https://github.com/containerd/containerd/blob/main/docs/getting-started.md" target="_blank">Getting Started</a> documentation.</p>
+<br><h3>Release notes for containerd 1.7.32</h3><h4>2026-05-20</h4><p>Welcome to the v1.7.32 release of containerd!</p>
+
+<p><br>
+The thirty-second patch release for containerd 1.7 contains various fixes
+and updates including a security patch.</p>
+
+<ul>
+<li><p><strong>containerd</strong></p>
+
+<ul>
+<li><a href="https://github.com/containerd/containerd/security/advisories/GHSA-fqw6-gf59-qr4w" target="_blank"><strong>CVE-2026-46680</strong></a></li>
+</ul></li>
+
+<li><p>Allow hosts.toml to contain only root-level fields without an explicit [host] section (<a href="https://github.com/containerd/containerd/pull/10028" target="_blank">#10028</a>)</p></li>
+
+<li><p>Fix handling of out-of-range USER values in OCI spec to avoid unexpected username/group lookups (<a href="https://github.com/containerd/containerd/pull/13450" target="_blank">#13450</a>)</p></li>
+
+<li><p>Apply hardening to block AF_ALG in default socket policy (<a href="https://github.com/containerd/containerd/pull/13406" target="_blank">#13406</a>)</p></li>
+
+<li><p>Support both &ldquo;volatile&rdquo; and &ldquo;fsync=volatile&rdquo; mount options for volatile snapshotter (<a href="https://github.com/containerd/containerd/pull/13299" target="_blank">#13299</a>)</p></li>
+
+<li><p>Set AppArmor abi conditionally to support versions &lt; 3.0 (<a href="https://github.com/containerd/containerd/pull/13273" target="_blank">#13273</a>)</p></li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<ul>
+<li>Maksym Pavlenko</li>
+<li>Chris Henzie</li>
+<li>Derek McGowan</li>
+<li>Paweł Gronowski</li>
+<li>Samuel Karp</li>
+<li>Wei Fu</li>
+<li>Brad Davidson</li>
+<li>Brian Goff</li>
+<li>LEI WANG</li>
+<li>Phil Estes</li>
+</ul>
+
+<details><summary>17 commits</summary>
+<p>
+
+  * [`bc87d865c`](https://github.com/containerd/containerd/commit/bc87d865cf39e0cc55a5e628d95cf8eef52787ad) Prepare release notes for v1.7.32
+* oci: return explicit error for out-of-range USER values ([#13450](https://github.com/containerd/containerd/pull/13450))
+  * [`503f47946`](https://github.com/containerd/containerd/commit/503f479466b432bd16fd9f14e10b6d4b09812730) oci: return explicit error for out-of-range USER values
+* seccomp: Block AF_ALG in default socket policy ([#13406](https://github.com/containerd/containerd/pull/13406))
+  * [`e55b747d3`](https://github.com/containerd/containerd/commit/e55b747d3496763d54b6c7670f4290c1e7183a36) seccomp: Block AF_ALG in default socket policy
+  * [`4627a65f8`](https://github.com/containerd/containerd/commit/4627a65f8a92ce704e40b4b42df4fbfb2ceae2b9) seccomp: Document socket rule scope and socketcall limitation
+* Fix issue with empty host tree in hosts.toml ([#10028](https://github.com/containerd/containerd/pull/10028))
+  * [`24007441d`](https://github.com/containerd/containerd/commit/24007441d3bb191e0045b83fce5890a67aa98449) Fix error parsing hosts.toml without any `host` tree
+* Support both styles of volatile mount option ([#13299](https://github.com/containerd/containerd/pull/13299))
+  * [`940733149`](https://github.com/containerd/containerd/commit/940733149271449293e063148e220faf885a01b9) Support both styles of volatile mount option
+* apparmor: Set abi conditionally ([#13273](https://github.com/containerd/containerd/pull/13273))
+  * [`2b732c892`](https://github.com/containerd/containerd/commit/2b732c8925a92b10300a3dc21dbfd37cafea76dd) apparmor: Set abi conditionally
+* Add GitHub Action for k8s node e2e tests ([#13258](https://github.com/containerd/containerd/pull/13258))
+  * [`0db1e143a`](https://github.com/containerd/containerd/commit/0db1e143a11de38b8f088684ce4f26a2b487d517) Add GitHub Action for k8s node e2e tests
+* Update release process after 1.7 ([#13236](https://github.com/containerd/containerd/pull/13236))
+  * [`3223a75c2`](https://github.com/containerd/containerd/commit/3223a75c20f06d0da7985a49ac42ed6ff67c5433) Update for latest updates to release tool
+  * [`1b30082eb`](https://github.com/containerd/containerd/commit/1b30082eb98c3c277fc07809049fbd4034c1d9f3) Update release process after 1.7
+</p>
+</details>
+
+<p>This release has no dependency changes</p>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v1.7.31" target="_blank">v1.7.31</a></p>
+<br><h3>Release notes for containerd API 1.11.1</h3><h4>2026-05-20</h4><p>Welcome to the api/v1.11.1 release of containerd!</p>
+
+<p>The first patch release for the containerd 1.11 API includes a fix
+in the task endpoints for non-runc shims.</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<ul>
+<li>Fix sandbox task API endpoints for non-runc runtimes (<a href="https://github.com/containerd/containerd/pull/13422" target="_blank">#13422</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Derek McGowan</li>
+<li>Maksym Pavlenko</li>
+<li>Samuel Karp</li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<details><summary>4 commits</summary>
+<p>
+
+* Prepare release notes for api/v1.11.1 ([#13444](https://github.com/containerd/containerd/pull/13444))
+  * [`da7aef299`](https://github.com/containerd/containerd/commit/da7aef299c57cc1f290700ade8fa0a5fec69a462) Prepare release notes for api/v1.11.1
+* Fix sandbox task API endpoints for non-runc runtimes ([#13422](https://github.com/containerd/containerd/pull/13422))
+  * [`e44f5f9ec`](https://github.com/containerd/containerd/commit/e44f5f9ec610d95a712d230e8a19ae516e0a26ac) protos: include task API address to CreateTaskRequest
+</p>
+</details>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<p>This release has no dependency changes</p>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/api/v1.11.0" target="_blank">api/v1.11.0</a></p>
+<br><h2>containerd/nerdctl</h2> <h3>Release notes for v2.3.1</h3><h4>2026-05-21</h4><h2 id="changes">Changes</h2>
+
+<p>This is the release of nerdctl v2.3.1.</p>
+
+<p>This is a patch release for v2.3.0. It promotes the v2.3.x line to a GA release by updating <code>nerdctl-full</code> to use the stable containerd v2.3.1 instead of the beta containerd build used in v2.3.0.</p>
+
+<p>Major changes:</p>
+
+<ul>
+<li><code>nerdctl compose</code>:
+
+<ul>
+<li>Added support for the Compose <code>healthcheck</code> field in service configs (#4869, thanks to @opjt)</li>
+<li>Added support for passing service names to <code>nerdctl compose down</code> (#4901, thanks to @ysedira)</li>
+</ul></li>
+<li><code>nerdctl network</code>:
+
+<ul>
+<li>Fixed a panic when statting an invalid CNI config path (#4890, thanks to @immanuwell)</li>
+</ul></li>
+<li><code>nerdctl-full</code>:
+
+<ul>
+<li>Updated containerd to v2.3.1, BuildKit to v0.30.0, and gomodjail to v0.3.2 (#4887, #4922)</li>
+</ul></li>
+<li>Documentation:
+
+<ul>
+<li>Fixed the spelling of the <code>--sig-proxy</code> flag in the command reference (#4903, thanks to @MukundaKatta)</li>
+<li>Removed a stray quote from the <code>--interactive</code> flag documentation (#4904, thanks to @MukundaKatta)</li>
+</ul></li>
+<li>CI and tests:
+
+<ul>
+<li>Added zizmor workflow linting and fixed reported workflow issues (#4909, thanks to @omribz156)</li>
+<li>Continued migrating container tests to Tigron (#4863, #4865, thanks to @opjt)</li>
+</ul></li>
+</ul>
+
+<p>Full changes: <a href="https://github.com/containerd/nerdctl/milestone/61?closed=1" target="_blank">https://github.com/containerd/nerdctl/milestone/61?closed=1</a>
+Thanks to @ChengyuZhu6, @opjt, @immanuwell, @ysedira, @MukundaKatta, and @omribz156.</p>
+
+<h2 id="compatible-containerd-versions">Compatible containerd versions</h2>
+
+<p>This release of nerdctl is expected to be used with containerd v1.7, v2.0, v2.1, v2.2, or v2.3.
+Some features may not work with other releases of containerd.</p>
+
+<h2 id="about-the-binaries">About the binaries</h2>
+
+<ul>
+<li>Minimal (<code>nerdctl-2.3.1-linux-amd64.tar.gz</code>): nerdctl only</li>
+<li>Full (<code>nerdctl-full-2.3.1-linux-amd64.tar.gz</code>):    Includes dependencies such as containerd, runc, and CNI</li>
+</ul>
+
+<h3 id="minimal">Minimal</h3>
+
+<p>Extract the archive to a path like <code>/usr/local/bin</code> or <code>~/bin</code> .
+<details><summary>tar Cxzvvf /usr/local/bin nerdctl-2.3.1-linux-amd64.tar.gz</summary>
+<p></p>
+
+<pre><code>-rwxr-xr-x root/root  31604898 2026-05-21 14:25 nerdctl
+-rwxr-xr-x root/root     23381 2026-05-21 14:24 containerd-rootless-setuptool.sh
+-rwxr-xr-x root/root      8639 2026-05-21 14:24 containerd-rootless.sh
+</code></pre>
+
+<p></p>
+</details></p>
+
+<h3 id="full">Full</h3>
+
+<p>Extract the archive to a path like <code>/usr/local</code> or <code>~/.local</code> .</p>
+
+<details><summary>tar Cxzvvf /usr/local nerdctl-full-2.3.1-linux-amd64.tar.gz</summary>
+<p>
+
+```
+drwxr-xr-x 0/0               0 2026-05-21 14:33 bin/
+-rwxr-xr-x 0/0        34502474 2026-05-13 11:39 bin/buildctl
+-rwxr-xr-x 0/0        29909144 2025-05-12 13:10 bin/buildg
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-bandwidth -> ../libexec/cni/bandwidth
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-bridge -> ../libexec/cni/bridge
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-dhcp -> ../libexec/cni/dhcp
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-dummy -> ../libexec/cni/dummy
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-firewall -> ../libexec/cni/firewall
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-host-device -> ../libexec/cni/host-device
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-host-local -> ../libexec/cni/host-local
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-ipvlan -> ../libexec/cni/ipvlan
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-loopback -> ../libexec/cni/loopback
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-macvlan -> ../libexec/cni/macvlan
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-portmap -> ../libexec/cni/portmap
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-ptp -> ../libexec/cni/ptp
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-sbr -> ../libexec/cni/sbr
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-static -> ../libexec/cni/static
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-tap -> ../libexec/cni/tap
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-tuning -> ../libexec/cni/tuning
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-vlan -> ../libexec/cni/vlan
+lrwxrwxrwx 0/0               0 2026-05-21 14:32 bin/buildkit-cni-vrf -> ../libexec/cni/vrf
+-rwxr-xr-x 0/0        78723496 2026-05-13 11:39 bin/buildkitd
+-rwxr-xr-x 0/0        16853648 2026-05-21 14:31 bin/bypass4netns
+-rwxr-xr-x 0/0         6607010 2026-05-21 14:31 bin/bypass4netnsd
+-rwxr-xr-x 0/0        39455632 2026-05-21 14:32 bin/containerd
+-rwxr-xr-x 0/0        12079288 2025-11-06 01:44 bin/containerd-fuse-overlayfs-grpc
+-rwxr-xr-x 0/0           23381 2026-05-21 14:33 bin/containerd-rootless-setuptool.sh
+-rwxr-xr-x 0/0            8639 2026-05-21 14:33 bin/containerd-rootless.sh
+-rwxr-xr-x 0/0         8458402 2026-05-21 14:32 bin/containerd-shim-runc-v2
+-rwxr-xr-x 0/0        55267512 2026-01-21 14:59 bin/containerd-stargz-grpc
+-rwxr-xr-x 0/0        23592203 2026-05-21 14:33 bin/ctd-decoder
+-rwxr-xr-x 0/0        22577314 2026-05-21 14:32 bin/ctr
+-rwxr-xr-x 0/0        31235586 2026-05-21 14:33 bin/ctr-enc
+-rwxr-xr-x 0/0        23417016 2026-01-21 14:59 bin/ctr-remote
+-rwxr-xr-x 0/0         1885808 2026-05-21 14:33 bin/fuse-overlayfs
+-rwxr-xr-x 0/0         7913634 2026-05-21 14:31 bin/gomodjail
+-rwxr-xr-x 0/0        31568034 2026-05-21 14:33 bin/nerdctl
+-rwxr-xr-x 0/0        39489638 2026-05-21 14:33 bin/nerdctl.gomodjail
+-rwxr-xr-x 0/0        12034560 2026-04-09 19:03 bin/rootlessctl
+-rwxr-xr-x 0/0        23451213 2026-04-09 19:03 bin/rootlesskit
+-rwxr-xr-x 0/0        17088688 2026-05-21 14:31 bin/runc
+-rwxr-xr-x 0/0        53829816 2026-01-21 14:59 bin/stargz-fuse-manager
+-rwxr-xr-x 0/0        10821816 2026-01-21 14:59 bin/stargz-store-helper
+-rwxr-xr-x 0/0          870496 2026-05-21 14:33 bin/tini
+drwxr-xr-x 0/0               0 2026-05-21 14:32 lib/
+drwxr-xr-x 0/0               0 2026-05-21 14:32 lib/systemd/
+drwxr-xr-x 0/0               0 2026-05-21 14:32 lib/systemd/system/
+-rw-r--r-- 0/0            1309 2026-05-21 14:32 lib/systemd/system/buildkit.service
+-rw-r--r-- 0/0            1248 2026-05-21 14:30 lib/systemd/system/containerd.service
+-rw-r--r-- 0/0             312 2026-05-21 14:32 lib/systemd/system/stargz-snapshotter.service
+drwxr-xr-x 0/0               0 2026-05-21 14:32 libexec/
+drwxr-xr-x 0/0               0 2026-03-16 14:18 libexec/cni/
+-rw-r--r-- 0/0           11357 2026-03-16 14:18 libexec/cni/LICENSE
+-rw-r--r-- 0/0            2343 2026-03-16 14:18 libexec/cni/README.md
+-rwxr-xr-x 0/0         5042926 2026-03-16 14:18 libexec/cni/bandwidth
+-rwxr-xr-x 0/0         5698763 2026-03-16 14:18 libexec/cni/bridge
+-rwxr-xr-x 0/0        13725422 2026-03-16 14:18 libexec/cni/dhcp
+-rwxr-xr-x 0/0         5251069 2026-03-16 14:18 libexec/cni/dummy
+-rwxr-xr-x 0/0         5702145 2026-03-16 14:18 libexec/cni/firewall
+-rwxr-xr-x 0/0         5159967 2026-03-16 14:18 libexec/cni/host-device
+-rwxr-xr-x 0/0         4350778 2026-03-16 14:18 libexec/cni/host-local
+-rwxr-xr-x 0/0         5274322 2026-03-16 14:18 libexec/cni/ipvlan
+-rwxr-xr-x 0/0         4302030 2026-03-16 14:18 libexec/cni/loopback
+-rwxr-xr-x 0/0         5307111 2026-03-16 14:18 libexec/cni/macvlan
+-rwxr-xr-x 0/0         5108385 2026-03-16 14:18 libexec/cni/portmap
+-rwxr-xr-x 0/0         5475470 2026-03-16 14:18 libexec/cni/ptp
+-rwxr-xr-x 0/0         4525826 2026-03-16 14:18 libexec/cni/sbr
+-rwxr-xr-x 0/0         3776708 2026-03-16 14:18 libexec/cni/static
+-rwxr-xr-x 0/0         5453308 2026-03-16 14:18 libexec/cni/tap
+-rwxr-xr-x 0/0         4389084 2026-03-16 14:18 libexec/cni/tuning
+-rwxr-xr-x 0/0         5267679 2026-03-16 14:18 libexec/cni/vlan
+-rwxr-xr-x 0/0         4685012 2026-03-16 14:18 libexec/cni/vrf
+drwxr-xr-x 0/0               0 2026-05-21 14:30 share/
+drwxr-xr-x 0/0               0 2026-05-21 14:33 share/doc/
+drwxr-xr-x 0/0               0 2026-05-21 14:33 share/doc/nerdctl/
+-rw-r--r-- 0/0           12036 2026-05-21 14:24 share/doc/nerdctl/README.md
+drwxr-xr-x 0/0               0 2026-05-21 14:24 share/doc/nerdctl/docs/
+-rw-r--r-- 0/0            3953 2026-05-21 14:24 share/doc/nerdctl/docs/build.md
+-rw-r--r-- 0/0            2570 2026-05-21 14:24 share/doc/nerdctl/docs/builder-debug.md
+-rw-r--r-- 0/0            4779 2026-05-21 14:24 share/doc/nerdctl/docs/cni.md
+-rw-r--r-- 0/0           90467 2026-05-21 14:24 share/doc/nerdctl/docs/command-reference.md
+-rw-r--r-- 0/0            1829 2026-05-21 14:24 share/doc/nerdctl/docs/compose.md
+-rw-r--r-- 0/0            7592 2026-05-21 14:24 share/doc/nerdctl/docs/config.md
+-rw-r--r-- 0/0            9128 2026-05-21 14:24 share/doc/nerdctl/docs/cosign.md
+-rw-r--r-- 0/0            5660 2026-05-21 14:24 share/doc/nerdctl/docs/cvmfs.md
+drwxr-xr-x 0/0               0 2026-05-21 14:24 share/doc/nerdctl/docs/dev/
+-rw-r--r-- 0/0           12701 2026-05-21 14:24 share/doc/nerdctl/docs/dev/auditing_dockerfile.md
+-rw-r--r-- 0/0            8586 2026-05-21 14:24 share/doc/nerdctl/docs/dev/store.md
+-rw-r--r-- 0/0            2879 2026-05-21 14:24 share/doc/nerdctl/docs/dir.md
+-rw-r--r-- 0/0             906 2026-05-21 14:24 share/doc/nerdctl/docs/experimental.md
+-rw-r--r-- 0/0           14757 2026-05-21 14:24 share/doc/nerdctl/docs/faq.md
+-rw-r--r-- 0/0             884 2026-05-21 14:24 share/doc/nerdctl/docs/freebsd.md
+-rw-r--r-- 0/0            5585 2026-05-21 14:24 share/doc/nerdctl/docs/gpu.md
+-rw-r--r-- 0/0            3419 2026-05-21 14:24 share/doc/nerdctl/docs/healthchecks.md
+drwxr-xr-x 0/0               0 2026-05-21 14:24 share/doc/nerdctl/docs/images/
+-rw-r--r-- 0/0            1540 2026-05-21 14:24 share/doc/nerdctl/docs/images/nerdctl-white.svg
+-rw-r--r-- 0/0            1462 2026-05-21 14:24 share/doc/nerdctl/docs/images/nerdctl.svg
+-rw-r--r-- 0/0          684421 2026-05-21 14:24 share/doc/nerdctl/docs/images/rootlessKit-network-design.png
+-rw-r--r-- 0/0           14462 2026-05-21 14:24 share/doc/nerdctl/docs/ipfs.md
+-rw-r--r-- 0/0            2426 2026-05-21 14:24 share/doc/nerdctl/docs/multi-platform.md
+-rw-r--r-- 0/0            2960 2026-05-21 14:24 share/doc/nerdctl/docs/notation.md
+-rw-r--r-- 0/0            2805 2026-05-21 14:24 share/doc/nerdctl/docs/nydus.md
+-rw-r--r-- 0/0            3277 2026-05-21 14:24 share/doc/nerdctl/docs/ocicrypt.md
+-rw-r--r-- 0/0            2079 2026-05-21 14:24 share/doc/nerdctl/docs/overlaybd.md
+-rw-r--r-- 0/0           15657 2026-05-21 14:24 share/doc/nerdctl/docs/registry.md
+-rw-r--r-- 0/0            9388 2026-05-21 14:24 share/doc/nerdctl/docs/rootless.md
+-rw-r--r-- 0/0            4126 2026-05-21 14:24 share/doc/nerdctl/docs/soci.md
+-rw-r--r-- 0/0           11912 2026-05-21 14:24 share/doc/nerdctl/docs/stargz.md
+drwxr-xr-x 0/0               0 2026-05-21 14:24 share/doc/nerdctl/docs/testing/
+-rw-r--r-- 0/0            4897 2026-05-21 14:24 share/doc/nerdctl/docs/testing/README.md
+-rw-r--r-- 0/0           16500 2026-05-21 14:24 share/doc/nerdctl/docs/testing/tools.md
+drwxr-xr-x 0/0               0 2026-05-21 14:33 share/doc/nerdctl-full/
+-rw-r--r-- 0/0             904 2026-05-21 14:33 share/doc/nerdctl-full/README.md
+-rw-r--r-- 0/0            9331 2026-05-21 14:33 share/doc/nerdctl-full/SHA256SUMS
+```
+</p>
+</details>
+
+<details><summary>Included components</summary>
+<p>
+
+See `share/doc/nerdctl-full/README.md`:
+```markdown
+# nerdctl (full distribution)
+- nerdctl: v2.3.1
+- containerd: v2.3.1
+- runc: v1.4.2
+- CNI plugins: v1.9.1
+- BuildKit: v0.30.0
+- Stargz Snapshotter: v0.18.2
+- imgcrypt: v2.0.2
+- bypass4netns: v0.4.2
+- fuse-overlayfs: v1.16
+- containerd-fuse-overlayfs: v2.1.7
+- Tini: v0.19.0
+- buildg: v0.5.3
+- RootlessKit: v3.0.0
+- gomodjail: v0.3.2@c145bb1e36fe0939c5fa0467f2477878dea8e3d9
+
+## License
+- bin/fuse-overlayfs: [GNU GENERAL PUBLIC LICENSE, Version 2](https://github.com/containers/fuse-overlayfs/blob/v1.16/COPYING)
+- bin/{runc,bypass4netns,bypass4netnsd}: Apache License 2.0, statically linked with libseccomp ([LGPL 2.1](https://github.com/seccomp/libseccomp/blob/main/LICENSE), source code available at https://github.com/seccomp/libseccomp/)
+- bin/tini: [MIT License](https://github.com/krallin/tini/blob/v0.19.0/LICENSE)
+- Other files: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+```
+</p>
+</details>
+
+<h2 id="quick-start">Quick start</h2>
+
+<h3 id="rootful">Rootful</h3>
+
+<pre><code class="language-console">$ sudo systemctl enable --now containerd
+$ sudo nerdctl run -d --name nginx -p 80:80 nginx:alpine
+</code></pre>
+
+<h3 id="rootless">Rootless</h3>
+
+<pre><code class="language-console">$ containerd-rootless-setuptool.sh install
+$ nerdctl run -d --name nginx -p 8080:80 nginx:alpine
+</code></pre>
+
+<p>Enabling cgroup v2 is highly recommended for rootless mode, see <a href="https://rootlesscontaine.rs/getting-started/common/cgroup2/" target="_blank">https://rootlesscontaine.rs/getting-started/common/cgroup2/</a> .</p>
+
+<hr>
+
+<p>The binaries were built automatically on GitHub Actions.
+The build log is available for 90 days: <a href="https://github.com/containerd/nerdctl/actions/runs/26232089277" target="_blank">https://github.com/containerd/nerdctl/actions/runs/26232089277</a></p>
+
+<p>The sha256sum of the SHA256SUMS file itself is <code>8a0586ff11d4d5a5d19d59494a10af8c6d41dd95ca72ff347f62d5288bc5131a</code> .</p>
+
+<hr>
+
+<p>Release manager: Chengyu Zhu (@ChengyuZhu6)</p>
+<br><h2>etcd-io/etcd</h2> <h3>Release notes for v3.7.0-beta.0</h3><h4>2026-05-19</h4><p>Please check out <a href="https://github.com/etcd-io/etcd/blob/main/CHANGELOG/CHANGELOG-3.7.md" target="_blank">CHANGELOG</a> for a full list of changes. And make sure to read <a href="https://etcd.io/docs/v3.7/upgrades/upgrade_3_7/" target="_blank">upgrade guide</a> before upgrading etcd (there may be breaking changes).</p>
+
+<p>For installation guides, please check out <a href="https://etcd.io/docs/v3.7/op-guide/" target="_blank">operating etcd</a>. Latest support status for common architectures and operating systems can be found at <a href="https://etcd.io/docs/v3.7/op-guide/supported-platform/" target="_blank">supported platforms</a>.</p>
+
+<h6 id="linux">Linux</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.7.0-beta.0
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C /tmp/etcd-download-test --strip-components=1 --no-same-owner
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+
+# start a local etcd server
+/tmp/etcd-download-test/etcd
+
+# write,read to etcd
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 put foo bar
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 get foo
+</code></pre>
+
+<h6 id="macos-darwin">macOS (Darwin)</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.7.0-beta.0
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-darwin-amd64.zip -o /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+unzip /tmp/etcd-${ETCD_VER}-darwin-amd64.zip -d /tmp &amp;&amp; rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+mv /tmp/etcd-${ETCD_VER}-darwin-amd64/* /tmp/etcd-download-test &amp;&amp; rm -rf mv /tmp/etcd-${ETCD_VER}-darwin-amd64
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+</code></pre>
+
+<h6 id="docker">Docker</h6>
+
+<p>etcd uses <a href="https://gcr.io/etcd-development/etcd" target="_blank"><code>gcr.io/etcd-development/etcd</code></a> as a primary container registry, and <a href="https://quay.io/coreos/etcd" target="_blank"><code>quay.io/coreos/etcd</code></a> as secondary.</p>
+
+<pre><code class="language-sh">ETCD_VER=v3.7.0-beta.0
+
+rm -rf /tmp/etcd-data.tmp &amp;&amp; mkdir -p /tmp/etcd-data.tmp &amp;&amp; \
+  docker rmi gcr.io/etcd-development/etcd:${ETCD_VER} || true &amp;&amp; \
+  docker run \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  --mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+  --name etcd-gcr-${ETCD_VER} \
+  gcr.io/etcd-development/etcd:${ETCD_VER} \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:2379 \
+  --advertise-client-urls http://0.0.0.0:2379 \
+  --listen-peer-urls http://0.0.0.0:2380 \
+  --initial-advertise-peer-urls http://0.0.0.0:2380 \
+  --initial-cluster s1=http://0.0.0.0:2380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new \
+  --log-level info \
+  --logger zap \
+  --log-outputs stderr
+
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcd --version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdutl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl endpoint health
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl put foo bar
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl get foo
+</code></pre>
+<br>
+</body>
+
+</html>
