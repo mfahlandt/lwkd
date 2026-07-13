@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2026-07-06 - 2026-07-13</h1><h2>containerd/containerd</h2> <h3>Release notes for containerd 2.3.3</h3><h4>2026-07-10</h4><p>Welcome to the v2.3.3 release of containerd!</p>
+
+<p>The third patch release for containerd 2.3 contains various fixes and updates.</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<ul>
+<li>Set SystemTemp environment variable on Windows so temp directory overrides work for SYSTEM services (<a href="https://github.com/containerd/containerd/pull/13694" target="_blank">#13694</a>)</li>
+</ul>
+
+<h4 id="container-runtime-interface-cri">Container Runtime Interface (CRI)</h4>
+
+<ul>
+<li>Fix nil pointer dereference in NRI GetIPs during pod sandbox teardown or container exit (<a href="https://github.com/containerd/containerd/pull/13697" target="_blank">#13697</a>)</li>
+<li>Reject CreateContainer calls when the target sandbox is not running (<a href="https://github.com/containerd/containerd/pull/13668" target="_blank">#13668</a>)</li>
+<li>Ensure sandbox shutdown on RunPodSandbox hook failures to avoid mount leaks (<a href="https://github.com/containerd/containerd/pull/13645" target="_blank">#13645</a>)</li>
+</ul>
+
+<h4 id="image-distribution">Image Distribution</h4>
+
+<ul>
+<li>Surface OCI error bodies in registry 403 responses by falling back to GET requests (<a href="https://github.com/containerd/containerd/pull/13738" target="_blank">#13738</a>)</li>
+</ul>
+
+<h4 id="snapshotters">Snapshotters</h4>
+
+<ul>
+<li>Align default 4K mkfs block size for EROFS across all platforms (<a href="https://github.com/containerd/containerd/pull/13632" target="_blank">#13632</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Maksym Pavlenko</li>
+<li>Samuel Karp</li>
+<li>Chris Henzie</li>
+<li>Phil Estes</li>
+<li>Sebastiaan van Stijn</li>
+<li>Akihiro Suda</li>
+<li>Austin Vazquez</li>
+<li>Chris Crone</li>
+<li>Derek McGowan</li>
+<li>Maksim An</li>
+<li>crawfordxx</li>
+<li>cshung</li>
+<li>lauralorenz</li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<details><summary>14 commits</summary>
+<p>
+
+* Prepare release notes for v2.3.3 ([#13750](https://github.com/containerd/containerd/pull/13750))
+  * [`7f6cee02a`](https://github.com/containerd/containerd/commit/7f6cee02ad5afc5f3244ec36937d8eed61f7057d) Prepare release notes for v2.3.3
+* CI: migrate Vagrant to Lima ([#13744](https://github.com/containerd/containerd/pull/13744))
+  * [`7316210ce`](https://github.com/containerd/containerd/commit/7316210ce6bd95e8afd2856e256b5d9855385d01) CI: migrate Vagrant to Lima
+* remotes: surface OCI error body in registry 4xx responses ([#13738](https://github.com/containerd/containerd/pull/13738))
+  * [`457fba3a3`](https://github.com/containerd/containerd/commit/457fba3a380dab10ef7e9334352352f72caf8423) remotes: surface OCI error body on HEAD 403 via GET fallback
+* Update go to 1.26.5 ([#13732](https://github.com/containerd/containerd/pull/13732))
+  * [`dc2df934e`](https://github.com/containerd/containerd/commit/dc2df934efebc78523d6821c2520f538ff65986d) Update go to 1.26.5
+* ci: pin fog-json to resolve gem conflict ([#13711](https://github.com/containerd/containerd/pull/13711))
+  * [`5be0495df`](https://github.com/containerd/containerd/commit/5be0495dff529910a85b6ca1b2a1a35ea220da59) ci: pin fog-json to resolve gem conflict
+* Fix nil pointer dereference in NRI GetIPs ([#13697](https://github.com/containerd/containerd/pull/13697))
+  * [`36c713971`](https://github.com/containerd/containerd/commit/36c7139715fee7ff2f87f78a8b3d6fea4e2e7b35) Fix nil pointer dereference in NRI GetIPs
+* Set SystemTemp env var to config temp on Windows ([#13694](https://github.com/containerd/containerd/pull/13694))
+  * [`26dce170d`](https://github.com/containerd/containerd/commit/26dce170df24e227aeb5ccd1cec1e5c91b307595) Set SystemTemp env var to config temp on Windows
+* update runhcs to v0.15.0-rc.3 ([#13693](https://github.com/containerd/containerd/pull/13693))
+  * [`9bc2c2349`](https://github.com/containerd/containerd/commit/9bc2c23496073c3b48b083f6bede9e82d879a7d4) update runhcs to v0.15.0-rc.3
+* Update to current setup-go version ([#13686](https://github.com/containerd/containerd/pull/13686))
+  * [`3e97edeb7`](https://github.com/containerd/containerd/commit/3e97edeb7d3dfcee903c37ab531b1fdfe0a49ae4) Update to current setup-go version
+* cri: reject CreateContainer when sandbox is not running ([#13668](https://github.com/containerd/containerd/pull/13668))
+  * [`8856b0f9c`](https://github.com/containerd/containerd/commit/8856b0f9c3ae50efe6f2a84ab7337953faeb129f) cri: reject CreateContainer when sandbox is not running
+* update runhcs to v0.15.0-rc.2 ([#13666](https://github.com/containerd/containerd/pull/13666))
+  * [`ae796cec5`](https://github.com/containerd/containerd/commit/ae796cec596341f3db4ea324199b83670aaa8162) update runhcs to v0.15.0-rc.2
+* test: fix flaky image timestamp check on coarse clocks ([#13643](https://github.com/containerd/containerd/pull/13643))
+  * [`168d56783`](https://github.com/containerd/containerd/commit/168d56783608354301e6f6dfb3ceb9af342c7dde) test: fix flaky image timestamp check on coarse clocks
+* Add defer in event of mid-function failures in RunPodSandbox to avoid mount leaks ([#13645](https://github.com/containerd/containerd/pull/13645))
+  * [`d1db61db8`](https://github.com/containerd/containerd/commit/d1db61db8d6b59cdb27e5e1843911ad12e25a5e7) Add deferred call to ShutdownSandbox to avoid leaks
+* erofs: align default mkfs block size across platforms ([#13632](https://github.com/containerd/containerd/pull/13632))
+  * [`01b0f03f6`](https://github.com/containerd/containerd/commit/01b0f03f676c19bf5beca591524f274b61537694) erofs: align default mkfs block size across platforms
+</p>
+</details>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<p>This release has no dependency changes</p>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v2.3.2" target="_blank">v2.3.2</a></p>
+
+<h3 id="which-file-should-i-download">Which file should I download?</h3>
+
+<ul>
+<li><code>containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:         ✅Recommended. Dynamically linked with glibc 2.35 (Ubuntu 22.04).</li>
+<li><code>containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:  Statically linked. Expected to be used on Linux distributions that do not use glibc &gt;= 2.35. Not position-independent.</li>
+</ul>
+
+<p>In addition to containerd, typically you will have to install <a href="https://github.com/opencontainers/runc/releases" target="_blank">runc</a>
+and <a href="https://github.com/containernetworking/plugins/releases" target="_blank">CNI plugins</a> from their official sites too.</p>
+
+<p>See also the <a href="https://github.com/containerd/containerd/blob/main/docs/getting-started.md" target="_blank">Getting Started</a> documentation.</p>
+<br><h3>Release notes for containerd 2.2.6</h3><h4>2026-07-09</h4><p>Welcome to the v2.2.6 release of containerd!</p>
+
+<p>The sixth patch release for containerd 2.2 contains various fixes and updates.</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<h4 id="container-runtime-interface-cri">Container Runtime Interface (CRI)</h4>
+
+<ul>
+<li>Fix nil pointer dereference in NRI GetIPs during pod sandbox teardown or container exit (<a href="https://github.com/containerd/containerd/pull/13696" target="_blank">#13696</a>)</li>
+<li>Reject CreateContainer calls when the target sandbox is not running (<a href="https://github.com/containerd/containerd/pull/13669" target="_blank">#13669</a>)</li>
+<li>Ensure sandbox shutdown on RunPodSandbox hook failures to avoid mount leaks (<a href="https://github.com/containerd/containerd/pull/13644" target="_blank">#13644</a>)</li>
+</ul>
+
+<h4 id="image-distribution">Image Distribution</h4>
+
+<ul>
+<li>Limit fallback to /blobs endpoint during ref resolution to prevent content store pollution (<a href="https://github.com/containerd/containerd/pull/13620" target="_blank">#13620</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Samuel Karp</li>
+<li>Chris Henzie</li>
+<li>Phil Estes</li>
+<li>Akihiro Suda</li>
+<li>Joseph Zhang</li>
+<li>Maksym Pavlenko</li>
+<li>crawfordxx</li>
+<li>lauralorenz</li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<details><summary>8 commits</summary>
+<p>
+
+* Prepare release notes for v2.2.6 ([#13751](https://github.com/containerd/containerd/pull/13751))
+  * [`701734d2f`](https://github.com/containerd/containerd/commit/701734d2f96b150769ef2f0b7be2e1e39e67f2fb) Prepare release notes for v2.2.6
+* CI: migrate Vagrant to Lima ([#13745](https://github.com/containerd/containerd/pull/13745))
+  * [`672ea355f`](https://github.com/containerd/containerd/commit/672ea355f5a7134160fc66a1a800cd9f89176f40) CI: migrate Vagrant to Lima
+* Update go to 1.26.5/1.25.12 ([#13726](https://github.com/containerd/containerd/pull/13726))
+  * [`d7eba3f42`](https://github.com/containerd/containerd/commit/d7eba3f429449d19e9ea1f4e5f017a8893d49281) Update go to 1.26.5/1.25.12
+* ci: pin fog-json to resolve gem conflict ([#13714](https://github.com/containerd/containerd/pull/13714))
+  * [`8f123e4f7`](https://github.com/containerd/containerd/commit/8f123e4f7fbe59cf9ca86999f65cc8f2021dafd6) ci: pin fog-json to resolve gem conflict
+* Fix nil pointer dereference in NRI GetIPs ([#13696](https://github.com/containerd/containerd/pull/13696))
+  * [`d3e1a2be9`](https://github.com/containerd/containerd/commit/d3e1a2be92e527bf40ea4746b616bd782e108380) Fix nil pointer dereference in NRI GetIPs
+* cri: reject CreateContainer when sandbox is not running ([#13669](https://github.com/containerd/containerd/pull/13669))
+  * [`872a9502e`](https://github.com/containerd/containerd/commit/872a9502eebee41d58005a8a2eb11c7194025fb1) cri: reject CreateContainer when sandbox is not running
+* Add defer in event of mid-function failures in RunPodSandbox to avoid mount leaks ([#13644](https://github.com/containerd/containerd/pull/13644))
+  * [`ba7605ee7`](https://github.com/containerd/containerd/commit/ba7605ee7eb74493c464018055b43f0fed5e9289) Add deferred call to ShutdownSandbox to avoid leaks
+* fix: avoid content storage pollution by limiting the fallback on ref resolution ([#13620](https://github.com/containerd/containerd/pull/13620))
+  * [`36c4275ee`](https://github.com/containerd/containerd/commit/36c4275eed174bdf40df60a5dea2c32191a1e946) fix:avoid content storage pollution by limiting the fallback on ref resolution
+</p>
+</details>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<p>This release has no dependency changes</p>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v2.2.5" target="_blank">v2.2.5</a></p>
+
+<h3 id="which-file-should-i-download">Which file should I download?</h3>
+
+<ul>
+<li><code>containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:         ✅Recommended. Dynamically linked with glibc 2.35 (Ubuntu 22.04).</li>
+<li><code>containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:  Statically linked. Expected to be used on Linux distributions that do not use glibc &gt;= 2.35. Not position-independent.</li>
+</ul>
+
+<p>In addition to containerd, typically you will have to install <a href="https://github.com/opencontainers/runc/releases" target="_blank">runc</a>
+and <a href="https://github.com/containernetworking/plugins/releases" target="_blank">CNI plugins</a> from their official sites too.</p>
+
+<p>See also the <a href="https://github.com/containerd/containerd/blob/main/docs/getting-started.md" target="_blank">Getting Started</a> documentation.</p>
+<br><h3>Release notes for containerd 2.0.11</h3><h4>2026-07-09</h4><p>Welcome to the v2.0.11 release of containerd!</p>
+
+<p>The eleventh patch release for containerd 2.0 contains various fixes and updates.</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<h4 id="image-distribution">Image Distribution</h4>
+
+<ul>
+<li>Limit fallback to /blobs endpoint during ref resolution to prevent content store pollution (<a href="https://github.com/containerd/containerd/pull/13622" target="_blank">#13622</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Samuel Karp</li>
+<li>Chris Henzie</li>
+<li>Joseph Zhang</li>
+<li>Phil Estes</li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<details><summary>4 commits</summary>
+<p>
+
+* Prepare release notes for v2.0.11 ([#13752](https://github.com/containerd/containerd/pull/13752))
+  * [`24a2ac9db`](https://github.com/containerd/containerd/commit/24a2ac9db44440a5c23314bbbe265a0be5330d30) Prepare release notes for v2.0.11
+* Update go to 1.26.5/1.25.12 ([#13730](https://github.com/containerd/containerd/pull/13730))
+  * [`8f0774f1a`](https://github.com/containerd/containerd/commit/8f0774f1a0c7b07fc4cd8ae8a7fdefdc212ea620) Update go to 1.26.5/1.25.12
+* ci: pin fog-json to resolve gem conflict ([#13713](https://github.com/containerd/containerd/pull/13713))
+  * [`f89266ecb`](https://github.com/containerd/containerd/commit/f89266ecb9d2bcb7b8677ddabda09d6dc4e21aca) ci: pin fog-json to resolve gem conflict
+* fix: avoid content storage pollution by limiting the fallback on ref resolution ([#13622](https://github.com/containerd/containerd/pull/13622))
+  * [`179b642d6`](https://github.com/containerd/containerd/commit/179b642d662ddbaeebe57214164a399ceaed5fbd) fix:avoid content storage pollution by limiting the fallback on ref resolution
+</p>
+</details>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<p>This release has no dependency changes</p>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v2.0.10" target="_blank">v2.0.10</a></p>
+
+<h3 id="which-file-should-i-download">Which file should I download?</h3>
+
+<ul>
+<li><code>containerd-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:         ✅Recommended. Dynamically linked with glibc 2.31 (Ubuntu 20.04).</li>
+<li><code>containerd-static-&lt;VERSION&gt;-&lt;OS&gt;-&lt;ARCH&gt;.tar.gz</code>:  Statically linked. Expected to be used on non-glibc Linux distributions. Not position-independent.</li>
+</ul>
+
+<p>In addition to containerd, typically you will have to install <a href="https://github.com/opencontainers/runc/releases" target="_blank">runc</a>
+and <a href="https://github.com/containernetworking/plugins/releases" target="_blank">CNI plugins</a> from their official sites too.</p>
+
+<p>See also the <a href="https://github.com/containerd/containerd/blob/main/docs/getting-started.md" target="_blank">Getting Started</a> documentation.</p>
+<br><h3>Release notes for containerd 1.7.34</h3><h4>2026-07-09</h4><p>Welcome to the v1.7.34 release of containerd!</p>
+
+<p>The thirty-fourth patch release for containerd 1.7 contains various fixes and updates.</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<h4 id="container-runtime-interface-cri">Container Runtime Interface (CRI)</h4>
+
+<ul>
+<li>Fix lost container exit events when events arrive before container info is cached (<a href="https://github.com/containerd/containerd/pull/11634" target="_blank">#11634</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Chris Henzie</li>
+<li>Samuel Karp</li>
+<li>Akihiro Suda</li>
+<li>Maksym Pavlenko</li>
+<li>Phil Estes</li>
+<li>Sopho Merkviladze</li>
+<li>ningmingxiao</li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<details><summary>5 commits</summary>
+<p>
+
+* Prepare release notes for v1.7.34 ([#13753](https://github.com/containerd/containerd/pull/13753))
+  * [`7db112471`](https://github.com/containerd/containerd/commit/7db112471b99935b1deea31bcac9070ce2ccb4de) Prepare release notes for v1.7.34
+* Update go to 1.26.5/1.25.12 ([#13731](https://github.com/containerd/containerd/pull/13731))
+  * [`c06144c85`](https://github.com/containerd/containerd/commit/c06144c8516ccd2fb632e0db4290a7cb5909cdb6) Update go to 1.26.5/1.25.12
+* ci: pin fog-json to resolve gem conflict ([#13712](https://github.com/containerd/containerd/pull/13712))
+  * [`b84460e50`](https://github.com/containerd/containerd/commit/b84460e50769d336bf62dca976eb23f984f7d10b) ci: pin fog-json to resolve gem conflict
+* cri:fix lost container exit events if they arrive before info is cached ([#11634](https://github.com/containerd/containerd/pull/11634))
+  * [`2fe076ea7`](https://github.com/containerd/containerd/commit/2fe076ea7ebaac58d3e731bcb6dcde84d3fe5719) cri:fix lost container exit events if they arrive before info is cached
+* build(deps): bump golang.org/x/* dependencies ([#13502](https://github.com/containerd/containerd/pull/13502))
+  * [`862057716`](https://github.com/containerd/containerd/commit/862057716f66750c93fade0c0bc1cff4a8169039) bump golang.org/x/* dependencies
+</p>
+</details>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<ul>
+<li><strong>golang.org/x/crypto</strong>  v0.45.0 -&gt; v0.52.0</li>
+<li><strong>golang.org/x/mod</strong>     v0.29.0 -&gt; v0.35.0</li>
+<li><strong>golang.org/x/net</strong>     v0.47.0 -&gt; v0.55.0</li>
+<li><strong>golang.org/x/sync</strong>    v0.18.0 -&gt; v0.20.0</li>
+<li><strong>golang.org/x/sys</strong>     v0.38.0 -&gt; v0.45.0</li>
+<li><strong>golang.org/x/term</strong>    v0.37.0 -&gt; v0.43.0</li>
+<li><strong>golang.org/x/text</strong>    v0.31.0 -&gt; v0.37.0</li>
+</ul>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/v1.7.33" target="_blank">v1.7.33</a></p>
+<br><h2>prometheus/prometheus</h2> <h3>Release notes for 3.13.1 / 2026-07-10</h3><h4>2026-07-10</h4><p>This is a bugfix release for 3.13 LTS.</p>
+
+<ul>
+<li>[BUGFIX] TSDB: Fix the head-chunk cache returning samples from the wrong chunk, or spurious not-found errors, to range queries after head-chunk truncation. #19134</li>
+</ul>
+<br><h3>Release notes for 3.5.5 / 2026-07-09</h3><h4>2026-07-09</h4><p>This release is built with Go 1.25.12 and fixes a security issue in a UI dependency.</p>
+
+<ul>
+<li>[SECURITY] UI: Bump <code>sanitize-html</code> to v2.17.5 to fix CVE-2026-53606. #19060</li>
+</ul>
+<br><h3>Release notes for 3.13.0-rc.0 / 2026-06-18</h3><h4>2026-07-09</h4><ul>
+<li>[SECURITY] UI: Bump <code>sanitize-html</code> to fix a cross-site scripting vulnerability (CVE-2026-44990). #18697</li>
+<li>[CHANGE] API: Use SHA-256 instead of SHA-1 to generate rule group pagination tokens. #18927</li>
+<li>[CHANGE] HTTP clients: Credentials (Authorization header, basic auth, bearer token, OAuth2, configured headers) are no longer forwarded when following a redirect to a different host; affects scraping, remote read/write, alerting, and service discovery. Via prometheus/common v0.69.0 (CVE-2025-4673 CVE-2023-45289). #18949</li>
+<li>[CHANGE] promtool: Relative file paths in the file passed to <code>--http.config.file</code> are now resolved relative to that config file&rsquo;s directory instead of its parent directory. Via prometheus/common v0.69.0. #18949</li>
+<li>[CHANGE] PromQL: Rename the <code>min()</code> and <code>max()</code> duration-expression functions (experimental feature flag <code>experimental-duration-expr</code>) to <code>min_of()</code> and <code>max_of()</code> to avoid confusion with the <code>min</code> and <code>max</code> aggregate operators. #18687</li>
+<li>[FEATURE] API: Add experimental search endpoints to search metric names, label names, and label values. #18573</li>
+<li>[FEATURE] Discovery/AWS: Add ability to filter RDS instances. #18859</li>
+<li>[FEATURE] PromQL: Add <code>min_of(a, b)</code> and <code>max_of(a, b)</code> scalar experimental functions, returning the smaller or larger of two scalar values. #18687</li>
+<li>[FEATURE] PromQL: Add support for smoothed/anchored rate with native histograms. #18564</li>
+<li>[FEATURE] PromQL: Expose per-query <code>samplesRead</code> (and <code>samplesReadPerStep</code> with <code>stats=all</code> and the <code>promql-per-step-stats</code> feature flag) in the query stats response, and add the <code>prometheus_engine_query_samples_read_total</code> engine counter. <code>samplesRead</code> reflects storage I/O distinct from <code>totalQueryableSamples</code>, which counts samples loaded into the evaluator (and so over-counts when a sample is reused across multiple range-vector windows). #18081</li>
+<li>[FEATURE] Scrape: Add <code>__convert_classic_histograms_to_nhcb__</code> internal label to allow per-target override of <code>convert_classic_histograms_to_nhcb</code> scrape configuration via relabeling. #18840</li>
+<li>[FEATURE] TSDB: Add <code>storage.tsdb.chunk_encoding.floats</code> configuration field to select float chunk encoding (<code>xor</code> or <code>xor2</code>) at runtime, independently of the <code>--enable-feature=xor2-encoding</code> flag. #18769</li>
+<li>[FEATURE] remote_write: Add Certificate support for ingesting data into an Azure Monitor Workspace. #18217</li>
+<li>[FEATURE] Scrape: Add <code>__always_scrape_classic_histograms__</code> and <code>__scrape_native_histograms__</code> internal labels to allow per-target override of the <code>always_scrape_classic_histograms</code> and <code>scrape_native_histograms</code> scrape configuration via relabeling. #18929</li>
+<li>[ENHANCEMENT] Release: Container images are now also published to the GitHub Container Registry (ghcr.io). #18791</li>
+<li>[ENHANCEMENT] PromQL: Prettify <code>fill_left(x) fill_right(x)</code> as <code>fill(x)</code> when both fill values are equal. #18851</li>
+<li>[ENHANCEMENT] UI: Improve autocompletion after closing a function bracket. #18894</li>
+<li>[PERF] Labels: Add case-insensitive prefix matching to speed up evaluation of long case-insensitive regular expressions (up to ~2x faster). #18540</li>
+<li>[PERF] TSDB: Reduce per-sample overhead in chunk population, speeding up affected queries by ~12-15% in benchmarks. #18699</li>
+<li>[PERF] TSDB: Eliminate unnecessary heap allocations in the V2 histogram WAL decoder, reducing allocations by up to 50% and memory by up to 10% for deployments using native histograms with created-timestamp storage enabled (<code>--enable-feature=created-timestamp-zero-ingestion</code>). #18813</li>
+<li>[BUGFIX] Discovery/AWS: Fix failure when processing an AWS RDS cluster without instances. #18845</li>
+<li>[BUGFIX] Fix race condition in initTime that could cause ErrOutOfBounds. #18629</li>
+<li>[BUGFIX] PromQL: A range query whose <code>end</code> was not aligned to <code>step</code> caused subqueries inside it to evaluate past the parent&rsquo;s last actual step, inflating <code>peakSamples</code> in the query stats and against the <code>query.max-samples</code> limit, and wasting storage I/O reading samples that were never used in the result. #18081</li>
+<li>[BUGFIX] PromQL: A range query containing an at-modifier-unsafe function over a range-vector with an <code>@</code> modifier (e.g. <code>predict_linear(metric[60s] @ T, X)</code>) silently under-counted <code>totalQueryableSamples</code> for steps after step 0. #18081</li>
+<li>[BUGFIX] PromQL: Fix <code>fill_left</code>/<code>fill_right</code> producing missing samples in range queries when using <code>group_left</code>/<code>group_right</code>. #18850</li>
+<li>[BUGFIX] PromQL: Fix for resets() and changes() in anchored range extenders with histograms. #18906</li>
+<li>[BUGFIX] PromQL: Fix panic on <code>1[5m] smoothed</code> and similar expressions when extended range selectors are enabled. #18764</li>
+<li>[BUGFIX] PromQL: Fix panic when a <code>smoothed</code> instant vector selector produces no samples for a series. #18943</li>
+<li>[BUGFIX] PromQL: Fix panic when using a parenthesised plain number as an offset (e.g. <code>foo offset -(5)</code>). #18768</li>
+<li>[BUGFIX] promtool: Fix panic when parsing exposition text containing empty braces <code>{}</code>. Via prometheus/common v0.69.0. #18949</li>
+<li>[BUGFIX] Promtool: Fix <code>check healthy</code> and <code>check ready</code> when <code>--url</code> ends with a trailing slash. #18854</li>
+<li>[BUGFIX] Rules: Close PromQL query after each rule evaluation to ensure resources are released. #18733</li>
+<li>[BUGFIX] Scaleway SD: Resolve VPC/IPAM-only instances that have no legacy <code>private_ip</code> or <code>public_ip</code> field, but do have private NICs attached. #18772</li>
+<li>[BUGFIX] TSDB: Do not leak head series when an integer histogram append is rejected (e.g. out-of-order). #18838</li>
+<li>[BUGFIX] UI: Escape label values offered by PromQL autocomplete. #18658</li>
+<li>[BUGFIX] TSDB: Fix chunk snapshot encoding for EncXOR2 chunks, preventing corruption on TSDB restart when EncXOR2-encoded series were present. #18739</li>
+<li>[BUGFIX] TSDB: Store a millisecond timestamp (not a WAL segment number) in walExpiries when a series is evicted via CompactStaleHead/CompactSelectedSeries, so the series&rsquo;s label record is correctly retained in the next WAL checkpoint and replays cleanly. #18847</li>
+<li>[BUGFIX] TSDB: Prevent loss of samples at the chunk-range boundary when CompactSelectedSeries (and CompactStaleHead) evict the series — the per-slice compaction loop now runs one more iteration so the boundary timestamp is captured in a block before the in-memory copy is removed. #18849</li>
+</ul>
+<br><h2>coredns/coredns</h2> <h3>Release notes for v1.14.6</h3><h4>2026-07-10</h4><p>This patch release focuses on fixing ARM and MIPS build issues introduced in
+v1.14.5 by downgrading the dd-trace-go dependency, while also including
+improvements to forwarding and secondary zone support.</p>
+
+<h2 id="brought-to-you-by">Brought to You By</h2>
+
+<p>Filippo125
+houyuwushang
+Immanuel Tikhonov
+Ville Vesilehto
+Yong Tang</p>
+
+<h2 id="noteworthy-changes">Noteworthy Changes</h2>
+
+<p>core: Downgrade dd-trace-go to v2.8.2 (<a href="https://github.com/coredns/coredns/pull/8266" target="_blank">https://github.com/coredns/coredns/pull/8266</a>)
+plugin/auto: Keep first matching zone file for duplicate origins (<a href="https://github.com/coredns/coredns/pull/8216" target="_blank">https://github.com/coredns/coredns/pull/8216</a>)
+plugin/forward: Add source_address directive (<a href="https://github.com/coredns/coredns/pull/8011" target="_blank">https://github.com/coredns/coredns/pull/8011</a>)
+plugin/secondary: Serve catalog member zones (<a href="https://github.com/coredns/coredns/pull/8230" target="_blank">https://github.com/coredns/coredns/pull/8230</a>)</p>
+<br><h3>Release notes for v1.14.5</h3><h4>2026-07-10</h4><p>This release improves DNS transport security and operational reliability, with
+safer DoH/DoH3 handling, enhanced forwarding configuration, and improved dnstap
+support. It also adds robustness improvements across file serving, secondary
+zones, transfers, rewrites, hosts handling, and error processing, while fixing
+several edge cases in DNS response handling.</p>
+
+<h2 id="brought-to-you-by">Brought to You By</h2>
+
+<p>Aaron Mark
+Amirhossein Ebrahimzade
+Antoine
+Baltasar Blanco
+Cedric Wang
+Ilya Kulakov
+Immanuel Tikhonov
+Jaime Hablutzel
+Jonathan Tooker
+Omkhar Arasaratnam
+Pavel Lazureykis
+SEONGHYUN HONG
+Saleh
+Thomas Gosteli
+Ville Vesilehto
+Yong Tang
+houyuwushang
+rpb-ant</p>
+
+<h2 id="noteworthy-changes">Noteworthy Changes</h2>
+
+<p>core: Accept scoped IPv6 addresses in transfer targets (<a href="https://github.com/coredns/coredns/pull/8204" target="_blank">https://github.com/coredns/coredns/pull/8204</a>)
+core: Bound DoQ stream read with the server read timeout (<a href="https://github.com/coredns/coredns/pull/8231" target="_blank">https://github.com/coredns/coredns/pull/8231</a>)
+core: Classify nxdomain without soa as denial (<a href="https://github.com/coredns/coredns/pull/8199" target="_blank">https://github.com/coredns/coredns/pull/8199</a>)
+core: Guard Join against an empty label slice (<a href="https://github.com/coredns/coredns/pull/8225" target="_blank">https://github.com/coredns/coredns/pull/8225</a>)
+core: Propagate HTTPRequestValidateFunc to all configs in a server block (<a href="https://github.com/coredns/coredns/pull/8169" target="_blank">https://github.com/coredns/coredns/pull/8169</a>)
+core: Sanitize DoH/DoH3 request parse errors (<a href="https://github.com/coredns/coredns/pull/8254" target="_blank">https://github.com/coredns/coredns/pull/8254</a>)
+core: Use Go TLS defaults (<a href="https://github.com/coredns/coredns/pull/8227" target="_blank">https://github.com/coredns/coredns/pull/8227</a>)
+core: Add Config.UDPDecorateWriterFunc for external plugins (<a href="https://github.com/coredns/coredns/pull/8257" target="_blank">https://github.com/coredns/coredns/pull/8257</a>)
+plugin/auto: Warn on duplicate zone file origins (<a href="https://github.com/coredns/coredns/pull/8191" target="_blank">https://github.com/coredns/coredns/pull/8191</a>)
+plugin/cache: Add regression test for AD bit not partitioning the cache (<a href="https://github.com/coredns/coredns/pull/8214" target="_blank">https://github.com/coredns/coredns/pull/8214</a>)
+plugin/dnstap: Close the previous connection before reconnecting (<a href="https://github.com/coredns/coredns/pull/8224" target="_blank">https://github.com/coredns/coredns/pull/8224</a>)
+plugin/dnstap: Fix self-deadlock in listener broadcast on client flush error (<a href="https://github.com/coredns/coredns/pull/8260" target="_blank">https://github.com/coredns/coredns/pull/8260</a>)
+plugin/dnstap: Store IPv4-mapped IPv6 addresses as 4 octets with SocketFamily INET (<a href="https://github.com/coredns/coredns/pull/8186" target="_blank">https://github.com/coredns/coredns/pull/8186</a>)
+plugin/erratic: Apply default truncate amount of 2 for bare <code>truncate</code> (<a href="https://github.com/coredns/coredns/pull/8240" target="_blank">https://github.com/coredns/coredns/pull/8240</a>)
+plugin/file: Return SOA in authority for negative CNAME target answers (<a href="https://github.com/coredns/coredns/pull/8226" target="_blank">https://github.com/coredns/coredns/pull/8226</a>)
+plugin/file: Run additional processing for wildcard answers (<a href="https://github.com/coredns/coredns/pull/8222" target="_blank">https://github.com/coredns/coredns/pull/8222</a>)
+plugin/forward: Add doh support (<a href="https://github.com/coredns/coredns/pull/8004" target="_blank">https://github.com/coredns/coredns/pull/8004</a>)
+plugin/forward: Make dnstap FORWARDER_* describe the socket from CoreDNS to upstream (<a href="https://github.com/coredns/coredns/pull/8184" target="_blank">https://github.com/coredns/coredns/pull/8184</a>)
+plugin/forward: Make per-upstream read timeout configurable (<a href="https://github.com/coredns/coredns/pull/8205" target="_blank">https://github.com/coredns/coredns/pull/8205</a>)
+plugin/forward: Restore old behavior forward plugin continue on empty conf file (<a href="https://github.com/coredns/coredns/pull/8203" target="_blank">https://github.com/coredns/coredns/pull/8203</a>)
+plugin/hosts: Add wildcard support (<a href="https://github.com/coredns/coredns/pull/8185" target="_blank">https://github.com/coredns/coredns/pull/8185</a>)
+plugin/hosts: Fall through unsupported query types (<a href="https://github.com/coredns/coredns/pull/8193" target="_blank">https://github.com/coredns/coredns/pull/8193</a>)
+plugin/hosts: Fix data race between lookups and reload (<a href="https://github.com/coredns/coredns/pull/8253" target="_blank">https://github.com/coredns/coredns/pull/8253</a>)
+plugin/kubernetes: Fix AXFR panic when nsAddrs returns multiple records (<a href="https://github.com/coredns/coredns/pull/8256" target="_blank">https://github.com/coredns/coredns/pull/8256</a>)
+plugin/local: Handle names under .localhost. (<a href="https://github.com/coredns/coredns/pull/8151" target="_blank">https://github.com/coredns/coredns/pull/8151</a>)
+plugin/log: Synthesize deferred error responses (<a href="https://github.com/coredns/coredns/pull/8200" target="_blank">https://github.com/coredns/coredns/pull/8200</a>)
+plugin/rewrite: Fix nil-pointer panic in EDNS0 response reversion with no OPT record (<a href="https://github.com/coredns/coredns/pull/8190" target="_blank">https://github.com/coredns/coredns/pull/8190</a>)
+plugin/rewrite: Restore the original question on empty replies (<a href="https://github.com/coredns/coredns/pull/8212" target="_blank">https://github.com/coredns/coredns/pull/8212</a>)
+plugin/secondary: Parse catalog zones after transfer (<a href="https://github.com/coredns/coredns/pull/8209" target="_blank">https://github.com/coredns/coredns/pull/8209</a>)
+plugin/secondary: Stop update loop on reload shutdown (<a href="https://github.com/coredns/coredns/pull/8198" target="_blank">https://github.com/coredns/coredns/pull/8198</a>)
+plugin/trace: Correct Zipkin v2 endpoint docs (<a href="https://github.com/coredns/coredns/pull/8202" target="_blank">https://github.com/coredns/coredns/pull/8202</a>)
+plugin/transfer: Configure notify source address (<a href="https://github.com/coredns/coredns/pull/8192" target="_blank">https://github.com/coredns/coredns/pull/8192</a>)
+plugin/transfer: Fix panic in CoreDNS transfer plugin caused by empty DNS record (<a href="https://github.com/coredns/coredns/pull/8207" target="_blank">https://github.com/coredns/coredns/pull/8207</a>)
+plugin/tsig: Don&rsquo;t echo client&rsquo;s TSIG.Error if verification is successful (<a href="https://github.com/coredns/coredns/pull/8215" target="_blank">https://github.com/coredns/coredns/pull/8215</a>)</p>
+<br><h2>etcd-io/etcd</h2> <h3>Release notes for v3.7.0</h3><h4>2026-07-08</h4><p>Please check out <a href="https://github.com/etcd-io/etcd/blob/main/CHANGELOG/CHANGELOG-3.7.md" target="_blank">CHANGELOG</a> for a full list of changes. And make sure to read <a href="https://etcd.io/docs/v3.7/upgrades/upgrade_3_7/" target="_blank">upgrade guide</a> before upgrading etcd (there may be breaking changes).</p>
+
+<p>For installation guides, please check out <a href="https://etcd.io/docs/v3.7/op-guide/" target="_blank">operating etcd</a>. Latest support status for common architectures and operating systems can be found at <a href="https://etcd.io/docs/v3.7/op-guide/supported-platform/" target="_blank">supported platforms</a>.</p>
+
+<h6 id="linux">Linux</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.7.0
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C /tmp/etcd-download-test --strip-components=1 --no-same-owner
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+
+# start a local etcd server
+/tmp/etcd-download-test/etcd
+
+# write,read to etcd
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 put foo bar
+/tmp/etcd-download-test/etcdctl --endpoints=localhost:2379 get foo
+</code></pre>
+
+<h6 id="macos-darwin">macOS (Darwin)</h6>
+
+<pre><code class="language-sh">ETCD_VER=v3.7.0
+
+# choose either URL
+GOOGLE_URL=https://storage.googleapis.com/etcd
+GITHUB_URL=https://github.com/etcd-io/etcd/releases/download
+DOWNLOAD_URL=${GOOGLE_URL}
+
+rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+rm -rf /tmp/etcd-download-test &amp;&amp; mkdir -p /tmp/etcd-download-test
+
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-darwin-amd64.zip -o /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+unzip /tmp/etcd-${ETCD_VER}-darwin-amd64.zip -d /tmp &amp;&amp; rm -f /tmp/etcd-${ETCD_VER}-darwin-amd64.zip
+mv /tmp/etcd-${ETCD_VER}-darwin-amd64/* /tmp/etcd-download-test &amp;&amp; rm -rf mv /tmp/etcd-${ETCD_VER}-darwin-amd64
+
+/tmp/etcd-download-test/etcd --version
+/tmp/etcd-download-test/etcdctl version
+/tmp/etcd-download-test/etcdutl version
+</code></pre>
+
+<h6 id="docker">Docker</h6>
+
+<p>etcd uses <a href="https://gcr.io/etcd-development/etcd" target="_blank"><code>gcr.io/etcd-development/etcd</code></a> as a primary container registry, and <a href="https://quay.io/coreos/etcd" target="_blank"><code>quay.io/coreos/etcd</code></a> as secondary.</p>
+
+<pre><code class="language-sh">ETCD_VER=v3.7.0
+
+rm -rf /tmp/etcd-data.tmp &amp;&amp; mkdir -p /tmp/etcd-data.tmp &amp;&amp; \
+  docker rmi gcr.io/etcd-development/etcd:${ETCD_VER} || true &amp;&amp; \
+  docker run \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  --mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+  --name etcd-gcr-${ETCD_VER} \
+  gcr.io/etcd-development/etcd:${ETCD_VER} \
+  /usr/local/bin/etcd \
+  --name s1 \
+  --data-dir /etcd-data \
+  --listen-client-urls http://0.0.0.0:2379 \
+  --advertise-client-urls http://0.0.0.0:2379 \
+  --listen-peer-urls http://0.0.0.0:2380 \
+  --initial-advertise-peer-urls http://0.0.0.0:2380 \
+  --initial-cluster s1=http://0.0.0.0:2380 \
+  --initial-cluster-token tkn \
+  --initial-cluster-state new \
+  --log-level info \
+  --logger zap \
+  --log-outputs stderr
+
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcd --version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdutl version
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl endpoint health
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl put foo bar
+docker exec etcd-gcr-${ETCD_VER} /usr/local/bin/etcdctl get foo
+</code></pre>
+<br><h2>grpc/grpc</h2> <h3>Release notes for Release v1.82.1</h3><h4>2026-07-08</h4><p>This is release gRPC Core 1.82.1 (glacier).</p>
+
+<p>For gRPC documentation, see <a href="https://grpc.io/" target="_blank">grpc.io</a>. For previous releases, see <a href="https://github.com/grpc/grpc/releases" target="_blank">Releases</a>.</p>
+
+<p>This release contains refinements, improvements, and bug fixes.</p>
+
+<h2 id="what-s-changed">What&rsquo;s Changed</h2>
+
+<h3 id="python">Python</h3>
+
+<ul>
+<li>[Backport][v1.82.x][Python] Update lower bound for protobuf from 6.33.5 to 7.35.1 by @asheshvidyut in <a href="https://github.com/grpc/grpc/pull/42920" target="_blank">https://github.com/grpc/grpc/pull/42920</a></li>
+</ul>
+
+<p><strong>Full Changelog</strong>: <a href="https://github.com/grpc/grpc/compare/v1.82.0...v1.82.1" target="_blank">https://github.com/grpc/grpc/compare/v1.82.0&hellip;v1.82.1</a></p>
+<br>
+</body>
+
+</html>
