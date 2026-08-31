@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Whats new in the last week</title>
+</head>
+
+<body>
+<h1>Latest Releases for the week 2026-08-24 - 2026-08-31</h1><h2>cri-o/cri-o</h2> <h3>Release notes for v1.36.4</h3><h4>2026-08-24</h4><ul>
+<li><a href="#cri-o-v1364">CRI-O v1.36.4</a>
+
+<ul>
+<li><a href="#downloads">Downloads</a></li>
+<li><a href="#changelog-since-v1363">Changelog since v1.36.3</a>
+
+<ul>
+<li><a href="#changes-by-kind">Changes by Kind</a>
+
+<ul>
+<li><a href="#feature">Feature</a></li>
+<li><a href="#bug-or-regression">Bug or Regression</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a>
+
+<ul>
+<li><a href="#added">Added</a></li>
+<li><a href="#changed">Changed</a></li>
+<li><a href="#removed">Removed</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="cri-o-v1-36-4">CRI-O v1.36.4</h1>
+
+<p>The release notes have been generated for the commit range
+<a href="https://github.com/cri-o/cri-o/compare/v1.36.3...v1.36.4" target="_blank">v1.36.3&hellip;v1.36.4</a> on Mon, 24 Aug 2026 16:51:10 UTC.</p>
+
+<h2 id="downloads">Downloads</h2>
+
+<p>Download one of our static release bundles via our Google Cloud Bucket:</p>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.36.4.tar.gz" target="_blank">cri-o.amd64.v1.36.4.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.36.4.tar.gz.sha256sum" target="_blank">cri-o.amd64.v1.36.4.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.36.4.tar.gz.bundle" target="_blank">cri-o.amd64.v1.36.4.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.36.4.tar.gz.spdx" target="_blank">cri-o.amd64.v1.36.4.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.36.4.tar.gz.spdx.bundle" target="_blank">cri-o.amd64.v1.36.4.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.36.4.tar.gz" target="_blank">cri-o.arm64.v1.36.4.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.36.4.tar.gz.sha256sum" target="_blank">cri-o.arm64.v1.36.4.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.36.4.tar.gz.bundle" target="_blank">cri-o.arm64.v1.36.4.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.36.4.tar.gz.spdx" target="_blank">cri-o.arm64.v1.36.4.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.36.4.tar.gz.spdx.bundle" target="_blank">cri-o.arm64.v1.36.4.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.36.4.tar.gz" target="_blank">cri-o.ppc64le.v1.36.4.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.36.4.tar.gz.sha256sum" target="_blank">cri-o.ppc64le.v1.36.4.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.36.4.tar.gz.bundle" target="_blank">cri-o.ppc64le.v1.36.4.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.36.4.tar.gz.spdx" target="_blank">cri-o.ppc64le.v1.36.4.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.36.4.tar.gz.spdx.bundle" target="_blank">cri-o.ppc64le.v1.36.4.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.36.4.tar.gz" target="_blank">cri-o.s390x.v1.36.4.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.36.4.tar.gz.sha256sum" target="_blank">cri-o.s390x.v1.36.4.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.36.4.tar.gz.bundle" target="_blank">cri-o.s390x.v1.36.4.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.36.4.tar.gz.spdx" target="_blank">cri-o.s390x.v1.36.4.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.36.4.tar.gz.spdx.bundle" target="_blank">cri-o.s390x.v1.36.4.tar.gz.spdx.bundle</a></li>
+</ul></li>
+</ul>
+
+<p>The <a href="https://openvex.dev" target="_blank">OpenVEX</a> report for this release is available at:</p>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.v1.36.4.openvex.json" target="_blank">cri-o.v1.36.4.openvex.json</a></li>
+</ul>
+
+<p>The <a href="https://slsa.dev" target="_blank">SLSA</a> provenance attestation for this release is available at:</p>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.v1.36.4.provenance.json" target="_blank">cri-o.v1.36.4.provenance.json</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.v1.36.4.provenance.json.bundle" target="_blank">cri-o.v1.36.4.provenance.json.bundle</a></li>
+</ul></li>
+</ul>
+
+<p>All release artifacts (bundles, SBOMs, VEX, and provenance) are also available as signed <a href="https://github.com/opencontainers/image-spec/blob/main/manifest.md" target="_blank">OCI artifacts</a> at <code>ghcr.io/cri-o/bundle:v1.36.4</code>.</p>
+
+<p>To verify the artifact signatures via <a href="https://github.com/sigstore/cosign" target="_blank">cosign</a>, run:</p>
+
+<pre><code class="language-console">&gt; export COSIGN_EXPERIMENTAL=1
+&gt; cosign verify-blob cri-o.amd64.v1.36.4.tar.gz \
+    --certificate-identity https://github.com/cri-o/packaging/.github/workflows/obs.yml@refs/heads/main \
+    --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+    --certificate-github-workflow-repository cri-o/packaging \
+    --certificate-github-workflow-ref refs/heads/main \
+    --bundle cri-o.amd64.v1.36.4.tar.gz.bundle
+</code></pre>
+
+<p>To verify the bill of materials (SBOM) in <a href="https://spdx.org" target="_blank">SPDX</a> format using the <a href="https://sigs.k8s.io/bom" target="_blank">bom</a> tool, run:</p>
+
+<pre><code class="language-console">&gt; tar xfz cri-o.amd64.v1.36.4.tar.gz
+&gt; bom validate -e cri-o.amd64.v1.36.4.tar.gz.spdx -d cri-o
+</code></pre>
+
+<p>To verify the <a href="https://openvex.dev" target="_blank">OpenVEX</a> vulnerability report, run:</p>
+
+<pre><code class="language-console">&gt; cosign verify-blob cri-o.v1.36.4.openvex.json \
+    --certificate-identity https://github.com/cri-o/packaging/.github/workflows/obs.yml@refs/heads/main \
+    --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+    --certificate-github-workflow-repository cri-o/packaging \
+    --certificate-github-workflow-ref refs/heads/main \
+    --bundle cri-o.v1.36.4.openvex.json.bundle
+</code></pre>
+
+<p>To verify the <a href="https://slsa.dev" target="_blank">SLSA</a> provenance attestation, run:</p>
+
+<pre><code class="language-console">&gt; cosign verify-blob cri-o.v1.36.4.provenance.json \
+    --certificate-identity https://github.com/cri-o/packaging/.github/workflows/obs.yml@refs/heads/main \
+    --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+    --certificate-github-workflow-repository cri-o/packaging \
+    --certificate-github-workflow-ref refs/heads/main \
+    --bundle cri-o.v1.36.4.provenance.json.bundle
+</code></pre>
+
+<h2 id="changelog-since-v1-36-3">Changelog since v1.36.3</h2>
+
+<h3 id="changes-by-kind">Changes by Kind</h3>
+
+<h4 id="feature">Feature</h4>
+
+<ul>
+<li>Added support for per-container targeting of cpu-load-balancing.crio.io, irq-load-balancing.crio.io, and cpu-quota.crio.io annotations. A container name can be appended to the annotation key (e.g. cpu-load-balancing.crio.io/my-container: &ldquo;disable&rdquo;) to apply the setting to a specific container rather than all containers in the pod. Container-specific annotations take precedence over pod-level annotations when both are present. (#10152, @openshift-cherrypick-robot)</li>
+</ul>
+
+<h4 id="bug-or-regression">Bug or Regression</h4>
+
+<ul>
+<li>Fix CRI-O crash (nil pointer dereference) in ListPodSandboxStats when a container&rsquo;s cgroup is cleaned up during teardown. (#10216, @openshift-cherrypick-robot)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+<br><h3>Release notes for v1.35.7</h3><h4>2026-08-24</h4><ul>
+<li><a href="#cri-o-v1357">CRI-O v1.35.7</a>
+
+<ul>
+<li><a href="#downloads">Downloads</a></li>
+<li><a href="#changelog-since-v1356">Changelog since v1.35.6</a>
+
+<ul>
+<li><a href="#changes-by-kind">Changes by Kind</a>
+
+<ul>
+<li><a href="#bug-or-regression">Bug or Regression</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a>
+
+<ul>
+<li><a href="#added">Added</a></li>
+<li><a href="#changed">Changed</a></li>
+<li><a href="#removed">Removed</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="cri-o-v1-35-7">CRI-O v1.35.7</h1>
+
+<p>The release notes have been generated for the commit range
+<a href="https://github.com/cri-o/cri-o/compare/v1.35.6...v1.35.7" target="_blank">v1.35.6&hellip;v1.35.7</a> on Mon, 24 Aug 2026 16:55:08 UTC.</p>
+
+<h2 id="downloads">Downloads</h2>
+
+<p>Download one of our static release bundles via our Google Cloud Bucket:</p>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.35.7.tar.gz" target="_blank">cri-o.amd64.v1.35.7.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.35.7.tar.gz.sha256sum" target="_blank">cri-o.amd64.v1.35.7.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.35.7.tar.gz.bundle" target="_blank">cri-o.amd64.v1.35.7.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.35.7.tar.gz.spdx" target="_blank">cri-o.amd64.v1.35.7.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.35.7.tar.gz.spdx.bundle" target="_blank">cri-o.amd64.v1.35.7.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.35.7.tar.gz" target="_blank">cri-o.arm64.v1.35.7.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.35.7.tar.gz.sha256sum" target="_blank">cri-o.arm64.v1.35.7.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.35.7.tar.gz.bundle" target="_blank">cri-o.arm64.v1.35.7.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.35.7.tar.gz.spdx" target="_blank">cri-o.arm64.v1.35.7.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.35.7.tar.gz.spdx.bundle" target="_blank">cri-o.arm64.v1.35.7.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.35.7.tar.gz" target="_blank">cri-o.ppc64le.v1.35.7.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.35.7.tar.gz.sha256sum" target="_blank">cri-o.ppc64le.v1.35.7.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.35.7.tar.gz.bundle" target="_blank">cri-o.ppc64le.v1.35.7.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.35.7.tar.gz.spdx" target="_blank">cri-o.ppc64le.v1.35.7.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.35.7.tar.gz.spdx.bundle" target="_blank">cri-o.ppc64le.v1.35.7.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.35.7.tar.gz" target="_blank">cri-o.s390x.v1.35.7.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.35.7.tar.gz.sha256sum" target="_blank">cri-o.s390x.v1.35.7.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.35.7.tar.gz.bundle" target="_blank">cri-o.s390x.v1.35.7.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.35.7.tar.gz.spdx" target="_blank">cri-o.s390x.v1.35.7.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.35.7.tar.gz.spdx.bundle" target="_blank">cri-o.s390x.v1.35.7.tar.gz.spdx.bundle</a></li>
+</ul></li>
+</ul>
+
+<p>To verify the artifact signatures via <a href="https://github.com/sigstore/cosign" target="_blank">cosign</a>, run:</p>
+
+<pre><code class="language-console">&gt; export COSIGN_EXPERIMENTAL=1
+&gt; cosign verify-blob cri-o.amd64.v1.35.7.tar.gz \
+    --certificate-identity https://github.com/cri-o/packaging/.github/workflows/obs.yml@refs/heads/main \
+    --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+    --certificate-github-workflow-repository cri-o/packaging \
+    --certificate-github-workflow-ref refs/heads/main \
+    --bundle cri-o.amd64.v1.35.7.tar.gz.bundle
+</code></pre>
+
+<p>To verify the bill of materials (SBOM) in <a href="https://spdx.org" target="_blank">SPDX</a> format using the <a href="https://sigs.k8s.io/bom" target="_blank">bom</a> tool, run:</p>
+
+<pre><code class="language-console">&gt; tar xfz cri-o.amd64.v1.35.7.tar.gz
+&gt; bom validate -e cri-o.amd64.v1.35.7.tar.gz.spdx -d cri-o
+</code></pre>
+
+<h2 id="changelog-since-v1-35-6">Changelog since v1.35.6</h2>
+
+<h3 id="changes-by-kind">Changes by Kind</h3>
+
+<h4 id="bug-or-regression">Bug or Regression</h4>
+
+<ul>
+<li>Fixed CVE-2026-15809: bypass of CVE-2022-4318 fix allowing /etc/passwd injection via newline characters in the HOME environment variable. The original check incorrectly matched the literal string &ldquo;\n&rdquo; instead of actual newline bytes. (#10201, @openshift-cherrypick-robot)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+<br><h3>Release notes for v1.34.12</h3><h4>2026-08-24</h4><ul>
+<li><a href="#cri-o-v13412">CRI-O v1.34.12</a>
+
+<ul>
+<li><a href="#downloads">Downloads</a></li>
+<li><a href="#changelog-since-v13411">Changelog since v1.34.11</a>
+
+<ul>
+<li><a href="#changes-by-kind">Changes by Kind</a>
+
+<ul>
+<li><a href="#bug-or-regression">Bug or Regression</a></li>
+<li><a href="#uncategorized">Uncategorized</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#dependencies">Dependencies</a>
+
+<ul>
+<li><a href="#added">Added</a></li>
+<li><a href="#changed">Changed</a></li>
+<li><a href="#removed">Removed</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="cri-o-v1-34-12">CRI-O v1.34.12</h1>
+
+<p>The release notes have been generated for the commit range
+<a href="https://github.com/cri-o/cri-o/compare/v1.34.11...v1.34.12" target="_blank">v1.34.11&hellip;v1.34.12</a> on Mon, 24 Aug 2026 17:00:23 UTC.</p>
+
+<h2 id="downloads">Downloads</h2>
+
+<p>Download one of our static release bundles via our Google Cloud Bucket:</p>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.12.tar.gz" target="_blank">cri-o.amd64.v1.34.12.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.12.tar.gz.sha256sum" target="_blank">cri-o.amd64.v1.34.12.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.12.tar.gz.bundle" target="_blank">cri-o.amd64.v1.34.12.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.12.tar.gz.spdx" target="_blank">cri-o.amd64.v1.34.12.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.34.12.tar.gz.spdx.bundle" target="_blank">cri-o.amd64.v1.34.12.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.12.tar.gz" target="_blank">cri-o.arm64.v1.34.12.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.12.tar.gz.sha256sum" target="_blank">cri-o.arm64.v1.34.12.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.12.tar.gz.bundle" target="_blank">cri-o.arm64.v1.34.12.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.12.tar.gz.spdx" target="_blank">cri-o.arm64.v1.34.12.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.arm64.v1.34.12.tar.gz.spdx.bundle" target="_blank">cri-o.arm64.v1.34.12.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.12.tar.gz" target="_blank">cri-o.ppc64le.v1.34.12.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.12.tar.gz.sha256sum" target="_blank">cri-o.ppc64le.v1.34.12.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.12.tar.gz.bundle" target="_blank">cri-o.ppc64le.v1.34.12.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.12.tar.gz.spdx" target="_blank">cri-o.ppc64le.v1.34.12.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.ppc64le.v1.34.12.tar.gz.spdx.bundle" target="_blank">cri-o.ppc64le.v1.34.12.tar.gz.spdx.bundle</a></li>
+</ul></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.12.tar.gz" target="_blank">cri-o.s390x.v1.34.12.tar.gz</a>
+
+<ul>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.12.tar.gz.sha256sum" target="_blank">cri-o.s390x.v1.34.12.tar.gz.sha256sum</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.12.tar.gz.bundle" target="_blank">cri-o.s390x.v1.34.12.tar.gz.bundle</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.12.tar.gz.spdx" target="_blank">cri-o.s390x.v1.34.12.tar.gz.spdx</a></li>
+<li><a href="https://storage.googleapis.com/cri-o/artifacts/cri-o.s390x.v1.34.12.tar.gz.spdx.bundle" target="_blank">cri-o.s390x.v1.34.12.tar.gz.spdx.bundle</a></li>
+</ul></li>
+</ul>
+
+<p>To verify the artifact signatures via <a href="https://github.com/sigstore/cosign" target="_blank">cosign</a>, run:</p>
+
+<pre><code class="language-console">&gt; export COSIGN_EXPERIMENTAL=1
+&gt; cosign verify-blob cri-o.amd64.v1.34.12.tar.gz \
+    --certificate-identity https://github.com/cri-o/packaging/.github/workflows/obs.yml@refs/heads/main \
+    --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+    --certificate-github-workflow-repository cri-o/packaging \
+    --certificate-github-workflow-ref refs/heads/main \
+    --bundle cri-o.amd64.v1.34.12.tar.gz.bundle
+</code></pre>
+
+<p>To verify the bill of materials (SBOM) in <a href="https://spdx.org" target="_blank">SPDX</a> format using the <a href="https://sigs.k8s.io/bom" target="_blank">bom</a> tool, run:</p>
+
+<pre><code class="language-console">&gt; tar xfz cri-o.amd64.v1.34.12.tar.gz
+&gt; bom validate -e cri-o.amd64.v1.34.12.tar.gz.spdx -d cri-o
+</code></pre>
+
+<h2 id="changelog-since-v1-34-11">Changelog since v1.34.11</h2>
+
+<h3 id="changes-by-kind">Changes by Kind</h3>
+
+<h4 id="bug-or-regression">Bug or Regression</h4>
+
+<ul>
+<li>User namespace UID/GID mappings are now correctly restored after CRI-O restart, fixing &ldquo;permission denied&rdquo; errors for containers using user namespaces with ID-mapped mounts. (#10231, @Chandan9112)</li>
+</ul>
+
+<h4 id="uncategorized">Uncategorized</h4>
+
+<ul>
+<li>Fixed CVE-2026-15809: bypass of CVE-2022-4318 fix allowing /etc/passwd injection via newline characters in the HOME environment variable. The original check incorrectly matched the literal string &ldquo;\n&rdquo; instead of actual newline bytes. (#10217, @aksjadha)</li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="added">Added</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="changed">Changed</h3>
+
+<p><em>Nothing has changed.</em></p>
+
+<h3 id="removed">Removed</h3>
+
+<p><em>Nothing has changed.</em></p>
+<br><h2>containerd/containerd</h2> <h3>Release notes for containerd API 1.12.0-rc.0</h3><h4>2026-08-28</h4><p>Welcome to the api/v1.12.0-rc.0 release of containerd!
+<em>This is a pre-release of containerd</em></p>
+
+<p>The 13th release for the containerd 1.x API aligns with the containerd 2.4 release.</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<ul>
+<li><strong>Include media type in content create event</strong> (<a href="https://github.com/containerd/containerd/pull/13833" target="_blank">#13833</a>)</li>
+<li><strong>Add parent path to runc checkpoint options</strong> (<a href="https://github.com/containerd/containerd/pull/13699" target="_blank">#13699</a>)</li>
+</ul>
+
+<h4 id="deprecations">Deprecations</h4>
+
+<ul>
+<li><strong>Deprecate &ldquo;allow mount handlers&rdquo; in shim info and replace with mount capability extension</strong> (<a href="https://github.com/containerd/containerd/pull/14002" target="_blank">#14002</a>)</li>
+<li><strong>Fix sandbox task API endpoints for non-runc runtimes</strong> (<a href="https://github.com/containerd/containerd/pull/13360" target="_blank">#13360</a>)</li>
+</ul>
+
+<p>Please try out the release binaries and report any issues at
+<a href="https://github.com/containerd/containerd/issues" target="_blank">https://github.com/containerd/containerd/issues</a>.</p>
+
+<h3 id="contributors">Contributors</h3>
+
+<ul>
+<li>Derek McGowan</li>
+<li>Maksym Pavlenko</li>
+<li>Wei Fu</li>
+<li>Jordan Liggitt</li>
+<li>Samuel Karp</li>
+<li>Kohei Tokunaga</li>
+<li>Philip Laine</li>
+<li>Sebastiaan van Stijn</li>
+<li>Sergey Kanzhelev</li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<details><summary>22 commits</summary>
+<p>
+
+* Prepare api/v1.12.0-rc.0 release ([#14047](https://github.com/containerd/containerd/pull/14047))
+  * [`d767f44b5`](https://github.com/containerd/containerd/commit/d767f44b5227116479ebbf4145623f3500e4cc23) Prepare api/v1.12.0-rc.0 release
+* Shim mount handler protocol ([#14002](https://github.com/containerd/containerd/pull/14002))
+  * [`a72247425`](https://github.com/containerd/containerd/commit/a72247425b44e86a3790828dd11de5c5aecaf23d) api: add shim mount capabilities
+* chore(api): update github.com/sirupsen/logrus v1.10.2 ([#14037](https://github.com/containerd/containerd/pull/14037))
+  * [`a28910b14`](https://github.com/containerd/containerd/commit/a28910b14ffc8ff5098d14e2f776dfc6b1857afe) chore(api): update github.com/sirupsen/logrus v1.10.2
+* Prepare release notes for api/v1.12.0-beta.0 ([#13899](https://github.com/containerd/containerd/pull/13899))
+  * [`0ff04dc3f`](https://github.com/containerd/containerd/commit/0ff04dc3f7934523f6a2001e67d9572d4a9d4885) Prepare release notes for api/v1.12.0-beta.0
+* Include media type in content create event ([#13833](https://github.com/containerd/containerd/pull/13833))
+  * [`a452c2e23`](https://github.com/containerd/containerd/commit/a452c2e2304d43f48299ed2663ed82673b25be81) Include media type in content create event
+* build(deps): bump golang.org/x/net from 0.51.0 to 0.55.0 in /api ([#13819](https://github.com/containerd/containerd/pull/13819))
+  * [`52c5f1f64`](https://github.com/containerd/containerd/commit/52c5f1f64e2184af56f3550940db29ccdb94e576) build(deps): bump golang.org/x/net from 0.51.0 to 0.55.0 in /api
+* build(deps): bump github.com/containerd/ttrpc to v1.2.9 ([#13740](https://github.com/containerd/containerd/pull/13740))
+  * [`658a1c78b`](https://github.com/containerd/containerd/commit/658a1c78b52e25002c9c26a504055c8d3af09ea3) build(deps): bump github.com/containerd/ttrpc to v1.2.9
+* Add parent path to runc checkpoint options ([#13699](https://github.com/containerd/containerd/pull/13699))
+  * [`ea0ed51e2`](https://github.com/containerd/containerd/commit/ea0ed51e2101448874215c0de945197a1cafdea4) shim: allow specifying runc's --parent-path during checkpointing
+* Update typeurl/v2 to v2.3.0 to drop gogo dependency ([#13490](https://github.com/containerd/containerd/pull/13490))
+  * [`ce3914324`](https://github.com/containerd/containerd/commit/ce39143249b595d2b275e47c279c129f67e3a2a9) Update typeurl/v2 to v2.3.0 to drop gogo dependency
+* do not hide linitng errors ([#13423](https://github.com/containerd/containerd/pull/13423))
+  * [`7f10e9eb5`](https://github.com/containerd/containerd/commit/7f10e9eb5fe3b6e89438fd4806f75bcddfbf576e) do not hide linitng errors
+* Fix sandbox task API endpoints for non-runc runtimes ([#13360](https://github.com/containerd/containerd/pull/13360))
+  * [`ac01ae5c2`](https://github.com/containerd/containerd/commit/ac01ae5c2766961c3592523ab679dc06ca73c331) protos: include task API address to CreateTaskRequest
+</p>
+</details>
+
+<h3 id="dependency-changes">Dependency Changes</h3>
+
+<ul>
+<li><strong>github.com/containerd/ttrpc</strong>                v1.2.5 -&gt; v1.2.9</li>
+<li><strong>github.com/containerd/typeurl/v2</strong>           v2.1.1 -&gt; v2.3.0</li>
+<li><strong>github.com/sirupsen/logrus</strong>                 v1.9.3 -&gt; v1.10.2</li>
+<li><strong>golang.org/x/net</strong>                           v0.48.0 -&gt; v0.55.0</li>
+<li><strong>golang.org/x/sys</strong>                           v0.39.0 -&gt; v0.46.0</li>
+<li><strong>golang.org/x/text</strong>                          v0.32.0 -&gt; v0.37.0</li>
+<li><strong>google.golang.org/genproto/googleapis/rpc</strong>  ff82c1b0f217 -&gt; a57be14db171</li>
+<li><strong>google.golang.org/grpc</strong>                     v1.79.3 -&gt; v1.81.1</li>
+<li><strong>google.golang.org/protobuf</strong>                 v1.36.10 -&gt; v1.36.11</li>
+</ul>
+
+<p>Previous release can be found at <a href="https://github.com/containerd/containerd/releases/tag/api/v1.11.0" target="_blank">api/v1.11.0</a></p>
+<br><h2>containerd/nerdctl</h2> <h3>Release notes for v2.4.0-beta.0</h3><h4>2026-08-24</h4><h2 id="changes">Changes</h2>
+
+<p>This is the first beta release of nerdctl v2.4.0.</p>
+
+<p>This release of nerdctl-full uses a beta release of containerd (v2.4.0-beta.0).</p>
+
+<p>Major changes:</p>
+
+<ul>
+<li><p><code>nerdctl image</code>:</p>
+
+<ul>
+<li>Adopted Docker v29 default <code>nerdctl images</code> output (<code>IMAGE</code>, <code>ID</code>, <code>DISK USAGE</code>, <code>CONTENT SIZE</code>, <code>EXTRA</code>) (#5093, thanks to @ekalinin)</li>
+<li>Added <code>nerdctl push --all-tags</code> (<code>-a</code>) to push every local tag of a repository (#5133, thanks to @ekalinin)</li>
+<li>Added <code>nerdctl image convert --erofs {raw|zstd}</code> and aligned EROFS pull/push with containerd (#4927)</li>
+<li>Added <code>nerdctl save --quiet</code> (<code>-q</code>) to suppress progress output (#5064, thanks to @s3onghyun)</li>
+<li>Fixed <code>nerdctl image ls &lt;repo&gt;</code> to list all tags of a bare repository name (#5115, thanks to @ankit090701)</li>
+<li>Added snapshot info to native <code>nerdctl image inspect</code> (#5114, thanks to @ningmingxiao)</li>
+</ul></li>
+
+<li><p><code>nerdctl container</code>:</p>
+
+<ul>
+<li>Added <code>--mount type=image</code> (read-only) (#4990, thanks to @mayur-tolexo)</li>
+<li>Added <code>--expose</code> and <code>--publish-all</code> (<code>-P</code>) (#5036, thanks to @Mujib-Ahasan)</li>
+<li>Added support for the Docker v25 recursive read-only (RRO) mount form (#5043, thanks to @AkihiroSuda)</li>
+<li>Allocated a free host port from a published port range for a single container port (#4988, thanks to @s3onghyun)</li>
+<li>Fixed <code>--cpus</code> writing cpuset instead of CFS quota/period (#5067, thanks to @kmaris)</li>
+<li>Fixed <code>nerdctl run</code>/<code>exec -i</code> hanging when stdin reaches EOF during task creation (#5042, thanks to @AkihiroSuda)</li>
+<li>Added snapshot info to native <code>nerdctl container inspect</code> (#5118, thanks to @ningmingxiao)</li>
+<li>Suppressed a spurious hostsstore NotFound warning on container removal (#5098, thanks to @pujitha24)</li>
+</ul></li>
+
+<li><p><code>nerdctl network</code>:</p>
+
+<ul>
+<li>Added <code>--aux-address</code> support for <code>nerdctl network create</code> (#5041, thanks to @mayur-tolexo)</li>
+<li>Added <code>--ipv4</code> so <code>--ipv4=false --ipv6</code> can create IPv6-only networks (#5024, thanks to @mayur-tolexo)</li>
+<li>Matched each <code>--ip-range</code> to its subnet for dual-stack networks (#5018, thanks to @mayur-tolexo)</li>
+<li>Supported big-endian hosts when parsing <code>/proc/net/{tcp,udp}</code> addresses (#5100, thanks to @larrasket)</li>
+</ul></li>
+
+<li><p><code>nerdctl events</code>:</p>
+
+<ul>
+<li>Added label-based filtering (#4999, thanks to @Mujib-Ahasan)</li>
+<li>Renamed the <code>Status</code> field to <code>Action</code> to match Docker v29 (#5087, thanks to @Akshitguptaa)</li>
+</ul></li>
+
+<li><p><code>nerdctl compose</code>:</p>
+
+<ul>
+<li>Stopped requiring CNI plugins for compose projects that do not use CNI (#5132, thanks to @ravi-arnan)</li>
+<li>Fixed a panic when asserting <code>x-nerdctl-*</code> compose extension types (#5073, thanks to @arpitjain099)</li>
+</ul></li>
+
+<li><p>Rootless:</p>
+
+<ul>
+<li>Enabled IPv6 in the RootlessKit network namespace (#5055, thanks to @Akshitguptaa)</li>
+</ul></li>
+
+<li><p><code>nerdctl-full</code>:</p>
+
+<ul>
+<li>Updated containerd to v2.4.0-beta.0 and RootlessKit to v3.1.0 (#5144, #5152, thanks to @haytok)</li>
+</ul></li>
+
+<li><p>Documentation:</p>
+
+<ul>
+<li>Documented volume <code>:z</code> and <code>:Z</code> SELinux options (#5140, thanks to @VedantMadane)</li>
+<li>Fixed typos in docs (#5146, thanks to @MsfPablo)</li>
+</ul></li>
+
+<li><p>Misc:</p>
+
+<ul>
+<li>Hid internal alias flags from help output (#5025, thanks to @immanuwell)</li>
+</ul></li>
+
+<li><p>CI and tests:</p>
+
+<ul>
+<li>Updated CI to Ubuntu 26.04 and Docker 29.6.1, and ran integration tests directly on hosts and Lima guests (#5020, #5021, #5035, thanks to @AkihiroSuda)</li>
+<li>Continued migrating container, network, and compose tests to Tigron (#4780, #5014, #5045, #5056, #5058, #5063, #5069, #5070, #5071, #5074, #5085, #5086, #5094, #5120, thanks to @must108, @takumi12311123, @papidb, @Mujib-Ahasan, and @ogulcanaydogan)</li>
+</ul></li>
+
+<li><p>And more!</p></li>
+</ul>
+
+<p>Full changes: <a href="https://github.com/containerd/nerdctl/milestone/66?closed=1" target="_blank">https://github.com/containerd/nerdctl/milestone/66?closed=1</a></p>
+
+<p>Thanks to @ChengyuZhu6, @AkihiroSuda, @ekalinin, @mayur-tolexo, @ningmingxiao, @haytok, @Mujib-Ahasan, @s3onghyun, @immanuwell, @Akshitguptaa, @ankit090701, @ravi-arnan, @arpitjain099, @kmaris, @larrasket, @pujitha24, @VedantMadane, @MsfPablo, @papidb, @ogulcanaydogan, @must108, @takumi12311123, @subotac, and @nikolauspschuetz.</p>
+
+<h2 id="compatible-containerd-versions">Compatible containerd versions</h2>
+
+<p>This release of nerdctl is expected to be used with containerd v1.7 or later.
+Some features may not work with other releases of containerd.</p>
+
+<h2 id="about-the-binaries">About the binaries</h2>
+
+<ul>
+<li>Minimal (<code>nerdctl-2.4.0-beta.0-linux-amd64.tar.gz</code>): nerdctl only</li>
+<li>Full (<code>nerdctl-full-2.4.0-beta.0-linux-amd64.tar.gz</code>):    Includes dependencies such as containerd, runc, and CNI</li>
+</ul>
+
+<h3 id="minimal">Minimal</h3>
+
+<p>Extract the archive to a path like <code>/usr/local/bin</code> or <code>~/bin</code> .
+<details><summary>tar Cxzvvf /usr/local/bin nerdctl-2.4.0-beta.0-linux-amd64.tar.gz</summary>
+<p></p>
+
+<pre><code>-rwxr-xr-x root/root  32686242 2026-08-23 06:01 nerdctl
+-rwxr-xr-x root/root     23381 2026-08-23 06:00 containerd-rootless-setuptool.sh
+-rwxr-xr-x root/root      9555 2026-08-23 06:00 containerd-rootless.sh
+</code></pre>
+
+<p></p>
+</details></p>
+
+<h3 id="full">Full</h3>
+
+<p>Extract the archive to a path like <code>/usr/local</code> or <code>~/.local</code> .</p>
+
+<details><summary>tar Cxzvvf /usr/local nerdctl-full-2.4.0-beta.0-linux-amd64.tar.gz</summary>
+<p>
+
+```
+drwxr-xr-x 0/0               0 2026-08-23 06:11 bin/
+-rwxr-xr-x 0/0        34352159 2026-07-16 13:59 bin/buildctl
+-rwxr-xr-x 0/0        29909144 2025-05-12 13:10 bin/buildg
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-bandwidth -> ../libexec/cni/bandwidth
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-bridge -> ../libexec/cni/bridge
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-dhcp -> ../libexec/cni/dhcp
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-dummy -> ../libexec/cni/dummy
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-firewall -> ../libexec/cni/firewall
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-host-device -> ../libexec/cni/host-device
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-host-local -> ../libexec/cni/host-local
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-ipvlan -> ../libexec/cni/ipvlan
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-loopback -> ../libexec/cni/loopback
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-macvlan -> ../libexec/cni/macvlan
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-portmap -> ../libexec/cni/portmap
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-ptp -> ../libexec/cni/ptp
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-sbr -> ../libexec/cni/sbr
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-static -> ../libexec/cni/static
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-tap -> ../libexec/cni/tap
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-tuning -> ../libexec/cni/tuning
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-vlan -> ../libexec/cni/vlan
+lrwxrwxrwx 0/0               0 2026-08-23 06:09 bin/buildkit-cni-vrf -> ../libexec/cni/vrf
+-rwxr-xr-x 0/0        79620820 2026-07-16 13:59 bin/buildkitd
+-rwxr-xr-x 0/0        16853776 2026-08-23 06:09 bin/bypass4netns
+-rwxr-xr-x 0/0         6607010 2026-08-23 06:09 bin/bypass4netnsd
+-rwxr-xr-x 0/0        40396784 2026-08-23 06:09 bin/containerd
+-rwxr-xr-x 0/0        12079288 2025-11-06 01:44 bin/containerd-fuse-overlayfs-grpc
+-rwxr-xr-x 0/0           23381 2026-08-23 06:11 bin/containerd-rootless-setuptool.sh
+-rwxr-xr-x 0/0            9555 2026-08-23 06:11 bin/containerd-rootless.sh
+-rwxr-xr-x 0/0         7987362 2026-08-23 06:09 bin/containerd-shim-runc-v2
+-rwxr-xr-x 0/0        55267512 2026-01-21 14:59 bin/containerd-stargz-grpc
+-rwxr-xr-x 0/0        23592723 2026-08-23 06:10 bin/ctd-decoder
+-rwxr-xr-x 0/0        22671522 2026-08-23 06:09 bin/ctr
+-rwxr-xr-x 0/0        31243738 2026-08-23 06:10 bin/ctr-enc
+-rwxr-xr-x 0/0        23417016 2026-01-21 14:59 bin/ctr-remote
+-rwxr-xr-x 0/0         1695448 2026-08-23 06:10 bin/fuse-overlayfs
+-rwxr-xr-x 0/0         7917730 2026-08-23 06:08 bin/gomodjail
+-rwxr-xr-x 0/0        32649378 2026-08-23 06:11 bin/nerdctl
+-rwxr-xr-x 0/0        40574966 2026-08-23 06:11 bin/nerdctl.gomodjail
+-rwxr-xr-x 0/0        12048966 2026-08-04 09:31 bin/rootlessctl
+-rwxr-xr-x 0/0        23498531 2026-08-04 09:31 bin/rootlesskit
+-rwxr-xr-x 0/0        15249928 2026-08-23 06:08 bin/runc
+-rwxr-xr-x 0/0        53829816 2026-01-21 14:59 bin/stargz-fuse-manager
+-rwxr-xr-x 0/0        10821816 2026-01-21 14:59 bin/stargz-store-helper
+-rwxr-xr-x 0/0          870496 2026-08-23 06:10 bin/tini
+drwxr-xr-x 0/0               0 2026-08-23 06:09 lib/
+drwxr-xr-x 0/0               0 2026-08-23 06:09 lib/systemd/
+drwxr-xr-x 0/0               0 2026-08-23 06:09 lib/systemd/system/
+-rw-r--r-- 0/0            1309 2026-08-23 06:09 lib/systemd/system/buildkit.service
+-rw-r--r-- 0/0            1248 2026-08-23 06:07 lib/systemd/system/containerd.service
+-rw-r--r-- 0/0             312 2026-08-23 06:09 lib/systemd/system/stargz-snapshotter.service
+drwxr-xr-x 0/0               0 2026-08-23 06:09 libexec/
+drwxr-xr-x 0/0               0 2026-03-16 14:18 libexec/cni/
+-rw-r--r-- 0/0           11357 2026-03-16 14:18 libexec/cni/LICENSE
+-rw-r--r-- 0/0            2343 2026-03-16 14:18 libexec/cni/README.md
+-rwxr-xr-x 0/0         5042926 2026-03-16 14:18 libexec/cni/bandwidth
+-rwxr-xr-x 0/0         5698763 2026-03-16 14:18 libexec/cni/bridge
+-rwxr-xr-x 0/0        13725422 2026-03-16 14:18 libexec/cni/dhcp
+-rwxr-xr-x 0/0         5251069 2026-03-16 14:18 libexec/cni/dummy
+-rwxr-xr-x 0/0         5702145 2026-03-16 14:18 libexec/cni/firewall
+-rwxr-xr-x 0/0         5159967 2026-03-16 14:18 libexec/cni/host-device
+-rwxr-xr-x 0/0         4350778 2026-03-16 14:18 libexec/cni/host-local
+-rwxr-xr-x 0/0         5274322 2026-03-16 14:18 libexec/cni/ipvlan
+-rwxr-xr-x 0/0         4302030 2026-03-16 14:18 libexec/cni/loopback
+-rwxr-xr-x 0/0         5307111 2026-03-16 14:18 libexec/cni/macvlan
+-rwxr-xr-x 0/0         5108385 2026-03-16 14:18 libexec/cni/portmap
+-rwxr-xr-x 0/0         5475470 2026-03-16 14:18 libexec/cni/ptp
+-rwxr-xr-x 0/0         4525826 2026-03-16 14:18 libexec/cni/sbr
+-rwxr-xr-x 0/0         3776708 2026-03-16 14:18 libexec/cni/static
+-rwxr-xr-x 0/0         5453308 2026-03-16 14:18 libexec/cni/tap
+-rwxr-xr-x 0/0         4389084 2026-03-16 14:18 libexec/cni/tuning
+-rwxr-xr-x 0/0         5267679 2026-03-16 14:18 libexec/cni/vlan
+-rwxr-xr-x 0/0         4685012 2026-03-16 14:18 libexec/cni/vrf
+drwxr-xr-x 0/0               0 2026-08-23 06:07 share/
+drwxr-xr-x 0/0               0 2026-08-23 06:11 share/doc/
+drwxr-xr-x 0/0               0 2026-08-23 06:11 share/doc/nerdctl/
+-rw-r--r-- 0/0           12380 2026-08-23 06:00 share/doc/nerdctl/README.md
+drwxr-xr-x 0/0               0 2026-08-23 06:00 share/doc/nerdctl/docs/
+-rw-r--r-- 0/0            3953 2026-08-23 06:00 share/doc/nerdctl/docs/build.md
+-rw-r--r-- 0/0            2570 2026-08-23 06:00 share/doc/nerdctl/docs/builder-debug.md
+-rw-r--r-- 0/0            4779 2026-08-23 06:00 share/doc/nerdctl/docs/cni.md
+-rw-r--r-- 0/0           94663 2026-08-23 06:00 share/doc/nerdctl/docs/command-reference.md
+-rw-r--r-- 0/0            1829 2026-08-23 06:00 share/doc/nerdctl/docs/compose.md
+-rw-r--r-- 0/0            7592 2026-08-23 06:00 share/doc/nerdctl/docs/config.md
+-rw-r--r-- 0/0            9128 2026-08-23 06:00 share/doc/nerdctl/docs/cosign.md
+-rw-r--r-- 0/0            5660 2026-08-23 06:00 share/doc/nerdctl/docs/cvmfs.md
+drwxr-xr-x 0/0               0 2026-08-23 06:00 share/doc/nerdctl/docs/dev/
+-rw-r--r-- 0/0           12701 2026-08-23 06:00 share/doc/nerdctl/docs/dev/auditing_dockerfile.md
+-rw-r--r-- 0/0            8587 2026-08-23 06:00 share/doc/nerdctl/docs/dev/store.md
+-rw-r--r-- 0/0            3148 2026-08-23 06:00 share/doc/nerdctl/docs/dir.md
+-rw-r--r-- 0/0            1826 2026-08-23 06:00 share/doc/nerdctl/docs/erofs.md
+-rw-r--r-- 0/0             906 2026-08-23 06:00 share/doc/nerdctl/docs/experimental.md
+-rw-r--r-- 0/0           14757 2026-08-23 06:00 share/doc/nerdctl/docs/faq.md
+-rw-r--r-- 0/0             884 2026-08-23 06:00 share/doc/nerdctl/docs/freebsd.md
+-rw-r--r-- 0/0            5585 2026-08-23 06:00 share/doc/nerdctl/docs/gpu.md
+-rw-r--r-- 0/0            3419 2026-08-23 06:00 share/doc/nerdctl/docs/healthchecks.md
+drwxr-xr-x 0/0               0 2026-08-23 06:00 share/doc/nerdctl/docs/images/
+-rw-r--r-- 0/0            1540 2026-08-23 06:00 share/doc/nerdctl/docs/images/nerdctl-white.svg
+-rw-r--r-- 0/0            1462 2026-08-23 06:00 share/doc/nerdctl/docs/images/nerdctl.svg
+-rw-r--r-- 0/0          684421 2026-08-23 06:00 share/doc/nerdctl/docs/images/rootlessKit-network-design.png
+-rw-r--r-- 0/0           14462 2026-08-23 06:00 share/doc/nerdctl/docs/ipfs.md
+-rw-r--r-- 0/0            2426 2026-08-23 06:00 share/doc/nerdctl/docs/multi-platform.md
+-rw-r--r-- 0/0            2960 2026-08-23 06:00 share/doc/nerdctl/docs/notation.md
+-rw-r--r-- 0/0            2806 2026-08-23 06:00 share/doc/nerdctl/docs/nydus.md
+-rw-r--r-- 0/0            3277 2026-08-23 06:00 share/doc/nerdctl/docs/ocicrypt.md
+-rw-r--r-- 0/0            2215 2026-08-23 06:00 share/doc/nerdctl/docs/overlaybd.md
+-rw-r--r-- 0/0           15657 2026-08-23 06:00 share/doc/nerdctl/docs/registry.md
+-rw-r--r-- 0/0           10065 2026-08-23 06:00 share/doc/nerdctl/docs/rootless.md
+-rw-r--r-- 0/0            4126 2026-08-23 06:00 share/doc/nerdctl/docs/soci.md
+-rw-r--r-- 0/0           11912 2026-08-23 06:00 share/doc/nerdctl/docs/stargz.md
+drwxr-xr-x 0/0               0 2026-08-23 06:00 share/doc/nerdctl/docs/testing/
+-rw-r--r-- 0/0            5727 2026-08-23 06:00 share/doc/nerdctl/docs/testing/README.md
+-rw-r--r-- 0/0           16694 2026-08-23 06:00 share/doc/nerdctl/docs/testing/tools.md
+drwxr-xr-x 0/0               0 2026-08-23 06:11 share/doc/nerdctl-full/
+-rw-r--r-- 0/0             918 2026-08-23 06:10 share/doc/nerdctl-full/README.md
+-rw-r--r-- 0/0            9431 2026-08-23 06:11 share/doc/nerdctl-full/SHA256SUMS
+```
+</p>
+</details>
+
+<details><summary>Included components</summary>
+<p>
+
+See `share/doc/nerdctl-full/README.md`:
+```markdown
+# nerdctl (full distribution)
+- nerdctl: v2.4.0-beta.0
+- containerd: v2.4.0-beta.0
+- runc: v1.5.1
+- CNI plugins: v1.9.1
+- BuildKit: v0.31.2
+- Stargz Snapshotter: v0.18.2
+- imgcrypt: v2.0.2
+- bypass4netns: v0.4.2
+- fuse-overlayfs: v1.17
+- containerd-fuse-overlayfs: v2.1.7
+- Tini: v0.19.0
+- buildg: v0.5.3
+- RootlessKit: v3.1.0
+- gomodjail: v0.3.2@c145bb1e36fe0939c5fa0467f2477878dea8e3d9
+
+## License
+- bin/fuse-overlayfs: [GNU GENERAL PUBLIC LICENSE, Version 2](https://github.com/containers/fuse-overlayfs/blob/v1.17/COPYING)
+- bin/{runc,bypass4netns,bypass4netnsd}: Apache License 2.0, statically linked with libseccomp ([LGPL 2.1](https://github.com/seccomp/libseccomp/blob/main/LICENSE), source code available at https://github.com/seccomp/libseccomp/)
+- bin/tini: [MIT License](https://github.com/krallin/tini/blob/v0.19.0/LICENSE)
+- Other files: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+```
+</p>
+</details>
+
+<h2 id="quick-start">Quick start</h2>
+
+<h3 id="rootful">Rootful</h3>
+
+<pre><code class="language-console">$ sudo systemctl enable --now containerd
+$ sudo nerdctl run -d --name nginx -p 80:80 nginx:alpine
+</code></pre>
+
+<h3 id="rootless">Rootless</h3>
+
+<pre><code class="language-console">$ containerd-rootless-setuptool.sh install
+$ nerdctl run -d --name nginx -p 8080:80 nginx:alpine
+</code></pre>
+
+<p>Enabling cgroup v2 is highly recommended for rootless mode, see <a href="https://rootlesscontaine.rs/getting-started/common/cgroup2/" target="_blank">https://rootlesscontaine.rs/getting-started/common/cgroup2/</a> .</p>
+
+<hr>
+
+<p>The binaries were built automatically on GitHub Actions.
+The build log is available for 90 days: <a href="https://github.com/containerd/nerdctl/actions/runs/32621770689" target="_blank">https://github.com/containerd/nerdctl/actions/runs/32621770689</a></p>
+
+<p>The sha256sum of the SHA256SUMS file itself is <code>264a0f2968bf11034adcad8df85efd078777f1377d36fc4c239d38aefead5bcd</code> .</p>
+
+<hr>
+
+<p>Release manager: Chengyu Zhu (@ChengyuZhu6)</p>
+<br><h2>kubernetes-sigs/cluster-api-provider-vsphere</h2> <h3>Release notes for templates/v1.37.0</h3><h4>2026-08-28</h4><p>VM templates for Kubernetes v1.37.0\n\nIf an OVA image consists of multiple parts, use <code>cat &lt;image&gt;-parts* &gt; &lt;image&gt;.ova</code> to join them back.</p>
+<br><h2>kubernetes-sigs/kind</h2> <h3>Release notes for v0.33.0</h3><h4>2026-08-26</h4><p>This release contains critical dependency updates, bug fixes, and defaults to Kubernetes 1.36.1.</p>
+
+<h1 id="breaking-changes">Breaking Changes</h1>
+
+<p>The default node image is now  <code>kindest/node:v1.37.0@sha256:a1ed56cfb0e7b93589bdf97c8cd566405a265939e3620fc4f5de89adff580ae5</code>.</p>
+
+<h1 id="new-features">New Features</h1>
+
+<ul>
+<li>Assorted dependency updates.</li>
+</ul>
+
+<p>Images pre-built for this release:</p>
+
+<ul>
+<li>v1.37.0: <code>kindest/node:v1.37.0@sha256:a1ed56cfb0e7b93589bdf97c8cd566405a265939e3620fc4f5de89adff580ae5</code></li>
+<li>v1.36.4: <code>kindest/node:v1.36.4@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed</code></li>
+<li>v1.35.8: <code>kindest/node:v1.35.8@sha256:07b2536e30b803ed61d1677a79df6115f798ce64c80f9e22f6ed45afd09323c0</code></li>
+<li>v1.34.11: <code>kindest/node:v1.34.11@sha256:44e222ee2132dab25ff87301682f89eb82c7880ea3a1bf543bfe9708fd08d67d</code></li>
+</ul>
+
+<p><strong>NOTE</strong>: You <em>must</em> use the <code>@sha256</code> digest to guarantee an image built for this release, until such a time as we switch to a different tagging scheme. Even then we will highly encourage digest pinning for security and reproducibility reasons.</p>
+
+<p>See also:</p>
+
+<ul>
+<li><a href="https://kind.sigs.k8s.io/docs/user/quick-start/#creating-a-cluster" target="_blank">https://kind.sigs.k8s.io/docs/user/quick-start/#creating-a-cluster</a></li>
+<li><a href="https://kind.sigs.k8s.io/docs/user/quick-start/#building-images" target="_blank">https://kind.sigs.k8s.io/docs/user/quick-start/#building-images</a></li>
+</ul>
+
+<p>NOTE: These node images support amd64 and arm64, both of our supported platforms. <strong>You must use the same platform as your host,</strong> for more context see <a href="https://github.com/kubernetes-sigs/kind/issues/2718" target="_blank">#2718</a></p>
+
+<h1 id="fixes">Fixes</h1>
+
+<ul>
+<li>Respect Docker client proxy config for docker nodes. (#4192)</li>
+<li>Preserve external load balancer CDS/LDS configuration across container restarts. (#4195)</li>
+<li>Improve local-path-provisioner helperPod tolerations. (#4210)</li>
+<li>Assorted documentation fixes and improvements.</li>
+</ul>
+
+<h1 id="contributors">Contributors</h1>
+
+<p>Committers for this release:</p>
+
+<ul>
+<li>@antoineco</li>
+<li>@BenTheElder</li>
+<li>@christian-heusel</li>
+<li>@erichorwath</li>
+<li>@immanuwell</li>
+<li>@jboero</li>
+<li>@k8s-ci-robot</li>
+<li>@liggitt</li>
+<li>@null</li>
+<li>@popsiclelmlm</li>
+<li>@sestegra</li>
+<li>@stmcginnis</li>
+<li>@tom1299</li>
+</ul>
+
+<p>We&rsquo;d also like to thank everyone who touched the codebase, filed issues, and helped the community!</p>
+<br>
+</body>
+
+</html>
